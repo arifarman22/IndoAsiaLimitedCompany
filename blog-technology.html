@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leveraging Technology for Efficient Import Management - IndoAsia Trading</title>
+    <meta name="description" content="Discover how digital tools and platforms can streamline your import operations, from sourcing to delivery.">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="assets/css/header.css">
+    <link rel="stylesheet" href="assets/css/footer.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --brand-navy: #183E6C;
+            --brand-red: #EC1E24;
+            --brand-white: #EDEDED;
+            --bg-primary: var(--brand-white);
+            --bg-secondary: #f8fafc;
+            --accent: var(--brand-navy);
+            --accent-secondary: var(--brand-red);
+            --accent-gradient: linear-gradient(135deg, var(--brand-navy), var(--brand-red));
+            --text-primary: #1e293b;
+            --text-secondary: #64748b;
+            --border: #e2e8f0;
+            --card-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+            --transition: all 0.3s ease;
+            --border-radius: 12px;
+        }
+
+        body {
+            margin-top: 130px;
+            font-family: 'Montserrat', sans-serif;
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.7;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .blog-post {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 3rem 0;
+        }
+
+        .blog-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .blog-category {
+            display: inline-block;
+            background: var(--accent-gradient);
+            color: #000;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+        }
+
+        .blog-title {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--accent);
+        }
+
+        .blog-meta {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 2rem;
+            color: var(--text-secondary);
+            margin-bottom: 2rem;
+        }
+
+        .blog-author {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .author-avatar {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        .blog-image {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            border-radius: var(--border-radius);
+            margin-bottom: 3rem;
+        }
+
+        .blog-content {
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+
+        .blog-content h2 {
+            color: var(--accent);
+            margin: 2rem 0 1rem;
+            font-size: 1.8rem;
+        }
+
+        .blog-content h3 {
+            color: var(--accent-secondary);
+            margin: 1.5rem 0 1rem;
+            font-size: 1.4rem;
+        }
+
+        .blog-content p {
+            margin-bottom: 1.5rem;
+        }
+
+        .blog-content ul, .blog-content ol {
+            margin: 1.5rem 0;
+            padding-left: 2rem;
+        }
+
+        .blog-content li {
+            margin-bottom: 0.5rem;
+        }
+
+        .highlight-box {
+            background: var(--bg-secondary);
+            border-left: 4px solid var(--accent);
+            padding: 1.5rem;
+            margin: 2rem 0;
+            border-radius: var(--border-radius);
+        }
+
+        .back-to-blog {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--accent);
+            font-weight: 600;
+            margin-bottom: 2rem;
+            transition: var(--transition);
+        }
+
+        .back-to-blog:hover {
+            gap: 0.8rem;
+        }
+
+        .share-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            margin: 3rem 0;
+        }
+
+        .share-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            color: white;
+            transition: var(--transition);
+        }
+
+        .share-btn.facebook { background: #1877f2; }
+        .share-btn.linkedin { background: #0077b5; }
+        .share-btn.twitter { background: #1da1f2; }
+
+        .share-btn:hover {
+            transform: translateY(-3px);
+        }
+
+        @media (max-width: 768px) {
+            .blog-title {
+                font-size: 2rem;
+            }
+            
+            .blog-meta {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
+            .container {
+                padding: 0 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header" id="mainHeader" role="banner">
+        <div class="container header-content">
+            <div class="logo">
+                <a href="index.html" aria-label="IndoAsia Trading - Go to homepage">
+                    <img src="assets/images/horizontal-final.png" alt="IndoAsia Trading Logo" class="logo-img">
+                </a>
+            </div>
+            <nav>
+                <ul class="nav" id="mainNav">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="services.html">Our Process</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle">Our Services <span class="dropdown-arrow">▼</span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="coreServices.html">Core Services</a></li>
+                            <li><a href="additionalServices.html">Additional Services</a></li>
+                            <li><a href="plans.html">Plans & Pricing</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="features.html">Features</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle">Resources <span class="dropdown-arrow">▼</span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="blog.html">Blog</a></li>
+                            <li><a href="faqs.html">FAQs</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+            <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle mobile menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Blog Post Content -->
+    <main class="container">
+        <article class="blog-post">
+            <a href="blog.html" class="back-to-blog">
+                <i class="fas fa-arrow-left"></i> Back to Blog
+            </a>
+            
+            <header class="blog-header">
+                <span class="blog-category">Technology</span>
+                <h1 class="blog-title">Leveraging Technology for Efficient Import Management</h1>
+                <div class="blog-meta">
+                    <div class="blog-author">
+                        <img src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=100&q=80" alt="Alex Kim" class="author-avatar">
+                        <span>Alex Kim</span>
+                    </div>
+                    <span>February 28, 2023</span>
+                    <span>10 min read</span>
+                </div>
+            </header>
+
+            <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80" alt="Technology in Trade" class="blog-image">
+
+            <div class="blog-content">
+                <p>The digital revolution is transforming international trade, offering unprecedented opportunities to streamline import operations, reduce costs, and improve efficiency. From AI-powered sourcing platforms to blockchain-based supply chain tracking, technology is reshaping how businesses manage their import processes.</p>
+
+                <h2>The Digital Transformation of Import Management</h2>
+                <p>Traditional import management relied heavily on manual processes, paper documentation, and fragmented communication channels. Today's digital solutions offer integrated platforms that connect every aspect of the import journey, from initial sourcing to final delivery.</p>
+
+                <h3>Key Benefits of Digital Import Management</h3>
+                <ul>
+                    <li><strong>Increased Visibility:</strong> Real-time tracking across the entire supply chain</li>
+                    <li><strong>Cost Reduction:</strong> 15-25% reduction in operational costs</li>
+                    <li><strong>Time Savings:</strong> 30-40% faster processing times</li>
+                    <li><strong>Error Reduction:</strong> 80% fewer manual errors through automation</li>
+                    <li><strong>Compliance Assurance:</strong> Automated regulatory compliance checking</li>
+                </ul>
+
+                <div class="highlight-box">
+                    <strong>Digital Impact:</strong> Companies implementing comprehensive digital import management systems report average ROI of 300-400% within 18 months of implementation.
+                </div>
+
+                <h2>Core Technology Solutions for Import Management</h2>
+
+                <h3>1. Supply Chain Management (SCM) Platforms</h3>
+                <p>Integrated platforms that manage the entire import process:</p>
+                <ul>
+                    <li><strong>Supplier Management:</strong> Centralized supplier databases and performance tracking</li>
+                    <li><strong>Order Management:</strong> Automated purchase order generation and tracking</li>
+                    <li><strong>Inventory Control:</strong> Real-time inventory levels and demand forecasting</li>
+                    <li><strong>Financial Integration:</strong> Automated invoicing and payment processing</li>
+                </ul>
+
+                <h3>Popular SCM Platforms</h3>
+                <ul>
+                    <li><strong>SAP Ariba:</strong> Enterprise-level procurement and supply chain management</li>
+                    <li><strong>Oracle SCM Cloud:</strong> Comprehensive supply chain planning and execution</li>
+                    <li><strong>Flexport:</strong> Modern freight forwarding and logistics platform</li>
+                    <li><strong>TradeGecko:</strong> Inventory and order management for SMEs</li>
+                </ul>
+
+                <h3>2. Trade Finance and Payment Solutions</h3>
+                <p>Digital platforms streamlining financial transactions:</p>
+                <ul>
+                    <li><strong>Digital Letters of Credit:</strong> Faster processing and reduced costs</li>
+                    <li><strong>Trade Finance Platforms:</strong> Alternative financing options</li>
+                    <li><strong>Multi-currency Wallets:</strong> Simplified foreign exchange management</li>
+                    <li><strong>Blockchain Payments:</strong> Secure and transparent transactions</li>
+                </ul>
+
+                <h2>Emerging Technologies in Import Management</h2>
+
+                <h3>1. Artificial Intelligence and Machine Learning</h3>
+                <p>AI is revolutionizing various aspects of import management:</p>
+
+                <h4>Demand Forecasting</h4>
+                <ul>
+                    <li>Predictive analytics for inventory planning</li>
+                    <li>Seasonal trend analysis and market intelligence</li>
+                    <li>Automated reorder point calculations</li>
+                    <li>Risk assessment and mitigation strategies</li>
+                </ul>
+
+                <h4>Supplier Intelligence</h4>
+                <ul>
+                    <li>Automated supplier discovery and evaluation</li>
+                    <li>Performance prediction based on historical data</li>
+                    <li>Risk scoring and compliance monitoring</li>
+                    <li>Price optimization and negotiation support</li>
+                </ul>
+
+                <h4>Quality Control Automation</h4>
+                <ul>
+                    <li>Computer vision for product inspection</li>
+                    <li>Defect detection and classification</li>
+                    <li>Automated quality reports and analytics</li>
+                    <li>Predictive quality management</li>
+                </ul>
+
+                <div class="highlight-box">
+                    <strong>AI Success Story:</strong> A major electronics importer reduced quality issues by 60% and inspection costs by 40% using AI-powered visual inspection systems.
+                </div>
+
+                <h3>2. Blockchain Technology</h3>
+                <p>Blockchain provides transparency and security throughout the supply chain:</p>
+
+                <h4>Supply Chain Transparency</h4>
+                <ul>
+                    <li>Immutable record of product journey</li>
+                    <li>Origin verification and authenticity tracking</li>
+                    <li>Real-time visibility for all stakeholders</li>
+                    <li>Automated compliance documentation</li>
+                </ul>
+
+                <h4>Smart Contracts</h4>
+                <ul>
+                    <li>Automated payment releases upon delivery</li>
+                    <li>Self-executing contracts with predefined conditions</li>
+                    <li>Reduced disputes and faster settlements</li>
+                    <li>Lower transaction costs and intermediary fees</li>
+                </ul>
+
+                <h3>3. Internet of Things (IoT) Integration</h3>
+                <p>IoT devices provide real-time monitoring and control:</p>
+
+                <h4>Cargo Monitoring</h4>
+                <ul>
+                    <li>Temperature and humidity tracking for sensitive goods</li>
+                    <li>Location tracking and route optimization</li>
+                    <li>Shock and vibration monitoring</li>
+                    <li>Security alerts and theft prevention</li>
+                </ul>
+
+                <h4>Warehouse Automation</h4>
+                <ul>
+                    <li>Automated inventory counting and tracking</li>
+                    <li>Smart storage and retrieval systems</li>
+                    <li>Predictive maintenance for equipment</li>
+                    <li>Energy optimization and cost reduction</li>
+                </ul>
+
+                <h2>Digital Documentation and Compliance</h2>
+
+                <h3>1. Electronic Data Interchange (EDI)</h3>
+                <p>Standardized electronic communication between trading partners:</p>
+                <ul>
+                    <li><strong>Automated Document Exchange:</strong> Purchase orders, invoices, and shipping notices</li>
+                    <li><strong>Reduced Processing Time:</strong> Instant document transmission and processing</li>
+                    <li><strong>Error Elimination:</strong> Standardized formats reduce manual entry errors</li>
+                    <li><strong>Cost Savings:</strong> Reduced paper, postage, and processing costs</li>
+                </ul>
+
+                <h3>2. Digital Trade Platforms</h3>
+                <p>Government and industry platforms streamlining trade processes:</p>
+                <ul>
+                    <li><strong>Single Window Systems:</strong> One-stop submission for all trade documents</li>
+                    <li><strong>Digital Customs Clearance:</strong> Automated customs processing and approvals</li>
+                    <li><strong>Electronic Certificates:</strong> Digital certificates of origin and quality</li>
+                    <li><strong>Compliance Automation:</strong> Automated regulatory compliance checking</li>
+                </ul>
+
+                <h2>Data Analytics and Business Intelligence</h2>
+
+                <h3>1. Performance Analytics</h3>
+                <p>Data-driven insights for continuous improvement:</p>
+                <ul>
+                    <li><strong>Supplier Performance Metrics:</strong> Delivery times, quality scores, and cost analysis</li>
+                    <li><strong>Logistics Optimization:</strong> Route analysis and carrier performance</li>
+                    <li><strong>Cost Analysis:</strong> Total landed cost breakdown and optimization opportunities</li>
+                    <li><strong>Market Intelligence:</strong> Price trends and competitive analysis</li>
+                </ul>
+
+                <h3>2. Predictive Analytics</h3>
+                <p>Forecasting and risk management capabilities:</p>
+                <ul>
+                    <li><strong>Demand Forecasting:</strong> Accurate prediction of future requirements</li>
+                    <li><strong>Risk Assessment:</strong> Early warning systems for potential disruptions</li>
+                    <li><strong>Price Prediction:</strong> Commodity and currency price forecasting</li>
+                    <li><strong>Seasonal Planning:</strong> Optimized inventory and procurement strategies</li>
+                </ul>
+
+                <div class="highlight-box">
+                    <strong>Analytics Impact:</strong> Companies using advanced analytics in import management achieve 20-30% better forecast accuracy and 15% reduction in inventory holding costs.
+                </div>
+
+                <h2>Mobile Technology and Remote Management</h2>
+
+                <h3>1. Mobile Applications</h3>
+                <p>Smartphone and tablet apps for on-the-go management:</p>
+                <ul>
+                    <li><strong>Real-time Tracking:</strong> Shipment status and location updates</li>
+                    <li><strong>Document Management:</strong> Digital document storage and sharing</li>
+                    <li><strong>Communication Tools:</strong> Instant messaging with suppliers and partners</li>
+                    <li><strong>Approval Workflows:</strong> Mobile approval for orders and payments</li>
+                </ul>
+
+                <h3>2. Remote Inspection and Quality Control</h3>
+                <p>Technology enabling remote quality management:</p>
+                <ul>
+                    <li><strong>Video Inspections:</strong> Live streaming of production and quality checks</li>
+                    <li><strong>Augmented Reality:</strong> Remote guidance for local inspectors</li>
+                    <li><strong>Digital Reporting:</strong> Instant quality reports with photos and videos</li>
+                    <li><strong>Virtual Factory Tours:</strong> Remote facility assessments</li>
+                </ul>
+
+                <h2>Cybersecurity and Data Protection</h2>
+
+                <h3>1. Security Challenges in Digital Trade</h3>
+                <p>Protecting sensitive trade information and transactions:</p>
+                <ul>
+                    <li><strong>Data Breaches:</strong> Protection of confidential business information</li>
+                    <li><strong>Payment Security:</strong> Secure financial transactions and fraud prevention</li>
+                    <li><strong>Supply Chain Attacks:</strong> Protecting against compromised suppliers</li>
+                    <li><strong>Regulatory Compliance:</strong> Meeting data protection requirements</li>
+                </ul>
+
+                <h3>2. Security Best Practices</h3>
+                <ul>
+                    <li><strong>Multi-factor Authentication:</strong> Enhanced access control</li>
+                    <li><strong>Encryption:</strong> End-to-end data protection</li>
+                    <li><strong>Regular Audits:</strong> Continuous security assessments</li>
+                    <li><strong>Employee Training:</strong> Cybersecurity awareness programs</li>
+                </ul>
+
+                <h2>Implementation Strategy and Best Practices</h2>
+
+                <h3>1. Technology Adoption Roadmap</h3>
+                <p>Structured approach to digital transformation:</p>
+                <ul>
+                    <li><strong>Assessment Phase:</strong> Current state analysis and gap identification</li>
+                    <li><strong>Strategy Development:</strong> Technology roadmap and investment planning</li>
+                    <li><strong>Pilot Implementation:</strong> Small-scale testing and validation</li>
+                    <li><strong>Full Deployment:</strong> Company-wide rollout and training</li>
+                    <li><strong>Continuous Improvement:</strong> Ongoing optimization and updates</li>
+                </ul>
+
+                <h3>2. Change Management</h3>
+                <p>Ensuring successful technology adoption:</p>
+                <ul>
+                    <li><strong>Stakeholder Engagement:</strong> Building buy-in across the organization</li>
+                    <li><strong>Training Programs:</strong> Comprehensive user education and support</li>
+                    <li><strong>Process Redesign:</strong> Optimizing workflows for digital tools</li>
+                    <li><strong>Performance Monitoring:</strong> Tracking adoption and benefits realization</li>
+                </ul>
+
+                <h2>Future Trends and Innovations</h2>
+
+                <h3>1. Autonomous Supply Chains</h3>
+                <p>Self-managing supply chain systems:</p>
+                <ul>
+                    <li>AI-driven decision making without human intervention</li>
+                    <li>Autonomous vehicles and delivery systems</li>
+                    <li>Self-optimizing inventory and procurement</li>
+                    <li>Predictive maintenance and problem resolution</li>
+                </ul>
+
+                <h3>2. Quantum Computing Applications</h3>
+                <p>Next-generation computing power for complex optimization:</p>
+                <ul>
+                    <li>Advanced route optimization and logistics planning</li>
+                    <li>Complex risk modeling and scenario analysis</li>
+                    <li>Enhanced encryption and security protocols</li>
+                    <li>Real-time global supply chain optimization</li>
+                </ul>
+
+                <h2>ROI and Performance Metrics</h2>
+
+                <h3>Key Performance Indicators</h3>
+                <ul>
+                    <li><strong>Process Efficiency:</strong> Time reduction in key processes</li>
+                    <li><strong>Cost Savings:</strong> Operational cost reduction percentage</li>
+                    <li><strong>Error Rates:</strong> Reduction in manual errors and rework</li>
+                    <li><strong>Customer Satisfaction:</strong> Improved service levels and response times</li>
+                    <li><strong>Compliance Scores:</strong> Automated compliance achievement rates</li>
+                </ul>
+
+                <div class="highlight-box">
+                    <strong>Implementation Success:</strong> Best-in-class companies achieve 40-60% improvement in key performance metrics within 24 months of comprehensive technology implementation.
+                </div>
+
+                <h2>Conclusion</h2>
+                <p>Technology is no longer optional in modern import management—it's essential for competitiveness and growth. From AI-powered analytics to blockchain transparency, digital solutions offer unprecedented opportunities to optimize operations, reduce costs, and improve customer satisfaction.</p>
+
+                <p>Success in digital transformation requires a strategic approach, combining the right technology choices with effective change management and continuous improvement. Companies that embrace these technologies today will be best positioned to thrive in the increasingly digital future of international trade.</p>
+
+                <p>The key is to start with clear objectives, choose technologies that align with business needs, and maintain focus on delivering measurable value to customers and stakeholders. With the right approach, technology can transform import management from a complex challenge into a competitive advantage.</p>
+            </div>
+
+            <div class="share-buttons">
+                <a href="#" class="share-btn facebook" aria-label="Share on Facebook">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+                <a href="#" class="share-btn linkedin" aria-label="Share on LinkedIn">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+                <a href="#" class="share-btn twitter" aria-label="Share on Twitter">
+                    <i class="fab fa-twitter"></i>
+                </a>
+            </div>
+        </article>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-about">
+                    <div class="footer-logo">IndoAsia Trading</div>
+                    <p>Your trusted partner in China-Bangladesh import business. We simplify international trade with expert sourcing, logistics, and compliance solutions.</p>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://www.instagram.com/indoasiatrading/" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-links-container">
+                    <h3 class="footer-heading">Services</h3>
+                    <ul class="footer-links">
+                        <li><a href="services.html"><i class="fas fa-chevron-right"></i> Our Process</a></li>
+                        <li><a href="coreServices.html"><i class="fas fa-chevron-right"></i> Core Services</a></li>
+                        <li><a href="additionalServices.html"><i class="fas fa-chevron-right"></i> Additional Services</a></li>
+                        <li><a href="plans.html"><i class="fas fa-chevron-right"></i> Plans & Pricing</a></li>
+                        <li><a href="features.html"><i class="fas fa-chevron-right"></i> Features</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-links-container">
+                    <h3 class="footer-heading">Company</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html"><i class="fas fa-chevron-right"></i> Home</a></li>
+                        <li><a href="about.html"><i class="fas fa-chevron-right"></i> About Us</a></li>
+                        <li><a href="blog.html"><i class="fas fa-chevron-right"></i> Blog</a></li>
+                        <li><a href="faqs.html"><i class="fas fa-chevron-right"></i> FAQs</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Privacy Policy</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-contact-container">
+                    <h3 class="footer-heading">Contact Info</h3>
+                    <address class="footer-contact">
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>123 Trade Center, Dhaka, Bangladesh</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <span>+880 1234 567890</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <span>info@indoasiatrading.com</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-clock"></i>
+                            <span>Mon - Fri: 9:00 - 18:00</span>
+                        </div>
+                    </address>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2023 IndoAsia Trading. All rights reserved. | Designed with <i class="fas fa-heart" style="color: #EC1E24;"></i> for global trade</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+            const mainNav = document.getElementById('mainNav');
+            const header = document.getElementById('mainHeader');
+            
+            mobileMenuBtn.addEventListener('click', function() {
+                this.classList.toggle('active');
+                mainNav.classList.toggle('open');
+            });
+            
+            window.addEventListener('scroll', function() {
+                if (window.scrollY > 100) {
+                    header.classList.add('sticky');
+                } else {
+                    header.classList.remove('sticky');
+                }
+            });
+        });
+    </script>
+</body>
+</html>

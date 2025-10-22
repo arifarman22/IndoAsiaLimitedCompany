@@ -1,0 +1,1456 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Additional Services - IndoAsia Trading | Extended Import Solutions</title>
+    <meta name="description" content="Extended import services from China to Bangladesh. Market research, brand development, compliance consulting, and specialized logistics solutions.">
+    <meta name="keywords" content="additional import services, market research, brand development, compliance consulting, specialized logistics">
+    
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/images/logo.png">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js" defer></script>
+    
+    <style>
+        :root {
+            --brand-navy: #1a365d;
+            --brand-red: #e53e3e;
+            --brand-white: #EDEDED;
+            --bg-primary: var(--brand-white);
+            --bg-secondary: #f8fafc;
+            --bg-tertiary: #f1f5f9;
+            --accent: var(--brand-navy);
+            --accent-secondary: var(--brand-red);
+            --accent-gradient: linear-gradient(135deg, var(--brand-navy), var(--brand-red));
+            --text-primary: #0f172a;
+            --text-secondary: #334155;
+            --border: #e2e8f0;
+            --shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            --card-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+            --transition: all 0.3s ease;
+            --border-radius: 12px;
+            --hover-bg: #f8fafc;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.6;
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+            font-weight: 600;
+            font-size: 16px;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        section {
+            padding: 5rem 0;
+        }
+
+        h1, h2, h3 {
+            font-weight: 800;
+            line-height: 1.3;
+            margin-bottom: 1rem;
+            color: #0f172a;
+        }
+
+        h1 { font-size: 3.2rem; font-weight: 900; }
+        h2 { font-size: 2.2rem; font-weight: 800; }
+        h3 { font-size: 1.3rem; font-weight: 700; }
+
+        .text-center { text-align: center; }
+
+        .accent-text {
+            background: var(--accent-gradient);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 28px;
+            border-radius: var(--border-radius);
+            font-weight: 600;
+            text-align: center;
+            cursor: pointer;
+            transition: var(--transition);
+            border: none;
+            text-decoration: none;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn-primary {
+            background: var(--accent-gradient);
+            color: white;
+            box-shadow: 0 4px 15px rgba(37, 99, 235, 0.3);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(37, 99, 235, 0.4);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--accent);
+            border: 2px solid var(--accent);
+        }
+
+        .btn-secondary:hover {
+            background: var(--accent);
+            color: white;
+        }
+
+        /* Header */
+        .header {
+            background: rgba(252, 251, 251, 0.95);
+            padding: 0.5rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border);
+            transition: var(--transition);
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo-img {
+            height: 80px;
+            width: auto;
+            object-fit: contain;
+        }
+
+        .nav {
+            display: flex;
+            list-style: none;
+            gap: 0.3rem;
+            align-items: center;
+            position: relative;
+        }
+
+        .nav li {
+            position: relative;
+        }
+
+        .nav li a {
+            font-weight: 600;
+            color: var(--text-primary);
+            padding: 0.5rem 1rem;
+            border-radius: var(--border-radius);
+            transition: var(--transition);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .nav li a:hover {
+            background: var(--hover-bg);
+            color: var(--accent);
+        }
+
+        .dropdown-arrow {
+            font-size: 0.8rem;
+            transition: var(--transition);
+        }
+
+        .dropdown:hover .dropdown-arrow {
+            transform: rotate(180deg);
+        }
+
+        .dropdown-menu {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: white;
+            min-width: 200px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            border-radius: var(--border-radius);
+            padding: 0.5rem 0;
+            z-index: 1000;
+            list-style: none;
+            border: 1px solid var(--border);
+        }
+
+        .dropdown:hover .dropdown-menu {
+            display: block;
+        }
+
+        .dropdown-menu li a {
+            padding: 0.75rem 1rem;
+            white-space: nowrap;
+            border-radius: 0;
+        }
+
+        .dropdown-menu li a:hover {
+            background: var(--hover-bg);
+            color: var(--accent);
+        }
+
+        .nav li:last-child a {
+            background: var(--accent-gradient);
+            color: white;
+            font-weight: 600;
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            align-items: center;
+            justify-content: center;
+            background: var(--accent);
+            border-radius: 8px;
+            padding: 0.5rem 1rem;
+            cursor: pointer;
+            transition: background 0.3s ease, transform 0.3s ease;
+            border: none;
+            width: 44px;
+            height: 40px;
+            flex-direction: column;
+            gap: 4px;
+            z-index: 1101;
+        }
+
+        .mobile-menu-btn:hover {
+            background: var(--accent-secondary);
+        }
+
+        .mobile-menu-btn.active {
+            transform: rotate(90deg);
+        }
+        
+        .mobile-menu-btn span {
+            display: block;
+            width: 26px;
+            height: 3px;
+            background: white;
+            border-radius: 3px;
+            transition: transform 0.25s ease, opacity 0.2s ease;
+        }
+        
+        .mobile-menu-btn.active span:nth-child(1) { transform: rotate(45deg) translate(4px, 4px); }
+        .mobile-menu-btn.active span:nth-child(2) { opacity: 0; }
+        .mobile-menu-btn.active span:nth-child(3) { transform: rotate(-45deg) translate(4px, -4px); }
+
+        /* Hero Section */
+        .services-hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 50%, #f1f5f9 100%);
+            padding-top: 80px;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero-content h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--text-primary);
+            font-weight: 700;
+            opacity: 0;
+            transform: translateY(50px);
+            animation: smoothFadeUp 1.2s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+        }
+
+        .hero-content p {
+            font-size: 1.2rem;
+            margin-bottom: 2.5rem;
+            color: var(--text-secondary);
+            font-weight: 400;
+            opacity: 0;
+            transform: translateY(50px);
+            animation: smoothFadeUp 1.2s cubic-bezier(0.4, 0, 0.2, 1) 0.3s forwards;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            opacity: 0;
+            transform: translateY(50px);
+            animation: smoothFadeUp 1.2s cubic-bezier(0.4, 0, 0.2, 1) 0.6s forwards;
+        }
+
+        /* Professional Smooth Animations */
+        @keyframes smoothFadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slideInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes slideInRight {
+            from {
+                opacity: 0;
+                transform: translateX(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes scaleIn {
+            from {
+                opacity: 0;
+                transform: scale(0.9);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-8px); }
+        }
+
+        /* Enhanced service card animations */
+        .service-card {
+            will-change: transform, opacity;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .service-card .service-icon img {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        /* Smooth button transitions */
+        .btn {
+            will-change: transform;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        /* Stats items smooth animation */
+        .stat-item {
+            opacity: 0;
+            transform: translateY(30px) scale(0.9);
+            transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .stat-item.visible {
+            opacity: 1;
+            transform: translateY(0) scale(1);
+        }
+
+        /* Minimalistic fade animations */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Smooth overlay transitions */
+        .service-overlay {
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .overlay-btn {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        /* Enhanced image hover effects */
+        .service-thumb img {
+            transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        /* Responsive Mobile Navigation */
+        @media (max-width: 968px) {
+            .mobile-menu-btn {
+                display: flex;
+            }
+
+            .nav {
+                position: fixed;
+                top: 70px;
+                left: 0;
+                width: 100%;
+                background: rgba(255, 255, 255, 0.98);
+                backdrop-filter: blur(10px);
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 1rem;
+                padding: 2rem 1rem;
+                transform: translateY(-100%);
+                opacity: 0;
+                visibility: hidden;
+                transition: transform 0.4s ease, opacity 0.4s ease;
+                box-shadow: 0 8px 32px rgba(0,0,0,0.15);
+                border-top: 2px solid var(--accent);
+                z-index: 1099;
+            }
+
+            .nav.open {
+                transform: translateY(0);
+                opacity: 1;
+                visibility: visible;
+            }
+
+            .nav li {
+                width: 100%;
+                text-align: center;
+                border-bottom: 1px solid rgba(26, 32, 44, 0.1);
+            }
+
+            .nav li:last-child {
+                border-bottom: none;
+            }
+
+            .nav li a {
+                display: block;
+                padding: 1rem 0.75rem;
+                font-weight: 600;
+                color: var(--text-primary);
+                font-size: 1.1rem;
+                border-radius: 8px;
+                margin: 0.25rem 0;
+                transition: all 0.3s ease;
+            }
+
+            .nav li a:hover {
+                background: var(--accent);
+                color: white;
+                transform: translateX(5px);
+            }
+
+            .dropdown-menu {
+                position: static;
+                display: none;
+                background: rgba(248, 250, 252, 0.95);
+                box-shadow: inset 0 2px 4px rgba(0,0,0,0.1);
+                border-radius: 8px;
+                margin-top: 0.5rem;
+                padding: 0.5rem 0;
+            }
+
+            .dropdown.active .dropdown-menu {
+                display: block;
+            }
+
+            .dropdown-menu li a {
+                font-size: 1rem;
+                padding: 0.75rem 1rem;
+                color: var(--text-secondary);
+                font-weight: 500;
+            }
+
+            .dropdown-menu li a:hover {
+                background: var(--accent-secondary);
+                color: white;
+            }
+        }
+
+        /* Service Cards */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .service-card {
+            background: var(--bg-secondary);
+            border-radius: var(--border-radius);
+            padding: 0;
+            border: 1px solid var(--border);
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+            opacity: 0;
+            transform: scale(0.8);
+        }
+
+        .service-card.animate {
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        .service-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+            border-color: var(--accent);
+        }
+
+        .service-thumb {
+            height: 200px;
+            overflow: hidden;
+            position: relative;
+            border-radius: var(--border-radius) var(--border-radius) 0 0;
+        }
+
+        .service-thumb img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.4s ease;
+        }
+
+        .service-card:hover .service-thumb img {
+            transform: scale(1.1);
+        }
+
+        .service-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(255, 255, 255, 0.95);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        
+        .service-card:hover .service-overlay {
+            opacity: 1;
+        }
+        
+        .overlay-content {
+            text-align: center;
+            color: var(--text-primary);
+        }
+        
+        .overlay-content h4 {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .overlay-content p {
+            margin-bottom: 1rem;
+            opacity: 0.9;
+        }
+        
+        .overlay-btn {
+            background: var(--accent);
+            color: white;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .overlay-btn:hover {
+            background: var(--accent-secondary);
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+        }
+
+        .service-content {
+            padding: 2rem;
+        }
+
+        .service-content h3 {
+            color: var(--accent);
+            font-size: 1.4rem;
+            margin-bottom: 1rem;
+            transition: color 0.3s ease;
+        }
+
+        .service-card:hover .service-content h3 {
+            color: var(--accent-secondary);
+        }
+
+        .service-content p {
+            color: #0f172a;
+            font-weight: 600;
+            line-height: 1.6;
+        }
+
+        .service-icon {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background: transparent;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+            position: relative;
+            top: -40px;
+            margin-left: auto;
+            margin-right: auto;
+            transition: transform 0.3s ease;
+        }
+
+        .service-icon img {
+            transition: transform 0.3s ease;
+        }
+
+        .service-card:hover .service-icon {
+            transform: scale(1.1) translateY(-5px);
+        }
+
+        .service-card:hover .service-icon img {
+            transform: rotate(10deg);
+        }
+
+        .service-features {
+            list-style: none;
+            margin: 1.5rem 0;
+        }
+
+        .service-features li {
+            padding: 0.5rem 0;
+            color: #0f172a;
+            position: relative;
+            padding-left: 1.5rem;
+            font-weight: 600;
+            transition: transform 0.2s ease;
+        }
+
+        .service-features li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--accent-secondary);
+            font-weight: bold;
+            font-size: 1.1rem;
+        }
+
+        .service-card:hover .service-features li {
+            transform: translateX(5px);
+        }
+
+        .service-buttons {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+        }
+
+        .service-buttons .btn {
+            transition: transform 0.2s ease;
+        }
+
+        .service-card:hover .service-buttons .btn {
+            transform: translateY(-2px);
+        }
+
+        /* Stats Section */
+        .stats-section {
+            background: linear-gradient(135deg, var(--bg-secondary) 0%, var(--bg-primary) 100%);
+            padding: 4rem 0;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            text-align: center;
+        }
+
+        .stat-item h3 {
+            font-size: 3rem;
+            background: var(--accent-gradient);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 0.5rem;
+            font-weight: 800;
+        }
+
+        .stat-item p {
+            font-weight: 700;
+            color: var(--accent);
+            font-size: 1.1rem;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background: linear-gradient(135deg, var(--accent) 0%, #1d4ed8 100%);
+            color: #ffffff;
+            text-align: center;
+            padding: 5rem 0;
+        }
+        
+        .cta-section h2,
+        .cta-section p {
+            color: white;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 2rem;
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--bg-secondary);
+            padding: 4rem 0 2rem;
+            border-top: 1px solid var(--border);
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-section h3,
+        .footer-section h4 {
+            margin-bottom: 1.5rem;
+            color: var(--accent);
+        }
+
+        .footer-section p {
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+            color: #0f172a;
+            font-weight: 600;
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section ul li {
+            margin-bottom: 0.8rem;
+        }
+
+        .footer-section ul li a {
+            color: #334155;
+            transition: var(--transition);
+            display: inline-block;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .footer-section ul li a:hover {
+            color: var(--accent);
+            transform: translateX(5px);
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .social-links a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: var(--accent);
+            color: white;
+            border-radius: 50%;
+            transition: var(--transition);
+            font-weight: 600;
+            text-decoration: none;
+        }
+
+        .social-links a:hover {
+            background: var(--accent-secondary);
+            transform: translateY(-3px);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid var(--border);
+            color: #334155;
+            font-weight: 600;
+        }
+
+
+
+        /* Responsive */
+        @media (max-width: 968px) {
+            .mobile-menu-btn {
+                display: flex;
+            }
+
+            .nav {
+                position: fixed;
+                top: 70px;
+                left: 0;
+                width: 100%;
+                background: var(--bg-primary);
+                flex-direction: column;
+                padding: 2rem;
+                transform: translateY(-100%);
+                opacity: 0;
+                visibility: hidden;
+                transition: var(--transition);
+                box-shadow: var(--shadow);
+                z-index: 999;
+            }
+
+            .nav.open {
+                transform: translateY(0);
+                opacity: 1;
+                visibility: visible;
+            }
+
+            .nav li {
+                width: 100%;
+                text-align: center;
+            }
+
+            .nav li a {
+                display: block;
+                padding: 1rem;
+            }
+
+            .container {
+                padding: 0 1rem;
+            }
+
+            h1 {
+                font-size: 2.5rem;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+
+            .service-card {
+                margin-bottom: 1rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header class="header" id="mainHeader">
+        <div class="container header-content">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="assets/images/horizontal-final.png" alt="IndoAsia Trading Logo" class="logo-img">
+                </a>
+            </div>
+            <nav>
+                <ul class="nav" id="mainNav">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="services.html">Our Process</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle">Our Services <span class="dropdown-arrow">▼</span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="coreServices.html">Core Services</a></li>
+                            <li><a href="additionalServices.html">Additional Services</a></li>
+                            <li><a href="plans.html">Plans & Pricing</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="features.html">Features</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle">Resources <span class="dropdown-arrow">▼</span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="blog.html">Blog</a></li>
+                            <li><a href="faqs.html">FAQs</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <main>
+        <section class="services-hero">
+            <div class="container">
+                <div class="hero-content">
+                    <h1>Extended <span class="accent-text">Import Solutions</span></h1>
+                    <p>Specialized services to enhance your import operations. From market research to brand development, we provide comprehensive support for your business growth.</p>
+                    <div class="hero-buttons">
+                        <a href="#additional-services" class="btn btn-primary">Explore Services</a>
+                        <a href="contact.html" class="btn btn-secondary">Get Consultation</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="additional-services" class="services-section">
+            <div class="container">
+                <h2 class="text-center fade-in">Additional <span class="accent-text">Services</span></h2>
+                <p class="text-center fade-in" style="font-size: 1.2rem; margin-bottom: 3rem; color: var(--text-secondary);">Specialized solutions to accelerate your import business</p>
+                
+                <div class="services-grid">
+                    <article class="service-card interactive-card" data-service="market-research">
+                        <div class="service-thumb">
+                            <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=400&h=300&fit=crop&crop=center" alt="Market Research" loading="lazy">
+                            <div class="service-overlay">
+                                <div class="overlay-content">
+                                    <h4>Research Accuracy: 95%</h4>
+                                    <p>Data-driven insights</p>
+                                    <button class="overlay-btn" onclick="showServiceModal('market-research')">View Details</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="service-content">
+                            <div class="service-icon">
+                                <img src="assets/images/analytics.png" alt="Market Research" style="width: 40px; height: 40px; object-fit: contain;">
+                            </div>
+                            <h3>Market Research & Analysis</h3>
+                            <p>Comprehensive market intelligence to identify opportunities and optimize your import strategy.</p>
+                            <ul class="service-features">
+                                <li>Market trend analysis</li>
+                                <li>Competitor research</li>
+                                <li>Consumer behavior studies</li>
+                                <li>Price benchmarking</li>
+                            </ul>
+                            <div class="service-buttons">
+                                <a href="contact.html" class="btn btn-primary">Get Quote</a>
+                                <button class="btn btn-secondary" onclick="showServiceModal('market-research')">Learn More</button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="service-card interactive-card" data-service="brand-development">
+                        <div class="service-thumb">
+                            <img src="https://images.unsplash.com/photo-1559136555-9303baea8ebd?w=400&h=300&fit=crop&crop=center" alt="Brand Development" loading="lazy">
+                            <div class="service-overlay">
+                                <div class="overlay-content">
+                                    <h4>Brand Success Rate: 92%</h4>
+                                    <p>Creative excellence</p>
+                                    <button class="overlay-btn" onclick="showServiceModal('brand-development')">View Details</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="service-content">
+                            <div class="service-icon">
+                                <img src="assets/icons/brand-development.png" alt="Brand Development" style="width: 40px; height: 40px; object-fit: contain;">
+                            </div>
+                            <h3>Brand Development</h3>
+                            <p>Complete brand creation and enhancement services for your imported products.</p>
+                            <ul class="service-features">
+                                <li>Brand strategy development</li>
+                                <li>Logo and packaging design</li>
+                                <li>Marketing material creation</li>
+                                <li>Brand positioning</li>
+                            </ul>
+                            <div class="service-buttons">
+                                <a href="contact.html" class="btn btn-primary">Get Quote</a>
+                                <button class="btn btn-secondary" onclick="showServiceModal('brand-development')">Learn More</button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="service-card interactive-card" data-service="compliance">
+                        <div class="service-thumb">
+                            <img src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=400&h=300&fit=crop&crop=center" alt="Compliance Consulting" loading="lazy">
+                            <div class="service-overlay">
+                                <div class="overlay-content">
+                                    <h4>Compliance Rate: 100%</h4>
+                                    <p>Regulatory expertise</p>
+                                    <button class="overlay-btn" onclick="showServiceModal('compliance')">View Details</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="service-content">
+                            <div class="service-icon">
+                                <img src="assets/icons/consulting.png" alt="Compliance Consulting" style="width: 40px; height: 40px; object-fit: contain;">
+                            </div>
+                            <h3>Compliance Consulting</h3>
+                            <p>Expert guidance on international trade regulations and compliance requirements.</p>
+                            <ul class="service-features">
+                                <li>Regulatory compliance audit</li>
+                                <li>Documentation assistance</li>
+                                <li>Certification support</li>
+                                <li>Legal requirement guidance</li>
+                            </ul>
+                            <div class="service-buttons">
+                                <a href="contact.html" class="btn btn-primary">Get Quote</a>
+                                <button class="btn btn-secondary" onclick="showServiceModal('compliance')">Learn More</button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="service-card interactive-card" data-service="financing">
+                        <div class="service-thumb">
+                            <img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=400&h=300&fit=crop&crop=center" alt="Trade Financing" loading="lazy">
+                            <div class="service-overlay">
+                                <div class="overlay-content">
+                                    <h4>Approval Rate: 88%</h4>
+                                    <p>Financial solutions</p>
+                                    <button class="overlay-btn" onclick="showServiceModal('financing')">View Details</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="service-content">
+                            <div class="service-icon">
+                                <img src="assets/icons/trade-financing.png" alt="Trade Financing" style="width: 40px; height: 40px; object-fit: contain;">
+                            </div>
+                            <h3>Trade Financing</h3>
+                            <p>Flexible financing solutions to support your import operations and cash flow.</p>
+                            <ul class="service-features">
+                                <li>Letter of credit facilitation</li>
+                                <li>Import financing options</li>
+                                <li>Payment term negotiations</li>
+                                <li>Risk mitigation strategies</li>
+                            </ul>
+                            <div class="service-buttons">
+                                <a href="contact.html" class="btn btn-primary">Get Quote</a>
+                                <button class="btn btn-secondary" onclick="showServiceModal('financing')">Learn More</button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="service-card interactive-card" data-service="technology">
+                        <div class="service-thumb">
+                            <img src="https://images.unsplash.com/photo-1518186285589-2f7649de83e0?w=400&h=300&fit=crop&crop=center" alt="Technology Integration" loading="lazy">
+                            <div class="service-overlay">
+                                <div class="overlay-content">
+                                    <h4>Integration Success: 96%</h4>
+                                    <p>Digital transformation</p>
+                                    <button class="overlay-btn" onclick="showServiceModal('technology')">View Details</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="service-content">
+                            <div class="service-icon">
+                                <img src="assets/icons/integration.png" alt="Technology Integration" style="width: 40px; height: 40px; object-fit: contain;">
+                            </div>
+                            <h3>Technology Integration</h3>
+                            <p>Advanced technology solutions to streamline your import operations and enhance efficiency.</p>
+                            <ul class="service-features">
+                                <li>ERP system integration</li>
+                                <li>Inventory management systems</li>
+                                <li>Real-time tracking platforms</li>
+                                <li>Automated reporting tools</li>
+                            </ul>
+                            <div class="service-buttons">
+                                <a href="contact.html" class="btn btn-primary">Get Quote</a>
+                                <button class="btn btn-secondary" onclick="showServiceModal('technology')">Learn More</button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="service-card interactive-card" data-service="training">
+                        <div class="service-thumb">
+                            <img src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?w=400&h=300&fit=crop&crop=center" alt="Training & Development" loading="lazy">
+                            <div class="service-overlay">
+                                <div class="overlay-content">
+                                    <h4>Training Satisfaction: 94%</h4>
+                                    <p>Skill development</p>
+                                    <button class="overlay-btn" onclick="showServiceModal('training')">View Details</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="service-content">
+                            <div class="service-icon">
+                                <img src="assets/icons/training.png" alt="Training & Development" style="width: 40px; height: 40px; object-fit: contain;">
+                            </div>
+                            <h3>Training & Development</h3>
+                            <p>Comprehensive training programs to build your team's import expertise and capabilities.</p>
+                            <ul class="service-features">
+                                <li>Import/export training</li>
+                                <li>Customs procedures workshops</li>
+                                <li>Quality control training</li>
+                                <li>Supplier management courses</li>
+                            </ul>
+                            <div class="service-buttons">
+                                <a href="contact.html" class="btn btn-primary">Get Quote</a>
+                                <button class="btn btn-secondary" onclick="showServiceModal('training')">Learn More</button>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="stats-section">
+            <div class="container">
+                <div class="stats-grid">
+                    <div class="stat-item fade-in">
+                        <h3 data-count="150">150+</h3>
+                        <p>Additional Projects</p>
+                    </div>
+                    <div class="stat-item fade-in">
+                        <h3 data-count="95">95%</h3>
+                        <p>Client Satisfaction</p>
+                    </div>
+                    <div class="stat-item fade-in">
+                        <h3 data-count="50">50+</h3>
+                        <p>Specialized Solutions</p>
+                    </div>
+                    <div class="stat-item fade-in">
+                        <h3 data-count="24">24/7</h3>
+                        <p>Expert Support</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="cta-section">
+            <div class="container">
+                <h2>Ready to Enhance Your Import Operations?</h2>
+                <p>Discover how our additional services can accelerate your business growth and optimize your import processes.</p>
+                <div class="cta-buttons">
+                    <a href="contact.html" class="btn btn-primary">Get Started Today</a>
+                    <a href="coreServices.html" class="btn btn-secondary">View Core Services</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer" role="contentinfo">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>IndoAsia Trading</h3>
+                    <p>Your trusted partner for premium import services between China and Bangladesh.</p>
+                    <div class="social-links" role="list" aria-label="Social media links">
+                        <a href="https://www.facebook.com/p/IndoAsiaTrading" target="_blank" rel="noopener noreferrer" aria-label="Follow us on Facebook"><span>FB</span></a>
+                        <a href="https://www.linkedin.com/company/indoasia-trading" target="_blank" rel="noopener noreferrer" aria-label="Follow us on LinkedIn"><span>LI</span></a>
+                        <a href="https://www.instagram.com/indoasiatrading/" target="_blank" rel="noopener noreferrer" aria-label="Follow us on Instagram"><span>IG</span></a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Services</h4>
+                    <ul role="list">
+                        <li><a href="services.html">Import Sourcing</a></li>
+                        <li><a href="services.html">Logistics</a></li>
+                        <li><a href="services.html">Quality Assurance</a></li>
+                        <li><a href="services.html">Custom Solutions</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Company</h4>
+                    <ul role="list">
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="team.html">Our Team</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Contact Info</h4>
+                    <address>
+                        <p>Email: <a href="mailto:indoasiatrading@outlook.com">indoasiatrading@outlook.com</a></p>
+                        <p>Phone: <a href="tel:+8801711257739">+8801711257739</a></p>
+                        <p>Address: H-13, R-11, Block-L, South Bonosree, Khilgaon, Dhaka 1219.</p>
+                    </address>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2023 IndoAsia Trading. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Service modal functionality
+        function showServiceModal(serviceId) {
+            alert(`Learn more about our ${serviceId} services. Contact us for detailed information.`);
+        }
+        
+        // Professional Animation System
+        function initProfessionalAnimations() {
+            // Enhanced intersection observer with staggered animations
+            const animationObserver = new IntersectionObserver((entries) => {
+                entries.forEach((entry, index) => {
+                    if (entry.isIntersecting) {
+                        setTimeout(() => {
+                            entry.target.classList.add('visible');
+                            
+                            if (entry.target.classList.contains('service-card')) {
+                                entry.target.classList.add('animate');
+                                entry.target.style.animationDelay = `${index * 0.1}s`;
+                            }
+                            
+                            if (entry.target.classList.contains('stat-item')) {
+                                entry.target.style.transform = 'translateY(0) scale(1)';
+                                entry.target.style.opacity = '1';
+                            }
+                        }, index * 100);
+                        
+                        animationObserver.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+            
+            document.querySelectorAll('.fade-in, .service-card, .stat-item').forEach(el => {
+                animationObserver.observe(el);
+            });
+        }
+        
+        // Enhanced service card interactions
+        function initServiceCardAnimations() {
+            const cards = document.querySelectorAll('.service-card');
+            
+            cards.forEach((card, index) => {
+                card.style.transitionDelay = `${index * 0.1}s`;
+                
+                // Smooth hover effects
+                card.addEventListener('mouseenter', () => {
+                    card.style.transform = 'translateY(-12px) scale(1.02)';
+                    card.style.boxShadow = '0 20px 40px rgba(0,0,0,0.15)';
+                    
+                    const icon = card.querySelector('.service-icon img');
+                    if (icon) {
+                        icon.style.transform = 'scale(1.1) rotate(5deg)';
+                    }
+                });
+                
+                card.addEventListener('mouseleave', () => {
+                    card.style.transform = 'translateY(0) scale(1)';
+                    card.style.boxShadow = '';
+                    
+                    const icon = card.querySelector('.service-icon img');
+                    if (icon) {
+                        icon.style.transform = 'scale(1) rotate(0deg)';
+                    }
+                });
+            });
+        }
+        
+        // Smooth button interactions
+        function initButtonAnimations() {
+            const buttons = document.querySelectorAll('.btn');
+            
+            buttons.forEach(button => {
+                button.addEventListener('mouseenter', () => {
+                    button.style.transform = 'translateY(-2px) scale(1.05)';
+                    button.style.boxShadow = '0 8px 25px rgba(0,0,0,0.2)';
+                });
+                
+                button.addEventListener('mouseleave', () => {
+                    button.style.transform = 'translateY(0) scale(1)';
+                    button.style.boxShadow = '';
+                });
+                
+                // Ripple effect on click
+                button.addEventListener('click', (e) => {
+                    const ripple = document.createElement('span');
+                    const rect = button.getBoundingClientRect();
+                    const size = Math.max(rect.width, rect.height);
+                    const x = e.clientX - rect.left - size / 2;
+                    const y = e.clientY - rect.top - size / 2;
+                    
+                    ripple.style.cssText = `
+                        position: absolute;
+                        width: ${size}px;
+                        height: ${size}px;
+                        left: ${x}px;
+                        top: ${y}px;
+                        background: rgba(255,255,255,0.3);
+                        border-radius: 50%;
+                        transform: scale(0);
+                        animation: ripple 0.6s linear;
+                        pointer-events: none;
+                    `;
+                    
+                    button.style.position = 'relative';
+                    button.style.overflow = 'hidden';
+                    button.appendChild(ripple);
+                    
+                    setTimeout(() => ripple.remove(), 600);
+                });
+            });
+        }
+        
+        // Parallax scrolling effect
+        function initParallaxEffects() {
+            let ticking = false;
+            
+            function updateParallax() {
+                const scrolled = window.pageYOffset;
+                const parallaxElements = document.querySelectorAll('.services-hero');
+                
+                parallaxElements.forEach(element => {
+                    const speed = 0.3;
+                    element.style.transform = `translateY(${scrolled * speed}px)`;
+                });
+                
+                ticking = false;
+            }
+            
+            window.addEventListener('scroll', () => {
+                if (!ticking) {
+                    requestAnimationFrame(updateParallax);
+                    ticking = true;
+                }
+            });
+        }
+        
+        // Mobile navigation functionality
+        function initMobileMenu() {
+            const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+            const mainNav = document.getElementById('mainNav');
+            const dropdowns = document.querySelectorAll('.dropdown');
+            
+            if (mobileMenuBtn && mainNav) {
+                mobileMenuBtn.addEventListener('click', function() {
+                    mobileMenuBtn.classList.toggle('active');
+                    mainNav.classList.toggle('open');
+                });
+                
+                document.addEventListener('click', function(e) {
+                    if (!mobileMenuBtn.contains(e.target) && !mainNav.contains(e.target)) {
+                        mobileMenuBtn.classList.remove('active');
+                        mainNav.classList.remove('open');
+                    }
+                });
+            }
+            
+            dropdowns.forEach(dropdown => {
+                const toggle = dropdown.querySelector('.dropdown-toggle');
+                if (toggle) {
+                    toggle.addEventListener('click', function(e) {
+                        if (window.innerWidth <= 968) {
+                            e.preventDefault();
+                            dropdown.classList.toggle('active');
+                        }
+                    });
+                }
+            });
+        }
+        
+        // Initialize all animations
+        document.addEventListener('DOMContentLoaded', function() {
+            initProfessionalAnimations();
+            initServiceCardAnimations();
+            initButtonAnimations();
+            initMobileMenu();
+            
+            setTimeout(() => {
+                initParallaxEffects();
+            }, 500);
+        });
+        
+        // Add ripple animation keyframes
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes ripple {
+                to {
+                    transform: scale(4);
+                    opacity: 0;
+                }
+            }
+        `;
+        document.head.appendChild(style);
+
+        // Enhanced stats counter with smooth easing
+        const statItems = document.querySelectorAll('.stat-item');
+        const statsObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const numberElement = entry.target.querySelector('h3');
+                    const finalValue = parseInt(numberElement.getAttribute('data-count'));
+                    animateValue(numberElement, 0, finalValue, 2000);
+                    statsObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.5 });
+
+        statItems.forEach(item => statsObserver.observe(item));
+
+        function animateValue(element, start, end, duration) {
+            let startTimestamp = null;
+            const step = (timestamp) => {
+                if (!startTimestamp) startTimestamp = timestamp;
+                const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+                const easeOutQuart = 1 - Math.pow(1 - progress, 4);
+                const value = Math.floor(easeOutQuart * (end - start) + start);
+                element.textContent = value + (element.dataset.suffix || '');
+                if (progress < 1) window.requestAnimationFrame(step);
+            };
+            window.requestAnimationFrame(step);
+        }
+    </script>
+</body>
+
+</html>

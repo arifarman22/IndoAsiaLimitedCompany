@@ -1,0 +1,54 @@
+/* login.css stylesheet */
+.login-container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.login-form {
+  background: var(--bg-secondary);
+  padding: 3rem;
+  border-radius: 10px;
+  box-shadow: var(--shadow);
+  width: 100%;
+  max-width: 400px;
+  transform: perspective(1000px) rotateX(10deg);
+  transition: transform 0.3s;
+}
+
+.login-form:hover {
+  transform: perspective(1000px) rotateX(0deg);
+}
+
+.login-form h2 {
+  text-align: center;
+  margin-bottom: 2rem;
+  color: var(--accent);
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: var(--text-secondary);
+}
+
+.form-group input {
+  width: 100%;
+  padding: 1rem;
+  background: var(--bg-primary);
+  border: 1px solid var(--border);
+  border-radius: 5px;
+  color: var(--text-primary);
+}
+
+.form-group input:focus {
+  outline: none;
+  border-color: var(--accent);
+  transform: scale(1.02);
+}

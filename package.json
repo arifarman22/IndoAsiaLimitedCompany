@@ -1,0 +1,34 @@
+{
+  "name": "indoasia-trading",
+  "version": "1.0.0",
+  "description": "Premium import services between China and Bangladesh - IndoAsia Trading",
+  "main": "index.html",
+  "scripts": {
+    "start": "npx serve .",
+    "build": "echo 'No build process needed for static site'",
+    "deploy": "echo 'Deploy to your preferred hosting service'",
+    "test": "echo 'No tests specified'"
+  },
+  "keywords": [
+    "import",
+    "china",
+    "bangladesh",
+    "trade",
+    "logistics",
+    "business",
+    "indoasia",
+    "trading",
+    "sourcing",
+    "customs"
+  ],
+  "author": "IndoAsia Trading",
+  "license": "MIT",
+  "devDependencies": {
+    "serve": "^14.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/indoasia-trading/website.git"
+  },
+  "homepage": "https://indoasiatraders.com"
+}

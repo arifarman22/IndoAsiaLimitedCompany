@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Navigation Implementation Guide</title>
+    
+    <!-- Add these CSS files to ALL pages -->
+    <link rel="stylesheet" href="assets/css/theme.css">
+    <link rel="stylesheet" href="assets/css/responsive-nav.css">
+    
+    <style>
+        /* CSS Variables - Professional White Theme */
+        :root {
+            /* Brand Colors */
+            --brand-navy: #183E6C;   /* Deep Navy Blue */
+            --brand-red:  #EC1E24;   /* Bright Red */
+            --brand-white: #EDEDED;  /* Off White */
+
+            /* Backgrounds */
+            --bg-primary: var(--brand-white);
+            --bg-secondary: #f8fafc;
+            --bg-tertiary: #f1f5f9;
+
+            /* Accents */
+            --accent: var(--brand-navy);
+            --accent-secondary: var(--brand-red);
+            --accent-gradient: linear-gradient(135deg, var(--brand-navy), var(--brand-red));
+
+            /* Text */
+            --text-primary: #1e293b;
+            --text-secondary: #64748b;
+
+            /* Borders & Shadows */
+            --border: #e2e8f0;
+            --shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            --card-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+
+            /* UI Helpers */
+            --transition: all 0.3s ease;
+            --border-radius: 12px;
+            --hover-bg: #f8fafc;
+            --active-bg: #eff6ff;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            margin: 0;
+            padding-top: 80px;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* Header Styles */
+        .header {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 0.5rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border);
+            transition: var(--transition);
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+        }
+
+        .header.sticky {
+            padding: 0.4rem 0;
+            box-shadow: var(--shadow);
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'Playfair Display', 'Inter', serif;
+            font-size: 1.8rem;
+            font-weight: 800;
+            background: var(--accent-gradient);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            letter-spacing: -0.02em;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo a {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+        }
+
+        .logo-img {
+            height: 80px;
+            width: auto;
+            object-fit: contain;
+        }
+
+        .logo-text {
+            background: var(--accent-gradient);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .content {
+            padding: 4rem 0;
+        }
+
+        .implementation-guide {
+            background: white;
+            padding: 2rem;
+            border-radius: var(--border-radius);
+            box-shadow: var(--card-shadow);
+            margin: 2rem 0;
+        }
+
+        .code-block {
+            background: #f8fafc;
+            padding: 1rem;
+            border-radius: 8px;
+            border-left: 4px solid var(--accent);
+            margin: 1rem 0;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9rem;
+            overflow-x: auto;
+        }
+
+        .step {
+            margin: 2rem 0;
+            padding: 1.5rem;
+            border: 1px solid var(--border);
+            border-radius: var(--border-radius);
+        }
+
+        .step h3 {
+            color: var(--accent);
+            margin-bottom: 1rem;
+        }
+
+        .file-list {
+            background: #f0f9ff;
+            padding: 1rem;
+            border-radius: 8px;
+            margin: 1rem 0;
+        }
+
+        .file-list ul {
+            margin: 0;
+            padding-left: 1.5rem;
+        }
+
+        .file-list li {
+            margin: 0.5rem 0;
+            color: var(--text-secondary);
+        }
+    </style>
+</head>
+<body>
+    <!-- COPY THIS HEADER STRUCTURE TO ALL PAGES -->
+    <header class="header" id="mainHeader" role="banner">
+        <div class="container header-content">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="assets/images/horizontal-final.png" alt="IndoAsia Trading Logo" class="logo-img">
+                    <span class="logo-text"></span>
+                </a>
+            </div>
+            <nav>
+                <ul class="nav" id="mainNav">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="services.html">Our Process</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle">Our Services <span class="dropdown-arrow">▼</span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="coreServices.html">Core Services</a></li>
+                            <li><a href="additionalServices.html">Additional Services</a></li>
+                            <li><a href="plans.html">Plans & Pricing</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="features.html">Features</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle">Resources <span class="dropdown-arrow">▼</span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="blog.html">Blog</a></li>
+                            <li><a href="faqs.html">FAQs</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+            <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle navigation menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <main class="content">
+        <div class="container">
+            <h1>Responsive Navigation Implementation Guide</h1>
+            <p>Follow these steps to implement responsive navigation across all pages of the IndoAsia Trading website.</p>
+
+            <div class="implementation-guide">
+                <h2>Files Created</h2>
+                <div class="file-list">
+                    <p><strong>New files that have been created:</strong></p>
+                    <ul>
+                        <li><code>assets/css/responsive-nav.css</code> - Responsive navigation styles</li>
+                        <li><code>assets/js/responsive-nav.js</code> - Responsive navigation functionality</li>
+                        <li><code>responsive-nav-implementation.html</code> - This implementation guide</li>
+                    </ul>
+                </div>
+
+                <div class="step">
+                    <h3>Step 1: Add CSS Files to All Pages</h3>
+                    <p>Add this line to the <code>&lt;head&gt;</code> section of every HTML file:</p>
+                    <div class="code-block">
+&lt;link rel="stylesheet" href="assets/css/responsive-nav.css"&gt;
+                    </div>
+                    <p>Make sure it comes after your existing CSS files.</p>
+                </div>
+
+                <div class="step">
+                    <h3>Step 2: Add JavaScript Files to All Pages</h3>
+                    <p>Add this line before the closing <code>&lt;/body&gt;</code> tag of every HTML file:</p>
+                    <div class="code-block">
+&lt;script src="assets/js/responsive-nav.js"&gt;&lt;/script&gt;
+                    </div>
+                    <p>Make sure it comes after your existing JavaScript files.</p>
+                </div>
+
+                <div class="step">
+                    <h3>Step 3: Update Header Structure</h3>
+                    <p>Replace the existing header in all HTML files with the structure shown above. Key elements:</p>
+                    <ul>
+                        <li>Header with <code>id="mainHeader"</code></li>
+                        <li>Navigation with <code>id="mainNav"</code></li>
+                        <li>Mobile menu button with <code>id="mobileMenuBtn"</code></li>
+                        <li>Dropdown menus with <code>class="dropdown"</code></li>
+                        <li>Dropdown arrows with <code>class="dropdown-arrow"</code></li>
+                    </ul>
+                </div>
+
+                <div class="step">
+                    <h3>Step 4: Pages to Update</h3>
+                    <div class="file-list">
+                        <p><strong>Apply these changes to all HTML files:</strong></p>
+                        <ul>
+                            <li>index.html</li>
+                            <li>about.html</li>
+                            <li>contact.html</li>
+                            <li>services.html</li>
+                            <li>coreServices.html</li>
+                            <li>additionalServices.html</li>
+                            <li>features.html</li>
+                            <li>plans.html</li>
+                            <li>blog.html</li>
+                            <li>faqs.html</li>
+                            <li>team.html</li>
+                            <li>404.html</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="step">
+                    <h3>Step 5: Features Included</h3>
+                    <ul>
+                        <li>✅ Mobile-first responsive design</li>
+                        <li>✅ Hamburger menu for mobile devices</li>
+                        <li>✅ Smooth animations and transitions</li>
+                        <li>✅ Dropdown menus for desktop and mobile</li>
+                        <li>✅ Touch-friendly interactions</li>
+                        <li>✅ Keyboard navigation support</li>
+                        <li>✅ Accessibility features (ARIA labels, focus states)</li>
+                        <li>✅ Sticky header with scroll effects</li>
+                        <li>✅ Cross-browser compatibility</li>
+                        <li>✅ Print-friendly styles</li>
+                    </ul>
+                </div>
+
+                <div class="step">
+                    <h3>Step 6: Testing</h3>
+                    <p>After implementation, test the navigation on:</p>
+                    <ul>
+                        <li>Desktop browsers (Chrome, Firefox, Safari, Edge)</li>
+                        <li>Mobile devices (iOS Safari, Android Chrome)</li>
+                        <li>Tablet devices</li>
+                        <li>Different screen sizes and orientations</li>
+                        <li>Keyboard navigation (Tab, Enter, Escape keys)</li>
+                        <li>Touch interactions (tap, swipe)</li>
+                    </ul>
+                </div>
+
+                <div class="step">
+                    <h3>Step 7: Customization</h3>
+                    <p>The navigation uses CSS variables for easy customization:</p>
+                    <div class="code-block">
+:root {
+    --brand-navy: #183E6C;
+    --brand-red: #EC1E24;
+    --brand-white: #EDEDED;
+    --accent: var(--brand-navy);
+    --accent-secondary: var(--brand-red);
+    --transition: all 0.3s ease;
+    --border-radius: 12px;
+}
+                    </div>
+                    <p>Modify these variables to match your brand colors and preferences.</p>
+                </div>
+            </div>
+
+            <div class="implementation-guide">
+                <h2>Mobile Navigation Preview</h2>
+                <p>Resize your browser window to less than 968px width to see the mobile navigation in action. The hamburger menu will appear and the navigation will transform into a mobile-friendly slide-down menu.</p>
+                
+                <h3>Mobile Features:</h3>
+                <ul>
+                    <li>Hamburger menu button with animated icon</li>
+                    <li>Full-width slide-down navigation</li>
+                    <li>Staggered animation for menu items</li>
+                    <li>Touch-friendly dropdown menus</li>
+                    <li>Swipe-to-close functionality</li>
+                    <li>Backdrop blur effect</li>
+                    <li>Smooth transitions and animations</li>
+                </ul>
+            </div>
+        </div>
+    </main>
+
+    <!-- ADD THESE SCRIPTS TO ALL PAGES -->
+    <script src="assets/js/responsive-nav.js"></script>
+    <script>
+        // Test the mobile menu functionality
+        console.log('Responsive navigation loaded successfully!');
+        
+        // Add some demo functionality for this guide
+        document.addEventListener('DOMContentLoaded', function() {
+            // Highlight current page in navigation
+            const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+            const navLinks = document.querySelectorAll('.nav a');
+            
+            navLinks.forEach(link => {
+                if (link.getAttribute('href') === currentPage) {
+                    link.classList.add('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>

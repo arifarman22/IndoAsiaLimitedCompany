@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        .mobile-menu-btn {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+            background: #183E6C;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+        }
+        .mobile-menu-btn span {
+            display: block;
+            width: 26px;
+            height: 3px;
+            background: white;
+            border-radius: 3px;
+        }
+        .nav {
+            display: none;
+            background: white;
+            padding: 20px;
+        }
+        .nav.open {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <button class="mobile-menu-btn" id="mobileMenuBtn">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
+    
+    <nav class="nav" id="mainNav">
+        <p>Mobile menu is working!</p>
+    </nav>
+
+    <script>
+        const btn = document.getElementById('mobileMenuBtn');
+        const nav = document.getElementById('mainNav');
+        
+        btn.addEventListener('click', function() {
+            nav.classList.toggle('open');
+            console.log('Button clicked, nav open:', nav.classList.contains('open'));
+        });
+    </script>
+</body>
+</html>

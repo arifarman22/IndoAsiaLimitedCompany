@@ -1,0 +1,25 @@
+/* about.css stylesheet */
+.about-section {
+  padding: 4rem 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.about-image {
+  width: 100%;
+  border-radius: 10px;
+  box-shadow: var(--shadow);
+  transform: rotateY(10deg);
+  transition: transform 0.3s;
+}
+
+.about-image:hover {
+  transform: rotateY(0deg);
+}
+
+.story {
+  font-size: 1.1rem;
+  line-height: 1.8;
+}

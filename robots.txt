@@ -1,0 +1,18 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://indoasiatraders.com/sitemap.xml
+
+# Disallow login page from indexing
+Disallow: /login.html
+
+# Allow all other pages
+Allow: /about.html
+Allow: /features.html
+Allow: /contact.html
+Allow: /blog.html
+Allow: /assets/
+
+# Crawl delay (optional)
+Crawl-delay: 1

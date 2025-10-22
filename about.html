@@ -1,0 +1,1245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - IndoAsia Trading | Your Import Partner</title>
+    <meta name="description" content="Discover IndoAsia Trading's story - Bangladesh's premier China import specialists with 500+ successful projects and 98% satisfaction rate.">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --brand-navy: #183E6C;
+            --brand-red: #EC1E24;
+            --brand-white: #EDEDED;
+            --bg-primary: var(--brand-white);
+            --bg-secondary: #f8fafc;
+            --bg-tertiary: #f1f5f9;
+            --accent: var(--brand-navy);
+            --accent-secondary: var(--brand-red);
+            --accent-gradient: linear-gradient(135deg, var(--brand-navy), var(--brand-red));
+            --text-primary: #1e293b;
+            --text-secondary: #64748b;
+            --border: #e2e8f0;
+            --shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            --card-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+            --transition: all 0.3s ease;
+            --border-radius: 12px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.6;
+            overflow-x: hidden;
+            padding-top: 80px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* Header */
+        .header {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 0.5rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border);
+            transition: var(--transition);
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+        }
+
+        .header.sticky {
+            padding: 0.4rem 0;
+            box-shadow: var(--shadow);
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'Playfair Display', 'Inter', serif;
+            font-size: 1.8rem;
+            font-weight: 800;
+            background: var(--accent-gradient);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            letter-spacing: -0.02em;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo a {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+        }
+
+        .logo-img {
+            height: 80px;
+            width: auto;
+            object-fit: contain;
+        }
+
+        .logo-text {
+            background: var(--accent-gradient);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .nav {
+            display: flex;
+            list-style: none;
+            gap: 0.3rem;
+            align-items: center;
+            position: relative;
+        }
+
+        .nav li {
+            position: relative;
+        }
+
+        .nav li a {
+            font-weight: 600;
+            color: #0f172a;
+            padding: 0.5rem 1rem;
+            border-radius: var(--border-radius);
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            text-decoration: none;
+        }
+
+        .nav li a:hover,
+        .nav li a.active {
+            background: var(--hover-bg);
+            color: var(--accent);
+        }
+
+        .dropdown-arrow {
+            font-size: 0.8rem;
+            transition: var(--transition);
+        }
+
+        .dropdown:hover .dropdown-arrow {
+            transform: rotate(180deg);
+        }
+
+        /* Dropdown menu styling */
+        .dropdown-menu {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: white;
+            min-width: 200px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            border-radius: var(--border-radius);
+            padding: 0.5rem 0;
+            z-index: 1000;
+            list-style: none;
+            margin: 0;
+        }
+
+        .dropdown:hover .dropdown-menu {
+            display: block;
+        }
+
+        .dropdown-menu li {
+            margin: 0;
+        }
+
+        .dropdown-menu li a {
+            padding: 0.75rem 1rem;
+            white-space: nowrap;
+            border-radius: 0;
+        }
+
+        .dropdown-menu li a:hover {
+            background: var(--hover-bg);
+        }
+
+        /* Last item (Contact button) styling */
+        .nav li:last-child a {
+            background: var(--accent-gradient);
+            color: white;
+            font-weight: 600;
+        }
+
+        .nav li:last-child a:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+        }
+
+        /* Mobile Navigation */
+        .mobile-menu-btn {
+            display: none;
+        }
+
+        @media (max-width: 968px) {
+            .mobile-menu-btn {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                background: var(--accent);
+                border-radius: 8px;
+                padding: 0.5rem 1rem;
+                cursor: pointer;
+                transition: background 0.3s ease, transform 0.3s ease;
+                border: none;
+                width: 44px;
+                height: 40px;
+                flex-direction: column;
+                gap: 4px;
+                z-index: 1101;
+            }
+
+            .mobile-menu-btn:hover {
+                background: var(--accent-secondary);
+            }
+
+            .mobile-menu-btn.active {
+                transform: rotate(90deg);
+            }
+            
+            .mobile-menu-btn span {
+                display: block;
+                width: 26px;
+                height: 3px;
+                background: white;
+                border-radius: 3px;
+                transition: transform 0.25s ease, opacity 0.2s ease;
+            }
+            
+            .mobile-menu-btn.active span:nth-child(1) { transform: rotate(45deg) translate(4px, 4px); }
+            .mobile-menu-btn.active span:nth-child(2) { opacity: 0; }
+            .mobile-menu-btn.active span:nth-child(3) { transform: rotate(-45deg) translate(4px, -4px); }
+
+            .nav {
+                position: fixed;
+                top: 70px;
+                left: 0;
+                width: 100%;
+                background: rgba(255, 255, 255, 0.98);
+                backdrop-filter: blur(10px);
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 1rem;
+                padding: 2rem 1rem;
+                transform: translateY(-100%);
+                opacity: 0;
+                visibility: hidden;
+                transition: transform 0.4s ease, opacity 0.4s ease;
+                box-shadow: 0 8px 32px rgba(0,0,0,0.15);
+                border-top: 2px solid var(--accent);
+                z-index: 1099;
+            }
+
+            .nav.open {
+                transform: translateY(0);
+                opacity: 1;
+                visibility: visible;
+            }
+
+            .nav li {
+                width: 100%;
+                text-align: center;
+                border-bottom: 1px solid rgba(26, 32, 44, 0.1);
+            }
+
+            .nav li:last-child {
+                border-bottom: none;
+            }
+
+            .nav li a {
+                display: block;
+                padding: 1rem 0.75rem;
+                font-weight: 600;
+                color: var(--text-primary);
+                font-size: 1.1rem;
+                border-radius: 8px;
+                margin: 0.25rem 0;
+                transition: all 0.3s ease;
+            }
+
+            .nav li a:hover {
+                background: var(--accent);
+                color: white;
+                transform: translateX(5px);
+            }
+
+            .dropdown-menu {
+                position: static;
+                display: none;
+                background: rgba(248, 250, 252, 0.95);
+                box-shadow: inset 0 2px 4px rgba(0,0,0,0.1);
+                border-radius: 8px;
+                margin-top: 0.5rem;
+                padding: 0.5rem 0;
+            }
+
+            .dropdown.active .dropdown-menu {
+                display: block;
+            }
+
+            .dropdown-menu li a {
+                font-size: 1rem;
+                padding: 0.75rem 1rem;
+                color: var(--text-secondary);
+                font-weight: 500;
+            }
+
+            .dropdown-menu li a:hover {
+                background: var(--accent-secondary);
+                color: white;
+            }
+        }
+
+        /* Hero Section with Parallax */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            background: linear-gradient(135deg, var(--bg-primary) 0%, var(--bg-secondary) 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="%23e2e8f0" stroke-width="0.5"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
+            opacity: 0.3;
+            animation: gridMove 20s linear infinite;
+        }
+
+        @keyframes gridMove {
+            0% { transform: translate(0, 0); }
+            100% { transform: translate(10px, 10px); }
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            opacity: 0;
+            transform: translateY(50px);
+            animation: heroFadeIn 1s ease forwards 0.5s;
+        }
+
+        @keyframes heroFadeIn {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            font-weight: 900;
+            margin-bottom: 1.5rem;
+            background: var(--accent-gradient);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: textGlow 3s ease-in-out infinite alternate;
+        }
+
+        @keyframes textGlow {
+            0% { filter: brightness(1); }
+            100% { filter: brightness(1.2); }
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            max-width: 600px;
+            margin-bottom: 2rem;
+            opacity: 0;
+            animation: slideUp 1s ease forwards 1s;
+        }
+
+        @keyframes slideUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero p {
+            transform: translateY(30px);
+        }
+
+        /* Floating Elements */
+        .floating-element {
+            position: absolute;
+            opacity: 0.1;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .floating-element:nth-child(1) {
+            top: 20%;
+            left: 10%;
+            animation-delay: 0s;
+        }
+
+        .floating-element:nth-child(2) {
+            top: 60%;
+            right: 15%;
+            animation-delay: 2s;
+        }
+
+        .floating-element:nth-child(3) {
+            bottom: 20%;
+            left: 20%;
+            animation-delay: 4s;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(5deg); }
+        }
+
+        /* Stats Section */
+        .stats {
+            padding: 5rem 0;
+            background: var(--bg-secondary);
+            position: relative;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+            margin-top: 3rem;
+        }
+
+        .stat-card {
+            text-align: center;
+            padding: 2rem;
+            background: white;
+            border-radius: var(--border-radius);
+            box-shadow: var(--card-shadow);
+            transform: translateY(50px);
+            opacity: 0;
+            transition: var(--transition);
+        }
+
+        .stat-card.animate {
+            transform: translateY(0);
+            opacity: 1;
+            animation: bounceIn 0.8s ease;
+        }
+
+        @keyframes bounceIn {
+            0% { transform: scale(0.3) translateY(50px); }
+            50% { transform: scale(1.05) translateY(-10px); }
+            70% { transform: scale(0.9) translateY(0); }
+            100% { transform: scale(1) translateY(0); }
+        }
+
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 900;
+            background: var(--accent-gradient);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--text-secondary);
+        }
+
+        /* Story Section */
+        .story {
+            padding: 6rem 0;
+            position: relative;
+        }
+
+        .story-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .story-text {
+            opacity: 0;
+            transform: translateX(-50px);
+        }
+
+        .story-text.animate {
+            opacity: 1;
+            transform: translateX(0);
+            animation: slideInLeft 1s ease;
+        }
+
+        @keyframes slideInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .story-image {
+            position: relative;
+            opacity: 0;
+            transform: translateX(50px);
+        }
+
+        .story-image.animate {
+            opacity: 1;
+            transform: translateX(0);
+            animation: slideInRight 1s ease;
+        }
+
+        @keyframes slideInRight {
+            from {
+                opacity: 0;
+                transform: translateX(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .story-image img {
+            width: 100%;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        .story-image:hover img {
+            transform: scale(1.05) rotate(2deg);
+        }
+
+        /* Mission Vision Cards */
+        .mission-vision {
+            padding: 6rem 0;
+            background: var(--bg-secondary);
+        }
+
+        .mv-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .mv-card {
+            background: white;
+            padding: 3rem 2rem;
+            border-radius: var(--border-radius);
+            text-align: center;
+            box-shadow: var(--card-shadow);
+            position: relative;
+            overflow: hidden;
+            transform: translateY(50px);
+            opacity: 0;
+            transition: var(--transition);
+        }
+
+        .mv-card.animate {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        .mv-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+            transition: left 0.5s;
+        }
+
+        .mv-card:hover::before {
+            left: 100%;
+        }
+
+        .mv-card:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+        }
+
+        .mv-icon {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--bg-tertiary);
+            border-radius: 50%;
+            animation: pulse 2s infinite;
+        }
+
+        .mv-icon img {
+            width: 50px;
+            height: 50px;
+            object-fit: contain;
+            filter: brightness(0) saturate(100%) invert(27%) sepia(51%) saturate(2878%) hue-rotate(346deg) brightness(104%) contrast(97%);
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+
+        /* Team Section */
+        .team {
+            padding: 6rem 0;
+        }
+
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .team-card {
+            background: white;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--card-shadow);
+            transform: translateY(50px);
+            opacity: 0;
+            transition: var(--transition);
+        }
+
+        .team-card.animate {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        .team-card:hover {
+            transform: translateY(-15px) rotateY(5deg);
+            box-shadow: 0 25px 50px rgba(0,0,0,0.2);
+        }
+
+        .team-image {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .team-card:hover .team-image {
+            transform: scale(1.1);
+        }
+
+        .team-info {
+            padding: 2rem;
+            text-align: center;
+        }
+
+        .team-name {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--accent);
+            margin-bottom: 0.5rem;
+        }
+
+        .team-role {
+            color: var(--text-secondary);
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        /* CTA Section */
+        .cta {
+            padding: 6rem 0;
+            background: var(--accent-gradient);
+            color: white;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="2" fill="white" opacity="0.1"/></svg>');
+            animation: sparkle 3s linear infinite;
+        }
+
+        @keyframes sparkle {
+            0% { transform: translateX(0) translateY(0); }
+            100% { transform: translateX(100px) translateY(100px); }
+        }
+
+        .cta-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .cta h2 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            animation: glow 2s ease-in-out infinite alternate;
+        }
+
+        @keyframes glow {
+            from { text-shadow: 0 0 20px rgba(255,255,255,0.5); }
+            to { text-shadow: 0 0 30px rgba(255,255,255,0.8); }
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 1rem 2rem;
+            background: white;
+            color: var(--accent);
+            text-decoration: none;
+            border-radius: var(--border-radius);
+            font-weight: 700;
+            margin: 1rem;
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+            transition: left 0.5s;
+        }
+
+        .btn:hover::before {
+            left: 100%;
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+        }
+
+        /* Footer Styles */
+        .footer {
+            background: var(--bg-secondary);
+            padding: 4rem 0 2rem;
+            border-top: 1px solid var(--border);
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-section h3,
+        .footer-section h4 {
+            margin-bottom: 1.5rem;
+            color: var(--accent);
+        }
+
+        .footer-section p {
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+            color: var(--text-primary);
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section ul li {
+            margin-bottom: 0.8rem;
+        }
+
+        .footer-section ul li a {
+            color: var(--text-secondary);
+            transition: var(--transition);
+            display: inline-block;
+        }
+
+        .footer-section ul li a:hover {
+            color: var(--accent);
+            transform: translateX(5px);
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .social-links a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: var(--accent);
+            color: white;
+            border-radius: 50%;
+            transition: var(--transition);
+            font-weight: 600;
+            text-decoration: none;
+        }
+
+        .social-links a:hover {
+            background: var(--accent-secondary);
+            transform: translateY(-3px);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid var(--border);
+            color: var(--text-secondary);
+        }
+
+        /* Additional Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .story-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .container {
+                padding: 0 1rem;
+            }
+        }
+
+        /* Section Headers */
+        .section-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-header h2 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+        }
+
+        .section-header p {
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Scroll Animations */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header" id="mainHeader" role="banner">
+        <div class="container header-content">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="assets/images/horizontal-final.png" alt="IndoAsia Trading Logo" class="logo-img">
+                    <span class="logo-text"></span>
+                </a>
+            </div>
+            <nav>
+                <ul class="nav" id="mainNav">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="services.html">Our Process</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle">Our Services <span class="dropdown-arrow">▼</span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="coreServices.html">Core Services</a></li>
+                            <li><a href="additionalServices.html">Additional Services</a></li>
+                            <li><a href="plans.html">Plans & Pricing</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="features.html">Features</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle">Resources <span class="dropdown-arrow">▼</span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="blog.html">Blog</a></li>
+                            <li><a href="faqs.html">FAQs</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+            <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle navigation menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="floating-element">🚢</div>
+        <div class="floating-element">📦</div>
+        <div class="floating-element">🌏</div>
+        <div class="container">
+            <div class="hero-content">
+                <h1>About IndoAsia Trading</h1>
+                <p>Your trusted partner for seamless China-Bangladesh imports. We bridge continents, connect businesses, and deliver excellence in every shipment.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats">
+        <div class="container">
+            <div class="section-header fade-in">
+                <h2>Our Impact in Numbers</h2>
+                <p>Proven results that speak for themselves</p>
+            </div>
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <span class="stat-number" data-count="500">0</span>
+                    <div class="stat-label">Successful Imports</div>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number" data-count="98">0</span>
+                    <div class="stat-label">Client Satisfaction %</div>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number" data-count="24">0</span>
+                    <div class="stat-label">Countries Served</div>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number" data-count="99">0</span>
+                    <div class="stat-label">On-Time Delivery %</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Story Section -->
+    <section class="story">
+        <div class="container">
+            <div class="story-content">
+                <div class="story-text">
+                    <h2>Building Bridges Between Nations</h2>
+                    <p>Founded in 2023, IndoAsia Trading emerged from a vision to revolutionize trade between China and Bangladesh. We recognized the immense potential for Bangladeshi businesses to access high-quality Chinese products but saw the challenges they faced navigating international trade.</p>
+                    <p>Our team combines decades of experience in international trade, logistics, and supply chain management. This deep understanding of both Chinese and Bangladeshi markets allows us to create seamless import experiences for our clients.</p>
+                    <p>Today, we're proud to have facilitated over 500 successful imports while maintaining a 98% client satisfaction rate. Our commitment to transparency, quality, and efficiency has made us the preferred partner for SMEs across Bangladesh.</p>
+                </div>
+                <div class="story-image">
+                    <img src="assets/images/China-bangla.jpg" alt="China Bangladesh Trade">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mission Vision -->
+    <section class="mission-vision">
+        <div class="container">
+            <div class="section-header fade-in">
+                <h2>Our Mission & Vision</h2>
+                <p>Driving economic growth through seamless international trade</p>
+            </div>
+            <div class="mv-grid">
+                <div class="mv-card">
+                    <div class="mv-icon"><img src="assets/icons/mission.png" alt="Mission Icon"></div>
+                    <h3>Our Mission</h3>
+                    <p>To empower Bangladeshi businesses with access to world-class Chinese products through streamlined import processes, competitive pricing, and exceptional service.</p>
+                </div>
+                <div class="mv-card">
+                    <div class="mv-icon"><img src="assets/icons/visson.png" alt="Vision Icon"></div>
+                    <h3>Our Vision</h3>
+                    <p>To become the leading bridge for trade between China and Bangladesh, fostering economic growth and creating opportunities for businesses in both nations.</p>
+                </div>
+                <div class="mv-card">
+                    <div class="mv-icon"><img src="assets/icons/qualityAbout.png" alt="Values Icon"></div>
+                    <h3>Our Values</h3>
+                    <p>Integrity, transparency, innovation, and customer-centricity guide everything we do. We believe in building lasting relationships based on trust and results.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section class="team">
+        <div class="container">
+            <div class="section-header fade-in">
+                <h2>Meet Our Leadership Team</h2>
+                <p>Experienced professionals dedicated to your success</p>
+            </div>
+            <div class="team-grid">
+                <div class="team-card">
+                    <img src="assets/images/ridoy.jpg" alt="CEO" class="team-image">
+                    <div class="team-info">
+                        <h3 class="team-name">Abdul Rahman</h3>
+                        <p class="team-role">CEO & Founder</p>
+                        <p>15+ years in international trade and supply chain management</p>
+                    </div>
+                </div>
+                <div class="team-card">
+                    <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Operations Director" class="team-image">
+                    <div class="team-info">
+                        <h3 class="team-name">Li Wei</h3>
+                        <p class="team-role">Operations Director</p>
+                        <p>Expert in Chinese manufacturing and quality control processes</p>
+                    </div>
+                </div>
+                <div class="team-card">
+                    <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Logistics Manager" class="team-image">
+                    <div class="team-info">
+                        <h3 class="team-name">Fatima Begum</h3>
+                        <p class="team-role">Logistics Manager</p>
+                        <p>Specializes in international shipping and customs clearance</p>
+                    </div>
+                </div>
+                <div class="team-card">
+                    <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Client Relations" class="team-image">
+                    <div class="team-info">
+                        <h3 class="team-name">Chen Yang</h3>
+                        <p class="team-role">Client Relations Director</p>
+                        <p>Dedicated to ensuring client satisfaction and business growth</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Ready to Transform Your Business?</h2>
+                <p>Join hundreds of successful Bangladeshi businesses that trust us with their import needs.</p>
+                <a href="contact.html" class="btn">Get Started Today</a>
+                <a href="services.html" class="btn">Explore Services</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer" role="contentinfo">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>IndoAsia Trading</h3>
+                    <p>Your trusted partner for premium import services between China and Bangladesh.</p>
+                    <div class="social-links" role="list" aria-label="Social media links">
+                        <a href="https://www.facebook.com/p/IndoAsiaTrading" target="_blank" rel="noopener noreferrer"
+                            aria-label="Follow us on Facebook"><span>FB</span></a>
+                        <a href="https://www.linkedin.com/company/indoasia-trading" target="_blank"
+                            rel="noopener noreferrer" aria-label="Follow us on LinkedIn"><span>LI</span></a>
+                        <a href="https://www.instagram.com/indoasiatrading/#"
+                            target="_blank" rel="noopener noreferrer"
+                            aria-label="Follow us on Instagram"><span>IG</span></a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Services</h4>
+                    <ul role="list">
+                        <li><a href="services.html">Import Sourcing</a></li>
+                        <li><a href="services.html">Logistics</a></li>
+                        <li><a href="services.html">Quality Assurance</a></li>
+                        <li><a href="services.html">Custom Solutions</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Company</h4>
+                    <ul role="list">
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="team.html">Our Team</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Contact Info</h4>
+                    <address>
+                        <p>Email: <a href="mailto:indoasiatrading@outlook.com">indoasiatrading@outlook.com</a></p>
+                        <p>Phone: <a href="tel:+8801711257739">+8801711257739</a></p>
+                        <p>Address: H-13, R-11, Block-L, South Bonosree, Khilgaon, Dhaka 1219.
+                        </p>
+                    </address>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2023 IndoAsia Trading. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mainNav = document.getElementById('mainNav');
+
+        if (mobileMenuBtn && mainNav) {
+            mobileMenuBtn.addEventListener('click', () => {
+                mobileMenuBtn.classList.toggle('active');
+                mainNav.classList.toggle('open');
+            });
+            
+            // Close menu when clicking outside
+            document.addEventListener('click', function(e) {
+                if (!mobileMenuBtn.contains(e.target) && !mainNav.contains(e.target)) {
+                    mobileMenuBtn.classList.remove('active');
+                    mainNav.classList.remove('open');
+                }
+            });
+        }
+        
+        // Handle dropdown clicks on mobile
+        document.querySelectorAll('.dropdown').forEach(dropdown => {
+            const toggle = dropdown.querySelector('.dropdown-toggle');
+            if (toggle) {
+                toggle.addEventListener('click', function(e) {
+                    if (window.innerWidth <= 968) {
+                        e.preventDefault();
+                        dropdown.classList.toggle('active');
+                    }
+                });
+            }
+        });
+        
+        // Sticky header
+        const header = document.getElementById('mainHeader');
+        if (header) {
+            window.addEventListener('scroll', function () {
+                if (window.scrollY > 100) {
+                    header.classList.add('sticky');
+                } else {
+                    header.classList.remove('sticky');
+                }
+            });
+        };
+
+        // Scroll Animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate');
+                }
+            });
+        }, observerOptions);
+
+        // Observe elements for animation
+        document.querySelectorAll('.stat-card, .mv-card, .team-card, .story-text, .story-image, .fade-in').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Counter Animation
+        function animateCounter(element) {
+            const target = parseInt(element.getAttribute('data-count'));
+            const duration = 2000;
+            const step = target / (duration / 16);
+            let current = 0;
+
+            const timer = setInterval(() => {
+                current += step;
+                if (current >= target) {
+                    current = target;
+                    clearInterval(timer);
+                }
+                element.textContent = Math.round(current);
+            }, 16);
+        }
+
+        // Animate counters when visible
+        const counterObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    animateCounter(entry.target);
+                    counterObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.5 });
+
+        document.querySelectorAll('.stat-number').forEach(counter => {
+            counterObserver.observe(counter);
+        });
+
+        // Parallax Effect
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const parallax = document.querySelector('.hero');
+            if (parallax) {
+                parallax.style.transform = `translateY(${scrolled * 0.5}px)`;
+            }
+        });
+
+        // Smooth Scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
