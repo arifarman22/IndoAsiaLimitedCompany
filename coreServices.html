@@ -828,10 +828,13 @@
             justify-content: center;
             opacity: 0;
             transition: opacity 0.3s ease;
+            pointer-events: none;
+            z-index: 5;
         }
         
         .service-card:hover .service-overlay {
             opacity: 1;
+            pointer-events: auto;
         }
         
         .overlay-content {
@@ -860,6 +863,9 @@
             transition: all 0.3s ease;
             text-decoration: none;
             display: inline-block;
+            pointer-events: auto;
+            z-index: 10;
+            position: relative;
         }
         
         .overlay-btn:hover {
@@ -1134,13 +1140,7 @@
                     <article class="service-card interactive-card" data-service="sourcing">
                         <div class="service-thumb">
                             <img src="assets/images/productSourcingCore.jpg" alt="Product Sourcing" loading="lazy">
-                            <div class="service-overlay">
-                                <div class="overlay-content">
-                                    <h4>Success Rate: 98%</h4>
-                                    <p>Average cost savings: 25%</p>
-                                    <a href="contact.html" class="overlay-btn">View Details</a>
-                                </div>
-                            </div>
+
                         </div>
                         <div class="service-content">
                             <div class="service-icon">
@@ -1164,13 +1164,7 @@
                     <article class="service-card interactive-card" data-service="logistics">
                         <div class="service-thumb">
                             <img src="assets/images/logistics.jpeg" alt="Logistics & Shipping" loading="lazy">
-                            <div class="service-overlay">
-                                <div class="overlay-content">
-                                    <h4>Delivery Rate: 99.8%</h4>
-                                    <p>Global shipping network</p>
-                                    <a href="contact.html" class="overlay-btn">View Details</a>
-                                </div>
-                            </div>
+
                         </div>
                         <div class="service-content">
                             <div class="service-icon">
@@ -1194,13 +1188,7 @@
                     <article class="service-card interactive-card" data-service="quality">
                         <div class="service-thumb">
                             <img src="assets/images/qualityassuarancefinal.jpg" alt="Quality Assurance" loading="lazy">
-                            <div class="service-overlay">
-                                <div class="overlay-content">
-                                    <h4>Quality Score: 99.5%</h4>
-                                    <p>ISO certified processes</p>
-                                    <a href="contact.html" class="overlay-btn">View Details</a>
-                                </div>
-                            </div>
+
                         </div>
                         <div class="service-content">
                             <div class="service-icon">
@@ -1224,13 +1212,7 @@
                     <article class="service-card interactive-card" data-service="customs">
                         <div class="service-thumb">
                             <img src="assets/images/customs.jpg" alt="Customs Clearance" loading="lazy">
-                            <div class="service-overlay">
-                                <div class="overlay-content">
-                                    <h4>Clearance Rate: 100%</h4>
-                                    <p>Expert documentation</p>
-                                    <a href="contact.html" class="overlay-btn">View Details</a>
-                                </div>
-                            </div>
+
                         </div>
                         <div class="service-content">
                             <div class="service-icon">
@@ -1254,13 +1236,7 @@
                     <article class="service-card interactive-card" data-service="consultation">
                         <div class="service-thumb">
                             <img src="assets/images/business.webp" alt="Business Consultation" loading="lazy">
-                            <div class="service-overlay">
-                                <div class="overlay-content">
-                                    <h4>Client Satisfaction: 98%</h4>
-                                    <p>Strategic guidance</p>
-                                    <a href="contact.html" class="overlay-btn">View Details</a>
-                                </div>
-                            </div>
+
                         </div>
                         <div class="service-content">
                             <div class="service-icon">
@@ -1284,13 +1260,7 @@
                     <article class="service-card interactive-card" data-service="warehousing">
                         <div class="service-thumb">
                             <img src="assets/images/wirehousedistribution.jpg" alt="Warehousing & Distribution" loading="lazy">
-                            <div class="service-overlay">
-                                <div class="overlay-content">
-                                    <h4>Storage Capacity: 10K+ sqft</h4>
-                                    <p>Secure facilities</p>
-                                    <a href="contact.html" class="overlay-btn">View Details</a>
-                                </div>
-                            </div>
+
                         </div>
                         <div class="service-content">
                             <div class="service-icon">
