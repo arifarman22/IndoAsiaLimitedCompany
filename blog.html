@@ -342,7 +342,7 @@
         /* Last item (Contact button) styling */
         .nav li:last-child a {
             background: var(--accent-gradient);
-            color: #000;
+            color: #ffffff;
             font-weight: 600;
         }
 
@@ -1298,99 +1298,6 @@
         </div>
     </footer>
 
-    <script>
-        // Mobile Menu Toggle
-        document.addEventListener('DOMContentLoaded', function() {
-            const mobileMenuBtn = document.getElementById('mobileMenuBtn');
-            const mainNav = document.getElementById('mainNav');
-            const header = document.getElementById('mainHeader');
-            
-            // Mobile menu toggle
-            mobileMenuBtn.addEventListener('click', function() {
-                this.classList.toggle('active');
-                mainNav.classList.toggle('open');
-                this.setAttribute('aria-expanded', this.classList.contains('active'));
-            });
-            
-            // Sticky header
-            window.addEventListener('scroll', function() {
-                if (window.scrollY > 100) {
-                    header.classList.add('sticky');
-                } else {
-                    header.classList.remove('sticky');
-                }
-            });
-            
-            // Close mobile menu when clicking outside
-            document.addEventListener('click', function(event) {
-                if (!event.target.closest('.header-content') && mainNav.classList.contains('open')) {
-                    mobileMenuBtn.classList.remove('active');
-                    mainNav.classList.remove('open');
-                    mobileMenuBtn.setAttribute('aria-expanded', 'false');
-                }
-            });
-            
-            // Animation on scroll
-            const observerOptions = {
-                threshold: 0.1,
-                rootMargin: '0px 0px -50px 0px'
-            };
-            
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('animated');
-                        
-                        // Text animation for titles
-                        if (entry.target.classList.contains('text-animate')) {
-                            const words = entry.target.textContent.split(' ');
-                            entry.target.innerHTML = '';
-                            words.forEach(word => {
-                                const span = document.createElement('span');
-                                span.className = 'ta-word';
-                                span.textContent = word + ' ';
-                                entry.target.appendChild(span);
-                            });
-                            
-                            setTimeout(() => {
-                                const taWords = entry.target.querySelectorAll('.ta-word');
-                                taWords.forEach((word, index) => {
-                                    setTimeout(() => {
-                                        word.classList.add('animated');
-                                    }, index * 100);
-                                });
-                            }, 300);
-                        }
-                    }
-                });
-            }, observerOptions);
-            
-            // Observe elements for animation
-            document.querySelectorAll('.animate-on-scroll, .text-animate').forEach(el => {
-                observer.observe(el);
-            });
-            
-            // Tilt effect for cards
-            document.querySelectorAll('.tilt').forEach(card => {
-                card.addEventListener('mousemove', (e) => {
-                    const rect = card.getBoundingClientRect();
-                    const x = e.clientX - rect.left;
-                    const y = e.clientY - rect.top;
-                    
-                    const centerX = rect.width / 2;
-                    const centerY = rect.height / 2;
-                    
-                    const angleY = (x - centerX) / 25;
-                    const angleX = (centerY - y) / 25;
-                    
-                    card.style.transform = `perspective(1000px) rotateX(${angleX}deg) rotateY(${angleY}deg) scale3d(1.02, 1.02, 1.02)`;
-                });
-                
-                card.addEventListener('mouseleave', () => {
-                    card.style.transform = 'perspective(1000px) rotateX(0) rotateY(0) scale3d(1, 1, 1)';
-                });
-            });
-        });
-    </script>
+    <script>/* navigation handled by assets/js/mobile-nav-fix.js */</script>
 </body>
 </html>

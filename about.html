@@ -1123,38 +1123,11 @@
         </div>
     </footer>
 
+    <!-- Mobile Navigation Script -->
+    <script src="assets/js/mobile-nav.js"></script>
+    
     <script>
-        // Mobile Menu Toggle
-        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
-        const mainNav = document.getElementById('mainNav');
-
-        if (mobileMenuBtn && mainNav) {
-            mobileMenuBtn.addEventListener('click', () => {
-                mobileMenuBtn.classList.toggle('active');
-                mainNav.classList.toggle('open');
-            });
-            
-            // Close menu when clicking outside
-            document.addEventListener('click', function(e) {
-                if (!mobileMenuBtn.contains(e.target) && !mainNav.contains(e.target)) {
-                    mobileMenuBtn.classList.remove('active');
-                    mainNav.classList.remove('open');
-                }
-            });
-        }
-        
-        // Handle dropdown clicks on mobile
-        document.querySelectorAll('.dropdown').forEach(dropdown => {
-            const toggle = dropdown.querySelector('.dropdown-toggle');
-            if (toggle) {
-                toggle.addEventListener('click', function(e) {
-                    if (window.innerWidth <= 968) {
-                        e.preventDefault();
-                        dropdown.classList.toggle('active');
-                    }
-                });
-            }
-        });
+        // Mobile navigation is handled by assets/js/mobile-nav.js
         
         // Sticky header
         const header = document.getElementById('mainHeader');
@@ -1241,5 +1214,6 @@
             });
         });
     </script>
+    <script src="assets/js/mobile-nav-fix.js"></script>
 </body>
 </html>

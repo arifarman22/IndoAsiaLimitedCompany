@@ -367,10 +367,14 @@
             display: flex;
             gap: 0.5rem;
             flex-wrap: wrap;
+            position: relative;
+            z-index: 10;
         }
 
         .service-buttons .btn {
             transition: transform 0.2s ease;
+            position: relative;
+            z-index: 10;
         }
 
         .service-card:hover .service-buttons .btn {
@@ -769,7 +773,7 @@
 
         .nav li:last-child a {
             background: var(--accent-gradient);
-            color: #000;
+            color: #ffffff;
             font-weight: 600;
         }
 
@@ -854,6 +858,8 @@
             font-weight: 600;
             cursor: pointer;
             transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
         }
         
         .overlay-btn:hover {
@@ -942,7 +948,7 @@
         /* Responsive */
         @media (max-width: 968px) {
             .mobile-menu-btn {
-                display: flex;
+                display:inline-flex;
             }
 
             .nav {
@@ -1132,7 +1138,7 @@
                                 <div class="overlay-content">
                                     <h4>Success Rate: 98%</h4>
                                     <p>Average cost savings: 25%</p>
-                                    <button class="overlay-btn" onclick="showServiceModal('sourcing')">View Details</button>
+                                    <a href="contact.html" class="overlay-btn">View Details</a>
                                 </div>
                             </div>
                         </div>
@@ -1150,7 +1156,7 @@
                             </ul>
                             <div class="service-buttons">
                                 <a href="contact.html" class="btn btn-primary">Get Quote</a>
-                                <button class="btn btn-secondary" onclick="showServiceModal('sourcing')">Learn More</button>
+                                <a href="contact.html" class="btn btn-secondary">Learn More</a>
                             </div>
                         </div>
                     </article>
@@ -1162,7 +1168,7 @@
                                 <div class="overlay-content">
                                     <h4>Delivery Rate: 99.8%</h4>
                                     <p>Global shipping network</p>
-                                    <button class="overlay-btn" onclick="showServiceModal('logistics')">View Details</button>
+                                    <a href="contact.html" class="overlay-btn">View Details</a>
                                 </div>
                             </div>
                         </div>
@@ -1180,7 +1186,7 @@
                             </ul>
                             <div class="service-buttons">
                                 <a href="contact.html" class="btn btn-primary">Get Quote</a>
-                                <button class="btn btn-secondary" onclick="showServiceModal('logistics')">Learn More</button>
+                                <a href="contact.html" class="btn btn-secondary">Learn More</a>
                             </div>
                         </div>
                     </article>
@@ -1192,7 +1198,7 @@
                                 <div class="overlay-content">
                                     <h4>Quality Score: 99.5%</h4>
                                     <p>ISO certified processes</p>
-                                    <button class="overlay-btn" onclick="showServiceModal('quality')">View Details</button>
+                                    <a href="contact.html" class="overlay-btn">View Details</a>
                                 </div>
                             </div>
                         </div>
@@ -1210,7 +1216,7 @@
                             </ul>
                             <div class="service-buttons">
                                 <a href="contact.html" class="btn btn-primary">Get Quote</a>
-                                <button class="btn btn-secondary" onclick="showServiceModal('quality')">Learn More</button>
+                                <a href="contact.html" class="btn btn-secondary">Learn More</a>
                             </div>
                         </div>
                     </article>
@@ -1222,7 +1228,7 @@
                                 <div class="overlay-content">
                                     <h4>Clearance Rate: 100%</h4>
                                     <p>Expert documentation</p>
-                                    <button class="overlay-btn" onclick="showServiceModal('customs')">View Details</button>
+                                    <a href="contact.html" class="overlay-btn">View Details</a>
                                 </div>
                             </div>
                         </div>
@@ -1240,7 +1246,7 @@
                             </ul>
                             <div class="service-buttons">
                                 <a href="contact.html" class="btn btn-primary">Get Quote</a>
-                                <button class="btn btn-secondary" onclick="showServiceModal('customs')">Learn More</button>
+                                <a href="contact.html" class="btn btn-secondary">Learn More</a>
                             </div>
                         </div>
                     </article>
@@ -1252,7 +1258,7 @@
                                 <div class="overlay-content">
                                     <h4>Client Satisfaction: 98%</h4>
                                     <p>Strategic guidance</p>
-                                    <button class="overlay-btn" onclick="showServiceModal('consultation')">View Details</button>
+                                    <a href="contact.html" class="overlay-btn">View Details</a>
                                 </div>
                             </div>
                         </div>
@@ -1270,7 +1276,7 @@
                             </ul>
                             <div class="service-buttons">
                                 <a href="contact.html" class="btn btn-primary">Get Quote</a>
-                                <button class="btn btn-secondary" onclick="showServiceModal('consultation')">Learn More</button>
+                                <a href="contact.html" class="btn btn-secondary">Learn More</a>
                             </div>
                         </div>
                     </article>
@@ -1282,7 +1288,7 @@
                                 <div class="overlay-content">
                                     <h4>Storage Capacity: 10K+ sqft</h4>
                                     <p>Secure facilities</p>
-                                    <button class="overlay-btn" onclick="showServiceModal('warehousing')">View Details</button>
+                                    <a href="contact.html" class="overlay-btn">View Details</a>
                                 </div>
                             </div>
                         </div>
@@ -1300,7 +1306,7 @@
                             </ul>
                             <div class="service-buttons">
                                 <a href="contact.html" class="btn btn-primary">Get Quote</a>
-                                <button class="btn btn-secondary" onclick="showServiceModal('warehousing')">Learn More</button>
+                                <a href="contact.html" class="btn btn-secondary">Learn More</a>
                             </div>
                         </div>
                     </article>
@@ -1744,15 +1750,31 @@
                 });
             }
             
-            // Handle dropdown clicks on mobile
+            // Handle dropdown clicks on all screen sizes
             dropdowns.forEach(dropdown => {
                 const toggle = dropdown.querySelector('.dropdown-toggle');
                 if (toggle) {
                     toggle.addEventListener('click', function(e) {
-                        if (window.innerWidth <= 968) {
-                            e.preventDefault();
-                            dropdown.classList.toggle('active');
-                        }
+                        e.preventDefault();
+                        
+                        // Close other dropdowns
+                        dropdowns.forEach(otherDropdown => {
+                            if (otherDropdown !== dropdown) {
+                                otherDropdown.classList.remove('active');
+                            }
+                        });
+                        
+                        // Toggle current dropdown
+                        dropdown.classList.toggle('active');
+                    });
+                }
+            });
+            
+            // Close dropdowns when clicking outside
+            document.addEventListener('click', function(e) {
+                if (!e.target.closest('.dropdown')) {
+                    dropdowns.forEach(dropdown => {
+                        dropdown.classList.remove('active');
                     });
                 }
             });
@@ -1936,16 +1958,7 @@
                     card.style.boxShadow = '';
                 });
                 
-                // Shimmer effect on hover
-                card.addEventListener('mouseenter', () => {
-                    const buttons = card.querySelectorAll('.btn');
-                    buttons.forEach(btn => btn.classList.add('btn-shimmer'));
-                });
-                
-                card.addEventListener('mouseleave', () => {
-                    const buttons = card.querySelectorAll('.btn');
-                    buttons.forEach(btn => btn.classList.remove('btn-shimmer'));
-                });
+
             });
         }
         
@@ -2023,47 +2036,7 @@
                     button.style.transform = 'translateY(0) scale(1)';
                     button.style.boxShadow = '';
                 });
-                
-                button.addEventListener('click', (e) => {
-                    // Ripple effect
-                    const ripple = document.createElement('span');
-                    const rect = button.getBoundingClientRect();
-                    const size = Math.max(rect.width, rect.height);
-                    const x = e.clientX - rect.left - size / 2;
-                    const y = e.clientY - rect.top - size / 2;
-                    
-                    ripple.style.cssText = `
-                        position: absolute;
-                        width: ${size}px;
-                        height: ${size}px;
-                        left: ${x}px;
-                        top: ${y}px;
-                        background: rgba(255,255,255,0.5);
-                        border-radius: 50%;
-                        transform: scale(0);
-                        animation: ripple 0.6s linear;
-                        pointer-events: none;
-                    `;
-                    
-                    button.style.position = 'relative';
-                    button.style.overflow = 'hidden';
-                    button.appendChild(ripple);
-                    
-                    setTimeout(() => ripple.remove(), 600);
-                });
             });
-            
-            // Add ripple animation
-            const style = document.createElement('style');
-            style.textContent = `
-                @keyframes ripple {
-                    to {
-                        transform: scale(4);
-                        opacity: 0;
-                    }
-                }
-            `;
-            document.head.appendChild(style);
         }
         
         // Initialize everything when DOM is loaded

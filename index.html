@@ -131,6 +131,7 @@
     <link rel="stylesheet" href="assets/css/header.css">
     <link rel="stylesheet" href="assets/css/footer.css">
     <link rel="stylesheet" href="assets/css/animations.css">
+    <link rel="stylesheet" href="assets/css/dropdown-nav.css">
     <style>
     /* CSS Variables - Professional Theme */
    :root {
@@ -513,7 +514,7 @@
 }
 
 /* Responsive considerations */
-@media (max-width: 768px) {
+@media (max-width: 968px) {
     .nav {
         flex-direction: column;
         gap: 1rem;
@@ -2289,8 +2290,14 @@ h2 {
         </div>
     </footer>
 
-    <script src="assets/js/main.js"></script>
-    <script src="assets/js/mobile-nav-fix.js"></script>
+  <script src="assets/js/mobile-nav-fix.js"></script>
+  
+  
+  <!-- Unified Theme JavaScript -->
+   <script src="assets/js/main.js"></script>
+  <script src="assets/js/theme.js"></script>
+  <script src="assets/js/dropdown-nav.js"></script>
+    
     <script>
    // Wait until DOM is ready
 document.addEventListener('DOMContentLoaded', function () {

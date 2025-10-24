@@ -1,0 +1,138 @@
+/* Reusable Dropdown Navigation Styles */
+
+.dropdown {
+    position: relative;
+}
+
+.dropdown-toggle {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.dropdown-arrow {
+    font-size: 0.8rem;
+    transition: transform 0.3s ease;
+}
+
+.dropdown.active .dropdown-arrow {
+    transform: rotate(180deg);
+}
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: white;
+    min-width: 220px;
+    max-height: 300px;
+    overflow-y: auto;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
+    border-radius: 12px;
+    padding: 0.75rem 0;
+    z-index: 1000;
+    list-style: none;
+    margin: 0;
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    backdrop-filter: blur(10px);
+    animation: dropdownFadeIn 0.3s ease;
+}
+
+.dropdown.active .dropdown-menu {
+    display: block;
+}
+
+@keyframes dropdownFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.dropdown-menu::-webkit-scrollbar {
+    width: 6px;
+}
+
+.dropdown-menu::-webkit-scrollbar-track {
+    background: #f1f5f9;
+    border-radius: 3px;
+}
+
+.dropdown-menu::-webkit-scrollbar-thumb {
+    background: #cbd5e1;
+    border-radius: 3px;
+}
+
+.dropdown-menu::-webkit-scrollbar-thumb:hover {
+    background: #94a3b8;
+}
+
+.dropdown-menu li {
+    margin: 0;
+}
+
+.dropdown-menu li a {
+    display: block;
+    padding: 0.75rem 1.25rem;
+    color: #334155;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.2s ease;
+    border-radius: 0;
+}
+
+.dropdown-menu li a:hover {
+    background: #f8fafc;
+    color: var(--accent, #1a365d);
+    transform: translateX(4px);
+}
+
+/* Mobile responsive */
+@media (max-width: 968px) {
+    .dropdown-menu {
+        position: static;
+        display: none;
+        background: rgba(248, 250, 252, 0.95);
+        box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.1);
+        border-radius: 8px;
+        margin-top: 0.5rem;
+        padding: 0.5rem 0;
+        max-height: 250px;
+    }
+    
+    .dropdown.active .dropdown-menu {
+        display: block;
+        animation: mobileDropdownSlide 0.3s ease;
+    }
+    
+    @keyframes mobileDropdownSlide {
+        from {
+            opacity: 0;
+            max-height: 0;
+        }
+        to {
+            opacity: 1;
+            max-height: 250px;
+        }
+    }
+    
+    .dropdown-menu li a {
+        font-size: 1rem;
+        padding: 0.75rem 1rem;
+        color: #475569;
+        font-weight: 500;
+    }
+    
+    .dropdown-menu li a:hover {
+        background: var(--accent-secondary, #e53e3e);
+        color: white;
+        transform: translateX(0);
+    }
+}

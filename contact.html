@@ -521,7 +521,7 @@
 /* Last item (Contact button) styling */
 .nav li:last-child a {
     background: var(--accent-gradient);
-    color: #000;
+    color: #ffffff;
     font-weight: 600;
 }
 
@@ -531,7 +531,7 @@
 }
 
         /* Responsive considerations */
-        @media (max-width: 768px) {
+        @media (max-width: 968px) {
             .nav {
                 flex-direction: column;
                 gap: 0.5rem;
@@ -1010,11 +1010,12 @@
     </footer>
 
     <!-- JavaScript -->
-    <script src="assets/js/mobile-nav-fix.js"></script>
+    <!-- Mobile Navigation Script -->
+    <script src="assets/js/mobile-nav.js"></script>
+    
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            // Mobile menu functionality is handled centrally in assets/js/main.js
-            // to avoid duplicate bindings across pages.
+            // Mobile navigation is handled by assets/js/mobile-nav.js
             
             // Sticky header on scroll
             const header = document.getElementById('mainHeader');
@@ -1027,41 +1028,6 @@
                     }
                 });
             }
-
-            // Mobile Navigation Toggle (fixed for correct button ID)
-            const mobileMenuBtn = document.getElementById('mobileMenuBtn');
-            const nav = document.getElementById('mainNav');
-
-            if (mobileMenuBtn && nav) {
-                mobileMenuBtn.addEventListener('click', () => {
-                    mobileMenuBtn.classList.toggle('active');
-                    nav.classList.toggle('open');
-                });
-
-                // Close mobile menu when clicking outside
-                document.addEventListener('click', (e) => {
-                    if (nav.classList.contains('open') && !nav.contains(e.target) && !mobileMenuBtn.contains(e.target)) {
-                        mobileMenuBtn.classList.remove('active');
-                        nav.classList.remove('open');
-                    }
-                });
-            }
-
-            // Dropdown menu functionality for mobile
-            const dropdowns = document.querySelectorAll('.dropdown');
-            dropdowns.forEach(dropdown => {
-                const dropdownToggle = dropdown.querySelector('a');
-                const dropdownMenu = dropdown.querySelector('.dropdown-menu');
-                
-                if (dropdownToggle && dropdownMenu) {
-                    dropdownToggle.addEventListener('click', (e) => {
-                        if (window.innerWidth <= 968) {
-                            e.preventDefault();
-                            dropdown.classList.toggle('active');
-                        }
-                    });
-                }
-            });
 
 
 
@@ -1147,5 +1113,6 @@
     </script>
     <!-- Unified Theme JavaScript -->
     <script src="assets/js/theme.js"></script>
+    <script src="assets/js/mobile-nav-fix.js"></script>
 </body>
 </html>
