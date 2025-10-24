@@ -1124,7 +1124,7 @@
     </footer>
 
     <!-- Mobile Navigation Script -->
-    <script src="assets/js/mobile-nav.js"></script>
+   
     
     <script>
         // Mobile navigation is handled by assets/js/mobile-nav.js
@@ -1199,7 +1199,58 @@
                 parallax.style.transform = `translateY(${scrolled * 0.5}px)`;
             }
         });
-
+         function initMobileMenu() {
+            const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+            const mainNav = document.getElementById('mainNav');
+            const dropdowns = document.querySelectorAll('.dropdown');
+            
+            if (mobileMenuBtn && mainNav) {
+                mobileMenuBtn.addEventListener('click', function() {
+                    mobileMenuBtn.classList.toggle('active');
+                    mainNav.classList.toggle('open');
+                });
+                
+                // Close menu when clicking outside
+                document.addEventListener('click', function(e) {
+                    if (!mobileMenuBtn.contains(e.target) && !mainNav.contains(e.target)) {
+                        mobileMenuBtn.classList.remove('active');
+                        mainNav.classList.remove('open');
+                    }
+                });
+            }
+            
+            // Handle dropdown clicks on all screen sizes
+            dropdowns.forEach(dropdown => {
+                const toggle = dropdown.querySelector('.dropdown-toggle');
+                if (toggle) {
+                    toggle.addEventListener('click', function(e) {
+                        e.preventDefault();
+                        
+                        // Close other dropdowns
+                        dropdowns.forEach(otherDropdown => {
+                            if (otherDropdown !== dropdown) {
+                                otherDropdown.classList.remove('active');
+                            }
+                        });
+                        
+                        // Toggle current dropdown
+                        dropdown.classList.toggle('active');
+                    });
+                }
+            });
+            
+            // Close dropdowns when clicking outside
+            document.addEventListener('click', function(e) {
+                if (!e.target.closest('.dropdown')) {
+                    dropdowns.forEach(dropdown => {
+                        dropdown.classList.remove('active');
+                    });
+                }
+            });
+        }
+        
+        // Initialize mobile menu
+        initMobileMenu();
         // Smooth Scrolling
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
@@ -1214,6 +1265,6 @@
             });
         });
     </script>
-    <script src="assets/js/mobile-nav-fix.js"></script>
+    
 </body>
 </html>

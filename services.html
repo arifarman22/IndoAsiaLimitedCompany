@@ -296,7 +296,8 @@ p {
   transition: var(--transition);
 }
 
-.dropdown:hover .dropdown-arrow {
+.dropdown:hover .dropdown-arrow,
+.dropdown.active .dropdown-arrow {
   transform: rotate(180deg);
 }
 
@@ -315,7 +316,10 @@ p {
   list-style: none;
 }
 
-.dropdown:hover .dropdown-menu { display: block; }
+.dropdown:hover .dropdown-menu,
+.dropdown.active .dropdown-menu { 
+  display: block;
+}
 
 .dropdown-menu li a {
   padding: 0.75rem 1rem;
@@ -611,6 +615,9 @@ p {
     border-radius: 8px;
     margin-top: 0.5rem;
     padding: 0.5rem 0;
+    opacity: 1;
+    transform: none;
+    pointer-events: auto;
   }
 
   .dropdown.active .dropdown-menu {
@@ -1580,6 +1587,28 @@ p {
       });
     });
     
+    // Simple dropdown functionality
+    document.querySelectorAll('.dropdown-toggle').forEach(toggle => {
+      toggle.addEventListener('click', function(e) {
+        e.preventDefault();
+        const dropdown = this.closest('.dropdown');
+        const isActive = dropdown.classList.contains('active');
+        
+        // Close all dropdowns
+        document.querySelectorAll('.dropdown').forEach(d => d.classList.remove('active'));
+        
+        // Toggle current dropdown
+        if (!isActive) dropdown.classList.add('active');
+      });
+    });
+    
+    // Close dropdowns when clicking outside
+    document.addEventListener('click', function(e) {
+      if (!e.target.closest('.dropdown')) {
+        document.querySelectorAll('.dropdown').forEach(d => d.classList.remove('active'));
+      }
+    });
+    
     // Add hover effects to timeline dots
     document.querySelectorAll('.timeline-dot').forEach(dot => {
       dot.addEventListener('mouseenter', () => {
@@ -1707,14 +1736,11 @@ p {
   });
   </script>
   
-  <script src="assets/js/mobile-nav-fix.js"></script>
-  <script>
-  // Simple mobile navigation fix
   
-  </script>
+  
   
   <!-- Unified Theme JavaScript -->
   <script src="assets/js/theme.js"></script>
-  <script src="assets/js/dropdown-nav.js"></script>
+  
 </body>
 </html>

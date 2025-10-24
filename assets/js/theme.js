@@ -55,16 +55,29 @@ document.addEventListener('DOMContentLoaded', function() {
         
         if (!toggle || !menu) return;
 
-        // Mobile dropdown toggle
+        // Click toggle for all screen sizes
         toggle.addEventListener('click', function(e) {
-            if (window.innerWidth <= 968) {
-                e.preventDefault();
-                dropdown.classList.toggle('active');
-                menu.classList.toggle('show');
-            }
+            e.preventDefault();
+            
+            // Close other dropdowns
+            document.querySelectorAll('.dropdown').forEach(otherDropdown => {
+                if (otherDropdown !== dropdown) {
+                    otherDropdown.classList.remove('active');
+                }
+            });
+            
+            // Toggle current dropdown
+            dropdown.classList.toggle('active');
         });
-
-        // Desktop hover behavior is handled by CSS
+    });
+    
+    // Close dropdowns when clicking outside
+    document.addEventListener('click', function(e) {
+        if (!e.target.closest('.dropdown')) {
+            document.querySelectorAll('.dropdown').forEach(dropdown => {
+                dropdown.classList.remove('active');
+            });
+        }
     });
 
     // ===== STICKY HEADER =====

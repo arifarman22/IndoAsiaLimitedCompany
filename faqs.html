@@ -290,7 +290,7 @@
     transition: var(--transition);
 }
 
-.dropdown:hover .dropdown-arrow {
+.dropdown.active .dropdown-arrow {
     transform: rotate(180deg);
 }
 
@@ -310,8 +310,11 @@
     margin: 0;
 }
 
-.dropdown:hover .dropdown-menu {
-    display: block;
+.dropdown.active .dropdown-menu {
+    display: block !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: translateY(0) !important;
 }
 
 .dropdown-menu li {
@@ -414,7 +417,7 @@
     z-index: 100;
 }
 
-.dropdown:hover .dropdown-menu {
+.dropdown.active .dropdown-menu {
     opacity: 1;
     visibility: visible;
     transform: translateY(0);
@@ -584,7 +587,7 @@
         <li><a href="index.html">Home</a></li>
         <li><a href="services.html">Our Process</a></li>
         <li class="dropdown">
-            <a href="#" class="dropdown-toggle">Our Services <span class="dropdown-arrow">▼</span></a>
+            <a href="#" class="dropdown-toggle" onclick="toggleDropdown(this); return false;">Our Services <span class="dropdown-arrow">▼</span></a>
             <ul class="dropdown-menu">
                 <li><a href="coreServices.html">Core Services</a></li>
                 <li><a href="additionalServices.html">Additional Services</a></li>
@@ -593,7 +596,7 @@
         </li>
         <li><a href="features.html">Features</a></li>
         <li class="dropdown">
-            <a href="#" class="dropdown-toggle">Resources <span class="dropdown-arrow">▼</span></a>
+            <a href="#" class="dropdown-toggle" onclick="toggleDropdown(this); return false;">Resources <span class="dropdown-arrow">▼</span></a>
             <ul class="dropdown-menu">
                 <li><a href="blog.html">Blog</a></li>
                 <li><a href="faqs.html">FAQs</a></li>
@@ -859,9 +862,139 @@
         </div>
     </footer>
 
-    <script>/* navigation handled by assets/js/mobile-nav-fix.js */</script>
-    <script src="assets/js/animations.js"></script>
-    <script src="assets/js/auto-animate.js"></script>
+    <script>
+        // Mobile navigation functionality
+        function initMobileMenu() {
+            const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+            const mainNav = document.getElementById('mainNav');
+            
+            if (mobileMenuBtn && mainNav) {
+                mobileMenuBtn.addEventListener('click', function() {
+                    mobileMenuBtn.classList.toggle('active');
+                    mainNav.classList.toggle('open');
+                });
+                
+                // Close menu when clicking outside
+                document.addEventListener('click', function(e) {
+                    if (!mobileMenuBtn.contains(e.target) && !mainNav.contains(e.target)) {
+                        mobileMenuBtn.classList.remove('active');
+                        mainNav.classList.remove('open');
+                    }
+                });
+            }
+        }
+        
+        // Dropdown functionality
+        function initDropdowns() {
+            // Get all dropdown toggles directly
+            const dropdownToggles = document.querySelectorAll('.dropdown-toggle');
+            
+            dropdownToggles.forEach(toggle => {
+                toggle.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    const dropdown = this.closest('.dropdown');
+                    if (!dropdown) return;
+                    
+                    // Toggle this dropdown
+                    const isActive = dropdown.classList.contains('active');
+                    
+                    // Close all dropdowns first
+                    document.querySelectorAll('.dropdown').forEach(d => {
+                        d.classList.remove('active');
+                    });
+                    
+                    // If it wasn't active, open it
+                    if (!isActive) {
+                        dropdown.classList.add('active');
+                    }
+                });
+            });
+            
+            // Close dropdowns when clicking outside
+            document.addEventListener('click', function(e) {
+                if (!e.target.closest('.dropdown')) {
+                    document.querySelectorAll('.dropdown').forEach(dropdown => {
+                        dropdown.classList.remove('active');
+                    });
+                }
+            });
+        }
+        
+        // FAQ functionality
+        function initFAQs() {
+            const faqQuestions = document.querySelectorAll('.faq-question');
+            
+            faqQuestions.forEach(question => {
+                question.addEventListener('click', function() {
+                    const faqItem = this.parentElement;
+                    const isOpen = faqItem.classList.contains('open');
+                    
+                    // Close all other FAQs
+                    document.querySelectorAll('.faq-item').forEach(item => {
+                        if (item !== faqItem) {
+                            item.classList.remove('open');
+                            item.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
+                            item.querySelector('.faq-answer').setAttribute('aria-hidden', 'true');
+                        }
+                    });
+                    
+                    // Toggle current FAQ
+                    if (isOpen) {
+                        faqItem.classList.remove('open');
+                        this.setAttribute('aria-expanded', 'false');
+                        faqItem.querySelector('.faq-answer').setAttribute('aria-hidden', 'true');
+                    } else {
+                        faqItem.classList.add('open');
+                        this.setAttribute('aria-expanded', 'true');
+                        faqItem.querySelector('.faq-answer').setAttribute('aria-hidden', 'false');
+                    }
+                });
+            });
+        }
+        
+        // Animation observer
+        function initAnimations() {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('animated');
+                    }
+                });
+            }, { threshold: 0.1 });
+            
+            document.querySelectorAll('.animate-on-scroll').forEach(el => {
+                observer.observe(el);
+            });
+        }
+        
+        // Simple dropdown toggle function
+        function toggleDropdown(element) {
+            const dropdown = element.closest('.dropdown');
+            if (!dropdown) return;
+            
+            const isActive = dropdown.classList.contains('active');
+            
+            // Close all dropdowns
+            document.querySelectorAll('.dropdown').forEach(d => {
+                d.classList.remove('active');
+            });
+            
+            // If it wasn't active, open it
+            if (!isActive) {
+                dropdown.classList.add('active');
+            }
+        }
+        
+        // Initialize everything
+        document.addEventListener('DOMContentLoaded', function() {
+            initMobileMenu();
+            initDropdowns();
+            initFAQs();
+            initAnimations();
+        });
+    </script>
+
 </body>
 
 </html>

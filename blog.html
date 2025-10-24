@@ -1298,6 +1298,61 @@
         </div>
     </footer>
 
-    <script>/* navigation handled by assets/js/mobile-nav-fix.js */</script>
+    <script>
+        // Mobile navigation functionality
+        function initMobileMenu() {
+            const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+            const mainNav = document.getElementById('mainNav');
+            const dropdowns = document.querySelectorAll('.dropdown');
+            
+            if (mobileMenuBtn && mainNav) {
+                mobileMenuBtn.addEventListener('click', function() {
+                    mobileMenuBtn.classList.toggle('active');
+                    mainNav.classList.toggle('open');
+                });
+                
+                // Close menu when clicking outside
+                document.addEventListener('click', function(e) {
+                    if (!mobileMenuBtn.contains(e.target) && !mainNav.contains(e.target)) {
+                        mobileMenuBtn.classList.remove('active');
+                        mainNav.classList.remove('open');
+                    }
+                });
+            }
+            
+            // Handle dropdown clicks
+            dropdowns.forEach(dropdown => {
+                const toggle = dropdown.querySelector('.dropdown-toggle');
+                if (toggle) {
+                    toggle.addEventListener('click', function(e) {
+                        e.preventDefault();
+                        dropdown.classList.toggle('active');
+                    });
+                }
+            });
+        }
+        
+        // Animation observer
+        function initAnimations() {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('animated');
+                    }
+                });
+            }, { threshold: 0.1 });
+            
+            document.querySelectorAll('.animate-on-scroll').forEach(el => {
+                observer.observe(el);
+            });
+        }
+        
+        // Initialize everything
+        document.addEventListener('DOMContentLoaded', function() {
+            initMobileMenu();
+            initAnimations();
+        });
+    </script>
+   
 </body>
 </html>
