@@ -124,7 +124,7 @@ a:hover {
 .container {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 2rem;
+    padding: 0 1rem;
 }
 
 section {
@@ -327,8 +327,8 @@ p {
 
 .pricing-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2.5rem;
     margin-top: 3rem;
     padding-top: 2rem;
 }
@@ -336,7 +336,7 @@ p {
 .pricing-card {
     background: var(--bg-secondary);
     border-radius: var(--border-radius);
-    padding: 2.5rem;
+    padding: 1.5rem;
     text-align: center;
     border: 1px solid var(--border);
     transition: var(--transition);
@@ -476,7 +476,7 @@ p {
 
 .cta-content p {
     margin-bottom: 2rem;
-    color: rgba(0, 0, 0, 0.8);
+    color: white;
     max-width: 600px;
     margin-left: auto;
     margin-right: auto;
@@ -502,7 +502,7 @@ p {
 .cta-buttons .btn.btn-secondary {
     background: transparent;
     border: 2px solid rgba(0, 0, 0, 0.9);
-    color: rgba(0, 0, 0, 0.9);
+    color: white;
 }
 
 .cta-buttons .btn:hover {
@@ -1348,6 +1348,14 @@ p {
             .comparison-item {
                 padding: 1rem;
             }
+        }
+
+        .plans-hero .btn-primary {
+            color: white;
+        }
+
+        .plans-hero .btn-primary:hover {
+            color: white;
         }
 
         @media (prefers-reduced-motion: reduce) {

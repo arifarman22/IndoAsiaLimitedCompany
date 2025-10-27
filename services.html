@@ -1374,13 +1374,15 @@ p {
 </section>
 
     <!-- CTA Section -->
-    <section class="cta">
+    <section class="cta-section">
         <div class="container">
             <div class="cta-content">
-                <h2>Ready to Transform Your Business?</h2>
-                <p>Join hundreds of successful Bangladeshi businesses that trust us with their import needs.</p>
-                <a href="contact.html" class="btn">Get Started Today</a>
-                <a href="services.html" class="btn">Explore Services</a>
+                <h2 class="scale-in">Ready to Transform Your Business?</h2>
+                <p class="fade-in">Join hundreds of successful Bangladeshi businesses that trust us with their import needs.</p>
+                <div class="cta-buttons fade-in-left">
+                    <a href="contact.html" class="btn btn-primary">Get Started Today</a>
+                    <a href="coreServices.html" class="btn btn-secondary">Explore Services</a>
+                </div>
             </div>
         </div>
     </section>
@@ -1562,6 +1564,30 @@ p {
     event.target.style.background = 'var(--accent)';
     event.target.style.color = 'white';
   }
+  
+  // Country name animation
+  const countries = ['China', 'UK', 'USA', 'India', 'Pakistan', 'South Korea', 'Dubai', 'Thailand'];
+  let currentIndex = 0;
+  const countryElement = document.getElementById('country-name-services');
+  
+  function changeCountry() {
+    if (!countryElement) return;
+    
+    countryElement.classList.add('country-slide-out');
+    
+    setTimeout(() => {
+      currentIndex = (currentIndex + 1) % countries.length;
+      countryElement.textContent = countries[currentIndex];
+      countryElement.classList.remove('country-slide-out');
+      countryElement.classList.add('country-slide-in');
+      
+      setTimeout(() => {
+        countryElement.classList.remove('country-slide-in');
+      }, 300);
+    }, 300);
+  }
+  
+  setInterval(changeCountry, 3000);
   
   // Page script: sticky header, service card behavior, and IntersectionObserver-based entrance animations
   document.addEventListener('DOMContentLoaded', function() {

@@ -551,6 +551,7 @@
     .hero-content h1 {
         font-size: 3.5rem;
         margin-bottom: 1.5rem;
+        line-height: 1.4;
     }
 
     .hero-content p {
@@ -1045,6 +1046,21 @@
         opacity: 1;
         transform: translateY(0);
     }
+    
+    .fade-in-left {
+        opacity: 1;
+        transform: translateX(0);
+    }
+    
+    .fade-in-right {
+        opacity: 1;
+        transform: translateX(0);
+    }
+    
+    .scale-in {
+        opacity: 1;
+        transform: scale(1);
+    }
 
     /* Typing Animation */
     .typing-animation {
@@ -1063,6 +1079,15 @@
         opacity: 1;
         transform: translateY(0);
         transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    }
+    
+    /* Show all animation elements immediately */
+    .fade-in.show-fallback,
+    .fade-in-left.show-fallback,
+    .fade-in-right.show-fallback,
+    .scale-in.show-fallback {
+        opacity: 1;
+        transform: translateY(0) translateX(0) scale(1);
     }
 
     .typing-cursor {
@@ -1553,6 +1578,85 @@ h2 {
     box-shadow: 0 15px 40px rgba(220, 38, 38, 0.3);
 }
 
+/* New H1 Animations */
+@keyframes slide-up {
+    0% {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes glow {
+    0% {
+        filter: brightness(1) drop-shadow(0 0 5px rgba(24, 62, 108, 0.3));
+        transform: scale(1);
+    }
+    100% {
+        filter: brightness(1.2) drop-shadow(0 0 20px rgba(236, 30, 36, 0.6));
+        transform: scale(1.05);
+    }
+}
+
+.slide-up-animation {
+    animation: slide-up 1.2s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+/* Text Scroller Animation */
+@keyframes textScroll {
+    0% { transform: translateY(100%); opacity: 0; visibility: hidden; }
+    2% { transform: translateY(0); opacity: 1; visibility: visible; }
+    10% { transform: translateY(0); opacity: 1; visibility: visible; }
+    12% { transform: translateY(-100%); opacity: 0; visibility: hidden; }
+    100% { transform: translateY(-100%); opacity: 0; visibility: hidden; }
+}
+
+.text-scroller {
+    display: inline-block;
+    overflow: visible;
+    height: 1.3em;
+    position: relative;
+    vertical-align: middle;
+    min-width: 250px;
+    line-height: 1.3;
+}
+
+.text-scroller span {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: auto;
+    animation: textScroll 24s infinite;
+    background: var(--accent-gradient);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 900;
+    opacity: 0;
+    visibility: hidden;
+    white-space: nowrap;
+}
+
+.text-scroller span:nth-child(1) { animation-delay: 0s; }
+.text-scroller span:nth-child(2) { animation-delay: 3s; }
+.text-scroller span:nth-child(3) { animation-delay: 6s; }
+.text-scroller span:nth-child(4) { animation-delay: 9s; }
+.text-scroller span:nth-child(5) { animation-delay: 12s; }
+.text-scroller span:nth-child(6) { animation-delay: 15s; }
+.text-scroller span:nth-child(7) { animation-delay: 18s; }
+.text-scroller span:nth-child(8) { animation-delay: 21s; }
+
+@media (max-width: 768px) {
+    .text-scroller {
+        min-width: 180px;
+        height: 1.2em;
+    }
+}
+
 /* Performance optimizations */
 @media (prefers-reduced-motion: reduce) {
     *,
@@ -1621,12 +1725,12 @@ h2 {
         <section class="hero" aria-label="Hero section">
             <div class="container">
                 <div class="hero-content">
-                    <h1 class="fade-in typing-animation" id="hero-title">Seamless Imports<br><span class="accent-text">from <span id="country-name">Dubai</span> To Bangladesh</span></h1>
-                    <p class="fade-in typing-animation" id="hero-subtitle">Connect with verified manufacturers across multiple countries. We deliver end-to-end import solutions with 500+ successful projects, 99.8% on-time delivery, and complete transparency. Your trusted partner for international trade excellence.</p>
+                    <h1 class="fade-in slide-up-animation" id="hero-title" style="color: var(--text-primary); font-weight: 900;">Strategic Import Solutions from<br> <div class="text-scroller"><span>China</span><span>UK</span><span>USA</span><span>India</span><span>Pakistan</span><span>South Korea</span><span>Dubai</span><span>Thailand</span></div> to <span style="color: #dc2626; font-weight: 900; animation: pulse 3s ease-in-out infinite;">Bangladesh</span></h1>
+                    <p class="fade-in typing-animation" id="hero-subtitle">Partner with industry-leading import specialists for comprehensive supply chain management. We provide end-to-end procurement solutions with 500+ successful projects, 99.8% on-time delivery, and complete operational transparency. Your strategic partner for international trade excellence.</p>
                     <div class="hero-buttons fade-in typing-animation" id="hero-buttons">
-                        <a href="services.html" class="btn btn-primary" style="background: linear-gradient(135deg, #dc2626, #ea580c, #2563eb); color: white; box-shadow: 0 8px 25px rgba(220, 38, 38, 0.4); border: 2px solid transparent; padding: 16px 32px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; font-size: 14px;" aria-label="Explore our import services">🚀 Explore Services</a>
+                        <a href="services.html" class="btn btn-primary" style="background: linear-gradient(135deg, #dc2626, #ea580c, #2563eb); color: white; box-shadow: 0 8px 25px rgba(220, 38, 38, 0.4); border: 2px solid transparent; padding: 16px 32px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; font-size: 14px;" aria-label="Explore our import services">View Our Solutions</a>
                         <a href="contact.html" class="btn btn-secondary" style="background: linear-gradient(135deg, rgba(220, 38, 38, 0.1), rgba(37, 99, 235, 0.1)); color: #dc2626; border: 2px solid #dc2626; backdrop-filter: blur(10px); padding: 16px 32px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; font-size: 14px;"
-                            aria-label="Contact us for import consultation">📞 Contact Us</a>
+                            aria-label="Contact us for import consultation">Schedule Consultation</a>
                     </div>
                 </div>
             </div>
@@ -1691,7 +1795,7 @@ h2 {
                         </div>
                         
                         <div class="card-footer">
-                            <a href="features.html#sourcing" class="premium-btn" aria-label="Learn more about sourcing">
+                            <a href="contact.html" class="premium-btn" aria-label="Contact us about sourcing">
                                 <span>Explore Sourcing</span>
                                 <svg class="btn-arrow" viewBox="0 0 24 24" fill="none">
                                     <path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2"/>
@@ -1747,7 +1851,7 @@ h2 {
                         </div>
                         
                         <div class="card-footer">
-                            <a href="features.html#logistics" class="premium-btn" aria-label="Learn more about logistics">
+                            <a href="contact.html" class="premium-btn" aria-label="Learn more about logistics">
                                 <span>Explore Logistics</span>
                                 <svg class="btn-arrow" viewBox="0 0 24 24" fill="none">
                                     <path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2"/>
@@ -1803,7 +1907,7 @@ h2 {
                         </div>
                         
                         <div class="card-footer">
-                            <a href="features.html#solutions" class="premium-btn" aria-label="Learn more about customs solutions">
+                            <a href="contact.html" class="premium-btn" aria-label="Learn more about customs solutions">
                                 <span>Explore Solutions</span>
                                 <svg class="btn-arrow" viewBox="0 0 24 24" fill="none">
                                     <path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2"/>
@@ -2114,78 +2218,237 @@ h2 {
         </section>
 
         <!-- Differentiators section -->
-        <section class="comparison-section" aria-label="What sets us apart from other sourcing agents">
+        <section class="comparison-section" style="padding: 6rem 0; background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);" aria-label="What sets us apart from other sourcing agents">
             <div class="container">
                 <h2 class="text-center fade-in">What Sets Us <span class="accent-text">Apart</span> From Other Sourcing Agents</h2>
                 <p class="text-center subtitle fade-in">Practical advantages that reduce risk, save time, and improve margins</p>
 
-                <div class="features-grid stagger-container" style="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));">
-                    <div class="card accented scale-in">
-                        <div class="icon-accent" style="width: 60px; height: 60px; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem; background: transparent; border-radius: 50%; transition: transform 0.3s ease;">
-                            <img src="assets/icons/risk.png" alt="Risk Reduction" style="width: 50px; height: 50px; object-fit: contain;">
+                <div class="features-grid stagger-container" style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 2rem; margin-top: 3rem;">
+                    <article class="enhanced-feature-card floating scale-in">
+                        <div class="card-header">
+                            <div class="card-number">01</div>
+                            <div class="card-icon-wrapper">
+                                <img src="assets/icons/risk.png" alt="Risk Reduction" class="card-icon-img">
+                            </div>
+                            <h3>🛡️ Risk Reduction</h3>
                         </div>
-                        <h3 style="color: var(--accent); margin-bottom: 0.75rem;">Risk Reduction</h3>
-                        <ul class="feature-list">
-                            <li>Factory audits and compliance screening</li>
-                            <li>Contracted specs with penalty clauses</li>
-                            <li>Payment milestones tied to QC stages</li>
-                        </ul>
-                    </div>
-                    <div class="card accented scale-in">
-                        <div class="icon-accent" style="width: 60px; height: 60px; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem; background: transparent; border-radius: 50%; transition: transform 0.3s ease;">
-                            <img src="assets/icons/quality.png" alt="Quality Assurance" style="width: 50px; height: 50px; object-fit: contain;">
+                        <div class="card-content">
+                            <div class="feature-list">
+                                <div class="feature-item">
+                                    <span class="feature-icon">✓</span>
+                                    <span>Factory audits and compliance screening</span>
+                                </div>
+                                <div class="feature-item">
+                                    <span class="feature-icon">✓</span>
+                                    <span>Contracted specs with penalty clauses</span>
+                                </div>
+                                <div class="feature-item">
+                                    <span class="feature-icon">✓</span>
+                                    <span>Payment milestones tied to QC stages</span>
+                                </div>
+                            </div>
                         </div>
-                        <h3 style="color: var(--accent); margin-bottom: 0.75rem;">Quality Assurance</h3>
-                        <ul class="feature-list">
-                            <li>Pre‑production sample verification</li>
-                            <li>In‑line and pre‑shipment inspections</li>
-                            <li>Actionable photo/video inspection reports</li>
-                        </ul>
-                    </div>
-                    <div class="card accented scale-in">
-                        <div class="icon-accent" style="width: 60px; height: 60px; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem; background: transparent; border-radius: 50%; transition: transform 0.3s ease;">
-                            <img src="assets/icons/speed.png" alt="Speed & Visibility" style="width: 50px; height: 50px; object-fit: contain;">
+                    </article>
+                    
+                    <article class="enhanced-feature-card floating scale-in">
+                        <div class="card-header">
+                            <div class="card-number">02</div>
+                            <div class="card-icon-wrapper">
+                                <img src="assets/icons/quality.png" alt="Quality Assurance" class="card-icon-img">
+                            </div>
+                            <h3>⚡ Quality Assurance</h3>
                         </div>
-                        <h3 style="color: var(--accent); margin-bottom: 0.75rem;">Speed & Visibility</h3>
-                        <ul class="feature-list">
-                            <li>Fast supplier shortlist within days</li>
-                            <li>Live progress updates and timelines</li>
-                            <li>Optimized shipping with tracking</li>
-                        </ul>
-                    </div>
-                    <div class="card accented scale-in">
-                        <div class="icon-accent" style="width: 60px; height: 60px; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem; background: transparent; border-radius: 50%; transition: transform 0.3s ease;">
-                            <img src="assets/icons/cost-control.png" alt="Cost Control" style="width: 50px; height: 50px; object-fit: contain;">
+                        <div class="card-content">
+                            <div class="feature-list">
+                                <div class="feature-item">
+                                    <span class="feature-icon">✓</span>
+                                    <span>Pre‑production sample verification</span>
+                                </div>
+                                <div class="feature-item">
+                                    <span class="feature-icon">✓</span>
+                                    <span>In‑line and pre‑shipment inspections</span>
+                                </div>
+                                <div class="feature-item">
+                                    <span class="feature-icon">✓</span>
+                                    <span>Actionable photo/video inspection reports</span>
+                                </div>
+                            </div>
                         </div>
-                        <h3 style="color: var(--accent); margin-bottom: 0.75rem;">Cost Control</h3>
-                        <ul class="feature-list">
-                            <li>Negotiated factory‑direct pricing</li>
-                            <li>Consolidation to reduce freight</li>
-                            <li>Clear, all‑in quotations—no surprises</li>
-                        </ul>
-                    </div>
+                    </article>
+                    
+                    <article class="enhanced-feature-card floating scale-in">
+                        <div class="card-header">
+                            <div class="card-number">03</div>
+                            <div class="card-icon-wrapper">
+                                <img src="assets/icons/speed.png" alt="Speed & Visibility" class="card-icon-img">
+                            </div>
+                            <h3>🚀 Speed & Visibility</h3>
+                        </div>
+                        <div class="card-content">
+                            <div class="feature-list">
+                                <div class="feature-item">
+                                    <span class="feature-icon">✓</span>
+                                    <span>Fast supplier shortlist within days</span>
+                                </div>
+                                <div class="feature-item">
+                                    <span class="feature-icon">✓</span>
+                                    <span>Live progress updates and timelines</span>
+                                </div>
+                                <div class="feature-item">
+                                    <span class="feature-icon">✓</span>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+                    
+                    <article class="enhanced-feature-card floating scale-in">
+                        <div class="card-header">
+                            <div class="card-number">04</div>
+                            <div class="card-icon-wrapper">
+                                <img src="assets/icons/cost-control.png" alt="Cost Control" class="card-icon-img">
+                            </div>
+                            <h3>💰 Cost Control</h3>
+                        </div>
+                        <div class="card-content">
+                            <div class="feature-list">
+                                <div class="feature-item">
+                                    <span class="feature-icon">✓</span>
+                                    <span>Negotiated factory‑direct pricing</span>
+                                </div>
+                                <div class="feature-item">
+                                    <span class="feature-icon">✓</span>
+                                    <span>Consolidation to reduce freight</span>
+                                </div>
+                                <div class="feature-item">
+                                    <span class="feature-icon">✓</span>
+                                    <span>Clear, all‑in quotations—no surprises</span>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
                 </div>
 
-                <div class="text-center fade-in-left" style="margin-top: 2rem;">
+                <div class="text-center fade-in-left" style="margin-top: 3rem;">
                     <a href="contact.html" class="btn btn-primary">Discuss Your Project</a>
                     <a href="services.html" class="btn btn-secondary" style="margin-left: 0.5rem;">See How We Work</a>
                 </div>
             </div>
-            
-            <style>
-                .card.accented:hover .icon-accent {
-                    transform: scale(1.1) rotate(5deg);
-                }
-                
-                .card.accented:hover .icon-accent img {
-                    transform: rotate(10deg);
-                }
-                
-                .card.accented .icon-accent img {
-                    transition: transform 0.3s ease;
-                }
-            </style>
         </section>
+        
+        <style>
+        .enhanced-feature-card {
+            background: linear-gradient(145deg, #ffffff, #f8fafc);
+            border-radius: 20px;
+            padding: 0;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .enhanced-feature-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(135deg, var(--brand-navy), var(--brand-red));
+        }
+        
+        .enhanced-feature-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+        }
+        
+        .enhanced-feature-card .card-header {
+            padding: 2rem 2rem 1rem;
+            text-align: center;
+            position: relative;
+        }
+        
+        .enhanced-feature-card .card-number {
+            position: absolute;
+            top: 1.5rem;
+            right: 1.5rem;
+            width: 35px;
+            height: 35px;
+            background: linear-gradient(135deg, var(--brand-red), #dc2626);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 0.9rem;
+        }
+        
+        .enhanced-feature-card .card-icon-wrapper {
+            width: 70px;
+            height: 70px;
+            margin: 0 auto 1rem;
+            background: linear-gradient(135deg, rgba(26, 54, 93, 0.1), rgba(229, 62, 62, 0.1));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: transform 0.3s ease;
+        }
+        
+        .enhanced-feature-card:hover .card-icon-wrapper {
+            transform: scale(1.1) rotate(5deg);
+        }
+        
+        .enhanced-feature-card .card-icon-img {
+            width: 45px;
+            height: 45px;
+            object-fit: contain;
+            transition: transform 0.3s ease;
+        }
+        
+        .enhanced-feature-card:hover .card-icon-img {
+            transform: rotate(10deg);
+        }
+        
+        .enhanced-feature-card .card-header h3 {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--brand-navy);
+            margin-bottom: 0;
+        }
+        
+        .enhanced-feature-card .card-content {
+            padding: 0 2rem 2rem;
+        }
+        
+        .enhanced-feature-card .feature-list {
+            margin: 0;
+        }
+        
+        .enhanced-feature-card .feature-item {
+            display: flex;
+            align-items: center;
+            padding: 0.5rem 0;
+            color: #475569;
+            font-size: 0.9rem;
+        }
+        
+        .enhanced-feature-card .feature-icon {
+            width: 18px;
+            height: 18px;
+            background: linear-gradient(135deg, var(--brand-red), #dc2626);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.7rem;
+            font-weight: bold;
+            margin-right: 0.8rem;
+            flex-shrink: 0;
+        }
+        </style>
 
         <!-- Professional Testimonials Section -->
         <section class="testimonials-section" aria-label="Client testimonials">
@@ -2290,13 +2553,7 @@ h2 {
         </div>
     </footer>
 
-  <script src="assets/js/mobile-nav-fix.js"></script>
-  
-  
-  <!-- Unified Theme JavaScript -->
-   <script src="assets/js/main.js"></script>
-  <script src="assets/js/theme.js"></script>
-  <script src="assets/js/dropdown-nav.js"></script>
+ 
     
     <script>
    // Wait until DOM is ready
@@ -2416,10 +2673,7 @@ document.addEventListener('DOMContentLoaded', function () {
     
 
 
-    // -------------------
-    // Country name animation
-    // -------------------
-    initCountryAnimation();
+
     
     // -------------------
     // Premium Services Animations
@@ -2430,7 +2684,22 @@ document.addEventListener('DOMContentLoaded', function () {
     // Enhanced Floating Animations
     // -------------------
     initEnhancedFloatingAnimations();
+    
+    // -------------------
+    // Make all sections visible immediately
+    // -------------------
+    makeAllSectionsVisible();
 });
+
+// -------------------
+// Make All Sections Visible
+// -------------------
+function makeAllSectionsVisible() {
+    const hiddenElements = document.querySelectorAll('.fade-in, .fade-in-left, .fade-in-right, .scale-in');
+    hiddenElements.forEach(element => {
+        element.classList.add('show-fallback');
+    });
+}
 
 // -------------------
 // Enhanced Floating Animation Function
@@ -2502,38 +2771,7 @@ function initPremiumServicesAnimations() {
     });
 }
 
-// -------------------
-// Country Animation Function
-// -------------------
-function initCountryAnimation() {
-    const countries = ['China', 'India', 'Pakistan', 'South Korea', 'Dubai', 'Thailand', 'UK', 'USA'];
-    const countryElement = document.getElementById('country-name');
-    let currentIndex = 0;
 
-    if (!countryElement) return;
-
-    // Start animation after 1 second
-    setTimeout(() => {
-        setInterval(() => {
-            // Slide out current country upward
-            countryElement.classList.add('country-slide-out');
-            
-            setTimeout(() => {
-                // Change to next country
-                currentIndex = (currentIndex + 1) % countries.length;
-                countryElement.textContent = countries[currentIndex];
-                
-                // Slide in new country from above
-                countryElement.classList.remove('country-slide-out');
-                countryElement.classList.add('country-slide-in');
-                
-                setTimeout(() => {
-                    countryElement.classList.remove('country-slide-in');
-                }, 300);
-            }, 300);
-        }, 3000); // Change every 3 seconds
-    }, 1000); // Start after 1 second
-}
 
 // -------------------
 // Typing Animation Function (Disabled for hero title to preserve country animation)
@@ -2548,25 +2786,26 @@ function initTypingAnimation() {
     // Show title immediately without typing animation to preserve country name animation
     heroTitle.classList.add('show-fallback');
     
-    // Only animate subtitle and buttons
+    // Store the original subtitle text
     const subtitleText = heroSubtitle.textContent;
     const isMobile = window.innerWidth < 768;
     
+    // Show buttons immediately
+    heroButtons.classList.add('show-fallback');
+    
     if (isMobile) {
         heroSubtitle.classList.add('show-fallback');
-        heroButtons.classList.add('show-fallback');
         return;
     }
 
+    // Clear subtitle and make it visible for typing animation
     heroSubtitle.textContent = '';
+    heroSubtitle.style.opacity = '1';
+    heroSubtitle.classList.remove('typing-animation');
 
     setTimeout(() => {
-        typeText(heroSubtitle, subtitleText, 30, () => {
-            setTimeout(() => {
-                heroButtons.classList.add('animate');
-            }, 500);
-        });
-    }, 500);
+        typeText(heroSubtitle, subtitleText, 20);
+    }, 1500);
 }
 
 function typeText(element, text, speed, callback) {
@@ -2671,8 +2910,8 @@ function initServicesAnimations() {
     <style>
     /* Premium Services Animations */
     .premium-card {
-        opacity: 0;
-        transform: translateY(50px);
+        opacity: 1;
+        transform: translateY(0);
         transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
     }
 
@@ -2805,10 +3044,12 @@ function initServicesAnimations() {
 
     .premium-services-grid {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
-        gap: 2.5rem;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2rem;
         position: relative;
         z-index: 2;
+        max-width: 1400px;
+        margin: 0 auto;
     }
 
     .premium-card {
@@ -3070,6 +3311,20 @@ function initServicesAnimations() {
         transform: translateX(5px);
     }
 
+    @media (max-width: 1200px) {
+        .premium-services-grid {
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+        }
+    }
+    
+    @media (max-width: 968px) {
+        .premium-services-grid {
+            grid-template-columns: 1fr;
+            gap: 2rem;
+        }
+    }
+    
     @media (max-width: 768px) {
         .premium-services-grid {
             grid-template-columns: 1fr;

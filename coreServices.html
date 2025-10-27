@@ -228,6 +228,35 @@
             width: 100%;
             height: 100%;
             z-index: 1;
+            overflow: hidden;
+        }
+        
+        .hero-background::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at 20% 80%, rgba(37, 99, 235, 0.1) 0%, transparent 50%),
+                        radial-gradient(circle at 80% 20%, rgba(220, 38, 38, 0.1) 0%, transparent 50%),
+                        radial-gradient(circle at 40% 40%, rgba(29, 78, 216, 0.05) 0%, transparent 50%);
+            animation: backgroundShift 20s ease-in-out infinite;
+        }
+        
+        @keyframes backgroundShift {
+            0%, 100% {
+                transform: translateX(0) translateY(0) scale(1);
+                opacity: 0.7;
+            }
+            33% { 
+                transform: translateX(-20px) translateY(-10px) scale(1.05);
+                opacity: 0.8;
+            }
+            66% { 
+                transform: translateX(20px) translateY(10px) scale(0.95);
+                opacity: 0.6;
+            }
         }
 
         #particles-js {
@@ -1285,125 +1314,340 @@
         </section>
 
         <!-- Interactive Service Comparison -->
-        <section class="service-comparison" style="padding: 6rem 0; background: var(--bg-secondary);">
+        <section class="service-showcase" style="padding: 6rem 0; background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);">
             <div class="container">
                 <div class="section-header">
-                    <h2 class="slide-left">Service Packages</h2>
-                    <p class="slide-right">Choose the perfect service combination for your business needs</p>
+                    <h2 class="text-center">Explore Our Service Options</h2>
+                    <p class="text-center">Discover detailed information about each service we offer</p>
                 </div>
                 
-                <div class="comparison-tool" style="background: white; border-radius: var(--border-radius); padding: 3rem; box-shadow: 0 4px 20px rgba(0, 102, 204, 0.1); border: 1px solid var(--border);">
-                    <div class="service-selector" style="display: flex; gap: 1rem; margin-bottom: 2rem; flex-wrap: wrap; justify-content: center;">
-                        <button class="service-btn active" onclick="toggleService('sourcing')" data-service="sourcing" style="padding: 0.75rem 1.5rem; border: 2px solid var(--accent); background: var(--accent); color: white; border-radius: 8px; cursor: pointer; transition: all 0.3s ease;">Product Sourcing</button>
-                        <button class="service-btn" onclick="toggleService('logistics')" data-service="logistics" style="padding: 0.75rem 1.5rem; border: 2px solid var(--accent); background: transparent; color: var(--accent); border-radius: 8px; cursor: pointer; transition: all 0.3s ease;">Logistics</button>
-                        <button class="service-btn" onclick="toggleService('quality')" data-service="quality" style="padding: 0.75rem 1.5rem; border: 2px solid var(--accent); background: transparent; color: var(--accent); border-radius: 8px; cursor: pointer; transition: all 0.3s ease;">Quality Assurance</button>
-                        <button class="service-btn" onclick="toggleService('customs')" data-service="customs" style="padding: 0.75rem 1.5rem; border: 2px solid var(--accent); background: transparent; color: var(--accent); border-radius: 8px; cursor: pointer; transition: all 0.3s ease;">Customs</button>
-                    </div>
+                <div class="service-tabs" style="display: flex; justify-content: center; gap: 1rem; margin-bottom: 3rem; flex-wrap: wrap;">
+                    <button class="tab-btn active" onclick="showService('sourcing')" data-tab="sourcing" style="padding: 1rem 2rem; background: var(--accent); color: white; border: none; border-radius: 25px; font-weight: 600; cursor: pointer; transition: all 0.3s ease;">Product Sourcing</button>
+                    <button class="tab-btn" onclick="showService('logistics')" data-tab="logistics" style="padding: 1rem 2rem; background: white; color: var(--accent); border: 2px solid var(--accent); border-radius: 25px; font-weight: 600; cursor: pointer; transition: all 0.3s ease;">Logistics Solutions</button>
+                    <button class="tab-btn" onclick="showService('quality')" data-tab="quality" style="padding: 1rem 2rem; background: white; color: var(--accent); border: 2px solid var(--accent); border-radius: 25px; font-weight: 600; cursor: pointer; transition: all 0.3s ease;">Quality Control</button>
+                    <button class="tab-btn" onclick="showService('customs')" data-tab="customs" style="padding: 1rem 2rem; background: white; color: var(--accent); border: 2px solid var(--accent); border-radius: 25px; font-weight: 600; cursor: pointer; transition: all 0.3s ease;">Customs Support</button>
+                </div>
+                
+                <div class="service-content-cards">
                     
-                    <div class="selected-services" style="margin-bottom: 2rem;">
-                        <h4>Selected Services:</h4>
-                        <div id="selectedServicesList" style="display: flex; gap: 0.5rem; flex-wrap: wrap; margin-top: 0.5rem;">
-                            <span class="selected-tag" data-service="sourcing" style="background: var(--accent); color: white; padding: 0.25rem 0.75rem; border-radius: 20px; font-size: 0.9rem;">Product Sourcing</span>
+                    <!-- Product Sourcing Card -->
+                    <div class="service-card-detail active" id="card-sourcing" style="background: white; border-radius: 20px; padding: 3rem; box-shadow: 0 10px 40px rgba(0,0,0,0.1); border: 1px solid #e2e8f0;">
+                        <div class="card-header" style="text-align: center; margin-bottom: 2rem;">
+                            <div class="service-icon" style="width: 80px; height: 80px; background: linear-gradient(135deg, #dc2626, #ea580c); border-radius: 50%; margin: 0 auto 1rem; display: flex; align-items: center; justify-content: center; color: white; font-size: 2rem; font-weight: bold;">PS</div>
+                            <h3 style="color: var(--accent); font-size: 2rem; margin-bottom: 0.5rem;">Product Sourcing Excellence</h3>
+                            <p style="color: #64748b; font-size: 1.1rem;">Connect with verified manufacturers and secure the best deals</p>
                         </div>
-                    </div>
-                    
-                    <div class="service-details" id="serviceDetails">
-                        <div class="service-detail active" id="detail-sourcing">
-                            <h4 style="color: var(--accent); margin-bottom: 1rem;">Product Sourcing Details</h4>
-                            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem;">
-                                <div>
-                                    <h5>What's Included:</h5>
-                                    <ul style="margin: 0.5rem 0; padding-left: 1.5rem;">
-                                        <li>Supplier verification & background checks</li>
-                                        <li>Product sample acquisition</li>
-                                        <li>Price negotiation</li>
-                                        <li>Contract management</li>
-                                        <li>Quality specifications review</li>
-                                    </ul>
+                        
+                        <div class="card-content" style="display: grid; grid-template-columns: 1fr 1fr; gap: 3rem;">
+                            <div>
+                                <h4 style="color: var(--accent); margin-bottom: 1rem;">What We Deliver</h4>
+                                <div class="feature-list">
+                                    <div class="feature-item" style="display: flex; align-items: center; margin-bottom: 0.75rem;">
+                                        <span style="width: 20px; height: 20px; background: #10b981; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-size: 12px; margin-right: 0.75rem;">✓</span>
+                                        <span>Manufacturer verification and background screening</span>
+                                    </div>
+                                    <div class="feature-item" style="display: flex; align-items: center; margin-bottom: 0.75rem;">
+                                        <span style="width: 20px; height: 20px; background: #10b981; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-size: 12px; margin-right: 0.75rem;">✓</span>
+                                        <span>Product specification matching and customization</span>
+                                    </div>
+                                    <div class="feature-item" style="display: flex; align-items: center; margin-bottom: 0.75rem;">
+                                        <span style="width: 20px; height: 20px; background: #10b981; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-size: 12px; margin-right: 0.75rem;">✓</span>
+                                        <span>Competitive price negotiation and analysis</span>
+                                    </div>
+                                    <div class="feature-item" style="display: flex; align-items: center; margin-bottom: 0.75rem;">
+                                        <span style="width: 20px; height: 20px; background: #10b981; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-size: 12px; margin-right: 0.75rem;">✓</span>
+                                        <span>Sample procurement and quality validation</span>
+                                    </div>
+                                    <div class="feature-item" style="display: flex; align-items: center; margin-bottom: 0.75rem;">
+                                        <span style="width: 20px; height: 20px; background: #10b981; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-size: 12px; margin-right: 0.75rem;">✓</span>
+                                        <span>Contract drafting and legal protection</span>
+                                    </div>
                                 </div>
-                                <div style="background: #f0f9ff; padding: 1.5rem; border-radius: 8px;">
-                                    <h5>Pricing:</h5>
-                                    <p><strong>5-8%</strong> of order value</p>
-                                    <p><strong>Timeline:</strong> 3-7 days</p>
-                                    <p><strong>Suppliers:</strong> 200+ verified</p>
+                            </div>
+                            
+                            <div>
+                                <h4 style="color: var(--accent); margin-bottom: 1rem;">Investment & Returns</h4>
+                                <div class="pricing-info" style="background: #f8fafc; padding: 1.5rem; border-radius: 12px; margin-bottom: 1.5rem;">
+                                    <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
+                                        <span>Service Fee:</span>
+                                        <strong>6-9% of order value</strong>
+                                    </div>
+                                    <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
+                                        <span>Average Savings:</span>
+                                        <strong style="color: #10b981;">18-28%</strong>
+                                    </div>
+                                    <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
+                                        <span>Timeline:</span>
+                                        <strong>7-14 days</strong>
+                                    </div>
+                                    <div style="display: flex; justify-content: space-between;">
+                                        <span>Success Rate:</span>
+                                        <strong style="color: #10b981;">96%</strong>
+                                    </div>
+                                </div>
+                                <div class="bonus-info" style="background: linear-gradient(135deg, #fef3c7, #fde68a); padding: 1rem; border-radius: 8px; text-align: center;">
+                                    <strong>Bonus:</strong> Free market research report worth $500
                                 </div>
                             </div>
                         </div>
+                    </div>
+                    
+                    <!-- Logistics Card -->
+                    <div class="service-card-detail" id="card-logistics" style="display: none; background: white; border-radius: 20px; padding: 3rem; box-shadow: 0 10px 40px rgba(0,0,0,0.1); border: 1px solid #e2e8f0;">
+                        <div class="card-header" style="text-align: center; margin-bottom: 2rem;">
+                            <div class="service-icon" style="width: 80px; height: 80px; background: linear-gradient(135deg, #2563eb, #1d4ed8); border-radius: 50%; margin: 0 auto 1rem; display: flex; align-items: center; justify-content: center; color: white; font-size: 2rem; font-weight: bold;">LS</div>
+                            <h3 style="color: var(--accent); font-size: 2rem; margin-bottom: 0.5rem;">Logistics Solutions</h3>
+                            <p style="color: #64748b; font-size: 1.1rem;">Comprehensive shipping and transportation management</p>
+                        </div>
+                        
+                        <div class="card-content" style="display: grid; grid-template-columns: 1fr 1fr; gap: 3rem;">
+                            <div>
+                                <h4 style="color: var(--accent); margin-bottom: 1rem;">Transportation Options</h4>
+                                <div class="feature-list">
+                                    <div class="feature-item" style="display: flex; align-items: center; margin-bottom: 0.75rem;">
+                                        <span style="width: 20px; height: 20px; background: #3b82f6; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-size: 12px; margin-right: 0.75rem;">S</span>
+                                        <span>Sea freight - Most economical for large shipments</span>
+                                    </div>
+                                    <div class="feature-item" style="display: flex; align-items: center; margin-bottom: 0.75rem;">
+                                        <span style="width: 20px; height: 20px; background: #3b82f6; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-size: 12px; margin-right: 0.75rem;">A</span>
+                                        <span>Air cargo - Fast delivery for urgent orders</span>
+                                    </div>
+                                    <div class="feature-item" style="display: flex; align-items: center; margin-bottom: 0.75rem;">
+                                        <span style="width: 20px; height: 20px; background: #3b82f6; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-size: 12px; margin-right: 0.75rem;">E</span>
+                                        <span>Express courier - Door-to-door premium service</span>
+                                    </div>
+                                    <div class="feature-item" style="display: flex; align-items: center; margin-bottom: 0.75rem;">
+                                        <span style="width: 20px; height: 20px; background: #3b82f6; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-size: 12px; margin-right: 0.75rem;">T</span>
+                                        <span>Real-time tracking and shipment monitoring</span>
+                                    </div>
+                                    <div class="feature-item" style="display: flex; align-items: center; margin-bottom: 0.75rem;">
+                                        <span style="width: 20px; height: 20px; background: #3b82f6; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-size: 12px; margin-right: 0.75rem;">I</span>
+                                        <span>Comprehensive cargo insurance coverage</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div>
+                                <h4 style="color: var(--accent); margin-bottom: 1rem;">Competitive Rates</h4>
+                                <div class="pricing-info" style="background: #f8fafc; padding: 1.5rem; border-radius: 12px; margin-bottom: 1.5rem;">
+                                    <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
+                                        <span>Sea Freight:</span>
+                                        <strong>$3-6/kg</strong>
+                                    </div>
+                                    <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
+                                        <span>Air Freight:</span>
+                                        <strong>$10-18/kg</strong>
+                                    </div>
+                                    <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
+                                        <span>Express:</span>
+                                        <strong>$25-40/kg</strong>
+                                    </div>
+                                    <div style="display: flex; justify-content: space-between;">
+                                        <span>On-time Rate:</span>
+                                        <strong style="color: #10b981;">99.5%</strong>
+                                    </div>
+                                </div>
+                                <div class="bonus-info" style="background: linear-gradient(135deg, #dbeafe, #bfdbfe); padding: 1rem; border-radius: 8px; text-align: center;">
+                                    <strong>Special:</strong> Free 10-day storage at destination
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Quality Control Card -->
+                    <div class="service-card-detail" id="card-quality" style="display: none; background: white; border-radius: 20px; padding: 3rem; box-shadow: 0 10px 40px rgba(0,0,0,0.1); border: 1px solid #e2e8f0;">
+                        <div class="card-header" style="text-align: center; margin-bottom: 2rem;">
+                            <div class="service-icon" style="width: 80px; height: 80px; background: linear-gradient(135deg, #16a34a, #059669); border-radius: 50%; margin: 0 auto 1rem; display: flex; align-items: center; justify-content: center; color: white; font-size: 2rem; font-weight: bold;">QC</div>
+                            <h3 style="color: var(--accent); font-size: 2rem; margin-bottom: 0.5rem;">Quality Control</h3>
+                            <p style="color: #64748b; font-size: 1.1rem;">Rigorous inspection and quality assurance processes</p>
+                        </div>
+                        
+                        <div class="card-content" style="display: grid; grid-template-columns: 1fr 1fr; gap: 3rem;">
+                            <div>
+                                <h4 style="color: var(--accent); margin-bottom: 1rem;">Quality Assurance Process</h4>
+                                <div class="feature-list">
+                                    <div class="feature-item" style="display: flex; align-items: center; margin-bottom: 0.75rem;">
+                                        <span style="width: 20px; height: 20px; background: #16a34a; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-size: 12px; margin-right: 0.75rem;">1</span>
+                                        <span>Factory capability and compliance audit</span>
+                                    </div>
+                                    <div class="feature-item" style="display: flex; align-items: center; margin-bottom: 0.75rem;">
+                                        <span style="width: 20px; height: 20px; background: #16a34a; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-size: 12px; margin-right: 0.75rem;">2</span>
+                                        <span>Pre-production sample approval process</span>
+                                    </div>
+                                    <div class="feature-item" style="display: flex; align-items: center; margin-bottom: 0.75rem;">
+                                        <span style="width: 20px; height: 20px; background: #16a34a; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-size: 12px; margin-right: 0.75rem;">3</span>
+                                        <span>In-line production quality monitoring</span>
+                                    </div>
+                                    <div class="feature-item" style="display: flex; align-items: center; margin-bottom: 0.75rem;">
+                                        <span style="width: 20px; height: 20px; background: #16a34a; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-size: 12px; margin-right: 0.75rem;">4</span>
+                                        <span>Final pre-shipment inspection and testing</span>
+                                    </div>
+                                    <div class="feature-item" style="display: flex; align-items: center; margin-bottom: 0.75rem;">
+                                        <span style="width: 20px; height: 20px; background: #16a34a; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-size: 12px; margin-right: 0.75rem;">5</span>
+                                        <span>Detailed photo and video inspection reports</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div>
+                                <h4 style="color: var(--accent); margin-bottom: 1rem;">Quality Metrics</h4>
+                                <div class="pricing-info" style="background: #f8fafc; padding: 1.5rem; border-radius: 12px; margin-bottom: 1.5rem;">
+                                    <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
+                                        <span>Service Fee:</span>
+                                        <strong>3-4% of order value</strong>
+                                    </div>
+                                    <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
+                                        <span>Defect Rate:</span>
+                                        <strong style="color: #16a34a;">< 2%</strong>
+                                    </div>
+                                    <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
+                                        <span>Inspection Time:</span>
+                                        <strong>2-4 days</strong>
+                                    </div>
+                                    <div style="display: flex; justify-content: space-between;">
+                                        <span>Pass Rate:</span>
+                                        <strong style="color: #16a34a;">98.2%</strong>
+                                    </div>
+                                </div>
+                                <div class="bonus-info" style="background: linear-gradient(135deg, #dcfce7, #bbf7d0); padding: 1rem; border-radius: 8px; text-align: center;">
+                                    <strong>Guarantee:</strong> 100% refund if quality fails
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Customs Support Card -->
+                    <div class="service-card-detail" id="card-customs" style="display: none; background: white; border-radius: 20px; padding: 3rem; box-shadow: 0 10px 40px rgba(0,0,0,0.1); border: 1px solid #e2e8f0;">
+                        <div class="card-header" style="text-align: center; margin-bottom: 2rem;">
+                            <div class="service-icon" style="width: 80px; height: 80px; background: linear-gradient(135deg, #7c3aed, #6d28d9); border-radius: 50%; margin: 0 auto 1rem; display: flex; align-items: center; justify-content: center; color: white; font-size: 2rem; font-weight: bold;">CS</div>
+                            <h3 style="color: var(--accent); font-size: 2rem; margin-bottom: 0.5rem;">Customs Support</h3>
+                            <p style="color: #64748b; font-size: 1.1rem;">Expert customs clearance and compliance management</p>
+                        </div>
+                        
+                        <div class="card-content" style="display: grid; grid-template-columns: 1fr 1fr; gap: 3rem;">
+                            <div>
+                                <h4 style="color: var(--accent); margin-bottom: 1rem;">Customs Services</h4>
+                                <div class="feature-list">
+                                    <div class="feature-item" style="display: flex; align-items: center; margin-bottom: 0.75rem;">
+                                        <span style="width: 20px; height: 20px; background: #7c3aed; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-size: 12px; margin-right: 0.75rem;">D</span>
+                                        <span>Complete documentation preparation</span>
+                                    </div>
+                                    <div class="feature-item" style="display: flex; align-items: center; margin-bottom: 0.75rem;">
+                                        <span style="width: 20px; height: 20px; background: #7c3aed; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-size: 12px; margin-right: 0.75rem;">T</span>
+                                        <span>Duty and tax calculation optimization</span>
+                                    </div>
+                                    <div class="feature-item" style="display: flex; align-items: center; margin-bottom: 0.75rem;">
+                                        <span style="width: 20px; height: 20px; background: #7c3aed; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-size: 12px; margin-right: 0.75rem;">C</span>
+                                        <span>Regulatory compliance verification</span>
+                                    </div>
+                                    <div class="feature-item" style="display: flex; align-items: center; margin-bottom: 0.75rem;">
+                                        <span style="width: 20px; height: 20px; background: #7c3aed; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-size: 12px; margin-right: 0.75rem;">G</span>
+                                        <span>Government liaison and representation</span>
+                                    </div>
+                                    <div class="feature-item" style="display: flex; align-items: center; margin-bottom: 0.75rem;">
+                                        <span style="width: 20px; height: 20px; background: #7c3aed; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-size: 12px; margin-right: 0.75rem;">E</span>
+                                        <span>Emergency 24/7 clearance support</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div>
+                                <h4 style="color: var(--accent); margin-bottom: 1rem;">Service Fees</h4>
+                                <div class="pricing-info" style="background: #f8fafc; padding: 1.5rem; border-radius: 12px; margin-bottom: 1.5rem;">
+                                    <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
+                                        <span>Standard:</span>
+                                        <strong>$300-500</strong>
+                                    </div>
+                                    <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
+                                        <span>Express:</span>
+                                        <strong>$500-800</strong>
+                                    </div>
+                                    <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
+                                        <span>Processing:</span>
+                                        <strong>5-10 days</strong>
+                                    </div>
+                                    <div style="display: flex; justify-content: space-between;">
+                                        <span>Success Rate:</span>
+                                        <strong style="color: #7c3aed;">99.4%</strong>
+                                    </div>
+                                </div>
+                                <div class="bonus-info" style="background: linear-gradient(135deg, #ede9fe, #ddd6fe); padding: 1rem; border-radius: 8px; text-align: center;">
+                                    <strong>Included:</strong> Free duty consultation worth $200
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                         
                         <div class="service-detail" id="detail-logistics" style="display: none;">
-                            <h4 style="color: var(--accent); margin-bottom: 1rem;">Logistics & Shipping Details</h4>
+                            <h4 style="color: var(--accent); margin-bottom: 1rem;">Integrated Logistics Management</h4>
                             <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem;">
                                 <div>
-                                    <h5>What's Included:</h5>
+                                    <h5>Transportation Solutions:</h5>
                                     <ul style="margin: 0.5rem 0; padding-left: 1.5rem;">
-                                        <li>Sea, air, and express shipping</li>
-                                        <li>Real-time tracking system</li>
-                                        <li>Cargo insurance coverage</li>
-                                        <li>Documentation handling</li>
-                                        <li>Port-to-door delivery</li>
+                                        <li>Ocean freight services (FCL and LCL options)</li>
+                                        <li>Air cargo expedited shipping</li>
+                                        <li>Express courier door-to-door delivery</li>
+                                        <li>Overland transport via rail networks</li>
+                                        <li>Advanced shipment tracking systems</li>
+                                        <li>Full cargo insurance coverage</li>
+                                        <li>Export-import documentation services</li>
+                                        <li>Consolidation and warehousing facilities</li>
                                     </ul>
+                                    <div style="margin-top: 1rem; padding: 1rem; background: #fef3c7; border-radius: 6px;">
+                                        <strong>Added Value:</strong> Complimentary 7-day destination storage
+                                    </div>
                                 </div>
                                 <div style="background: #f0f9ff; padding: 1.5rem; border-radius: 8px;">
-                                    <h5>Pricing:</h5>
-                                    <p><strong>Sea:</strong> $2-5/kg</p>
-                                    <p><strong>Air:</strong> $8-15/kg</p>
-                                    <p><strong>Timeline:</strong> 15-25 days (sea)</p>
+                                    <h5>Transparent Pricing Structure:</h5>
+                                    <p><strong>Ocean Shipping:</strong> $2.50-4.80/kg (18-28 days)</p>
+                                    <p><strong>Air Transport:</strong> $9-14/kg (4-6 days)</p>
+                                    <p><strong>Express Service:</strong> $22-32/kg (2-3 days)</p>
+                                    <p><strong>Rail Freight:</strong> $4.50-7.50/kg (14-20 days)</p>
+                                    <p><strong>Insurance Premium:</strong> 0.35% of declared value</p>
+                                    <p><strong>Delivery Performance:</strong> 99.7% on-time record</p>
+                                    <div style="margin-top: 1rem; padding: 0.75rem; background: rgba(34, 197, 94, 0.1); border-radius: 4px;">
+                                        <strong>Volume Incentive:</strong> 12-18% discount for shipments over 1000kg
+                                    </div>
                                 </div>
                             </div>
                         </div>
                         
                         <div class="service-detail" id="detail-quality" style="display: none;">
-                            <h4 style="color: var(--accent); margin-bottom: 1rem;">Quality Assurance Details</h4>
+                            <h4 style="color: var(--accent); margin-bottom: 1rem;">Professional Quality Assurance</h4>
                             <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem;">
                                 <div>
-                                    <h5>What's Included:</h5>
+                                    <h5>Comprehensive Quality Framework:</h5>
                                     <ul style="margin: 0.5rem 0; padding-left: 1.5rem;">
-                                        <li>Factory audits & inspections</li>
-                                        <li>Pre-shipment quality checks</li>
-                                        <li>Compliance verification</li>
-                                        <li>Defect analysis reports</li>
-                                        <li>Corrective action plans</li>
+                                        <li>Manufacturing facility audit and certification</li>
+                                        <li>Pre-production sample validation process</li>
+                                        <li>During-production quality monitoring</li>
+                                        <li>Statistical process control implementation</li>
+                                        <li>Third-party laboratory testing services</li>
+                                        <li>Detailed photographic inspection reports</li>
+                                        <li>Final pre-shipment quality verification</li>
+                                        <li>Non-conformance corrective action plans</li>
                                     </ul>
+                                    <div style="margin-top: 1rem; padding: 1rem; background: #ecfdf5; border-radius: 6px;">
+                                        <strong>Compliance Standards:</strong> ISO 9001, BSCI, Sedex, WRAP certified processes
+                                    </div>
                                 </div>
                                 <div style="background: #f0f9ff; padding: 1.5rem; border-radius: 8px;">
-                                    <h5>Pricing:</h5>
-                                    <p><strong>2-3%</strong> of order value</p>
-                                    <p><strong>Timeline:</strong> 1-2 days</p>
-                                    <p><strong>Standards:</strong> ISO, CE, FDA</p>
+                                    <h5>Quality Investment Details:</h5>
+                                    <p><strong>Service Fee:</strong> 2.5-3.5% of order value</p>
+                                    <p><strong>Defect Prevention:</strong> 97.8% defect-free delivery rate</p>
+                                    <p><strong>Inspection Timeline:</strong> 1-3 business days</p>
+                                    <p><strong>Certification Support:</strong> ISO, CE, FDA, RoHS, CPSIA</p>
+                                    <p><strong>Report Turnaround:</strong> 24-48 hour delivery</p>
+                                    <p><strong>Rejection Handling:</strong> 4.2% industry-low rejection rate</p>
+                                    <div style="margin-top: 1rem; padding: 0.75rem; background: rgba(34, 197, 94, 0.1); border-radius: 4px;">
+                                        <strong>Quality Guarantee:</strong> Full refund if standards not achieved
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                        
-                        <div class="service-detail" id="detail-customs" style="display: none;">
-                            <h4 style="color: var(--accent); margin-bottom: 1rem;">Customs Clearance Details</h4>
-                            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem;">
-                                <div>
-                                    <h5>What's Included:</h5>
-                                    <ul style="margin: 0.5rem 0; padding-left: 1.5rem;">
-                                        <li>Document preparation & submission</li>
-                                        <li>Duty & tax calculation</li>
-                                        <li>Regulatory compliance checks</li>
-                                        <li>Customs brokerage services</li>
-                                        <li>Port clearance coordination</li>
-                                    </ul>
-                                </div>
-                                <div style="background: #f0f9ff; padding: 1.5rem; border-radius: 8px;">
-                                    <h5>Pricing:</h5>
-                                    <p><strong>$200-500</strong> per shipment</p>
-                                    <p><strong>Timeline:</strong> 3-7 days</p>
-                                    <p><strong>Success Rate:</strong> 99.8%</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="total-estimate" style="margin-top: 2rem; padding: 1.5rem; background: linear-gradient(135deg, var(--accent), #1d4ed8); color: white; border-radius: 12px; text-align: center;">
-                        <h4>Estimated Total Service Fee</h4>
-                        <div id="totalEstimate" style="font-size: 2rem; font-weight: 800; margin: 0.5rem 0;">Contact for Quote</div>
-                        <p style="opacity: 0.9;">Based on selected services. Final pricing depends on order specifics.</p>
-                        <button onclick="requestQuote()" style="margin-top: 1rem; padding: 0.75rem 2rem; background: white; color: var(--accent); border: none; border-radius: 8px; font-weight: 600; cursor: pointer;">Request Detailed Quote</button>
-                    </div>
                 </div>
+                
+               
             </div>
         </section>
 
@@ -1554,23 +1798,33 @@
         // Global variables for service comparison
         let selectedServices = ['sourcing'];
         
-        // Service comparison functionality
-        function toggleService(serviceId) {
-            const btn = document.querySelector(`[data-service="${serviceId}"]`);
-            const isSelected = selectedServices.includes(serviceId);
-            
-            if (isSelected) {
-                selectedServices = selectedServices.filter(s => s !== serviceId);
-                btn.style.background = 'transparent';
+        // Service showcase functionality
+        function showService(serviceId) {
+            // Update tab buttons
+            document.querySelectorAll('.tab-btn').forEach(btn => {
+                btn.classList.remove('active');
+                btn.style.background = 'white';
                 btn.style.color = 'var(--accent)';
-            } else {
-                selectedServices.push(serviceId);
-                btn.style.background = 'var(--accent)';
-                btn.style.color = 'white';
+            });
+            
+            const activeBtn = document.querySelector(`[data-tab="${serviceId}"]`);
+            if (activeBtn) {
+                activeBtn.classList.add('active');
+                activeBtn.style.background = 'var(--accent)';
+                activeBtn.style.color = 'white';
             }
             
-            updateSelectedServices();
-            updateServiceDetails();
+            // Update service cards
+            document.querySelectorAll('.service-card-detail').forEach(card => {
+                card.classList.remove('active');
+                card.style.display = 'none';
+            });
+            
+            const activeCard = document.getElementById(`card-${serviceId}`);
+            if (activeCard) {
+                activeCard.classList.add('active');
+                activeCard.style.display = 'block';
+            }
         }
         
         function updateSelectedServices() {
@@ -2012,8 +2266,8 @@
         // Initialize everything when DOM is loaded
         document.addEventListener('DOMContentLoaded', function() {
             initServiceCardInteractions();
-            updateSelectedServices();
-            updateServiceDetails();
+            // Initialize first service
+            showService('sourcing');
             initProfessionalAnimations();
             initAdvancedServiceCards();
             initButtonEffects();
@@ -2040,7 +2294,7 @@
             }
         });
     </script>
-    <script src="assets/js/dropdown-nav.js"></script>
+   
 </body>
 
 </html>
