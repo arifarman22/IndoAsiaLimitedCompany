@@ -132,6 +132,7 @@
     <link rel="stylesheet" href="assets/css/footer.css">
     <link rel="stylesheet" href="assets/css/animations.css">
     <link rel="stylesheet" href="assets/css/dropdown-nav.css">
+    <link rel="stylesheet" href="assets/css/utilities.css">
     <style>
     /* CSS Variables - Professional Theme */
    :root {
@@ -1429,7 +1430,7 @@ h2 {
         background: white;
         display: flex;
         flex-direction: column;
-        align-items: flex-start;
+        align-items: center;
         gap: 0;
         padding: 5rem 0 2rem;
         transition: left 0.3s ease;
@@ -2592,13 +2593,13 @@ document.addEventListener('DOMContentLoaded', function () {
         const mobileMenuBtn = document.getElementById('mobileMenuBtn');
         const mainNav = document.getElementById('mainNav');
         const dropdowns = document.querySelectorAll('.dropdown');
-        
+
         if (mobileMenuBtn && mainNav) {
             mobileMenuBtn.addEventListener('click', function() {
                 mobileMenuBtn.classList.toggle('active');
                 mainNav.classList.toggle('open');
             });
-            
+
             document.addEventListener('click', function(e) {
                 if (!mobileMenuBtn.contains(e.target) && !mainNav.contains(e.target)) {
                     mobileMenuBtn.classList.remove('active');
@@ -2967,6 +2968,12 @@ function initServicesAnimations() {
 }
 
     </script>
+
+    <!-- Professional Enhancement Scripts -->
+    <script src="assets/js/config.js"></script>
+    <script src="assets/js/seo.js"></script>
+    <script src="assets/js/animations.js"></script>
+    <script src="assets/js/form-validation.js"></script>
     
     <style>
     /* Premium Services Animations */
