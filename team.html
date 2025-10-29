@@ -710,7 +710,7 @@
             }
         }
     </style>
-</head>
+    <link rel="stylesheet" href="assets/css/sidebar-nav.css"></head>
 <body>
     <header class="header" id="mainHeader" role="banner">
         <div class="container header-content">
@@ -1033,7 +1033,40 @@
         </div>
     </footer>
 
-    <script>/* navigation handled by assets/js/mobile-nav-fix.js */</script>
-    <script src="assets/js/dropdown-nav.js"></script>
+    <script>
+        function initMobileMenu() {
+            const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+            const mainNav = document.getElementById('mainNav');
+            const dropdowns = document.querySelectorAll('.dropdown');
+            
+            if (mobileMenuBtn && mainNav) {
+                mobileMenuBtn.addEventListener('click', function() {
+                    mobileMenuBtn.classList.toggle('active');
+                    mainNav.classList.toggle('open');
+                });
+                
+                document.addEventListener('click', function(e) {
+                    if (!mobileMenuBtn.contains(e.target) && !mainNav.contains(e.target)) {
+                        mobileMenuBtn.classList.remove('active');
+                        mainNav.classList.remove('open');
+                    }
+                });
+            }
+            
+            dropdowns.forEach(dropdown => {
+                const toggle = dropdown.querySelector('.dropdown-toggle');
+                if (toggle) {
+                    toggle.addEventListener('click', function(e) {
+                        if (window.innerWidth <= 968) {
+                            e.preventDefault();
+                            dropdown.classList.toggle('active');
+                        }
+                    });
+                }
+            });
+        }
+        
+        initMobileMenu();
+    </script>
 </body>
 </html>

@@ -248,8 +248,9 @@
         .contact-container {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 4rem;
+            gap: 3rem;
             align-items: start;
+            margin-bottom: 4rem;
         }
 
         .contact-form {
@@ -312,13 +313,14 @@
         }
 
         .info-card {
-            background: var(--bg-secondary);
-            padding: 2rem;
+            background: #ffffff;
+            padding: 1.75rem;
             border-radius: var(--border-radius);
             border: 1px solid var(--border);
             transition: var(--transition);
             opacity: 0;
             transform: translateY(30px);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
         }
 
         .info-card.animate {
@@ -328,32 +330,63 @@
 
         .info-card:hover {
             transform: translateY(-5px);
-            box-shadow: var(--card-shadow);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+            border-color: var(--accent);
         }
 
         .info-icon {
             font-size: 2rem;
-            margin-bottom: 1rem;
-            background: var(--accent-gradient);
-            -webkit-background-clip: text;
-            background-clip: text;
-            -webkit-text-fill-color: transparent;
+            margin-bottom: 1.25rem;
             display: flex;
             align-items: center;
             justify-content: center;
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
-            background: var(--bg-tertiary);
-            margin: 0 auto 1rem;
+            width: 56px;
+            height: 56px;
+            border-radius: 12px;
+            background: linear-gradient(135deg, rgba(24, 62, 108, 0.08), rgba(236, 30, 36, 0.08));
+            margin: 0 auto 1.25rem;
         }
 
         .info-icon i {
-            font-size: 1.5rem;
+            font-size: 1.4rem;
             background: var(--accent-gradient);
             -webkit-background-clip: text;
             background-clip: text;
             -webkit-text-fill-color: transparent;
+        }
+
+        .info-card h3 {
+            font-size: 1.15rem;
+            margin-bottom: 0.75rem;
+            color: var(--text-primary);
+            font-weight: 600;
+        }
+
+        .info-card p {
+            font-size: 0.95rem;
+            line-height: 1.7;
+            color: var(--text-secondary);
+            margin: 0;
+        }
+
+        .location-badge {
+            display: inline-block;
+            padding: 0.25rem 0.75rem;
+            background: linear-gradient(135deg, rgba(24, 62, 108, 0.1), rgba(236, 30, 36, 0.1));
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: var(--accent);
+            margin-bottom: 0.5rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .offices-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin-top: 3rem;
         }
 
         .map-container {
@@ -700,6 +733,10 @@
                 gap: 2rem;
             }
             
+            .offices-grid {
+                grid-template-columns: 1fr;
+            }
+            
             .contact-hero-content h1 {
                 font-size: 2.2rem;
             }
@@ -813,7 +850,7 @@
             }
         }
     </style>
-</head>
+    <link rel="stylesheet" href="assets/css/sidebar-nav.css"></head>
 <body>
     <header class="header" id="mainHeader" role="banner">
         <div class="container header-content">
@@ -913,26 +950,19 @@
                 <!-- Contact Information -->
                 <div class="contact-info">
                     <div class="info-card animate-on-scroll">
-                        <div class="info-icon floating"><i class="fas fa-map-marker-alt"></i></div>
-                        <h3 class="text-animate">Our Office</h3>
-                        <p>H-13, R-11, Block-L, South Bonosree, Khilgaon,<br> Dhaka 1219.
-                        </p>
-                    </div>
-                    
-                    <div class="info-card animate-on-scroll">
-                        <div class="info-icon floating"><i class="fas fa-phone"></i></div>
+                        <div class="info-icon"><i class="fas fa-phone"></i></div>
                         <h3 class="text-animate">Phone</h3>
-                        <p>+8801711-257739<br></p>
+                        <p>+8801711-257739</p>
                     </div>
                     
                     <div class="info-card animate-on-scroll">
-                        <div class="info-icon floating"><i class="fas fa-envelope"></i></div>
+                        <div class="info-icon"><i class="fas fa-envelope"></i></div>
                         <h3 class="text-animate">Email</h3>
                         <p>indoasiatrading@outlook.com</p>
                     </div>
                     
                     <div class="info-card business-hours animate-on-scroll">
-                        <div class="info-icon floating"><i class="fas fa-clock"></i></div>
+                        <div class="info-icon"><i class="fas fa-clock"></i></div>
                         <h3 class="text-animate">Business Hours</h3>
                         <ul class="hours-list">
                             <li><span>Monday - Friday:</span> <span>9:00 AM - 6:00 PM</span></li>
@@ -943,8 +973,45 @@
                 </div>
             </div>
             
+            <!-- Global Offices Section -->
+            <div style="margin-top: 5rem;">
+                <h2 class="text-center text-animate">Our Global <span class="accent-text">Offices</span></h2>
+                <p class="text-center animate-on-scroll" style="max-width: 700px; margin: 0 auto 3rem;">We operate across multiple locations to serve you better with seamless international trade solutions.</p>
+                
+                <div class="offices-grid">
+                    <div class="info-card animate-on-scroll">
+                        <span class="location-badge">Headquarters</span>
+                        <div class="info-icon"><i class="fas fa-building"></i></div>
+                        <h3 class="text-animate">Bangladesh Office</h3>
+                        <p>H-13, R-11, Block-L, South Bonosree<br>Khilgaon, Dhaka 1219</p>
+                    </div>
+                    
+                    <div class="info-card animate-on-scroll">
+                        <span class="location-badge">Warehouse</span>
+                        <div class="info-icon"><i class="fas fa-warehouse"></i></div>
+                        <h3 class="text-animate">China Warehouse</h3>
+                        <p>中国空运仓库<br>广州市白云区石马桃红西街36号<br>龙诚国际仓<br>(导航新感觉灯光音响)</p>
+                    </div>
+                    
+                    <div class="info-card animate-on-scroll">
+                        <span class="location-badge">Regional Office</span>
+                        <div class="info-icon"><i class="fas fa-building"></i></div>
+                        <h3 class="text-animate">Kolkata Office</h3>
+                        <p>13/3 Paymental Street, Kolkata 700016<br>Near Ripon Street<br>(St. Mary's Church & School)<br>Ibrahim Court, 3rd Floor</p>
+                    </div>
+                    
+                    <div class="info-card animate-on-scroll">
+                        <span class="location-badge">Warehouse</span>
+                        <div class="info-icon"><i class="fas fa-warehouse"></i></div>
+                        <h3 class="text-animate">South Korea Warehouse</h3>
+                        <p>이건물류<br>경기도 시흥시 금오로 537번길 27<br>컨테이너 35번<br>Zip Code: 14926</p>
+                    </div>
+                </div>
+            </div>
+            </div>
+            
             <!-- Map Section -->
-            <div style="margin-top: 4rem;">
+            <div style="margin-top: 5rem;">
                 <h3 class="text-center text-animate">Our <span class="accent-text">Location</span></h3>
                 <div class="map-container">
                     <!-- Replace with actual map embed code -->

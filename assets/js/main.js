@@ -8,7 +8,6 @@ document.addEventListener('DOMContentLoaded', function() {
   initServiceWorker();
   initAnalytics();
   initMobileMenu();
-  initMobileDropdowns();
   initBodyAnimations();
   initScrollAnimations(); // Professional scroll animations
   initRevealStagger();
@@ -376,118 +375,24 @@ function initMobileMenu() {
   }, 150));
 }
 
-// Mobile dropdown functionality
-function initMobileDropdowns() {
-  const dropdownToggles = document.querySelectorAll('.dropdown-toggle');
-  dropdownToggles.forEach(toggle => {
-    // Ensure mobile clicks don't bubble to document and immediately close menus.
-    toggle.addEventListener('click', function(e) {
-      if (window.innerWidth <= 968) {
-        e.preventDefault();
-        e.stopPropagation();
-        const dropdown = this.parentElement;
-        const isNowActive = dropdown.classList.toggle('active');
-        // Reflect state to assistive tech
-        try { this.setAttribute('aria-expanded', String(isNowActive)); } catch (err) {}
-      }
-    });
-  });
-}
-
-// Initialize dropdowns after DOMContentLoaded
-(function(){
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', initMobileDropdowns);
-  } else {
-    initMobileDropdowns();
-  }
-})();
-
-// Enhance mobile dropdown: close on outside click and on submenu link click; reset on resize
-(function(){
-  function closeAllDropdowns() {
-    document.querySelectorAll('.dropdown.active').forEach(d => {
-      d.classList.remove('active');
-      const t = d.querySelector('.dropdown-toggle');
-      if (t) t.setAttribute('aria-expanded', 'false');
-    });
-  }
-
-  // Close when clicking outside
-  document.addEventListener('click', function(e) {
-    if (window.innerWidth <= 968) {
-      const isDropdown = e.target.closest('.dropdown');
-      const isToggle = e.target.closest('.dropdown-toggle');
-      if (!isDropdown && !isToggle) {
-        closeAllDropdowns();
-      }
-    }
-  });
-
-  // Close when selecting submenu link on mobile
-  document.addEventListener('click', function(e) {
-    if (window.innerWidth <= 968) {
-      const isSubmenuLink = e.target.closest('.dropdown-menu a');
-      if (isSubmenuLink) {
-        closeAllDropdowns();
-        const mainNav = document.getElementById('mainNav');
-        const mobileBtn = document.getElementById('mobileMenuBtn');
-        if (mainNav && mainNav.classList.contains('open')) {
-          mainNav.classList.remove('open');
-          mobileBtn && mobileBtn.classList.remove('active');
-          mobileBtn && mobileBtn.setAttribute('aria-expanded', 'false');
+// Dropdown functionality
+(function() {
+  function initDropdowns() {
+    document.querySelectorAll('.dropdown-toggle').forEach(toggle => {
+      toggle.addEventListener('click', function(e) {
+        if (window.innerWidth <= 968) {
+          e.preventDefault();
+          e.stopPropagation();
+          this.parentElement.classList.toggle('active');
         }
-      }
-    }
-  });
-
-  // Reset dropdowns on resize to desktop
-  window.addEventListener('resize', debounce(() => {
-    if (window.innerWidth > 968) {
-      document.querySelectorAll('.dropdown').forEach(d => d.classList.remove('active'));
-    }
-  }, 150));
-})();
-
-// Transient click-to-show on all screens; mobile keeps toggle behavior
-(function(){
-  const SHOW_DURATION_MS = 2000; // time to keep open on desktop/tablet
-
-  function handleToggleClick(e) {
-    const toggle = e.currentTarget;
-    const dropdown = toggle.parentElement;
-
-    if (window.innerWidth <= 968) {
-      // Mobile: toggle persistent open/close. Stop propagation so document click handlers don't close it.
-      e.preventDefault();
-      e.stopPropagation();
-      const isNowActive = dropdown.classList.toggle('active');
-      try { toggle.setAttribute('aria-expanded', String(isNowActive)); } catch (err) {}
-      return;
-    }
-
-    // Desktop/Tablet: transient show then auto-hide
-    e.preventDefault();
-    dropdown.classList.add('click-open');
-
-    // Clear previous timer
-    clearTimeout(dropdown._hideTimer);
-    dropdown._hideTimer = setTimeout(() => {
-      dropdown.classList.remove('click-open');
-    }, SHOW_DURATION_MS);
-  }
-
-  function initTransientDropdown() {
-    document.querySelectorAll('.dropdown-toggle').forEach(t => {
-      t.removeEventListener('click', handleToggleClick);
-      t.addEventListener('click', handleToggleClick);
+      });
     });
   }
-
+  
   if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', initTransientDropdown);
+    document.addEventListener('DOMContentLoaded', initDropdowns);
   } else {
-    initTransientDropdown();
+    initDropdowns();
   }
 })();
 
