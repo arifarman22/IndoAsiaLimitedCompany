@@ -436,7 +436,7 @@
         /* Header Styles */
         .header {
             background: rgba(255, 255, 255, 0.95);
-            padding: 0.5rem 0;
+            padding: 1.2rem 0;
             position: fixed;
             width: 100%;
             top: 0;
@@ -821,6 +821,20 @@
                 <p class="text-center subtitle">Dedicated professionals ensuring your success at every step</p>
                 
                 <div class="team-grid">
+
+                     <article class="team-card">
+                        <div class="team-photo">
+                            <img src="assets/images/arifarman.jpg" alt="Arif Arman, Chief Digital Officer">
+                        </div>
+                        <h3>Arif Arman</h3>
+                        <div class="position">Chief Digital Officer & Lead Developer</div>
+                        <p>Arif pioneers digital transformation and builds innovative solutions for seamless trade operations.</p>
+                        <div class="team-social">
+                            <a href="https://www.linkedin.com/in/arif-arman-70398a18b/" aria-label="LinkedIn profile"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="mailto:arifarman7862@gmail.com" aria-label="Email contact"><span>@</span></a>
+                        </div>
+                    </article>
+                    
                     <article class="team-card">
                         <div class="team-photo">
                             <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Sarah Ahmed, Head of Sourcing">
@@ -833,6 +847,8 @@
                             <a href="#" aria-label="Email contact"><span>@</span></a>
                         </div>
                     </article>
+
+                    
 
                     <article class="team-card">
                         <div class="team-photo">
@@ -859,6 +875,8 @@
                             <a href="#" aria-label="Email contact"><span>@</span></a>
                         </div>
                     </article>
+
+                   
                 </div>
             </div>
         </section>
@@ -917,25 +935,25 @@
                 
                 <div class="values-grid">
                     <div class="value-card">
-                        <div class="value-icon"><img src="assets/icons/communication.png" alt="Trust & Transparency"></div>
+                        <div class="value-icon" style="margin: 0 auto 1.5rem; background: #f0f4f8; border-radius: 50%; padding: 20px; width: 80px; height: 80px; display: flex; align-items: center; justify-content: center;"><img src="assets/icons/communication.png" alt="Trust & Transparency"></div>
                         <h4>Trust & Transparency</h4>
                         <p>We believe in open communication and honest dealings. Every client relationship is built on trust and mutual respect.</p>
                     </div>
 
                     <div class="value-card">
-                        <div class="value-icon"><img src="assets/icons/quality.png" alt="Excellence"></div>
+                        <div class="value-icon" style="margin: 0 auto 1.5rem; background: #f0f4f8; border-radius: 50%; padding: 20px; width: 80px; height: 80px; display: flex; align-items: center; justify-content: center;"><img src="assets/icons/quality.png" alt="Excellence"></div>
                         <h4>Excellence</h4>
                         <p>We strive for excellence in every aspect of our service, from initial consultation to final delivery.</p>
                     </div>
 
                     <div class="value-card">
-                        <div class="value-icon"><img src="assets/icons/integration.png" alt="Innovation"></div>
+                        <div class="value-icon" style="margin: 0 auto 1.5rem; background: #f0f4f8; border-radius: 50%; padding: 20px; width: 80px; height: 80px; display: flex; align-items: center; justify-content: center;"><img src="assets/icons/integration.png" alt="Innovation"></div>
                         <h4>Innovation</h4>
                         <p>We continuously improve our processes and adopt new technologies to better serve our clients.</p>
                     </div>
 
                     <div class="value-card">
-                        <div class="value-icon"><img src="assets/icons/team.png" alt="Client Success"></div>
+                        <div class="value-icon" style="margin: 0 auto 1.5rem; background: #f0f4f8; border-radius: 50%; padding: 20px; width: 80px; height: 80px; display: flex; align-items: center; justify-content: center;"><img src="assets/icons/team.png" alt="Client Success"></div>
                         <h4>Client Success</h4>
                         <p>Your success is our success. We're committed to helping you achieve your business goals.</p>
                     </div>
@@ -1068,6 +1086,26 @@
         }
         
         initMobileMenu();
+        
+        // Animation on scroll
+        const animateCards = document.querySelectorAll('.team-card, .expertise-card, .value-card, .stat-item');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry, index) => {
+                if (entry.isIntersecting) {
+                    setTimeout(() => {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }, index * 100);
+                }
+            });
+        }, { threshold: 0.1 });
+        
+        animateCards.forEach(card => {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(30px)';
+            card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(card);
+        });
     </script>
 </body>
 </html>
