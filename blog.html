@@ -211,7 +211,7 @@
         /* Header Styles (Updated to match faqs.html) */
         .header {
             background: rgba(255, 255, 255, 0.95);
-            padding: 1.5rem 0;
+            padding: 1.2rem 0;
             position: fixed;
             width: 100%;
             top: 0;
@@ -255,7 +255,7 @@
         }
 
         .logo-img {
-            height: 80px;
+            height: 90px;
             width: auto;
             object-fit: contain;
         }
@@ -561,6 +561,7 @@
             padding: 1.5rem;
             position: relative;
             z-index: 2;
+            text-align: center;
         }
 
         .blog-category {
@@ -583,11 +584,15 @@
         .blog-title {
             font-size: 1.3rem;
             margin-bottom: 0.8rem;
-            color: var(--accent);
             transition: var(--transition);
         }
 
-        .blog-card:hover .blog-title {
+        .blog-title a {
+            color: var(--accent);
+            cursor: pointer;
+        }
+
+        .blog-card:hover .blog-title a {
             color: var(--accent-secondary);
         }
 
@@ -624,17 +629,22 @@
         }
 
         .read-more {
-            color: var(--accent);
-            font-weight: 600;
             display: inline-flex;
             align-items: center;
             gap: 0.5rem;
+            padding: 10px 20px;
+            background: var(--accent-gradient);
+            color: #ffffff;
+            font-weight: 600;
+            border-radius: var(--border-radius);
             transition: var(--transition);
+            box-shadow: 0 2px 8px rgba(37, 99, 235, 0.2);
         }
 
         .read-more:hover {
-            gap: 0.8rem;
-            color: var(--accent-secondary);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+            color: #ffffff;
         }
 
         .blog-sidebar {
@@ -1076,7 +1086,7 @@
                     <img class="blog-image animated-photo" src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80" alt="International Shipping">
                     <div class="blog-content">
                         <span class="blog-category">Logistics</span>
-                        <h3 class="blog-title text-animate">Optimizing Your Supply Chain from China to Bangladesh</h3>
+                        <h3 class="blog-title text-animate"><a href="blog-supply-chain.html">Optimizing Your Supply Chain from China to Bangladesh</a></h3>
                         <p class="blog-excerpt">Learn how to streamline your import process, reduce costs, and improve delivery times with our expert supply chain strategies.</p>
                         <div class="blog-meta">
                             <div class="blog-author">
@@ -1094,7 +1104,7 @@
                     <img class="blog-image animated-photo" src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80" alt="Customs Documentation">
                     <div class="blog-content">
                         <span class="blog-category">Regulations</span>
-                        <h3 class="blog-title text-animate">Navigating Bangladesh Import Regulations in 2023</h3>
+                        <h3 class="blog-title text-animate"><a href="blog-regulations.html">Navigating Bangladesh Import Regulations in 2023</a></h3>
                         <p class="blog-excerpt">Stay compliant with the latest import regulations, documentation requirements, and customs procedures for Bangladesh.</p>
                         <div class="blog-meta">
                             <div class="blog-author">
@@ -1112,7 +1122,7 @@
                     <img class="blog-image animated-photo" src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80" alt="Quality Control">
                     <div class="blog-content">
                         <span class="blog-category">Quality Assurance</span>
-                        <h3 class="blog-title text-animate">Ensuring Product Quality from Chinese Manufacturers</h3>
+                        <h3 class="blog-title text-animate"><a href="blog-quality-control.html">Ensuring Product Quality from Chinese Manufacturers</a></h3>
                         <p class="blog-excerpt">Discover effective quality control strategies and inspection techniques to maintain product standards and protect your business.</p>
                         <div class="blog-meta">
                             <div class="blog-author">
@@ -1130,7 +1140,7 @@
                     <img class="blog-image animated-photo" src="https://images.unsplash.com/photo-1559526324-4b87b5e36e44?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80" alt="Cost Analysis">
                     <div class="blog-content">
                         <span class="blog-category">Finance</span>
-                        <h3 class="blog-title text-animate">Managing Import Costs and Currency Fluctuations</h3>
+                        <h3 class="blog-title text-animate"><a href="blog-cost-management.html">Managing Import Costs and Currency Fluctuations</a></h3>
                         <p class="blog-excerpt">Learn how to budget effectively, hedge against currency risks, and optimize your import financing for better profitability.</p>
                         <div class="blog-meta">
                             <div class="blog-author">
@@ -1148,7 +1158,7 @@
                     <img class="blog-image animated-photo" src="https://images.unsplash.com/photo-1563013544-824ae1b704d3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80" alt="Market Trends">
                     <div class="blog-content">
                         <span class="blog-category">Market Analysis</span>
-                        <h3 class="blog-title text-animate">Emerging Opportunities in Bangladesh Import Market</h3>
+                        <h3 class="blog-title text-animate"><a href="blog-market-opportunities.html">Emerging Opportunities in Bangladesh Import Market</a></h3>
                         <p class="blog-excerpt">Explore the latest market trends, consumer demands, and business opportunities for importers in Bangladesh.</p>
                         <div class="blog-meta">
                             <div class="blog-author">
@@ -1166,7 +1176,7 @@
                     <img class="blog-image animated-photo" src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80" alt="Technology in Trade">
                     <div class="blog-content">
                         <span class="blog-category">Technology</span>
-                        <h3 class="blog-title text-animate">Leveraging Technology for Efficient Import Management</h3>
+                        <h3 class="blog-title text-animate"><a href="blog-technology.html">Leveraging Technology for Efficient Import Management</a></h3>
                         <p class="blog-excerpt">Discover how digital tools and platforms can streamline your import operations, from sourcing to delivery.</p>
                         <div class="blog-meta">
                             <div class="blog-author">
@@ -1198,12 +1208,12 @@
                     <p>Your trusted partner for premium import services between China and Bangladesh.</p>
                     <div class="social-links" role="list" aria-label="Social media links">
                         <a href="https://www.facebook.com/p/IndoAsiaTrading" target="_blank" rel="noopener noreferrer"
-                            aria-label="Follow us on Facebook"><span>FB</span></a>
+                            aria-label="Follow us on Facebook"><i class="fab fa-facebook-f"></i></a>
                         <a href="https://www.linkedin.com/company/indoasia-trading" target="_blank"
-                            rel="noopener noreferrer" aria-label="Follow us on LinkedIn"><span>LI</span></a>
+                            rel="noopener noreferrer" aria-label="Follow us on LinkedIn"><i class="fab fa-linkedin-in"></i></a>
                         <a href="https://www.instagram.com/indoasiatrading/#"
                             target="_blank" rel="noopener noreferrer"
-                            aria-label="Follow us on Instagram"><span>IG</span></a>
+                            aria-label="Follow us on Instagram"><i class="fab fa-instagram"></i></a>
                     </div>
                 </div>
                 

@@ -62,7 +62,7 @@
 
 .logo a { display:flex; align-items:center; gap:8px; text-decoration:none }
 
-.logo-img { height: 80px; width: auto; object-fit: contain; }
+.logo-img { height: 100px; width: auto; object-fit: contain; }
 
 .logo-text { font-size: 0.9rem; }
 
@@ -155,7 +155,7 @@
   .mobile-menu-btn.active span:nth-child(3) { transform: rotate(-45deg) translate(7px, -6px); }
   
   .logo { font-size:1.05rem; gap:8px }
-  .logo-img { height:50px }
+  .logo-img { height:70px }
   
   .nav { 
     position: fixed; 
