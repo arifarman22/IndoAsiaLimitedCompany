@@ -1,0 +1,43 @@
+Files to update with sidebar navigation:
+- about.html
+- additionalServices.html
+- blog.html
+- blog-*.html (all blog pages)
+- contact.html
+- coreServices.html
+- features.html
+- plans.html
+- services.html
+- team.html
+
+Key CSS to add/update in @media (max-width: 968px):
+
+.nav {
+    position: fixed;
+    top: 0;
+    left: -100%;
+    width: 280px;
+    height: 100vh;
+    background: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+    padding: 5rem 0 2rem;
+    transition: left 0.3s ease;
+    box-shadow: 5px 0 15px rgba(0,0,0,0.1);
+    z-index: 1099;
+    overflow-y: auto;
+}
+
+.nav.open {
+    left: 0;
+}
+
+.dropdown-menu li a {
+    padding: 0.75rem 2.5rem;
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    font-weight: 500;
+    text-align: center;
+}
