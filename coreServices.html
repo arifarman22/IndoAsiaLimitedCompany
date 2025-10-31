@@ -1011,6 +1011,7 @@
             .nav li {
                 width: 100%;
                 border-bottom: 1px solid rgba(0,0,0,0.05);
+                text-align: center;
             }
 
             .nav li a {
@@ -1020,6 +1021,7 @@
                 color: var(--text-primary);
                 font-size: 1rem;
                 transition: all 0.3s ease;
+                justify-content: center;
             }
 
             .nav li a:hover {
@@ -1043,14 +1045,18 @@
 
             .dropdown-menu li {
                 border-bottom: none;
+                text-align: center;
             }
 
             .dropdown-menu li a {
+                display: flex;
                 padding: 0.75rem 1rem;
                 font-size: 0.9rem;
                 color: var(--text-secondary);
                 font-weight: 500;
                 text-align: center;
+                justify-content: center;
+                align-items: center;
             }
 
             .dropdown-menu li a:hover {
@@ -2060,9 +2066,23 @@
                     toggle.addEventListener('click', function(e) {
                         if (window.innerWidth <= 968) {
                             e.preventDefault();
+                            // Close other dropdowns
+                            dropdowns.forEach(d => {
+                                if (d !== dropdown) d.classList.remove('active');
+                            });
                             dropdown.classList.toggle('active');
                         }
                     });
+                }
+            });
+            
+            // Close dropdowns when clicking outside
+            document.addEventListener('click', function(e) {
+                if (window.innerWidth <= 968) {
+                    const isDropdownClick = e.target.closest('.dropdown');
+                    if (!isDropdownClick) {
+                        dropdowns.forEach(dropdown => dropdown.classList.remove('active'));
+                    }
                 }
             });
         }
