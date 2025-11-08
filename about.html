@@ -74,7 +74,7 @@
         }
 
         .logo {
-            font-family: 'Playfair Display', 'Inter', serif;
+            font-family: 'Montserrat', sans-serif;
             font-size: 1.8rem;
             font-weight: 800;
             background: var(--accent-gradient);
@@ -95,7 +95,7 @@
         }
 
         .logo-img {
-            height: 100px;
+            height: 80px;
             width: auto;
             object-fit: contain;
         }
@@ -110,7 +110,7 @@
         .nav {
             display: flex;
             list-style: none;
-            gap: 0.3rem;
+            gap: 0.1rem;
             align-items: center;
             position: relative;
         }
@@ -426,7 +426,7 @@
 
         /* Stats Section */
         .stats {
-            padding: 5rem 0;
+            padding: 3rem 0;
             background: var(--bg-secondary);
             position: relative;
         }
@@ -481,8 +481,16 @@
 
         /* Story Section */
         .story {
-            padding: 6rem 0;
+            padding: 3rem 0;
             position: relative;
+        }
+
+        .story-heading {
+            text-align: center;
+            font-size: 3rem;
+            font-weight: 900;
+            margin-bottom: 3rem;
+            color: var(--text-primary);
         }
 
         .story-content {
@@ -490,6 +498,7 @@
             grid-template-columns: 1fr 1fr;
             gap: 4rem;
             align-items: center;
+            margin-top: 2rem;
         }
 
         .story-text {
@@ -550,28 +559,65 @@
 
         /* Mission Vision Cards */
         .mission-vision {
-            padding: 6rem 0;
-            background: var(--bg-secondary);
+            padding: 3rem 0;
+            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .mission-vision::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 20% 80%, rgba(220, 38, 38, 0.05) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(26, 54, 93, 0.05) 0%, transparent 50%);
+            pointer-events: none;
+        }
+
+        .mission-heading {
+            text-align: center;
+            font-size: 3rem;
+            font-weight: 900;
+            margin-bottom: 1rem;
+            color: var(--text-primary);
+            position: relative;
+            z-index: 2;
         }
 
         .mv-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 2rem;
-            margin-top: 3rem;
+            margin-top: 0.5rem;
+            position: relative;
+            z-index: 2;
         }
 
         .mv-card {
-            background: white;
-            padding: 3rem 2rem;
-            border-radius: var(--border-radius);
+            background: linear-gradient(145deg, #ffffff, #f8fafc);
+            padding: 2rem 2rem 3rem;
+            border-radius: 20px;
             text-align: center;
-            box-shadow: var(--card-shadow);
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.8);
             position: relative;
             overflow: hidden;
             transform: translateY(50px);
             opacity: 0;
-            transition: var(--transition);
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .mv-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(135deg, var(--accent-secondary), var(--accent));
         }
 
         .mv-card.animate {
@@ -579,54 +625,43 @@
             opacity: 1;
         }
 
-        .mv-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
-            transition: left 0.5s;
-        }
-
-        .mv-card:hover::before {
-            left: 100%;
-        }
-
         .mv-card:hover {
-            transform: translateY(-10px) scale(1.02);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+            transform: translateY(-12px) scale(1.02);
+            box-shadow: 0 20px 60px rgba(0,0,0,0.15);
         }
 
         .mv-icon {
-            width: 80px;
-            height: 80px;
+            width: 90px;
+            height: 90px;
             margin: 0 auto 1.5rem;
             display: flex;
             align-items: center;
             justify-content: center;
-            background: var(--bg-tertiary);
+            background: linear-gradient(135deg, rgba(220, 38, 38, 0.1), rgba(26, 54, 93, 0.1));
             border-radius: 50%;
-            animation: pulse 2s infinite;
+            transition: all 0.3s ease;
+        }
+
+        .mv-card:hover .mv-icon {
+            transform: scale(1.1) rotate(5deg);
+            background: linear-gradient(135deg, rgba(220, 38, 38, 0.15), rgba(26, 54, 93, 0.15));
         }
 
         .mv-icon img {
-            width: 50px;
-            height: 50px;
+            width: 55px;
+            height: 55px;
             object-fit: contain;
             filter: brightness(0) saturate(100%) invert(27%) sepia(51%) saturate(2878%) hue-rotate(346deg) brightness(104%) contrast(97%);
+            transition: transform 0.3s ease;
         }
 
-        @keyframes pulse {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.1); }
-            100% { transform: scale(1); }
+        .mv-card:hover .mv-icon img {
+            transform: rotate(10deg);
         }
 
         /* Team Section */
         .team {
-            padding: 6rem 0;
+            padding: 3rem 0;
         }
 
         .team-grid {
@@ -687,7 +722,7 @@
 
         /* CTA Section */
         .cta {
-            padding: 6rem 0;
+            padding: 4rem 0;
             background: var(--accent-gradient);
             color: white;
             text-align: center;
@@ -809,7 +844,7 @@
         .social-links {
             display: flex;
             gap: 1rem;
-            margin-top: 1.5rem;
+            margin-top: 0.5rem;
         }
 
         .social-links a {
@@ -889,8 +924,8 @@
     <link rel="stylesheet" href="assets/css/translate.css">
 </head>
 <body>
-    <!-- Google Translate Widget -->
-    <div id="google_translate_element"></div>
+    <div id="google_translate_element" style="display:none;"></div>
+    
     <!-- Header -->
     <header class="header" id="mainHeader" role="banner">
         <div class="container header-content">
@@ -921,6 +956,25 @@
                         </ul>
                     </li>
                     <li><a href="about.html">About Us</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle">🌍 Language <span class="dropdown-arrow">▼</span></a>
+                        <ul class="dropdown-menu" id="languageMenu">
+                            <li><a href="#" onclick="changeLanguage('en'); return false;">🇬🇧 English</a></li>
+                            <li><a href="#" onclick="changeLanguage('bn'); return false;">🇧🇩 বাংলা</a></li>
+                            <li><a href="#" onclick="changeLanguage('zh-CN'); return false;">🇨🇳 中文</a></li>
+                            <li><a href="#" onclick="changeLanguage('hi'); return false;">🇮🇳 हिन्दी</a></li>
+                            <li><a href="#" onclick="changeLanguage('ur'); return false;">🇵🇰 اردو</a></li>
+                            <li><a href="#" onclick="changeLanguage('ko'); return false;">🇰🇷 한국어</a></li>
+                            <li><a href="#" onclick="changeLanguage('ar'); return false;">🇦🇪 العربية</a></li>
+                            <li><a href="#" onclick="changeLanguage('es'); return false;">🇪🇸 Español</a></li>
+                            <li><a href="#" onclick="changeLanguage('fr'); return false;">🇫🇷 Français</a></li>
+                            <li><a href="#" onclick="changeLanguage('de'); return false;">🇩🇪 Deutsch</a></li>
+                            <li><a href="#" onclick="changeLanguage('ja'); return false;">🇯🇵 日本語</a></li>
+                            <li><a href="#" onclick="changeLanguage('pt'); return false;">🇵🇹 Português</a></li>
+                            <li><a href="#" onclick="changeLanguage('ru'); return false;">🇷🇺 Русский</a></li>
+                            <li><a href="#" onclick="changeLanguage('th'); return false;">🇹🇭 ไทย</a></li>
+                        </ul>
+                    </li>
                     <li><a href="contact.html">Contact</a></li>
                 </ul>
             </nav>
@@ -939,8 +993,8 @@
         <div class="floating-element">🌏</div>
         <div class="container">
             <div class="hero-content">
-                <h1>About IndoAsia Trading</h1>
-                <p>Your trusted partner for seamless China-Bangladesh imports. We bridge continents, connect businesses, and deliver excellence in every shipment.</p>
+                <h1>Global Trade. Local Expertise.</h1>
+                <p>We simplify international trade by bridging markets, eliminating barriers, and delivering quality products from China to Bangladesh with unmatched reliability.</p>
             </div>
         </div>
     </section>
@@ -949,25 +1003,25 @@
     <section class="stats">
         <div class="container">
             <div class="section-header fade-in">
-                <h2>Our Impact in Numbers</h2>
-                <p>Proven results that speak for themselves</p>
+                <h2>Performance That Speaks</h2>
+                <p>Real numbers from real partnerships</p>
             </div>
             <div class="stats-grid">
                 <div class="stat-card">
                     <span class="stat-number" data-count="500">0</span>
-                    <div class="stat-label">Successful Imports</div>
+                    <div class="stat-label">Shipments Delivered</div>
                 </div>
                 <div class="stat-card">
                     <span class="stat-number" data-count="98">0</span>
-                    <div class="stat-label">Client Satisfaction %</div>
+                    <div class="stat-label">Satisfaction Rate</div>
                 </div>
                 <div class="stat-card">
-                    <span class="stat-number" data-count="24">0</span>
-                    <div class="stat-label">Countries Served</div>
+                    <span class="stat-number" data-count="150">0</span>
+                    <div class="stat-label">Active Partners</div>
                 </div>
                 <div class="stat-card">
                     <span class="stat-number" data-count="99">0</span>
-                    <div class="stat-label">On-Time Delivery %</div>
+                    <div class="stat-label">On-Time Rate</div>
                 </div>
             </div>
         </div>
@@ -976,12 +1030,13 @@
     <!-- Story Section -->
     <section class="story">
         <div class="container">
+            <h1 class="story-heading">Our <span class="accent-text">Journey</span></h1>
             <div class="story-content">
                 <div class="story-text">
-                    <h2>Building Bridges Between Nations</h2>
-                    <p>Founded in 2023, IndoAsia Trading emerged from a vision to revolutionize trade between China and Bangladesh. We recognized the immense potential for Bangladeshi businesses to access high-quality Chinese products but saw the challenges they faced navigating international trade.</p>
-                    <p>Our team combines decades of experience in international trade, logistics, and supply chain management. This deep understanding of both Chinese and Bangladeshi markets allows us to create seamless import experiences for our clients.</p>
-                    <p>Today, we're proud to have facilitated over 500 successful imports while maintaining a 98% client satisfaction rate. Our commitment to transparency, quality, and efficiency has made us the preferred partner for SMEs across Bangladesh.</p>
+                    <h2>From Vision to Reality</h2>
+                    <p>Established in 2023, IndoAsia Trading was born from a simple observation: Bangladeshi businesses needed a reliable partner to navigate the complexities of Chinese imports. We saw opportunity where others saw obstacles.</p>
+                    <p>With deep roots in both markets and expertise spanning logistics, quality control, and international regulations, we've built a bridge that makes cross-border trade effortless. Our bilingual team understands cultural nuances and business practices on both sides.</p>
+                    <p>Today, we're the go-to partner for businesses seeking quality Chinese products. From sourcing to delivery, we handle every detail so you can focus on growing your business.</p>
                 </div>
                 <div class="story-image">
                     <img src="assets/images/China-bangla.jpg" alt="China Bangladesh Trade">
@@ -993,25 +1048,22 @@
     <!-- Mission Vision -->
     <section class="mission-vision">
         <div class="container">
-            <div class="section-header fade-in">
-                <h2>Our Mission & Vision</h2>
-                <p>Driving economic growth through seamless international trade</p>
-            </div>
+            <h1 class="mission-heading">Our <span class="accent-text">Purpose</span></h1>
             <div class="mv-grid">
                 <div class="mv-card">
                     <div class="mv-icon"><img src="assets/icons/mission.png" alt="Mission Icon"></div>
-                    <h3>Our Mission</h3>
-                    <p>To empower Bangladeshi businesses with access to world-class Chinese products through streamlined import processes, competitive pricing, and exceptional service.</p>
+                    <h3>Mission</h3>
+                    <p>Simplify China-Bangladesh trade by providing end-to-end import solutions that save time, reduce costs, and guarantee quality for every client.</p>
                 </div>
                 <div class="mv-card">
                     <div class="mv-icon"><img src="assets/icons/visson.png" alt="Vision Icon"></div>
-                    <h3>Our Vision</h3>
-                    <p>To become the leading bridge for trade between China and Bangladesh, fostering economic growth and creating opportunities for businesses in both nations.</p>
+                    <h3>Vision</h3>
+                    <p>To be the most trusted trade partner connecting Asian markets, enabling businesses to scale globally with confidence and ease.</p>
                 </div>
                 <div class="mv-card">
                     <div class="mv-icon"><img src="assets/icons/qualityAbout.png" alt="Values Icon"></div>
-                    <h3>Our Values</h3>
-                    <p>Integrity, transparency, innovation, and customer-centricity guide everything we do. We believe in building lasting relationships based on trust and results.</p>
+                    <h3>Values</h3>
+                    <p>Trust, transparency, and results. We build partnerships, not transactions. Every shipment reflects our commitment to your success.</p>
                 </div>
             </div>
         </div>
@@ -1020,17 +1072,14 @@
     <!-- Team Section -->
     <section class="team">
         <div class="container">
-            <div class="section-header fade-in">
-                <h2>Meet Our Leadership Team</h2>
-                <p>Experienced professionals dedicated to your success</p>
-            </div>
+            <h1 class="story-heading">The <span class="accent-text">Team</span></h1>
             <div class="team-grid">
                 <div class="team-card">
                     <img src="assets/images/ridoy.jpg" alt="CEO" class="team-image">
                     <div class="team-info">
                         <h3 class="team-name">Abdul Rahman</h3>
-                        <p class="team-role">CEO & Founder</p>
-                        <p>15+ years in international trade and supply chain management</p>
+                        <p class="team-role">Founder & CEO</p>
+                        <p>Trade veteran with 15+ years connecting Asian markets</p>
                     </div>
                 </div>
                 <div class="team-card">
@@ -1038,23 +1087,23 @@
                     <div class="team-info">
                         <h3 class="team-name">Li Wei</h3>
                         <p class="team-role">Operations Director</p>
-                        <p>Expert in Chinese manufacturing and quality control processes</p>
+                        <p>China operations expert ensuring quality at every step</p>
                     </div>
                 </div>
                 <div class="team-card">
                     <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Logistics Manager" class="team-image">
                     <div class="team-info">
                         <h3 class="team-name">Fatima Begum</h3>
-                        <p class="team-role">Logistics Manager</p>
-                        <p>Specializes in international shipping and customs clearance</p>
+                        <p class="team-role">Logistics Head</p>
+                        <p>Shipping specialist navigating customs and regulations</p>
                     </div>
                 </div>
                 <div class="team-card">
                     <img src="assets/images/arifarman.jpg" alt="Technology Director" class="team-image">
                     <div class="team-info">
                         <h3 class="team-name">Arif Arman</h3>
-                        <p class="team-role">Chief Digital Officer & Lead Developer</p>
-                        <p>Pioneering digital transformation and building innovative solutions for seamless trade operations</p>
+                        <p class="team-role">Chief Digital Officer</p>
+                        <p>Tech innovator building digital solutions for modern trade</p>
                     </div>
                 </div>
             </div>
@@ -1065,10 +1114,10 @@
     <section class="cta">
         <div class="container">
             <div class="cta-content">
-                <h2>Ready to Transform Your Business?</h2>
-                <p>Join hundreds of successful Bangladeshi businesses that trust us with their import needs.</p>
-                <a href="contact.html" class="btn">Get Started Today</a>
-                <a href="services.html" class="btn">Explore Services</a>
+                <h2>Start Your Import Journey</h2>
+                <p>Partner with us and experience hassle-free imports from China to Bangladesh.</p>
+                <a href="contact.html" class="btn">Contact Us</a>
+                <a href="services.html" class="btn">View Services</a>
             </div>
         </div>
     </section>
