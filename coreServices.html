@@ -298,6 +298,9 @@
             overflow: hidden;
             opacity: 0;
             transform: translateY(20px);
+            display: flex;
+            flex-direction: column;
+            height: 100%;
         }
 
         .service-card.animate {
@@ -322,6 +325,9 @@
 
         .service-content {
             padding: 2rem;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
         }
 
         .service-content h3 {
@@ -391,10 +397,11 @@
 
         .service-buttons {
             display: flex;
+            flex-direction: column;
             gap: 0.5rem;
-            flex-wrap: wrap;
             position: relative;
             z-index: 10;
+            margin-top: auto;
         }
 
         .service-buttons .btn {

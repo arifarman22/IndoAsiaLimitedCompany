@@ -1764,6 +1764,95 @@
                 min-width: 180px;
                 height: 1.2em;
             }
+
+            /* Mobile Hero Section */
+            .hero {
+                padding: 4rem 0 2rem;
+                min-height: auto;
+            }
+
+            .hero-content h1 {
+                font-size: 1.8rem !important;
+                line-height: 1.3;
+            }
+
+            .hero-content p {
+                font-size: 0.95rem !important;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+                align-items: center;
+                gap: 0.75rem;
+            }
+
+            .hero-buttons .btn {
+                width: 100%;
+                max-width: 280px;
+                padding: 14px 24px !important;
+                font-size: 13px !important;
+            }
+
+            /* Mobile Stats Grid */
+            .stats-grid {
+                grid-template-columns: 1fr !important;
+                gap: 1.5rem !important;
+            }
+
+            .stat-item {
+                padding: 1.5rem !important;
+            }
+
+            /* Mobile Premium Services */
+            .premium-services-grid {
+                grid-template-columns: 1fr !important;
+                gap: 1.5rem;
+            }
+
+            .premium-card {
+                margin: 0;
+            }
+
+            /* Mobile Enhanced Services */
+            .enhanced-services-grid {
+                grid-template-columns: 1fr !important;
+            }
+
+            /* Mobile Features Grid */
+            .features-grid {
+                grid-template-columns: 1fr !important;
+            }
+
+            /* Mobile Video Grid */
+            .video-grid {
+                grid-template-columns: 1fr !important;
+            }
+
+            /* Mobile Testimonials */
+            .testimonials-grid {
+                grid-template-columns: 1fr !important;
+            }
+
+            /* Mobile CTA */
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .cta-buttons .btn {
+                width: 100%;
+                max-width: 280px;
+            }
+
+            /* Mobile Footer */
+            .footer-content {
+                grid-template-columns: 1fr !important;
+                text-align: center;
+            }
+
+            .social-links {
+                justify-content: center;
+            }
         }
 
         /* Performance optimizations */
@@ -1902,7 +1991,7 @@
                                     class="card-icon-img">
                             </div>
                             <h3>🔍 Sourcing Expertise</h3>
-                            <p class="card-subtitle">Connect with verified manufacturers</p>
+                            <p class="card-subtitle">verified manufacturers</p>
                         </div>
 
                         <div class="card-content">
@@ -3235,11 +3324,12 @@
 
     <!-- Floating Social Icons -->
     <div style="position: fixed; bottom: 30px; right: 30px; z-index: 1000; display: flex; flex-direction: column; gap: 15px;">
-        <a href="#" onclick="openChatbox('whatsapp'); return false;" style="width: 60px; height: 60px; background: linear-gradient(135deg, #dc2626, #ea580c); border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 15px rgba(220, 38, 38, 0.4); transition: transform 0.3s ease;" onmouseover="this.style.transform='scale(1.1)'" onmouseout="this.style.transform='scale(1)'">
-            <i class="fab fa-whatsapp" style="color: white; font-size: 28px;"></i>
-        </a>
+       
         <a href="#" onclick="openChatbox('facebook'); return false;" style="width: 60px; height: 60px; background: linear-gradient(135deg, #1a365d, #2563eb); border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 15px rgba(37, 99, 235, 0.4); transition: transform 0.3s ease;" onmouseover="this.style.transform='scale(1.1)'" onmouseout="this.style.transform='scale(1)'">
             <i class="fab fa-facebook-messenger" style="color: white; font-size: 28px;"></i>
+        </a>
+         <a href="#" onclick="openChatbox('whatsapp'); return false;" style="width: 60px; height: 60px; background: linear-gradient(135deg, #dc2626, #ea580c); border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 15px rgba(220, 38, 38, 0.4); transition: transform 0.3s ease;" onmouseover="this.style.transform='scale(1.1)'" onmouseout="this.style.transform='scale(1)'">
+            <i class="fab fa-whatsapp" style="color: white; font-size: 28px;"></i>
         </a>
     </div>
 
@@ -3408,6 +3498,7 @@
             z-index: 2;
             max-width: 1400px;
             margin: 0 auto;
+            align-items: stretch;
         }
 
         .premium-card {
@@ -3422,6 +3513,7 @@
             transform-style: preserve-3d;
             display: flex;
             flex-direction: column;
+            height: 100%;
         }
 
         .premium-card::before {
@@ -3559,6 +3651,7 @@
 
         .feature-list {
             margin-bottom: 2rem;
+            min-height: 160px;
         }
 
         .feature-item {
@@ -3597,6 +3690,7 @@
             background: rgba(248, 250, 252, 0.8);
             border-radius: 16px;
             border: 1px solid #e2e8f0;
+            margin-top: auto;
         }
 
         .stat {
