@@ -785,11 +785,40 @@
             color: #ffffff;
             text-align: center;
             padding: 5rem 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="2" fill="white" opacity="0.1"/></svg>');
+            animation: sparkle 3s linear infinite;
+        }
+
+        @keyframes sparkle {
+            0% { transform: translateX(0) translateY(0); }
+            100% { transform: translateX(100px) translateY(100px); }
         }
         
         .cta-section h2,
         .cta-section p {
             color: white;
+            position: relative;
+            z-index: 2;
+        }
+
+        .cta-section h2 {
+            animation: glow 2s ease-in-out infinite alternate;
+        }
+
+        @keyframes glow {
+            from { text-shadow: 0 0 20px rgba(255,255,255,0.5); }
+            to { text-shadow: 0 0 30px rgba(255,255,255,0.8); }
         }
 
         .cta-buttons {
@@ -806,6 +835,27 @@
         
         .cta-section .btn-secondary:hover {
             color: white;
+        }
+
+        .cta-buttons .btn {
+            position: relative;
+            overflow: hidden;
+            z-index: 2;
+        }
+
+        .cta-buttons .btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+            transition: left 0.5s;
+        }
+
+        .cta-buttons .btn:hover::before {
+            left: 100%;
         }
 
         /* Footer */
@@ -1220,13 +1270,14 @@
             </div>
         </section>
 
-        <section class="cta-section">
+        <section class="cta-section" style="background: linear-gradient(135deg, #1e3a8a 0%, #dc2626 100%); padding: 5rem 0; position: relative; overflow: hidden;">
+            <div class="stars"></div>
             <div class="container">
-                <h2>Ready to Enhance Your Import Operations?</h2>
-                <p>Discover how our additional services can accelerate your business growth and optimize your import processes.</p>
+                <h2 style="color: white; animation: fadeInUp 1s ease;">Ready to Enhance Your Import Operations?</h2>
+                <p style="color: white;">Discover how our additional services can accelerate your business growth and optimize your import processes.</p>
                 <div class="cta-buttons">
-                    <a href="contact.html" class="btn btn-primary">Get Started Today</a>
-                    <a href="coreServices.html" class="btn btn-secondary">View Core Services</a>
+                    <a href="contact.html" class="btn btn-primary" style="color: white;">Get Started Today</a>
+                    <a href="coreServices.html" class="btn btn-secondary" style="color: white;">View Core Services</a>
                 </div>
             </div>
         </section>
@@ -1615,3 +1666,44 @@
 </body>
 
 </html>
+
+<style>
+.stars {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.stars::before,
+.stars::after {
+    content: '';
+    position: absolute;
+    width: 2px;
+    height: 2px;
+    background: white;
+    box-shadow: 
+        100px 200px white, 200px 100px white, 300px 300px white,
+        400px 150px white, 500px 250px white, 600px 100px white,
+        700px 200px white, 150px 350px white, 250px 50px white,
+        350px 150px white, 450px 300px white, 550px 200px white;
+    animation: stars 3s linear infinite;
+}
+
+.stars::after {
+    box-shadow: 
+        150px 250px white, 250px 150px white, 350px 350px white,
+        450px 200px white, 550px 300px white, 650px 150px white,
+        750px 250px white, 200px 400px white, 300px 100px white,
+        400px 200px white, 500px 350px white, 600px 250px white;
+    animation-delay: 1.5s;
+}
+
+@keyframes stars {
+    from { transform: translateY(0); }
+    to { transform: translateY(-400px); }
+}
+</style>

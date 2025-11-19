@@ -1,0 +1,76 @@
+/* Star Animation for CTA Sections */
+.cta-section {
+    position: relative;
+    overflow: hidden;
+}
+
+.stars {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+.stars::before,
+.stars::after {
+    content: '';
+    position: absolute;
+    width: 2px;
+    height: 2px;
+    background: rgba(255, 255, 255, 0.8);
+    box-shadow: 
+        100px 200px #fff, 200px 100px #fff, 300px 300px #fff,
+        400px 150px #fff, 500px 250px #fff, 600px 100px #fff,
+        700px 300px #fff, 800px 200px #fff, 900px 150px #fff,
+        1000px 250px #fff, 50px 350px #fff, 150px 450px #fff,
+        250px 400px #fff, 350px 500px #fff, 450px 350px #fff,
+        550px 450px #fff, 650px 400px #fff, 750px 500px #fff,
+        850px 450px #fff, 950px 350px #fff, 120px 50px #fff,
+        220px 150px #fff, 320px 80px #fff, 420px 180px #fff,
+        520px 120px #fff, 620px 220px #fff, 720px 150px #fff,
+        820px 80px #fff, 920px 180px #fff, 1020px 120px #fff;
+    animation: moveStars 50s linear infinite;
+}
+
+.stars::after {
+    width: 1px;
+    height: 1px;
+    background: rgba(255, 255, 255, 0.5);
+    box-shadow: 
+        150px 250px #fff, 250px 150px #fff, 350px 350px #fff,
+        450px 200px #fff, 550px 300px #fff, 650px 150px #fff,
+        750px 350px #fff, 850px 250px #fff, 950px 200px #fff,
+        1050px 300px #fff, 100px 400px #fff, 200px 500px #fff,
+        300px 450px #fff, 400px 550px #fff, 500px 400px #fff,
+        600px 500px #fff, 700px 450px #fff, 800px 550px #fff,
+        900px 500px #fff, 1000px 400px #fff, 170px 100px #fff,
+        270px 200px #fff, 370px 130px #fff, 470px 230px #fff,
+        570px 170px #fff, 670px 270px #fff, 770px 200px #fff,
+        870px 130px #fff, 970px 230px #fff, 1070px 170px #fff;
+    animation: moveStars 80s linear infinite;
+}
+
+@keyframes moveStars {
+    from {
+        transform: translateY(0);
+    }
+    to {
+        transform: translateY(-1000px);
+    }
+}
+
+@media (max-width: 768px) {
+    .stars::before,
+    .stars::after {
+        box-shadow: 
+            50px 100px #fff, 100px 50px #fff, 150px 150px #fff,
+            200px 75px #fff, 250px 125px #fff, 300px 50px #fff,
+            350px 150px #fff, 400px 100px #fff, 450px 75px #fff,
+            500px 125px #fff, 25px 175px #fff, 75px 225px #fff,
+            125px 200px #fff, 175px 250px #fff, 225px 175px #fff,
+            275px 225px #fff, 325px 200px #fff, 375px 250px #fff,
+            425px 225px #fff, 475px 175px #fff;
+    }
+}

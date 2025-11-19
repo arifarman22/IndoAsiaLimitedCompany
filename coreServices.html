@@ -535,11 +535,40 @@
             color: #ffffff;
             text-align: center;
             padding: 5rem 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="2" fill="white" opacity="0.1"/></svg>');
+            animation: sparkle 3s linear infinite;
+        }
+
+        @keyframes sparkle {
+            0% { transform: translateX(0) translateY(0); }
+            100% { transform: translateX(100px) translateY(100px); }
         }
         
         .cta-section h2,
         .cta-section p {
             color: white;
+            position: relative;
+            z-index: 2;
+        }
+
+        .cta-section h2 {
+            animation: glow 2s ease-in-out infinite alternate;
+        }
+
+        @keyframes glow {
+            from { text-shadow: 0 0 20px rgba(255,255,255,0.5); }
+            to { text-shadow: 0 0 30px rgba(255,255,255,0.8); }
         }
 
         .cta-buttons {
@@ -553,6 +582,24 @@
         .cta-buttons .btn {
             background: rgba(255, 255, 255, 0.9);
             color: var(--accent);
+            position: relative;
+            overflow: hidden;
+            z-index: 2;
+        }
+
+        .cta-buttons .btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+            transition: left 0.5s;
+        }
+
+        .cta-buttons .btn:hover::before {
+            left: 100%;
         }
 
         .cta-buttons .btn.btn-secondary {
@@ -1917,13 +1964,14 @@
             </div>
         </section>
 
-        <section class="cta-section">
+        <section class="cta-section" style="background: linear-gradient(135deg, #1e3a8a 0%, #dc2626 100%); padding: 5rem 0; position: relative; overflow: hidden;">
+            <div class="stars"></div>
             <div class="container">
-                <h2>Ready to Transform Your Import Business?</h2>
-                <p>Join hundreds of successful Bangladeshi businesses that trust us with their import needs.</p>
+                <h2 style="color: white; animation: fadeInUp 1s ease;">Ready to Transform Your Import Business?</h2>
+                <p style="color: white;">Join hundreds of successful Bangladeshi businesses that trust us with their import needs.</p>
                 <div class="cta-buttons">
-                    <a href="contact.html" class="btn btn-primary">Get Started Today</a>
-                    <a href="about.html" class="btn btn-secondary">Learn About Us</a>
+                    <a href="contact.html" class="btn btn-primary" style="color: rgb(100, 14, 14);">Get Started Today</a>
+                    <a href="about.html" class="btn btn-secondary" style="margin-left: 1rem; color: white;">Learn About Us</a>
                 </div>
             </div>
         </section>
@@ -2566,3 +2614,36 @@
 </body>
 
 </html>
+
+    <style>
+        .stars {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+        }
+
+        .stars::before,
+        .stars::after {
+            content: '';
+            position: absolute;
+            width: 2px;
+            height: 2px;
+            background: white;
+            box-shadow: 100px 200px white, 300px 100px white, 500px 300px white, 700px 150px white, 900px 250px white,
+                        150px 50px white, 400px 350px white, 600px 50px white, 800px 300px white, 200px 150px white,
+                        350px 250px white, 550px 200px white, 750px 100px white, 250px 300px white, 450px 150px white;
+            animation: stars 3s linear infinite;
+        }
+
+        .stars::after {
+            animation-delay: 1.5s;
+        }
+
+        @keyframes stars {
+            from { transform: translateY(0); }
+            to { transform: translateY(-400px); }
+        }
+    </style>
