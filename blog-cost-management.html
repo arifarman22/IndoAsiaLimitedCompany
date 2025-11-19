@@ -194,6 +194,7 @@
         }
     </style>
     <link rel="stylesheet" href="assets/css/sidebar-nav.css">`r`n    <link rel="stylesheet" href="assets/css/translate.css">
+    <link rel="stylesheet" href="assets/css/chatbox.css">
 </head>
 <body>
     <div id="google_translate_element" style="display:none;"></div>
@@ -560,5 +561,92 @@
     <script>/* navigation handled by assets/js/mobile-nav-fix.js */</script>
     <script src="assets/js/dropdown-nav.js"></script>
     <script src="assets/js/translate.js"></script>
+    <script src="assets/js/chatbox.js"></script>
+
+    <!-- Floating Social Contact Icons -->
+    <div class="floating-social-icons">
+        <a href="#" onclick="openChatbox('facebook'); return false;" class="social-icon facebook-icon" aria-label="Chat on Facebook">
+            <i class="fab fa-facebook-messenger"></i>
+        </a>
+        <a href="#" onclick="openChatbox('whatsapp'); return false;" class="social-icon whatsapp-icon" aria-label="Chat on WhatsApp">
+            <i class="fab fa-whatsapp"></i>
+        </a>
+    </div>
+
+    <!-- Chatbox -->
+    <div id="chatbox">
+        <div id="chatHeader">
+            <span>Chat</span>
+            <button id="closeChat" onclick="closeChatbox()">&times;</button>
+        </div>
+        <div id="chatMessages"></div>
+        <div id="chatInputArea">
+            <input type="text" id="chatInput" placeholder="Type a message...">
+            <button id="sendBtn" onclick="sendMessage()">Send</button>
+        </div>
+    </div>
+
+    <style>
+        .floating-social-icons {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            z-index: 1000;
+        }
+
+        .social-icon {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 28px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+            transition: all 0.3s ease;
+            animation: pulse 2s infinite;
+        }
+
+        .facebook-icon {
+            background: linear-gradient(135deg, #1a365d, #2563eb);
+        }
+
+        .whatsapp-icon {
+            background: linear-gradient(135deg, #dc2626, #ea580c);
+        }
+
+        .social-icon:hover {
+            transform: scale(1.1) translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+            animation: none;
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.05);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .floating-social-icons {
+                bottom: 20px;
+                right: 20px;
+            }
+
+            .social-icon {
+                width: 50px;
+                height: 50px;
+                font-size: 24px;
+            }
+        }
+    </style>
+
 </body>
 </html>
