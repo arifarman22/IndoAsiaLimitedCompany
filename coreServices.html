@@ -284,23 +284,48 @@
         .services-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 2rem;
+            gap: 2.5rem;
             margin-top: 3rem;
         }
 
         .service-card {
-            background: var(--bg-secondary);
-            border-radius: var(--border-radius);
+            background: linear-gradient(145deg, #ffffff 0%, #f8fafc 100%);
+            border-radius: 24px;
             padding: 0;
-            border: 1px solid var(--border);
-            transition: all 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.8);
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
             position: relative;
-            overflow: hidden;
+            overflow: visible;
             opacity: 0;
             transform: translateY(20px);
             display: flex;
             flex-direction: column;
             height: 100%;
+            box-shadow: 0 8px 32px rgba(26, 54, 93, 0.08), 0 2px 8px rgba(0, 0, 0, 0.04);
+            backdrop-filter: blur(10px);
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            inset: -2px;
+            border-radius: 24px;
+            padding: 2px;
+            background: var(--accent-gradient);
+            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            -webkit-mask-composite: xor;
+            mask-composite: exclude;
+            opacity: 0;
+            transition: opacity 0.5s ease;
+        }
+
+        .service-card:hover::before {
+            opacity: 1;
+        }
+
+        .service-card:hover {
+            transform: translateY(-12px) scale(1.02);
+            box-shadow: 0 20px 60px rgba(26, 54, 93, 0.15), 0 8px 24px rgba(229, 62, 62, 0.1);
         }
 
         .service-card.animate {
@@ -309,16 +334,40 @@
         }
 
         .service-thumb {
-            height: 200px;
+            height: 220px;
             overflow: hidden;
             position: relative;
+            border-radius: 24px 24px 0 0;
+            margin: 0;
+        }
+
+        .service-thumb::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(180deg, transparent 0%, rgba(26, 54, 93, 0.4) 100%);
+            z-index: 1;
+            transition: opacity 0.5s ease;
+        }
+
+        .service-card:hover .service-thumb::before {
+            background: linear-gradient(180deg, transparent 0%, rgba(229, 62, 62, 0.3) 100%);
         }
 
         .service-thumb img {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            transition: transform 0.4s ease;
+            transition: transform 0.7s cubic-bezier(0.4, 0, 0.2, 1), filter 0.5s ease;
+            filter: brightness(1) saturate(1);
+        }
+
+        .service-card:hover .service-thumb img {
+            transform: scale(1.1) rotate(1deg);
+            filter: brightness(1.1) saturate(1.2);
         }
 
 
@@ -1303,10 +1352,10 @@
 
                         </div>
                         <div class="service-content">
-                            <div class="service-icon" style="margin-top: 20px; background: #f0f4f8; padding: 15px; border-radius: 50%; width: 70px; height: 70px; display: flex; align-items: center; justify-content: center; margin-left: auto; margin-right: auto;">
+                            <div class="service-icon" style="margin-top: 20px; margin-bottom: 0px; background: #f0f4f8; padding: 15px; border-radius: 50%; width: 70px; height: 70px; display: flex; align-items: center; justify-content: center; margin-left: auto; margin-right: auto;">
                                 <img src="assets/icons/product-development.png" alt="Product Sourcing" style="width: 40px; height: 40px; object-fit: contain;">
                             </div>
-                            <h3>Product Sourcing</h3>
+                            <h3 style="margin-top: 0; margin-bottom: 0.5rem;">Product Sourcing</h3>
                             <p>Direct access to verified Chinese manufacturers with quality assurance and competitive pricing.</p>
                             <ul class="service-features">
                                 <li>Supplier verification & background checks</li>
@@ -1327,10 +1376,10 @@
 
                         </div>
                         <div class="service-content">
-                            <div class="service-icon" style="margin-top: 20px; background: #f0f4f8; padding: 15px; border-radius: 50%; width: 70px; height: 70px; display: flex; align-items: center; justify-content: center; margin-left: auto; margin-right: auto;">
+                            <div class="service-icon" style="margin-top: 20px; margin-bottom: 0px; background: #f0f4f8; padding: 15px; border-radius: 50%; width: 70px; height: 70px; display: flex; align-items: center; justify-content: center; margin-left: auto; margin-right: auto;">
                                 <img src="assets/icons/logistics.png" alt="Logistics & Shipping" style="width: 40px; height: 40px; object-fit: contain;">
                             </div>
-                            <h3>Logistics & Shipping</h3>
+                            <h3 style="margin-top: 0; margin-bottom: 0.5rem;">Logistics & Shipping</h3>
                             <p>Comprehensive shipping solutions with real-time tracking and customs handling.</p>
                             <ul class="service-features">
                                 <li>Sea, air, and land freight options</li>
@@ -1351,10 +1400,10 @@
 
                         </div>
                         <div class="service-content">
-                            <div class="service-icon" style="margin-top: 20px; background: #f0f4f8; padding: 15px; border-radius: 50%; width: 70px; height: 70px; display: flex; align-items: center; justify-content: center; margin-left: auto; margin-right: auto;">
+                            <div class="service-icon" style="margin-top: 20px; margin-bottom: 0px; background: #f0f4f8; padding: 15px; border-radius: 50%; width: 70px; height: 70px; display: flex; align-items: center; justify-content: center; margin-left: auto; margin-right: auto;">
                                 <img src="assets/icons/quality.png" alt="Quality Assurance" style="width: 40px; height: 40px; object-fit: contain;">
                             </div>
-                            <h3>Quality Assurance</h3>
+                            <h3 style="margin-top: 0; margin-bottom: 0.5rem;">Quality Assurance</h3>
                             <p>Rigorous quality control processes to ensure products meet international standards.</p>
                             <ul class="service-features">
                                 <li>Factory audits & production monitoring</li>
@@ -1375,10 +1424,10 @@
 
                         </div>
                         <div class="service-content">
-                            <div class="service-icon" style="margin-top: 20px; background: #f0f4f8; padding: 15px; border-radius: 50%; width: 70px; height: 70px; display: flex; align-items: center; justify-content: center; margin-left: auto; margin-right: auto;">
+                            <div class="service-icon" style="margin-top: 20px; margin-bottom: 0px; background: #f0f4f8; padding: 15px; border-radius: 50%; width: 70px; height: 70px; display: flex; align-items: center; justify-content: center; margin-left: auto; margin-right: auto;">
                                 <img src="assets/icons/custom-clearance.png" alt="Customs Clearance" style="width: 40px; height: 40px; object-fit: contain;">
                             </div>
-                            <h3>Customs Clearance</h3>
+                            <h3 style="margin-top: 0; margin-bottom: 0.5rem;">Customs Clearance</h3>
                             <p>Expert handling of customs procedures to ensure smooth import processes.</p>
                             <ul class="service-features">
                                 <li>Document preparation & submission</li>
@@ -1399,10 +1448,10 @@
 
                         </div>
                         <div class="service-content">
-                            <div class="service-icon" style="margin-top: 20px; background: #f0f4f8; padding: 15px; border-radius: 50%; width: 70px; height: 70px; display: flex; align-items: center; justify-content: center; margin-left: auto; margin-right: auto;">
+                            <div class="service-icon" style="margin-top: 20px; margin-bottom: 0px; background: #f0f4f8; padding: 15px; border-radius: 50%; width: 70px; height: 70px; display: flex; align-items: center; justify-content: center; margin-left: auto; margin-right: auto;">
                                 <img src="assets/icons/business.png" alt="Business Consultation" style="width: 40px; height: 40px; object-fit: contain;">
                             </div>
-                            <h3>Business Consultation</h3>
+                            <h3 style="margin-top: 0; margin-bottom: 0.5rem;">Business Consultation</h3>
                             <p>Strategic guidance for import businesses to optimize operations and maximize profits.</p>
                             <ul class="service-features">
                                 <li>Market research & analysis</li>
@@ -1423,10 +1472,10 @@
 
                         </div>
                         <div class="service-content">
-                            <div class="service-icon" style="margin-top: 20px; background: #f0f4f8; padding: 15px; border-radius: 50%; width: 70px; height: 70px; display: flex; align-items: center; justify-content: center; margin-left: auto; margin-right: auto;">
+                            <div class="service-icon" style="margin-top: 20px; margin-bottom: 0px; background: #f0f4f8; padding: 15px; border-radius: 50%; width: 70px; height: 70px; display: flex; align-items: center; justify-content: center; margin-left: auto; margin-right: auto;">
                                 <img src="assets/icons/distribution-center.png" alt="Warehousing & Distribution" style="width: 40px; height: 40px; object-fit: contain;">
                             </div>
-                            <h3>Warehousing & Distribution</h3>
+                            <h3 style="margin-top: 0; margin-bottom: 0.5rem;">Warehousing & Distribution</h3>
                             <p>Secure storage solutions and efficient distribution networks across Bangladesh.</p>
                             <ul class="service-features">
                                 <li>Secure storage facilities</li>
