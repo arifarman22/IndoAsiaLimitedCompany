@@ -1895,10 +1895,10 @@
                         <div class="card-badge">Most Popular</div>
 
                         <div class="card-header">
-                            <div class="card-icon-wrapper">
+                            <div class="card-icon-wrapper" style="width: 120px; height: 120px;">
                                 <div class="card-icon-bg"></div>
                                 <img src="assets/images/sourcingexpertise.jpg" alt="Sourcing Expertise"
-                                    class="card-icon-img">
+                                    class="card-icon-img" style="width: 120px; height: 120px;">
                             </div>
                             <h3>🔍 Sourcing Expertise</h3>
                             <p class="card-subtitle">Connect with verified manufacturers</p>
@@ -3398,6 +3398,8 @@
             overflow: hidden;
             position: relative;
             transform-style: preserve-3d;
+            display: flex;
+            flex-direction: column;
         }
 
         .premium-card::before {
@@ -3480,6 +3482,7 @@
             width: 100px;
             height: 100px;
             margin: 0 auto 1.5rem;
+            flex-shrink: 0;
         }
 
         .card-icon-bg {
@@ -3500,8 +3503,8 @@
 
         .card-icon-img {
             position: relative;
-            width: 100%;
-            height: 100%;
+            width: 100px;
+            height: 100px;
             object-fit: cover;
             border-radius: 50%;
             z-index: 2;
@@ -3527,6 +3530,9 @@
 
         .premium-card .card-content {
             padding: 0 2rem 1.5rem;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
         }
 
         .feature-list {
