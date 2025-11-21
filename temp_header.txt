@@ -1,0 +1,59 @@
+﻿<header class="header" id="mainHeader" role="banner">
+        <div class="container header-content">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="assets/images/horizontal-final.png" alt="IndoAsia Trading Logo" class="logo-img">
+                    <span class="logo-text"></span>
+                </a>
+            </div>
+            <nav>
+                <ul class="nav" id="mainNav">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="services.html">Our Process</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle">Our Services <span class="dropdown-arrow">â–¼</span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="coreServices.html">Core Services</a></li>
+                            <li><a href="additionalServices.html">Additional Services</a></li>
+                            <li><a href="plans.html">Plans & Pricing</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="features.html">Features</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle">Resources <span class="dropdown-arrow">â–¼</span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="blog.html">Blog</a></li>
+                            <li><a href="faqs.html">FAQs</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle">ðŸŒ Language <span class="dropdown-arrow">â–¼</span></a>
+                        <ul class="dropdown-menu" id="languageMenu">
+                            <li><a href="#" onclick="changeLanguage('en'); return false;">ðŸ‡¬ðŸ‡§ English</a></li>
+                            <li><a href="#" onclick="changeLanguage('bn'); return false;">ðŸ‡§ðŸ‡© à¦¬à¦¾à¦‚à¦²à¦¾</a></li>
+                            <li><a href="#" onclick="changeLanguage('zh-CN'); return false;">ðŸ‡¨ðŸ‡³ ä¸­æ–‡</a></li>
+                            <li><a href="#" onclick="changeLanguage('hi'); return false;">ðŸ‡®ðŸ‡³ à¤¹à¤¿à¤¨à¥à¤¦à¥€</a></li>
+                            <li><a href="#" onclick="changeLanguage('ur'); return false;">ðŸ‡µðŸ‡° Ø§Ø±Ø¯Ùˆ</a></li>
+                            <li><a href="#" onclick="changeLanguage('ko'); return false;">ðŸ‡°ðŸ‡· í•œêµ­ì–´</a></li>
+                            <li><a href="#" onclick="changeLanguage('ar'); return false;">ðŸ‡¦ðŸ‡ª Ø§Ù„Ø¹Ø±Ø¨ÙŠØ©</a></li>
+                            <li><a href="#" onclick="changeLanguage('es'); return false;">ðŸ‡ªðŸ‡¸ EspaÃ±ol</a></li>
+                            <li><a href="#" onclick="changeLanguage('fr'); return false;">ðŸ‡«ðŸ‡· FranÃ§ais</a></li>
+                            <li><a href="#" onclick="changeLanguage('de'); return false;">ðŸ‡©ðŸ‡ª Deutsch</a></li>
+                            <li><a href="#" onclick="changeLanguage('ja'); return false;">ðŸ‡¯ðŸ‡µ æ—¥æœ¬èªž</a></li>
+                            <li><a href="#" onclick="changeLanguage('pt'); return false;">ðŸ‡µðŸ‡¹ PortuguÃªs</a></li>
+                            <li><a href="#" onclick="changeLanguage('ru'); return false;">ðŸ‡·ðŸ‡º Ð ÑƒÑÑÐºÐ¸Ð¹</a></li>
+                            <li><a href="#" onclick="changeLanguage('th'); return false;">ðŸ‡¹ðŸ‡­ à¹„à¸—à¸¢</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+
+            <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle navigation menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>

@@ -127,7 +127,7 @@
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.11.4/dist/gsap.min.js" defer></script>
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js" defer></script>
     <script src="assets/js/performance.js" defer></script>
-    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="assets/css/main.css">`n    <link rel="stylesheet" href="assets/css/responsive.css">
     <link rel="stylesheet" href="assets/css/header.css">
     <link rel="stylesheet" href="assets/css/footer.css">
     <link rel="stylesheet" href="assets/css/animations.css">
@@ -662,9 +662,37 @@
 
         .enhanced-services-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
-            gap: 2rem;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
             margin-top: 3rem;
+        }
+        
+        .enhanced-card {
+            padding: 1.5rem;
+        }
+        
+        .enhanced-card h3 {
+            font-size: 1.1rem;
+        }
+        
+        .enhanced-card .main-desc {
+            font-size: 0.9rem;
+        }
+        
+        .enhanced-card .details ul li {
+            font-size: 0.85rem;
+        }
+        
+        @media (max-width: 968px) {
+            .enhanced-services-grid {
+                grid-template-columns: repeat(2, 1fr) !important;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .enhanced-services-grid {
+                grid-template-columns: 1fr !important;
+            }
         }
 
         .enhanced-card {
@@ -1483,7 +1511,7 @@
                 align-items: center;
                 gap: 0;
                 padding: 5rem 0 2rem;
-                transition: left 0.3s ease;
+                
                 box-shadow: 5px 0 15px rgba(0, 0, 0, 0.1);
                 z-index: 1099;
                 overflow-y: auto;
@@ -2162,7 +2190,7 @@
                             class="accent-text">Achievements</span></h2>
                     <p class="fade-in"
                         style="font-size: 1.2rem; color: var(--text-secondary); max-width: 600px; margin: 0 auto;">
-                        Numbers that speak for our commitment to excellence in China-Bangladesh trade</p>
+                        Numbers that speak for our commitment to excellence in WorldWide trade</p>
                 </div>
 
                 <div class="stats-grid stagger-container"
@@ -2342,7 +2370,7 @@
             <div class="container">
                 <h2 class="text-center fade-in">More Ways We Help You <span class="accent-text">Win</span></h2>
                 <p class="text-center subtitle fade-in">Modeled after best-in-class sourcing and shipping partners,
-                    tailored for China-Bangladesh trade</p>
+                    tailored for Worldwide trade</p>
 
                 <div class="enhanced-services-grid stagger-container" role="list">
                     <article class="enhanced-card fade-in-left floating" role="listitem">

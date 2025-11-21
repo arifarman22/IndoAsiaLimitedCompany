@@ -23,3 +23,26 @@
   font-size: 1.1rem;
   line-height: 1.8;
 }
+
+/* Responsive styles */
+@media (max-width: 968px) {
+  .about-section {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    padding: 3rem 0;
+  }
+  
+  .about-image {
+    transform: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .about-section {
+    padding: 2rem 0;
+  }
+  
+  .story {
+    font-size: 1rem;
+  }
+}

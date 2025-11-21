@@ -107,7 +107,7 @@
 
 .dropdown-menu {
   position:absolute; top:100%; left:0; background:var(--bg-secondary,#fff);
-  border:1px solid var(--border,#e5e7eb); border-radius:8px; padding:0.6rem; min-width:160px;
+  border:1px solid var(--border,#e5e7eb); border-radius:8px; padding:0.6rem; min-width:200px;
   opacity:0; visibility:hidden; transform:translateY(6px); transition:var(--transition); z-index:1000; box-shadow:0 8px 18px rgba(0,0,0,0.06);
 }
 
