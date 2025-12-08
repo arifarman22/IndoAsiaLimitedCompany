@@ -612,11 +612,17 @@
     .mobile-menu-btn {
       display: none;
       flex-direction: column;
-      gap: 4px;
-      background: none;
-      border: none;
+      gap: 5px;
+      background: var(--bg-secondary);
+      border: 1px solid var(--border);
+      border-radius: 8px;
       cursor: pointer;
-      padding: 0.5rem;
+      padding: 10px;
+      z-index: 9999;
+      position: relative;
+      margin-right: 5px;
+      margin-top: 10px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
     }
 
     .mobile-menu-btn span {
@@ -1811,7 +1817,7 @@
       </div>
 
       <div class="footer-bottom">
-        <p>&copy; 2023 IndoAsia Trading. All rights reserved.</p>
+        <p>&copy; IndoAsia Trading. All rights reserved.</p>
       </div>
     </div>
   </footer>

@@ -698,6 +698,31 @@
     box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
 }
 
+        /* Mobile Menu Button */
+        .mobile-menu-btn {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            cursor: pointer;
+            padding: 10px;
+            z-index: 9999;
+            position: relative;
+            margin-left: 10px;
+            margin-top: 10px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .mobile-menu-btn span {
+            width: 28px;
+            height: 3px;
+            background: var(--accent);
+            border-radius: 3px;
+            transition: var(--transition);
+        }
+
         /* Responsive considerations */
         @media (max-width: 968px) {
             .nav {
@@ -713,6 +738,10 @@
 
             .dropdown:hover .dropdown-menu {
                 display: block;
+            }
+            
+            .mobile-menu-btn {
+                display: flex;
             }
         }
 
@@ -2088,7 +2117,7 @@
             </div>
             
             <div class="footer-bottom">
-                <p>&copy; 2023 IndoAsia Trading. All rights reserved.</p>
+                <p>&copy; IndoAsia Trading. All rights reserved.</p>
             </div>
         </div>
     </footer>
