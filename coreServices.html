@@ -80,6 +80,7 @@
 
         .container {
             max-width: 1200px;
+            height: 120%;
             margin: 0 auto;
             padding: 0 2rem;
             width: 100%;
@@ -787,7 +788,7 @@
         /* Header Styles */
         .header {
             background: rgba(252, 251, 251, 0.95);
-            padding: 0.5rem 0;
+           
             position: fixed;
             width: 100%;
             top: 0;
@@ -802,16 +803,23 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
+            height: 100px;
+            padding: 0.5rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            width: 100%;
         }
 
         .logo {
             display: flex;
             align-items: center;
             gap: 10px;
+            flex-shrink: 0;
+            max-width: 200px;
         }
 
         .logo-img {
-            height: 100px;
+            height: 80px;
             width: auto;
             object-fit: contain;
         }
@@ -896,41 +904,9 @@
             font-weight: 600;
         }
 
-        .mobile-menu-btn {
-            display: none;
-            align-items: center;
-            justify-content: center;
-            background: var(--accent);
-            border-radius: 8px;
-            cursor: pointer;
-            transition: background 0.3s ease;
-            border: none;
-            width: 44px;
-            height: 40px;
-            flex-direction: column;
-            gap: 4px;
-            z-index: 1101;
-            position: fixed;
-            right: 1rem;
-            top: 1.8rem;
-        }
+       
 
-        .mobile-menu-btn:hover {
-            background: var(--accent-secondary);
-        }
-        
-        .mobile-menu-btn span {
-            display: block;
-            width: 26px;
-            height: 3px;
-            background: white;
-            border-radius: 3px;
-            transition: transform 0.3s ease, opacity 0.3s ease;
-        }
-        
-        .mobile-menu-btn.active span:nth-child(1) { transform: rotate(45deg) translate(8px, 8px); }
-        .mobile-menu-btn.active span:nth-child(2) { opacity: 0; }
-        .mobile-menu-btn.active span:nth-child(3) { transform: rotate(-45deg) translate(8px, -8px); }
+      
 
         /* Small helpers */
         .sidebar a:focus {
@@ -1274,6 +1250,11 @@
                 height: 70px;
             }
             
+            .header-content {
+                height: 70px;
+                padding: 0.25rem 1rem;
+            }
+            
             .logo-img {
                 height: 60px !important;
             }
@@ -1429,8 +1410,9 @@
 
         @media (max-width: 480px) {
             .mobile-menu-btn {
-                right: 0.75rem;
-                top: 1rem;
+                right: 0.6rem;
+                top: 0.7rem;
+                left: auto;
                 width: 40px;
                 height: 36px;
             }
