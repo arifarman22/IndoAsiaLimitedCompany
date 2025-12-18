@@ -10,6 +10,7 @@
         },
 
         setupScrollAnimations() {
+            if (!('IntersectionObserver' in window)) return;
             const elements = document.querySelectorAll('.animate-on-scroll, .fade-in');
             const observer = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {

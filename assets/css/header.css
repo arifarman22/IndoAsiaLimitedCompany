@@ -1,21 +1,4 @@
-/* header.css stylesheet - Professional White Theme */
-.header {
-  background: rgba(255, 255, 255, 0.98);
-  padding: 0.6rem 0;
-  position: fixed;
-  width: 100%;
-  top: 0;
-  z-index: 1000;
-  backdrop-filter: blur(20px);
-  border-bottom: 1px solid var(--border);
-  transition: var(--transition);
-  box-shadow: 0 2px 20px rgba(37, 99, 235, 0.08);
-}
 
-.header.sticky {
-  padding: 0.8rem 0;
-  box-shadow: var(--shadow);
-}
 
 /* header.css stylesheet - Professional White Theme (cleaned, reduced sizes) */
 
@@ -118,22 +101,33 @@
   box-shadow: 0 6px 18px rgba(37, 99, 235, 0.14)
 }
 
-.mobile-menu-btn {
-  display: none;
-  background: none;
-  border: none;
-  cursor: pointer;
-  padding: 0.35rem
-}
+ .mobile-menu-btn {
+            display: none;
+            align-items: center;
+            justify-content: center;
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 10px;
+            cursor: pointer;
+            transition: background 0.3s ease, transform 0.3s ease;
+            width: 44px;
+            height: 40px;
+            flex-direction: column;
+            gap: 5px;
+            z-index: 1101;
+            margin-right: 1rem;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
 
 .mobile-menu-btn span {
-  display: block;
-  width: 20px;
-  height: 1.5px;
-  background: var(--text-primary, #1f2937);
-  margin: 3px 0;
-  transition: var(--transition)
-}
+      display: block;
+      width: 22px;
+      height: 2px;
+      background: var(--text-primary);
+      border-radius: 2px;
+      transition: transform 0.25s ease, opacity 0.2s ease;
+    }
 
 .mobile-menu-btn.active span:nth-child(1) {
   transform: rotate(45deg) translate(4px, 4px)
