@@ -1,945 +1,1094 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Plans & Pricing - IndoAsia Trading | Premium Import Solutions</title>
-    <meta name="description" content="Flexible import service plans for businesses of all sizes. Choose from Basic, Pro, or Enterprise packages with transparent pricing.">
+    <meta name="description"
+        content="Flexible import service plans for businesses of all sizes. Choose from Basic, Pro, or Enterprise packages with transparent pricing.">
     <meta name="keywords" content="import plans, pricing, basic plan, pro plan, enterprise plan, IndoAsia Trading">
     <meta name="author" content="IndoAsia Trading">
     <meta name="robots" content="index, follow">
-    
+
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://indoasiatraders.com/plans.html">
     <meta property="og:title" content="Plans & Pricing - IndoAsia Trading | Premium Import Solutions">
-    <meta property="og:description" content="Flexible import service plans for businesses of all sizes. Choose from Basic, Pro, or Enterprise packages.">
+    <meta property="og:description"
+        content="Flexible import service plans for businesses of all sizes. Choose from Basic, Pro, or Enterprise packages.">
     <meta property="og:image" content="https://indoasiatraders.com/assets/images/logo-bg.png">
-    
+
     <!-- Canonical URL -->
     <link rel="canonical" href="https://indoasiatraders.com/plans.html">
-    
+
     <!-- Favicon -->
     <link rel="icon" type="image/png" sizes="32x32" href="assets/images/logo.png">
     <link rel="icon" type="image/png" sizes="16x16" href="assets/images/logo.png">
     <link rel="apple-touch-icon" href="assets/images/logo.png">
-    
-   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="assets/css/main.css">    <link rel="stylesheet" href="assets/css/responsive.css">
-    
-    <link rel="stylesheet" href="assets/css/footer.css">
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="assets/css/responsive.css">
+
+
     <link rel="stylesheet" href="assets/css/animations.css">
     <link rel="stylesheet" href="assets/css/dropdown-nav.css">
-   
-   <style>
-    /* Plans Page Specific Styles */
-:root {
-  /* Brand Colors */
-  --brand-navy: #1a365d;   /* Deep Navy Blue */
-  --brand-red:  #e53e3e;   /* Bright Red */
-  --brand-white: #EDEDED;  /* Off White */
 
-  /* Backgrounds */
-  --bg-primary: var(--brand-white);
-  --bg-secondary: #f8fafc;
-  --bg-tertiary: #f1f5f9;
+    <style>
+        /* Plans Page Specific Styles */
+        :root {
+            /* Brand Colors */
+            --brand-navy: #1a365d;
+            /* Deep Navy Blue */
+            --brand-red: #e53e3e;
+            /* Bright Red */
+            --brand-white: #EDEDED;
+            /* Off White */
 
-  /* Accents */
-  --accent: var(--brand-navy);
-  --accent-secondary: var(--brand-red);
-  --accent-gradient: linear-gradient(135deg, var(--brand-navy), var(--brand-red));
+            /* Backgrounds */
+            --bg-primary: var(--brand-white);
+            --bg-secondary: #f8fafc;
+            --bg-tertiary: #f1f5f9;
 
-  /* Text */
-  --text-primary: #1e293b;
-  --text-secondary: #64748b;
+            /* Accents */
+            --accent: var(--brand-navy);
+            --accent-secondary: var(--brand-red);
+            --accent-gradient: linear-gradient(135deg, var(--brand-navy), var(--brand-red));
 
-  /* Borders & Shadows */
-  --border: #e2e8f0;
-  --shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-  --card-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+            /* Text */
+            --text-primary: #1e293b;
+            --text-secondary: #64748b;
 
-  /* UI Helpers */
-  --transition: all 0.3s ease;
-  --border-radius: 12px;
-  --hover-bg: #f8fafc;
-  --active-bg: #eff6ff;
-}
+            /* Borders & Shadows */
+            --border: #e2e8f0;
+            --shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            --card-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+
+            /* UI Helpers */
+            --transition: all 0.3s ease;
+            --border-radius: 12px;
+            --hover-bg: #f8fafc;
+            --active-bg: #eff6ff;
+        }
 
 
-.plans-hero {
-    background: linear-gradient(135deg, var(--bg-primary) 0%, var(--bg-secondary) 100%);
-    padding: 8rem 0 4rem;
-    text-align: center;
-    margin-top: 30px;
-    position: relative;
-    overflow: hidden;
-}
+        .plans-hero {
+            background: linear-gradient(135deg, var(--bg-primary) 0%, var(--bg-secondary) 100%);
+            padding: 8rem 0 4rem;
+            text-align: center;
+            margin-top: 30px;
+            position: relative;
+            overflow: hidden;
+        }
 
-.plans-hero::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: radial-gradient(circle at 20% 80%, rgba(37, 99, 235, 0.08) 0%, transparent 50%),
+        .plans-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at 20% 80%, rgba(37, 99, 235, 0.08) 0%, transparent 50%),
                 radial-gradient(circle at 80% 20%, rgba(255, 77, 148, 0.08) 0%, transparent 50%),
                 radial-gradient(circle at 40% 40%, rgba(34, 197, 94, 0.06) 0%, transparent 50%);
-    z-index: 1;
-}
-
-.plans-hero .container {
-    position: relative;
-    z-index: 2;
-}
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-body {
-    font-family: 'Montserrat', sans-serif;
-    background-color: var(--bg-primary);
-    color: #0f172a;
-    line-height: 1.6;
-    overflow-x: hidden;
-    scroll-behavior: smooth;
-    font-weight: 600;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-}
-
-a {
-    text-decoration: none;
-    color: var(--accent);
-    transition: var(--transition);
-}
-
-a:hover {
-    color: var(--text-primary);
-}
-
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 1rem;
-}
-
-section {
-    padding: 5rem 0;
-}
-
-h1, h2, h3, h4, h5, h6 {
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 800;
-    line-height: 1.3;
-    margin-bottom: 1rem;
-    color: #0f172a;
-}
-
-h1 {
-    font-size: 3.5rem;
-    font-weight: 900;
-    letter-spacing: -0.02em;
-}
-
-h2 {
-    font-size: 2.5rem;
-    font-weight: 800;
-}
-
-h3 {
-    font-size: 1.5rem;
-    font-weight: 700;
-}
-
-p {
-    margin-bottom: 1rem;
-    color: #334155;
-    font-weight: 600;
-}
-
-.text-center {
-    text-align: center;
-}
-
-.accent-text {
-    background: var(--accent-gradient);
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
-
-.btn {
-    display: inline-block;
-    padding: 12px 28px;
-    border-radius: var(--border-radius);
-    font-weight: 600;
-    text-align: center;
-    cursor: pointer;
-    transition: var(--transition);
-    border: none;
-    position: relative;
-    overflow: hidden;
-}
-
-.btn::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-    transition: left 0.5s;
-}
-
-.btn:hover::before {
-    left: 100%;
-}
-
-.btn-primary {
-    background: var(--accent-gradient);
-    color: white;
-    box-shadow: 0 4px 15px rgba(37, 99, 235, 0.3);
-}
-
-.btn-primary:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 6px 20px rgba(37, 99, 235, 0.4);
-}
-
-.btn-secondary {
-    background: transparent;
-    color: var(--accent);
-    border: 2px solid var(--accent);
-}
-
-.btn-secondary:hover {
-    background: var(--accent);
-    color: #000;
-}
-
-.card {
-    background: var(--bg-secondary);
-    border-radius: var(--border-radius);
-    padding: 2rem;
-    transition: var(--transition);
-    border: 1px solid var(--border);
-    height: 100%;
-}
-
-.card:hover {
-    transform: translateY(-10px);
-    box-shadow: var(--card-shadow);
-    border-color: rgba(37, 99, 235, 0.2);
-}
-
-
-
-.plans-hero h1 {
-    font-size: 3.5rem;
-    margin-bottom: 1.5rem;
-    position: relative;
-    z-index: 2;
-    color: #0f172a;
-    font-weight: 900;
-}
-
-.plans-hero p {
-    font-size: 1.2rem;
-    max-width: 600px;
-    margin: 0 auto 2rem;
-    position: relative;
-    z-index: 2;
-    color: #334155;
-    font-weight: 600;
-}
-
-/* Plans & Pricing comparison table */
-.plans-section {
-    background: var(--bg-secondary);
-    padding: 5rem 0;
-}
-
-.plans-table-wrapper {
-    overflow-x: auto;
-    border: 1px solid var(--border);
-    border-radius: var(--border-radius);
-    background: var(--bg-primary);
-    box-shadow: var(--shadow);
-    margin-top: 3rem;
-}
-
-.plans-table {
-    width: 100%;
-    border-collapse: collapse;
-    min-width: 820px;
-}
-
-.plans-table thead th {
-    background: var(--bg-tertiary);
-    color: var(--accent);
-    padding: 1.2rem;
-    text-align: left;
-    border-bottom: 1px solid var(--border);
-    font-weight: 700;
-}
-
-.plans-table tbody td {
-    padding: 1rem 1.2rem;
-    border-bottom: 1px solid var(--border);
-    vertical-align: top;
-    font-weight: 600;
-}
-
-.plan-col {
-    text-align: center;
-    width: 18%;
-}
-
-.plan-name {
-    font-weight: 800;
-    color: #0f172a;
-}
-
-.plan-price {
-    font-size: 1.8rem;
-    font-weight: 800;
-    color: var(--accent);
-}
-
-.included { color: var(--accent); font-weight: 700; }
-.not-included { color: var(--accent-secondary); font-weight: 600; }
-
-.plan-cta {
-    display: inline-block;
-    margin-top: 0.5rem;
-}
-
-/* Pricing cards section */
-.pricing-section {
-    background: var(--bg-primary);
-    padding: 5rem 0;
-}
-
-.pricing-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 2.5rem;
-    margin-top: 3rem;
-    padding-top: 2rem;
-}
-
-.pricing-card {
-    background: var(--bg-secondary);
-    border-radius: var(--border-radius);
-    padding: 1.5rem;
-    text-align: center;
-    border: 1px solid var(--border);
-    transition: var(--transition);
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-}
-
-.pricing-card.featured {
-    border: 2px solid var(--accent);
-    transform: scale(1.05);
-    position: relative;
-    z-index: 2;
-}
-
-.pricing-card.featured::before {
-    content: 'Most Popular';
-    position: absolute;
-    top: 15px;
-    right: 15px;
-    background: linear-gradient(135deg, #1a365d, #e53e3e);
-    color: #EDEDED;
-    padding: 0.4rem 1rem;
-    border-radius: 15px;
-    font-size: 0.8rem;
-    font-weight: 700;
-    z-index: 3;
-    box-shadow: 0 4px 15px rgba(26, 54, 93, 0.4);
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-}
-
-.pricing-card:hover {
-    transform: translateY(-10px);
-    box-shadow: var(--card-shadow);
-}
-
-.pricing-card.featured:hover {
-    transform: scale(1.05) translateY(-15px);
-    box-shadow: 0 30px 60px rgba(37, 99, 235, 0.2);
-}
-
-.pricing-card h3 {
-    font-size: 1.5rem;
-    margin-bottom: 1rem;
-    color: #0f172a;
-    font-weight: 800;
-}
-
-.pricing-card .btn {
-    margin-top: auto;
-}
-
-.pricing-card .price {
-    font-size: 3rem;
-    font-weight: 800;
-    color: #1a365d;
-    margin-bottom: 0.5rem;
-}
-
-.pricing-card .price-period {
-    color: #334155;
-    margin-bottom: 2rem;
-    font-weight: 600;
-}
-
-.service-features {
-    list-style: none;
-    margin-bottom: 2rem;
-    text-align: left;
-    flex-grow: 1;
-}
-
-.service-features li {
-    padding: 0.5rem 0;
-    color: #0f172a;
-    position: relative;
-    padding-left: 1.5rem;
-    font-weight: 600;
-}
-
-.service-features li::before {
-    content: '✓';
-    position: absolute;
-    left: 0;
-    color: #e53e3e;
-    font-weight: bold;
-    font-size: 1.1rem;
-}
-
-/* FAQ Section */
-.faq-section {
-    background: var(--bg-secondary);
-    padding: 5rem 0;
-}
-
-.faq-container {
-    max-width: 800px;
-    margin: 0 auto;
-}
-
-.faq-item {
-    margin-bottom: 1.5rem;
-    border: 1px solid var(--border);
-    border-radius: var(--border-radius);
-    overflow: hidden;
-}
-
-.faq-question {
-    padding: 1.5rem;
-    background: linear-gradient(135deg, rgba(26, 54, 93, 0.05), rgba(229, 62, 62, 0.05));
-    cursor: pointer;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    font-weight: 700;
-    color: var(--accent);
-}
-
-.faq-answer {
-    padding: 0;
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.3s ease;
-    background: var(--bg-secondary);
-    margin: 0;
-}
-
-.faq-answer.open {
-    max-height: 500px;
-    padding: 1rem;
-    margin: 0.5rem 1.5rem 1.5rem 1.5rem;
-    border-left: 4px solid var(--accent);
-    background: rgba(26, 54, 93, 0.03);
-    border-radius: 0 8px 8px 0;
-}
-
-/* CTA Section */
-.cta-section {
-    background: linear-gradient(135deg, var(--accent) 0%, #0099ff 100%);
-    color: #000;
-    text-align: center;
-    padding: 5rem 0;
-}
-
-.cta-content h2 {
-    margin-bottom: 1rem;
-    color: #000;
-}
-
-.cta-content p {
-    margin-bottom: 2rem;
-    color: white;
-    max-width: 600px;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.cta-buttons {
-    display: flex;
-    gap: 1rem;
-    justify-content: center;
-    flex-wrap: wrap;
-}
-
-.cta-buttons .btn {
-    background: rgba(0, 0, 0, 0.9);
-    color: #fff;
-    padding: 12px 28px;
-    border-radius: var(--border-radius);
-    text-decoration: none;
-    font-weight: 600;
-    transition: var(--transition);
-}
-
-.cta-buttons .btn.btn-secondary {
-    background: transparent;
-    border: 2px solid rgba(0, 0, 0, 0.9);
-    color: white;
-}
-
-.cta-buttons .btn:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
-}
-
-/* Header Styles */
-.header {
-    background: rgba(255, 255, 255, 0.95);
-    padding: 0.5rem 0;
-    position: fixed;
-    width: 100%;
-    top: 0;
-    z-index: 1000;
-    backdrop-filter: blur(10px);
-    border-bottom: 1px solid var(--border);
-    transition: var(--transition);
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-}
-
-.header.sticky {
-    padding: 0.4rem 0;
-    box-shadow: var(--shadow);
-}
-
-.header-content {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.logo {
-    font-family: 'Playfair Display', 'Inter', serif;
-    font-size: 1.8rem;
-    font-weight: 800;
-    background: var(--accent-gradient);
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-    letter-spacing: -0.02em;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-
-.logo a {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    text-decoration: none;
-}
-
-.logo-img {
-    height: 80px;
-    width: auto;
-    object-fit: contain;
-}
-
-.logo-text {
-    background: var(--accent-gradient);
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
-
-.nav {
-    display: flex;
-    list-style: none;
-    gap: 0.3rem;
-    align-items: center;
-    position: relative; /* Added for dropdown positioning */
-}
-
-.nav li {
-    position: relative; /* For dropdown positioning */
-}
-
-.nav li a {
-    font-weight: 600;
-    color: #0f172a;
-    padding: 0.5rem 1rem;
-    border-radius: var(--border-radius);
-    transition: var(--transition);
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    text-decoration: none;
-}
-
-.nav li a:hover {
-    background: var(--hover-bg);
-    color: var(--accent);
-}
-
-.dropdown-arrow {
-    font-size: 0.8rem;
-    transition: var(--transition);
-}
-
-.dropdown:hover .dropdown-arrow {
-    transform: rotate(180deg);
-}
-
-/* Dropdown menu styling */
-.dropdown-menu {
-    display: none;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    background: white;
-    min-width: 200px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    border-radius: var(--border-radius);
-    padding: 0.5rem 0;
-    z-index: 1000;
-    list-style: none;
-    margin: 0;
-}
-
-.dropdown:hover .dropdown-menu {
-    display: block;
-}
-
-.dropdown-menu li {
-    margin: 0;
-}
-
-.dropdown-menu li a {
-    padding: 0.75rem 1rem;
-    white-space: nowrap;
-    border-radius: 0;
-}
-
-.dropdown-menu li a:hover {
-    background: var(--hover-bg);
-}
-
-/* Last item (Contact button) styling */
-.nav li:last-child a {
-    background: var(--accent-gradient);
-    color: white;
-    font-weight: 600;
-}
-
-.nav li:last-child a:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
-}
-
-/* Mobile menu button */
-  .mobile-menu-btn {
-      display: none;
-      position: fixed;
-      top: 28px;
-      right: 30px;
-      align-items: center;
-      justify-content: center;
-      background: var(--bg-secondary);
-      border: 1px solid var(--border);
-      border-radius: 8px;
-      padding: 10px;
-      cursor: pointer;
-      transition: background 0.3s ease, transform 0.3s ease;
-      width: 44px;
-      height: 44px;
-      flex-direction: column;
-      gap: 5px;
-      z-index: 1101;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-    }
-
-    .mobile-menu-btn:hover {
-      background: var(--accent-secondary);
-    }
-
-    .mobile-menu-btn.active {
-      transform: rotate(90deg);
-    }
-
-    .mobile-menu-btn span {
-      display: block;
-      width: 22px;
-      height: 2px;
-      background: var(--text-primary);
-      border-radius: 2px;
-      transition: transform 0.25s ease, opacity 0.2s ease;
-    }
-
-    .mobile-menu-btn.active span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
-    .mobile-menu-btn.active span:nth-child(2) { opacity: 0; transform: scale(0); }
-    .mobile-menu-btn.active span:nth-child(3) { transform: rotate(-45deg) translate(7px, -6px); }
-
-/* Responsive Design */
-@media (max-width: 968px) {
-      .mobile-menu-btn {
-      display: none;
-      position: fixed;
-      top: 28px;
-      right: 30px;
-      align-items: center;
-      justify-content: center;
-      background: var(--bg-secondary);
-      border: 1px solid var(--border);
-      border-radius: 8px;
-      padding: 10px;
-      cursor: pointer;
-      transition: background 0.3s ease, transform 0.3s ease;
-      width: 44px;
-      height: 44px;
-      flex-direction: column;
-      gap: 5px;
-      z-index: 1101;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-    }
-
-    .mobile-menu-btn:hover {
-      background: var(--accent-secondary);
-    }
-
-    .mobile-menu-btn.active {
-      transform: rotate(90deg);
-    }
-
-    .mobile-menu-btn span {
-      display: block;
-      width: 22px;
-      height: 2px;
-      background: var(--text-primary);
-      border-radius: 2px;
-      transition: transform 0.25s ease, opacity 0.2s ease;
-    }
-
-    .mobile-menu-btn.active span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
-    .mobile-menu-btn.active span:nth-child(2) { opacity: 0; transform: scale(0); }
-    .mobile-menu-btn.active span:nth-child(3) { transform: rotate(-45deg) translate(7px, -6px); }
-    .container {
-        padding: 0 1rem;
-    }
-    
-    h1 {
-        font-size: 2.5rem;
-    }
-    
-    h2 {
-        font-size: 2rem;
-    }
-    
-    section {
-        padding: 3rem 0;
-    }
-    
-    .services-hero h1 {
-        font-size: 2.5rem;
-    }
-    
-    .service-grid {
-        grid-template-columns: 1fr;
-    }
-    
-    /* Mobile Navigation */
-    .mobile-menu-btn {
-        display: flex;
-        z-index: 1101;
-    }
-    
-    .nav {
-        position: fixed;
-        top: 0;
-        left: -100%;
-        width: 280px;
-        height: 100vh;
-        background: white;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 0;
-        padding: 5rem 0 2rem;
-        transition: left 0.3s ease;
-        box-shadow: 5px 0 15px rgba(0,0,0,0.1);
-        z-index: 1099;
-        overflow-y: auto;
-    }
-    
-    .nav.open {
-        left: 0;
-    }
-    
-    .nav li {
-        width: 100%;
-        text-align: center;
-        border-bottom: 1px solid rgba(0,0,0,0.05);
-    }
-    
-    .nav li:last-child {
-        border-bottom: none;
-    }
-    
-    .nav li a {
-        display: block;
-        padding: 1rem 1.5rem;
-        font-weight: 600;
-        color: var(--text-primary);
-        font-size: 1rem;
-        transition: all 0.3s ease;
-        justify-content: center;
-    }
-    
-    .nav li a:hover {
-        background: var(--hover-bg);
-        color: var(--accent);
-    }
-    
-    /* Dropdown menu for mobile */
-    .dropdown-menu {
-        position: static;
-        display: none;
-        background: rgba(248, 250, 252, 0.95);
-        box-shadow: inset 0 2px 4px rgba(0,0,0,0.1);
-        border-radius: 8px;
-        margin: 0.5rem 1rem;
-        padding: 0.5rem 0;
-    }
-    
-    .dropdown.active .dropdown-menu {
-        display: block;
-    }
-    
-    .dropdown-menu li {
-        text-align: center;
-    }
-    
-    .dropdown-menu li a {
-        display: flex;
-        font-size: 0.9rem;
-        padding: 0.75rem 1rem;
-        color: var(--text-secondary);
-        font-weight: 500;
-        text-align: center;
-        justify-content: center;
-        align-items: center;
-    }
-    
-    .dropdown-menu li a:hover {
-        background: var(--accent-secondary);
-        color: white;
-    }
-}
-
-@media (max-width: 768px) {
-    h1 {
-        font-size: 2rem;
-    }
-    
-    h2 {
-        font-size: 1.8rem;
-    }
-    
-    .container {
-        padding: 0 0.5rem;
-    }
-    
-    .services-hero h1 {
-        font-size: 2rem;
-    }
-    
-    .service-card {
-        padding: 1.5rem;
-    }
-    
-    .service-thumb {
-        margin: -1.5rem -1.5rem 1.5rem -1.5rem;
-    }
-    
-    .plans-hero h1 {
-        font-size: 2.5rem;
-    }
-    
-    .pricing-card.featured {
-        transform: scale(1);
-        margin-top: 0;
-    }
-    
-    .pricing-card.featured:hover {
-        transform: translateY(-10px);
-    }
-    
-    .pricing-card.featured::before {
-        top: -10px;
-        font-size: 0.8rem;
-        padding: 0.4rem 1rem;
-    }
-    
-    .cta-buttons {
-        flex-direction: column;
-    }
-}
-
-@media (max-width: 480px) {
-    .container {
-        padding: 0 1rem;
-    }
-    
-    section {
-        padding: 3rem 0;
-    }
-    
-    .plans-hero h1 {
-        font-size: 2rem;
-    }
-    
-    .pricing-grid {
-        grid-template-columns: 1fr;
-    }
-}
+            z-index: 1;
+        }
+
+        .plans-hero .container {
+            position: relative;
+            z-index: 2;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: var(--bg-primary);
+            color: #0f172a;
+            line-height: 1.6;
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+            font-weight: 600;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        a {
+            text-decoration: none;
+            color: var(--accent);
+            transition: var(--transition);
+        }
+
+        a:hover {
+            color: var(--text-primary);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+
+        section {
+            padding: 5rem 0;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 800;
+            line-height: 1.3;
+            margin-bottom: 1rem;
+            color: #0f172a;
+        }
+
+        h1 {
+            font-size: 3.5rem;
+            font-weight: 900;
+            letter-spacing: -0.02em;
+        }
+
+        h2 {
+            font-size: 2.5rem;
+            font-weight: 800;
+        }
+
+        h3 {
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+
+        p {
+            margin-bottom: 1rem;
+            color: #334155;
+            font-weight: 600;
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        .accent-text {
+            background: var(--accent-gradient);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 28px;
+            border-radius: var(--border-radius);
+            font-weight: 600;
+            text-align: center;
+            cursor: pointer;
+            transition: var(--transition);
+            border: none;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left 0.5s;
+        }
+
+        .btn:hover::before {
+            left: 100%;
+        }
+
+        .btn-primary {
+            background: var(--accent-gradient);
+            color: white;
+            box-shadow: 0 4px 15px rgba(37, 99, 235, 0.3);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(37, 99, 235, 0.4);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--accent);
+            border: 2px solid var(--accent);
+        }
+
+        .btn-secondary:hover {
+            background: var(--accent);
+            color: #000;
+        }
+
+        .card {
+            background: var(--bg-secondary);
+            border-radius: var(--border-radius);
+            padding: 2rem;
+            transition: var(--transition);
+            border: 1px solid var(--border);
+            height: 100%;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--card-shadow);
+            border-color: rgba(37, 99, 235, 0.2);
+        }
+
+         .footer {
+            background: var(--bg-secondary);
+            padding: 4rem 0 2rem;
+            border-top: 1px solid var(--border);
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+            text-align: left;
+        }
+
+        .footer-section h3,
+        .footer-section h4 {
+            margin-bottom: 1.5rem;
+            color: var(--accent);
+            text-align: left;
+            font-size: 1.5rem;
+        }
+
+        .footer-section p {
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+            color: var(--text-primary);
+            text-align: left;
+        }
+
+        .footer-section ul {
+            list-style: none;
+            text-align: left;
+        }
+
+        .footer-section ul li {
+            margin-bottom: 0.8rem;
+            text-align: left;
+        }
+
+        .footer-section ul li a {
+            color: var(--text-secondary);
+            transition: var(--transition);
+            display: inline-block;
+        }
+
+        .footer-section ul li a:hover {
+            color: var(--accent);
+            transform: translateX(5px);
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1.5rem;
+            justify-content: flex-start;
+        }
+
+        .social-links a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, var(--brand-navy), var(--brand-red));
+            color: white;
+            border-radius: 50%;
+            transition: var(--transition);
+            font-size: 1.2rem;
+            text-decoration: none;
+        }
+
+        .social-links a:hover {
+            background: var(--brand-navy);
+            transform: translateY(-3px);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid var(--border);
+            color: var(--text-secondary);
+        }
+
+
+
+        .plans-hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            position: relative;
+            z-index: 2;
+            color: #0f172a;
+            font-weight: 900;
+        }
+
+        .plans-hero p {
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin: 0 auto 2rem;
+            position: relative;
+            z-index: 2;
+            color: #334155;
+            font-weight: 600;
+        }
+
+        /* Plans & Pricing comparison table */
+        .plans-section {
+            background: var(--bg-secondary);
+            padding: 5rem 0;
+        }
+
+        .plans-table-wrapper {
+            overflow-x: auto;
+            border: 1px solid var(--border);
+            border-radius: var(--border-radius);
+            background: var(--bg-primary);
+            box-shadow: var(--shadow);
+            margin-top: 3rem;
+        }
+
+        .plans-table {
+            width: 100%;
+            border-collapse: collapse;
+            min-width: 820px;
+        }
+
+        .plans-table thead th {
+            background: var(--bg-tertiary);
+            color: var(--accent);
+            padding: 1.2rem;
+            text-align: left;
+            border-bottom: 1px solid var(--border);
+            font-weight: 700;
+        }
+
+        .plans-table tbody td {
+            padding: 1rem 1.2rem;
+            border-bottom: 1px solid var(--border);
+            vertical-align: top;
+            font-weight: 600;
+        }
+
+        .plan-col {
+            text-align: center;
+            width: 18%;
+        }
+
+        .plan-name {
+            font-weight: 800;
+            color: #0f172a;
+        }
+
+        .plan-price {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: var(--accent);
+        }
+
+        .included {
+            color: var(--accent);
+            font-weight: 700;
+        }
+
+        .not-included {
+            color: var(--accent-secondary);
+            font-weight: 600;
+        }
+
+        .plan-cta {
+            display: inline-block;
+            margin-top: 0.5rem;
+        }
+
+        /* Pricing cards section */
+        .pricing-section {
+            background: var(--bg-primary);
+            padding: 5rem 0;
+        }
+
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2.5rem;
+            margin-top: 3rem;
+            padding-top: 2rem;
+        }
+
+        .pricing-card {
+            background: var(--bg-secondary);
+            border-radius: var(--border-radius);
+            padding: 1.5rem;
+            text-align: center;
+            border: 1px solid var(--border);
+            transition: var(--transition);
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+
+        .pricing-card.featured {
+            border: 2px solid var(--accent);
+            transform: scale(1.05);
+            position: relative;
+            z-index: 2;
+        }
+
+        .pricing-card.featured::before {
+            content: 'Most Popular';
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: linear-gradient(135deg, #1a365d, #e53e3e);
+            color: #EDEDED;
+            padding: 0.4rem 1rem;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            z-index: 3;
+            box-shadow: 0 4px 15px rgba(26, 54, 93, 0.4);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .pricing-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--card-shadow);
+        }
+
+        .pricing-card.featured:hover {
+            transform: scale(1.05) translateY(-15px);
+            box-shadow: 0 30px 60px rgba(37, 99, 235, 0.2);
+        }
+
+        .pricing-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: #0f172a;
+            font-weight: 800;
+        }
+
+        .pricing-card .btn {
+            margin-top: auto;
+        }
+
+        .pricing-card .price {
+            font-size: 3rem;
+            font-weight: 800;
+            color: #1a365d;
+            margin-bottom: 0.5rem;
+        }
+
+        .pricing-card .price-period {
+            color: #334155;
+            margin-bottom: 2rem;
+            font-weight: 600;
+        }
+
+        .service-features {
+            list-style: none;
+            margin-bottom: 2rem;
+            text-align: left;
+            flex-grow: 1;
+        }
+
+        .service-features li {
+            padding: 0.5rem 0;
+            color: #0f172a;
+            position: relative;
+            padding-left: 1.5rem;
+            font-weight: 600;
+        }
+
+        .service-features li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: #e53e3e;
+            font-weight: bold;
+            font-size: 1.1rem;
+        }
+
+        /* FAQ Section */
+        .faq-section {
+            background: var(--bg-secondary);
+            padding: 5rem 0;
+        }
+
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            margin-bottom: 1.5rem;
+            border: 1px solid var(--border);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+        }
+
+        .faq-question {
+            padding: 1.5rem;
+            background: linear-gradient(135deg, rgba(26, 54, 93, 0.05), rgba(229, 62, 62, 0.05));
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 700;
+            color: var(--accent);
+        }
+
+        .faq-answer {
+            padding: 0;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+            background: var(--bg-secondary);
+            margin: 0;
+        }
+
+        .faq-answer.open {
+            max-height: 500px;
+            padding: 1rem;
+            margin: 0.5rem 1.5rem 1.5rem 1.5rem;
+            border-left: 4px solid var(--accent);
+            background: rgba(26, 54, 93, 0.03);
+            border-radius: 0 8px 8px 0;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background: linear-gradient(135deg, var(--accent) 0%, #0099ff 100%);
+            color: #000;
+            text-align: center;
+            padding: 5rem 0;
+        }
+
+        .cta-content h2 {
+            margin-bottom: 1rem;
+            color: #000;
+        }
+
+        .cta-content p {
+            margin-bottom: 2rem;
+            color: white;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .cta-buttons .btn {
+            background: rgba(0, 0, 0, 0.9);
+            color: #fff;
+            padding: 12px 28px;
+            border-radius: var(--border-radius);
+            text-decoration: none;
+            font-weight: 600;
+            transition: var(--transition);
+        }
+
+        .cta-buttons .btn.btn-secondary {
+            background: transparent;
+            border: 2px solid rgba(0, 0, 0, 0.9);
+            color: white;
+        }
+
+        .cta-buttons .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Header Styles */
+        .header {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 0.5rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border);
+            transition: var(--transition);
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+        }
+
+        .header.sticky {
+            padding: 0.4rem 0;
+            box-shadow: var(--shadow);
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'Playfair Display', 'Inter', serif;
+            font-size: 1.8rem;
+            font-weight: 800;
+            background: var(--accent-gradient);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            letter-spacing: -0.02em;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo a {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+        }
+
+        .logo-img {
+            height: 80px;
+            width: auto;
+            object-fit: contain;
+        }
+
+        .logo-text {
+            background: var(--accent-gradient);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .nav {
+            display: flex;
+            list-style: none;
+            gap: 0.3rem;
+            align-items: center;
+            position: relative;
+            /* Added for dropdown positioning */
+        }
+
+        .nav li {
+            position: relative;
+            /* For dropdown positioning */
+        }
+
+        .nav li a {
+            font-weight: 600;
+            color: #0f172a;
+            padding: 0.5rem 1rem;
+            border-radius: var(--border-radius);
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            text-decoration: none;
+        }
+
+        .nav li a:hover {
+            background: var(--hover-bg);
+            color: var(--accent);
+        }
+
+        .dropdown-arrow {
+            font-size: 0.8rem;
+            transition: var(--transition);
+        }
+
+        .dropdown:hover .dropdown-arrow {
+            transform: rotate(180deg);
+        }
+
+        /* Dropdown menu styling */
+        .dropdown-menu {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: white;
+            min-width: 200px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            border-radius: var(--border-radius);
+            padding: 0.5rem 0;
+            z-index: 1000;
+            list-style: none;
+            margin: 0;
+        }
+
+        .dropdown:hover .dropdown-menu {
+            display: block;
+        }
+
+        .dropdown-menu li {
+            margin: 0;
+        }
+
+        .dropdown-menu li a {
+            padding: 0.75rem 1rem;
+            white-space: nowrap;
+            border-radius: 0;
+        }
+
+        .dropdown-menu li a:hover {
+            background: var(--hover-bg);
+        }
+
+        /* Last item (Contact button) styling */
+        .nav li:last-child a {
+            background: var(--accent-gradient);
+            color: white;
+            font-weight: 600;
+        }
+
+        .nav li:last-child a:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+        }
+
+        /* Mobile menu button */
+        .mobile-menu-btn {
+            display: none;
+            position: fixed;
+            top: 28px;
+            right: 30px;
+            align-items: center;
+            justify-content: center;
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 10px;
+            cursor: pointer;
+            transition: background 0.3s ease, transform 0.3s ease;
+            width: 44px;
+            height: 44px;
+            flex-direction: column;
+            gap: 5px;
+            z-index: 1101;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .mobile-menu-btn:hover {
+            background: var(--accent-secondary);
+        }
+
+        .mobile-menu-btn.active {
+            transform: rotate(90deg);
+        }
+
+        .mobile-menu-btn span {
+            display: block;
+            width: 22px;
+            height: 2px;
+            background: var(--text-primary);
+            border-radius: 2px;
+            transition: transform 0.25s ease, opacity 0.2s ease;
+        }
+
+        .mobile-menu-btn.active span:nth-child(1) {
+            transform: rotate(45deg) translate(5px, 5px);
+        }
+
+        .mobile-menu-btn.active span:nth-child(2) {
+            opacity: 0;
+            transform: scale(0);
+        }
+
+        .mobile-menu-btn.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(7px, -6px);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 968px) {
+            .mobile-menu-btn {
+                display: none;
+                position: fixed;
+                top: 28px;
+                right: 30px;
+                align-items: center;
+                justify-content: center;
+                background: var(--bg-secondary);
+                border: 1px solid var(--border);
+                border-radius: 8px;
+                padding: 10px;
+                cursor: pointer;
+                transition: background 0.3s ease, transform 0.3s ease;
+                width: 44px;
+                height: 44px;
+                flex-direction: column;
+                gap: 5px;
+                z-index: 1101;
+                box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            }
+
+            .mobile-menu-btn:hover {
+                background: var(--accent-secondary);
+            }
+
+            .mobile-menu-btn.active {
+                transform: rotate(90deg);
+            }
+
+            .mobile-menu-btn span {
+                display: block;
+                width: 22px;
+                height: 2px;
+                background: var(--text-primary);
+                border-radius: 2px;
+                transition: transform 0.25s ease, opacity 0.2s ease;
+            }
+
+            .mobile-menu-btn.active span:nth-child(1) {
+                transform: rotate(45deg) translate(5px, 5px);
+            }
+
+            .mobile-menu-btn.active span:nth-child(2) {
+                opacity: 0;
+                transform: scale(0);
+            }
+
+            .mobile-menu-btn.active span:nth-child(3) {
+                transform: rotate(-45deg) translate(7px, -6px);
+            }
+
+            .container {
+                padding: 0 1rem;
+            }
+
+            h1 {
+                font-size: 2.5rem;
+            }
+
+            h2 {
+                font-size: 2rem;
+            }
+
+            section {
+                padding: 3rem 0;
+            }
+
+            .services-hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .service-grid {
+                grid-template-columns: 1fr;
+            }
+
+            /* Mobile Navigation */
+            .mobile-menu-btn {
+                display: flex;
+                z-index: 1101;
+            }
+
+            .nav {
+                position: fixed;
+                top: 0;
+                left: -100%;
+                width: 280px;
+                height: 100vh;
+                background: white;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 0;
+                padding: 5rem 0 2rem;
+                transition: left 0.3s ease;
+                box-shadow: 5px 0 15px rgba(0, 0, 0, 0.1);
+                z-index: 1099;
+                overflow-y: auto;
+            }
+
+            .nav.open {
+                left: 0;
+            }
+
+            .nav li {
+                width: 100%;
+                text-align: center;
+                border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+            }
+
+            .nav li:last-child {
+                border-bottom: none;
+            }
+
+            .nav li a {
+                display: block;
+                padding: 1rem 1.5rem;
+                font-weight: 600;
+                color: var(--text-primary);
+                font-size: 1rem;
+                transition: all 0.3s ease;
+                justify-content: center;
+            }
+
+            .nav li a:hover {
+                background: var(--hover-bg);
+                color: var(--accent);
+            }
+
+            /* Dropdown menu for mobile */
+            .dropdown-menu {
+                position: static;
+                display: none;
+                background: rgba(248, 250, 252, 0.95);
+                box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+                border-radius: 8px;
+                margin: 0.5rem 1rem;
+                padding: 0.5rem 0;
+            }
+
+            .dropdown.active .dropdown-menu {
+                display: block;
+            }
+
+            .dropdown-menu li {
+                text-align: center;
+            }
+
+            .dropdown-menu li a {
+                display: flex;
+                font-size: 0.9rem;
+                padding: 0.75rem 1rem;
+                color: var(--text-secondary);
+                font-weight: 500;
+                text-align: center;
+                justify-content: center;
+                align-items: center;
+            }
+
+            .dropdown-menu li a:hover {
+                background: var(--accent-secondary);
+                color: white;
+            }
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+
+            h2 {
+                font-size: 1.8rem;
+            }
+
+            .container {
+                padding: 0 0.5rem;
+            }
+
+            .services-hero h1 {
+                font-size: 2rem;
+            }
+
+            .service-card {
+                padding: 1.5rem;
+            }
+
+            .service-thumb {
+                margin: -1.5rem -1.5rem 1.5rem -1.5rem;
+            }
+
+            .plans-hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .pricing-card.featured {
+                transform: scale(1);
+                margin-top: 0;
+            }
+
+            .pricing-card.featured:hover {
+                transform: translateY(-10px);
+            }
+
+            .pricing-card.featured::before {
+                top: -10px;
+                font-size: 0.8rem;
+                padding: 0.4rem 1rem;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 0 1rem;
+            }
+
+            section {
+                padding: 3rem 0;
+            }
+
+            .plans-hero h1 {
+                font-size: 2rem;
+            }
+
+            .pricing-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
         /* Enhanced Professional Animations */
-        .text-animate { display: inline-block; overflow: hidden; }
-        .text-animate .ta-word { display:inline-block; opacity:0; transform:translateY(20px); transition: transform 600ms cubic-bezier(.2,.9,.2,1), opacity 600ms ease; will-change: transform, opacity; }
-        .text-animate .ta-word.animated { opacity:1; transform:translateY(0); }
+        .text-animate {
+            display: inline-block;
+            overflow: hidden;
+        }
 
-        .animate-on-scroll { opacity:0; transform:translateY(30px); transition: opacity 800ms ease, transform 800ms cubic-bezier(.2,.9,.2,1); will-change: transform, opacity; }
-        .animate-on-scroll.animated { opacity:1; transform:none; }
+        .text-animate .ta-word {
+            display: inline-block;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: transform 600ms cubic-bezier(.2, .9, .2, 1), opacity 600ms ease;
+            will-change: transform, opacity;
+        }
+
+        .text-animate .ta-word.animated {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .animate-on-scroll {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 800ms ease, transform 800ms cubic-bezier(.2, .9, .2, 1);
+            will-change: transform, opacity;
+        }
+
+        .animate-on-scroll.animated {
+            opacity: 1;
+            transform: none;
+        }
 
         /* Enhanced Card Animations */
         .pricing-card {
@@ -1000,12 +1149,12 @@ p {
         }
 
         .btn-primary.glow {
-            box-shadow: 0 8px 28px rgba(37,99,235,0.18);
+            box-shadow: 0 8px 28px rgba(37, 99, 235, 0.18);
             transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
         .btn-primary.glow:hover {
-            box-shadow: 0 20px 50px rgba(37,99,235,0.3);
+            box-shadow: 0 20px 50px rgba(37, 99, 235, 0.3);
             transform: translateY(-5px) scale(1.05);
         }
 
@@ -1045,10 +1194,23 @@ p {
         }
 
         @keyframes heroFloat {
-            0%, 100% { transform: translateY(0) translateX(0) rotate(0deg); }
-            25% { transform: translateY(-20px) translateX(10px) rotate(90deg); }
-            50% { transform: translateY(-10px) translateX(-15px) rotate(180deg); }
-            75% { transform: translateY(-25px) translateX(5px) rotate(270deg); }
+
+            0%,
+            100% {
+                transform: translateY(0) translateX(0) rotate(0deg);
+            }
+
+            25% {
+                transform: translateY(-20px) translateX(10px) rotate(90deg);
+            }
+
+            50% {
+                transform: translateY(-10px) translateX(-15px) rotate(180deg);
+            }
+
+            75% {
+                transform: translateY(-25px) translateX(5px) rotate(270deg);
+            }
         }
 
         /* FAQ Enhanced Animations */
@@ -1071,10 +1233,21 @@ p {
         }
 
         /* Staggered Animation Delays */
-        .pricing-card:nth-child(1) { animation-delay: 0.1s; }
-        .pricing-card:nth-child(2) { animation-delay: 0.2s; }
-        .pricing-card:nth-child(3) { animation-delay: 0.3s; }
-        .pricing-card:nth-child(4) { animation-delay: 0.4s; }
+        .pricing-card:nth-child(1) {
+            animation-delay: 0.1s;
+        }
+
+        .pricing-card:nth-child(2) {
+            animation-delay: 0.2s;
+        }
+
+        .pricing-card:nth-child(3) {
+            animation-delay: 0.3s;
+        }
+
+        .pricing-card:nth-child(4) {
+            animation-delay: 0.4s;
+        }
 
         /* Glow Animation for Featured Card */
         .pricing-card.featured {
@@ -1083,11 +1256,14 @@ p {
         }
 
         @keyframes featuredGlow {
-            0%, 100% { 
+
+            0%,
+            100% {
                 box-shadow: 0 0 30px rgba(26, 54, 93, 0.3), 0 0 60px rgba(229, 62, 62, 0.2);
                 border-color: var(--accent);
             }
-            50% { 
+
+            50% {
                 box-shadow: 0 0 50px rgba(26, 54, 93, 0.5), 0 0 80px rgba(229, 62, 62, 0.4);
                 border-color: var(--accent-secondary);
             }
@@ -1261,7 +1437,7 @@ p {
             box-shadow: 0 4px 15px rgba(37, 99, 235, 0.3);
         }
 
-        .benefit-card > * {
+        .benefit-card>* {
             position: relative;
             z-index: 2;
             transition: all 0.3s ease;
@@ -1390,16 +1566,16 @@ p {
                 gap: 2rem;
                 padding: 2rem;
             }
-            
+
             .benefits-grid {
                 grid-template-columns: 1fr;
             }
-            
+
             .comparison-header,
             .comparison-row {
                 grid-template-columns: 1fr;
             }
-            
+
             .comparison-item {
                 padding: 1rem;
             }
@@ -1414,53 +1590,63 @@ p {
         }
 
         @media (prefers-reduced-motion: reduce) {
-            .text-animate .ta-word, .animate-on-scroll, .plans-hero .hero-shape, .pricing-card, .btn, .faq-item, .benefit-card, .calculator-wrapper {
+
+            .text-animate .ta-word,
+            .animate-on-scroll,
+            .plans-hero .hero-shape,
+            .pricing-card,
+            .btn,
+            .faq-item,
+            .benefit-card,
+            .calculator-wrapper {
                 transition: none !important;
                 animation: none !important;
                 transform: none !important;
                 opacity: 1 !important;
             }
         }
-</style>
-    
-    <link rel="stylesheet" href="assets/css/sidebar-nav.css">    <link rel="stylesheet" href="assets/css/translate.css">
+    </style>
+
+    <link rel="stylesheet" href="assets/css/sidebar-nav.css">
+    <link rel="stylesheet" href="assets/css/translate.css">
     <link rel="stylesheet" href="assets/css/chatbox.css">
     <link rel="stylesheet" href="assets/css/stars.css">
 </head>
+
 <body>
     <div id="google_translate_element" style="display:none;"></div>
-    
+
     <!-- Header -->
-     <header class="header" id="mainHeader" role="banner">
+    <header class="header" id="mainHeader" role="banner">
         <div class="container header-content">
-    <div class="logo">
-        <a href="index.html">
-            <img src="assets/images/horizontal-final.png" alt="IndoAsia Trading Logo" class="logo-img">
-            <span class="logo-text"></span>
-        </a>
-    </div>
-    <nav>
-    <ul class="nav" id="mainNav">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="services.html">Our Process</a></li>
-        <li class="dropdown">
-            <a href="#" class="dropdown-toggle">Our Services <span class="dropdown-arrow">▼</span></a>
-            <ul class="dropdown-menu">
-                <li><a href="coreServices.html">Core Services</a></li>
-                <li><a href="additionalServices.html">Additional Services</a></li>
-                <li><a href="plans.html">Plans & Pricing</a></li>
-            </ul>
-        </li>
-        
-        <li><a href="features.html">Features</a></li>
-        <li class="dropdown">
-            <a href="#" class="dropdown-toggle">Resources <span class="dropdown-arrow">▼</span></a>
-            <ul class="dropdown-menu">
-                <li><a href="blog.html">Blog</a></li>
-                <li><a href="faqs.html">FAQs</a></li>
-            </ul>
-        </li>
-        <li><a href="about.html">About Us</a></li>
+            <div class="logo">
+                <a href="index.html">
+                    <img src="assets/images/horizontal-final.png" alt="IndoAsia Trading Logo" class="logo-img">
+                    <span class="logo-text"></span>
+                </a>
+            </div>
+            <nav>
+                <ul class="nav" id="mainNav">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="services.html">Our Process</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle">Our Services <span class="dropdown-arrow">▼</span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="coreServices.html">Core Services</a></li>
+                            <li><a href="additionalServices.html">Additional Services</a></li>
+                            <li><a href="plans.html">Plans & Pricing</a></li>
+                        </ul>
+                    </li>
+
+                    <li><a href="features.html">Features</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle">Resources <span class="dropdown-arrow">▼</span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="blog.html">Blog</a></li>
+                            <li><a href="faqs.html">FAQs</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="about.html">About Us</a></li>
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle">🌍 Language <span class="dropdown-arrow">▼</span></a>
                         <ul class="dropdown-menu" id="languageMenu">
@@ -1482,21 +1668,23 @@ p {
                     </li>
                     <li><a href="contact.html">Contact</a></li>
                 </ul>
-</nav>
+            </nav>
 
             <button class="mobile-menu-btn" id="mobileMenuBtn">
                 <span></span>
                 <span></span>
                 <span></span>
             </button>
-</div>
-</header>
+        </div>
+    </header>
 
     <!-- Hero Section -->
     <section class="plans-hero">
         <div class="container">
-            <h1><span class="text-animate">Flexible <span class="accent-text">Import Solutions</span> for Every Business</span></h1>
-            <p class="animate-on-scroll">Choose the plan that fits your import needs. All plans include our premium service quality with transparent pricing.</p>
+            <h1><span class="text-animate">Flexible <span class="accent-text">Import Solutions</span> for Every
+                    Business</span></h1>
+            <p class="animate-on-scroll">Choose the plan that fits your import needs. All plans include our premium
+                service quality with transparent pricing.</p>
             <a href="#pricing" class="btn btn-primary glow">View Plans</a>
         </div>
     </section>
@@ -1504,9 +1692,11 @@ p {
     <!-- Plans Comparison Table -->
     <section class="plans-section">
         <div class="container">
-            <h2 class="text-center"><span class="text-animate">Compare Our <span class="accent-text">Service Plans</span></span></h2>
-            <p class="text-center animate-on-scroll">Find the perfect solution for your import requirements with our tiered service packages</p>
-            
+            <h2 class="text-center"><span class="text-animate">Compare Our <span class="accent-text">Service
+                        Plans</span></span></h2>
+            <p class="text-center animate-on-scroll">Find the perfect solution for your import requirements with our
+                tiered service packages</p>
+
             <div class="plans-table-wrapper animate-on-scroll">
                 <table class="plans-table">
                     <thead>
@@ -1611,16 +1801,17 @@ p {
     <!-- Pricing Cards -->
     <section class="pricing-section" id="pricing">
         <div class="container">
-            <h2 class="text-center"><span class="text-animate">Simple, Transparent <span class="accent-text">Pricing</span></span></h2>
+            <h2 class="text-center"><span class="text-animate">Simple, Transparent <span
+                        class="accent-text">Pricing</span></span></h2>
             <p class="text-center animate-on-scroll">Choose the plan that works best for your business needs</p>
-            
+
             <div class="pricing-grid">
                 <div class="pricing-card tilt animate-on-scroll">
                     <h3>Basic Plan</h3>
                     <div class="price">$299</div>
                     <div class="price-period">per shipment</div>
                     <p>Perfect for small businesses with occasional import needs</p>
-                    
+
                     <ul class="service-features">
                         <li>Import consultation</li>
                         <li>Limited supplier verification</li>
@@ -1628,16 +1819,16 @@ p {
                         <li>Basic documentation support</li>
                         <li>Email support</li>
                     </ul>
-                    
+
                     <a href="contact.html" class="btn btn-secondary">Get Started</a>
                 </div>
-                
+
                 <div class="pricing-card tilt animate-on-scroll">
                     <h3>Standard Plan</h3>
                     <div class="price">$799</div>
                     <div class="price-period">per month</div>
                     <p>Ideal for growing businesses with regular import requirements</p>
-                    
+
                     <ul class="service-features">
                         <li>Full import consultation</li>
                         <li>Supplier verification</li>
@@ -1647,16 +1838,16 @@ p {
                         <li>Up to 10 monthly shipments</li>
                         <li>Email & phone support</li>
                     </ul>
-                    
+
                     <a href="contact.html" class="btn btn-secondary">Get Started</a>
                 </div>
-                
+
                 <div class="pricing-card featured tilt animate-on-scroll">
                     <h3>Professional Plan</h3>
                     <div class="price">$1,499</div>
                     <div class="price-period">per month</div>
                     <p>Our most popular plan for established import businesses</p>
-                    
+
                     <ul class="service-features">
                         <li>Comprehensive import consultation</li>
                         <li>Advanced supplier verification</li>
@@ -1667,16 +1858,16 @@ p {
                         <li>Up to 25 monthly shipments</li>
                         <li>Priority email, phone & chat support</li>
                     </ul>
-                    
+
                     <a href="contact.html" class="btn btn-primary">Get Started</a>
                 </div>
-                
+
                 <div class="pricing-card tilt animate-on-scroll">
                     <h3>Enterprise Plan</h3>
                     <div class="price">Custom</div>
                     <div class="price-period">pricing</div>
                     <p>Tailored solutions for large-scale import operations</p>
-                    
+
                     <ul class="service-features">
                         <li>Customized import solutions</li>
                         <li>End-to-end supply chain management</li>
@@ -1687,7 +1878,7 @@ p {
                         <li>24/7 emergency support</li>
                         <li>Custom reporting & analytics</li>
                     </ul>
-                    
+
                     <a href="contact.html" class="btn btn-secondary">Contact Sales</a>
                 </div>
             </div>
@@ -1697,9 +1888,10 @@ p {
     <!-- Cost Calculator Section -->
     <section class="calculator-section">
         <div class="container">
-            <h2 class="text-center"><span class="text-animate">Calculate Your <span class="accent-text">Savings</span></span></h2>
+            <h2 class="text-center"><span class="text-animate">Calculate Your <span
+                        class="accent-text">Savings</span></span></h2>
             <p class="text-center animate-on-scroll">See how much you can save with our professional import services</p>
-            
+
             <div class="calculator-wrapper animate-on-scroll">
                 <div class="calculator-form">
                     <div class="form-group">
@@ -1707,31 +1899,32 @@ p {
                         <input type="range" id="shipments" min="1" max="50" value="10" class="slider">
                         <span id="shipments-value">10</span>
                     </div>
-                    
+
                     <div class="form-group">
                         <label>Average Order Value ($)</label>
-                        <input type="range" id="order-value" min="1000" max="100000" value="25000" step="1000" class="slider">
+                        <input type="range" id="order-value" min="1000" max="100000" value="25000" step="1000"
+                            class="slider">
                         <span id="order-value-display">$25,000</span>
                     </div>
-                    
+
                     <div class="form-group">
                         <label>Current Import Costs (%)</label>
                         <input type="range" id="current-costs" min="5" max="25" value="15" class="slider">
                         <span id="current-costs-value">15%</span>
                     </div>
                 </div>
-                
+
                 <div class="calculator-results">
                     <div class="result-item">
                         <h3>Current Monthly Cost</h3>
                         <div class="cost-display" id="current-cost">$37,500</div>
                     </div>
-                    
+
                     <div class="result-item">
                         <h3>With IndoAsia Trading</h3>
                         <div class="cost-display savings" id="our-cost">$26,250</div>
                     </div>
-                    
+
                     <div class="result-item highlight">
                         <h3>Monthly Savings</h3>
                         <div class="savings-display" id="monthly-savings">$11,250</div>
@@ -1745,9 +1938,10 @@ p {
     <!-- Pricing Benefits Section -->
     <section class="benefits-section">
         <div class="container">
-            <h2 class="text-center"><span class="text-animate">Why Our <span class="accent-text">Pricing Works</span></span></h2>
+            <h2 class="text-center"><span class="text-animate">Why Our <span class="accent-text">Pricing
+                        Works</span></span></h2>
             <p class="text-center animate-on-scroll">Transparent, value-driven pricing with no hidden costs</p>
-            
+
             <div class="benefits-grid">
                 <div class="benefit-card animate-on-scroll">
                     <div class="benefit-icon"><img src="assets/icons/hiddenfee.png" alt="No Hidden Fees"></div>
@@ -1755,21 +1949,21 @@ p {
                     <p>All costs are transparent upfront. What you see is what you pay, with no surprise charges.</p>
                     <div class="benefit-highlight">100% Transparent</div>
                 </div>
-                
+
                 <div class="benefit-card animate-on-scroll">
                     <div class="benefit-icon"><img src="assets/icons/scalable-pricing.png" alt="Scalable Pricing"></div>
                     <h3>Scalable Pricing</h3>
                     <p>Plans grow with your business. Upgrade or downgrade anytime to match your needs.</p>
                     <div class="benefit-highlight">Flexible Terms</div>
                 </div>
-                
+
                 <div class="benefit-card animate-on-scroll">
                     <div class="benefit-icon"><img src="assets/icons/guarantee.png" alt="Value Guarantee"></div>
                     <h3>Value Guarantee</h3>
                     <p>We guarantee cost savings of at least 20% compared to traditional import methods.</p>
                     <div class="benefit-highlight">20% Minimum Savings</div>
                 </div>
-                
+
                 <div class="benefit-card animate-on-scroll">
                     <div class="benefit-icon"><img src="assets/icons/ROI.png" alt="Quick ROI"></div>
                     <h3>Quick ROI</h3>
@@ -1783,9 +1977,10 @@ p {
     <!-- Pricing Comparison Section -->
     <section class="comparison-section">
         <div class="container">
-            <h2 class="text-center"><span class="text-animate">Compare <span class="accent-text">Costs</span></span></h2>
+            <h2 class="text-center"><span class="text-animate">Compare <span class="accent-text">Costs</span></span>
+            </h2>
             <p class="text-center animate-on-scroll">See how we stack up against traditional import methods</p>
-            
+
             <div class="comparison-table animate-on-scroll">
                 <div class="comparison-header">
                     <div class="comparison-item">
@@ -1798,7 +1993,7 @@ p {
                         <h3>IndoAsia Trading</h3>
                     </div>
                 </div>
-                
+
                 <div class="comparison-row">
                     <div class="comparison-item">
                         <strong>Supplier Sourcing</strong>
@@ -1812,7 +2007,7 @@ p {
                         <small>In all plans</small>
                     </div>
                 </div>
-                
+
                 <div class="comparison-row">
                     <div class="comparison-item">
                         <strong>Quality Inspection</strong>
@@ -1826,7 +2021,7 @@ p {
                         <small>Professional rates</small>
                     </div>
                 </div>
-                
+
                 <div class="comparison-row">
                     <div class="comparison-item">
                         <strong>Logistics Management</strong>
@@ -1840,7 +2035,7 @@ p {
                         <small>Optimized rates</small>
                     </div>
                 </div>
-                
+
                 <div class="comparison-row">
                     <div class="comparison-item">
                         <strong>Documentation</strong>
@@ -1863,7 +2058,7 @@ p {
         <div class="container">
             <h2 class="text-center">Frequently Asked <span class="accent-text">Questions</span></h2>
             <p class="text-center">Find answers to common questions about our service plans</p>
-            
+
             <div class="faq-container">
                 <div class="faq-item">
                     <div class="faq-question">
@@ -1871,47 +2066,53 @@ p {
                         <span class="faq-toggle">+</span>
                     </div>
                     <div class="faq-answer">
-                        We accept all major credit cards, bank transfers, and PayPal. Enterprise clients may be eligible for net-30 payment terms.
+                        We accept all major credit cards, bank transfers, and PayPal. Enterprise clients may be eligible
+                        for net-30 payment terms.
                     </div>
                 </div>
-                
+
                 <div class="faq-item">
                     <div class="faq-question">
                         Can I change my plan later?
                         <span class="faq-toggle">+</span>
                     </div>
                     <div class="faq-answer">
-                        Yes, you can upgrade or downgrade your plan at any time. When upgrading, the new rate applies immediately. When downgrading, the new rate applies at the start of your next billing cycle.
+                        Yes, you can upgrade or downgrade your plan at any time. When upgrading, the new rate applies
+                        immediately. When downgrading, the new rate applies at the start of your next billing cycle.
                     </div>
                 </div>
-                
+
                 <div class="faq-item">
                     <div class="faq-question">
                         Are there any hidden fees?
                         <span class="faq-toggle">+</span>
                     </div>
                     <div class="faq-answer">
-                        No, our pricing is transparent. The only additional costs would be for services outside your selected plan, such as additional inspections or expedited shipping, which would be discussed and approved by you in advance.
+                        No, our pricing is transparent. The only additional costs would be for services outside your
+                        selected plan, such as additional inspections or expedited shipping, which would be discussed
+                        and approved by you in advance.
                     </div>
                 </div>
-                
+
                 <div class="faq-item">
                     <div class="faq-question">
                         Do you offer discounts for long-term commitments?
                         <span class="faq-toggle">+</span>
                     </div>
                     <div class="faq-answer">
-                        Yes, we offer discounts for annual commitments. Professional and Enterprise plan subscribers can save up to 15% with annual billing.
+                        Yes, we offer discounts for annual commitments. Professional and Enterprise plan subscribers can
+                        save up to 15% with annual billing.
                     </div>
                 </div>
-                
+
                 <div class="faq-item">
                     <div class="faq-question">
                         What if I need to cancel my service?
                         <span class="faq-toggle">+</span>
                     </div>
                     <div class="faq-answer">
-                        You can cancel your monthly plan at any time with 30 days' notice. Annual plans can be canceled with a prorated refund for unused months.
+                        You can cancel your monthly plan at any time with 30 days' notice. Annual plans can be canceled
+                        with a prorated refund for unused months.
                     </div>
                 </div>
             </div>
@@ -1919,15 +2120,18 @@ p {
     </section>
 
     <!-- CTA Section -->
-    <section class="cta-section" style="background: linear-gradient(135deg, #1e3a8a 0%, #dc2626 100%); padding: 5rem 0; position: relative; overflow: hidden;">
+    <section class="cta-section"
+        style="background: linear-gradient(135deg, #1e3a8a 0%, #dc2626 100%); padding: 5rem 0; position: relative; overflow: hidden;">
         <div class="stars"></div>
         <div class="container">
             <div class="cta-content" style="text-align: center; position: relative; z-index: 1;">
                 <h2 style="color: white; animation: fadeInUp 1s ease;">Ready to Streamline Your Import Process?</h2>
-                <p style="color: white;">Join hundreds of businesses that trust IndoAsia Trading for their import needs. Get started today with a plan that fits your requirements.</p>
+                <p style="color: white;">Join hundreds of businesses that trust IndoAsia Trading for their import needs.
+                    Get started today with a plan that fits your requirements.</p>
                 <div class="cta-buttons">
                     <a href="contact.html" class="btn" style="color: white;">Get Started Now</a>
-                    <a href="contact.html" class="btn btn-secondary" style="margin-left: 1rem; color: white;">Talk to Our Experts</a>
+                    <a href="contact.html" class="btn btn-secondary" style="margin-left: 1rem; color: white;">Talk to
+                        Our Experts</a>
                 </div>
             </div>
         </div>
@@ -1937,28 +2141,49 @@ p {
     <footer class="footer" role="contentinfo">
         <div class="container">
             <div class="footer-content">
-                <div class="footer-section"><style>.footer-section a { text-decoration: none; }</style>
+                <div class="footer-section">
+                    <style>
+                        .footer-section a {
+                            text-decoration: none;
+                        }
+                    </style>
                     <h3>IndoAsia Trading</h3>
                     <p>Your trusted partner for premium import services from all over the world.</p>
                     <div class="social-links" role="list" aria-label="Social media links">
                         <a href="https://www.facebook.com/p/IndoAsiaTrading" target="_blank" rel="noopener noreferrer"
                             aria-label="Follow us on Facebook"><i class="fab fa-facebook-f"></i></a>
                         <a href="https://www.linkedin.com/company/indoasiatrading/" target="_blank"
-                            rel="noopener noreferrer" aria-label="Follow us on LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                            rel="noopener noreferrer" aria-label="Follow us on LinkedIn"><i
+                                class="fab fa-linkedin-in"></i></a>
                         <a href="https://www.instagram.com/indoasiatrading/" target="_blank" rel="noopener noreferrer"
                             aria-label="Follow us on Instagram"><i class="fab fa-instagram"></i></a>
-                        <a href="https://youtube.com/@indoasiatrading?si=OhMRuZv84sHg0lor" target="_blank" rel="noopener noreferrer" aria-label="Follow us on YouTube"><i class="fab fa-youtube"></i></a>
+                        <a href="https://youtube.com/@indoasiatrading?si=OhMRuZv84sHg0lor" target="_blank"
+                            rel="noopener noreferrer" aria-label="Follow us on YouTube"><i
+                                class="fab fa-youtube"></i></a>
                     </div>
                 </div>
-                
-                <div class="footer-section"><style>.footer-section a { text-decoration: none; }</style>
+
+                <div class="footer-section">
+                    <style>
+                        .footer-section a {
+                            text-decoration: none;
+                        }
+                    </style>
                     <h4 style="font-size: 1.5rem;">Services</h4>
                     <ul role="list">
-                        <li><a href="coreServices.html">Core Services</a></li>                        <li><a href="additionalServices.html">Additional Services</a></li>                        <li><a href="plans.html">Plans & Pricing</a></li>                        <li><a href="features.html">Features</a></li>
+                        <li><a href="coreServices.html">Core Services</a></li>
+                        <li><a href="additionalServices.html">Additional Services</a></li>
+                        <li><a href="plans.html">Plans & Pricing</a></li>
+                        <li><a href="features.html">Features</a></li>
                     </ul>
                 </div>
-                
-                <div class="footer-section"><style>.footer-section a { text-decoration: none; }</style>
+
+                <div class="footer-section">
+                    <style>
+                        .footer-section a {
+                            text-decoration: none;
+                        }
+                    </style>
                     <h4 style="font-size: 1.5rem;">Company</h4>
                     <ul role="list">
                         <li><a href="about.html">About Us</a></li>
@@ -1967,8 +2192,13 @@ p {
                         <li><a href="contact.html">Contact</a></li>
                     </ul>
                 </div>
-                
-                <div class="footer-section"><style>.footer-section a { text-decoration: none; }</style>
+
+                <div class="footer-section">
+                    <style>
+                        .footer-section a {
+                            text-decoration: none;
+                        }
+                    </style>
                     <h4 style="font-size: 1.5rem;">Contact Info</h4>
                     <address>
                         <p>Email: <a href="mailto:indoasiatrading@outlook.com">indoasiatrading@outlook.com</a></p>
@@ -1978,7 +2208,7 @@ p {
                     </address>
                 </div>
             </div>
-            
+
             <div class="footer-bottom">
                 <p>&copy; 2023 IndoAsia Trading. All rights reserved.</p>
             </div>
@@ -1988,29 +2218,29 @@ p {
     <!-- Scripts -->
     <script>
         // Mobile navigation
-        (function() {
+        (function () {
             const mobileMenuBtn = document.getElementById('mobileMenuBtn');
             const mainNav = document.getElementById('mainNav');
             const dropdowns = document.querySelectorAll('.dropdown');
-            
+
             if (mobileMenuBtn && mainNav) {
-                mobileMenuBtn.addEventListener('click', function() {
+                mobileMenuBtn.addEventListener('click', function () {
                     mobileMenuBtn.classList.toggle('active');
                     mainNav.classList.toggle('open');
                 });
-                
-                document.addEventListener('click', function(e) {
+
+                document.addEventListener('click', function (e) {
                     if (!mobileMenuBtn.contains(e.target) && !mainNav.contains(e.target)) {
                         mobileMenuBtn.classList.remove('active');
                         mainNav.classList.remove('open');
                     }
                 });
             }
-            
+
             dropdowns.forEach(dropdown => {
                 const toggle = dropdown.querySelector('.dropdown-toggle');
                 if (toggle) {
-                    toggle.addEventListener('click', function(e) {
+                    toggle.addEventListener('click', function (e) {
                         if (window.innerWidth <= 968) {
                             e.preventDefault();
                             dropdowns.forEach(d => {
@@ -2021,8 +2251,8 @@ p {
                     });
                 }
             });
-            
-            document.addEventListener('click', function(e) {
+
+            document.addEventListener('click', function (e) {
                 if (window.innerWidth <= 968) {
                     const isDropdownClick = e.target.closest('.dropdown');
                     if (!isDropdownClick) {
@@ -2034,10 +2264,10 @@ p {
     </script>
     <!-- Font Awesome Kit -->
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
-        <script>
+    <script>
         // FAQ toggle functionality (accessible + animated)
-        (function(){
-            function initFaqs(){
+        (function () {
+            function initFaqs() {
                 const items = document.querySelectorAll('.faq-item');
                 if (!items.length) return;
 
@@ -2059,14 +2289,14 @@ p {
                     answer.style.transition = 'max-height 0.32s ease';
                     answer.style.maxHeight = isOpen ? answer.scrollHeight + 'px' : '0px';
 
-                    function closeOtherFaqs(){
+                    function closeOtherFaqs() {
                         // Optional: keep only one FAQ open at a time. Comment out if not desired.
                         items.forEach(other => {
                             if (other === item) return;
                             const otherAns = other.querySelector('.faq-answer');
                             const otherQ = other.querySelector('.faq-question');
                             const otherToggle = other.querySelector('.faq-toggle');
-                            if (otherAns && otherAns.classList.contains('open')){
+                            if (otherAns && otherAns.classList.contains('open')) {
                                 otherAns.classList.remove('open');
                                 otherAns.style.maxHeight = '0px';
                                 otherQ && otherQ.setAttribute('aria-expanded', 'false');
@@ -2075,7 +2305,7 @@ p {
                         });
                     }
 
-                    function toggleFaq(e){
+                    function toggleFaq(e) {
                         // Accept events from click or keyboard
                         if (e && e.type === 'keydown' && !(e.key === 'Enter' || e.key === ' ')) return;
                         if (e) e.preventDefault && e.preventDefault();
@@ -2096,7 +2326,7 @@ p {
 
                     // Attach listeners
                     question.addEventListener('click', toggleFaq);
-                    question.addEventListener('keydown', function(e){
+                    question.addEventListener('keydown', function (e) {
                         if (e.key === 'Enter' || e.key === ' ') toggleFaq(e);
                     });
 
@@ -2115,19 +2345,19 @@ p {
                 initFaqs();
             }
         })();
-        </script>
-            <script>
-            // Sticky header (per-page)
-            window.addEventListener('scroll', function() {
-                const header = document.getElementById('mainHeader');
-                if (!header) return;
-                if (window.scrollY > 50) {
-                    header.classList.add('sticky');
-                } else {
-                    header.classList.remove('sticky');
-                }
-            });
-            </script>
+    </script>
+    <script>
+        // Sticky header (per-page)
+        window.addEventListener('scroll', function () {
+            const header = document.getElementById('mainHeader');
+            if (!header) return;
+            if (window.scrollY > 50) {
+                header.classList.add('sticky');
+            } else {
+                header.classList.remove('sticky');
+            }
+        });
+    </script>
     <!-- Enhanced Professional Animation System -->
     <script>
         (function () {
@@ -2202,12 +2432,12 @@ p {
                 const cards = document.querySelectorAll('.pricing-card');
                 cards.forEach((card, index) => {
                     card.style.transitionDelay = `${index * 0.1}s`;
-                    
+
                     card.addEventListener('mouseenter', () => {
                         card.style.transform = 'translateY(-15px) scale(1.02)';
                         card.style.boxShadow = '0 25px 50px rgba(0, 0, 0, 0.15)';
                     });
-                    
+
                     card.addEventListener('mouseleave', () => {
                         if (card.classList.contains('featured')) {
                             card.style.transform = 'scale(1.05)';
@@ -2226,11 +2456,11 @@ p {
                     button.addEventListener('mouseenter', () => {
                         button.style.transform = 'translateY(-3px) scale(1.05)';
                     });
-                    
+
                     button.addEventListener('mouseleave', () => {
                         button.style.transform = 'translateY(0) scale(1)';
                     });
-                    
+
                     // Ripple effect on click
                     button.addEventListener('click', (e) => {
                         const ripple = document.createElement('span');
@@ -2238,7 +2468,7 @@ p {
                         const size = Math.max(rect.width, rect.height);
                         const x = e.clientX - rect.left - size / 2;
                         const y = e.clientY - rect.top - size / 2;
-                        
+
                         ripple.style.cssText = `
                             position: absolute;
                             width: ${size}px;
@@ -2251,11 +2481,11 @@ p {
                             animation: ripple 0.6s linear;
                             pointer-events: none;
                         `;
-                        
+
                         button.style.position = 'relative';
                         button.style.overflow = 'hidden';
                         button.appendChild(ripple);
-                        
+
                         setTimeout(() => ripple.remove(), 600);
                     });
                 });
@@ -2266,12 +2496,12 @@ p {
                 const rows = document.querySelectorAll('.plans-table tbody tr');
                 rows.forEach((row, index) => {
                     row.style.transitionDelay = `${index * 0.05}s`;
-                    
+
                     row.addEventListener('mouseenter', () => {
                         row.style.transform = 'translateX(8px)';
                         row.style.background = 'rgba(37, 99, 235, 0.05)';
                     });
-                    
+
                     row.addEventListener('mouseleave', () => {
                         row.style.transform = 'translateX(0)';
                         row.style.background = '';
@@ -2284,13 +2514,13 @@ p {
                 if (reduceMotion) return;
                 const hero = document.querySelector('.plans-hero');
                 if (!hero) return;
-                
+
                 const shapes = [
                     { left: '8%', top: '15%', size: '240px', gradient: 'radial-gradient(circle at 30% 30%, rgba(37,99,235,0.8), rgba(37,99,235,0.3))' },
                     { right: '8%', bottom: '-15%', size: '200px', gradient: 'radial-gradient(circle at 30% 30%, rgba(255,77,148,0.8), rgba(255,77,148,0.3))' },
                     { left: '70%', top: '60%', size: '160px', gradient: 'radial-gradient(circle at 30% 30%, rgba(34,197,94,0.6), rgba(34,197,94,0.2))' }
                 ];
-                
+
                 shapes.forEach((config, index) => {
                     const shape = document.createElement('div');
                     shape.className = 'hero-shape';
@@ -2315,26 +2545,26 @@ p {
                 const shipmentsSlider = document.getElementById('shipments');
                 const orderValueSlider = document.getElementById('order-value');
                 const currentCostsSlider = document.getElementById('current-costs');
-                
+
                 const shipmentsValue = document.getElementById('shipments-value');
                 const orderValueDisplay = document.getElementById('order-value-display');
                 const currentCostsValue = document.getElementById('current-costs-value');
-                
+
                 const currentCostDisplay = document.getElementById('current-cost');
                 const ourCostDisplay = document.getElementById('our-cost');
                 const monthlySavingsDisplay = document.getElementById('monthly-savings');
                 const savingsPercentDisplay = document.getElementById('savings-percent');
-                
+
                 function updateCalculator() {
                     const shipments = parseInt(shipmentsSlider.value);
                     const orderValue = parseInt(orderValueSlider.value);
                     const currentCostPercent = parseInt(currentCostsSlider.value);
-                    
+
                     // Update display values
                     shipmentsValue.textContent = shipments;
                     orderValueDisplay.textContent = `$${orderValue.toLocaleString()}`;
                     currentCostsValue.textContent = `${currentCostPercent}%`;
-                    
+
                     // Calculate costs
                     const monthlyVolume = shipments * orderValue;
                     const currentMonthlyCost = monthlyVolume * (currentCostPercent / 100);
@@ -2342,19 +2572,19 @@ p {
                     const ourMonthlyCost = monthlyVolume * (ourCostPercent / 100);
                     const monthlySavings = currentMonthlyCost - ourMonthlyCost;
                     const savingsPercent = Math.round((monthlySavings / currentMonthlyCost) * 100);
-                    
+
                     // Update displays with animation
                     currentCostDisplay.textContent = `$${currentMonthlyCost.toLocaleString()}`;
                     ourCostDisplay.textContent = `$${ourMonthlyCost.toLocaleString()}`;
                     monthlySavingsDisplay.textContent = `$${monthlySavings.toLocaleString()}`;
                     savingsPercentDisplay.textContent = `${savingsPercent}% Savings`;
                 }
-                
+
                 if (shipmentsSlider && orderValueSlider && currentCostsSlider) {
                     shipmentsSlider.addEventListener('input', updateCalculator);
                     orderValueSlider.addEventListener('input', updateCalculator);
                     currentCostsSlider.addEventListener('input', updateCalculator);
-                    
+
                     // Initial calculation
                     updateCalculator();
                 }
@@ -2396,19 +2626,19 @@ p {
         // Smooth parallax effects
         function initParallaxEffects() {
             let ticking = false;
-            
+
             function updateParallax() {
                 const scrolled = window.pageYOffset;
                 const heroShapes = document.querySelectorAll('.hero-shape');
-                
+
                 heroShapes.forEach((shape, index) => {
                     const speed = 0.2 + (index * 0.1);
                     shape.style.transform = `translateY(${scrolled * speed}px) rotate(${scrolled * 0.1}deg)`;
                 });
-                
+
                 ticking = false;
             }
-            
+
             window.addEventListener('scroll', () => {
                 if (!ticking) {
                     requestAnimationFrame(updateParallax);
@@ -2420,16 +2650,18 @@ p {
         // Initialize parallax on load
         document.addEventListener('DOMContentLoaded', initParallaxEffects);
     </script>
-  
+
     <script src="assets/js/translate.js"></script>
     <script src="assets/js/chatbox.js"></script>
 
     <!-- Floating Social Contact Icons -->
     <div class="floating-social-icons">
-        <a href="#" onclick="openChatbox('facebook'); return false;" class="social-icon facebook-icon" aria-label="Chat on Facebook">
+        <a href="#" onclick="openChatbox('facebook'); return false;" class="social-icon facebook-icon"
+            aria-label="Chat on Facebook">
             <i class="fab fa-facebook-messenger"></i>
         </a>
-        <a href="#" onclick="openChatbox('whatsapp'); return false;" class="social-icon whatsapp-icon" aria-label="Chat on WhatsApp">
+        <a href="#" onclick="openChatbox('whatsapp'); return false;" class="social-icon whatsapp-icon"
+            aria-label="Chat on WhatsApp">
             <i class="fab fa-whatsapp"></i>
         </a>
     </div>
@@ -2487,9 +2719,12 @@ p {
         }
 
         @keyframes pulse {
-            0%, 100% {
+
+            0%,
+            100% {
                 transform: scale(1);
             }
+
             50% {
                 transform: scale(1.05);
             }
@@ -2510,4 +2745,5 @@ p {
     </style>
 
 </body>
+
 </html>

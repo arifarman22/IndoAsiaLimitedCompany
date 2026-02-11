@@ -5,49 +5,54 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Core Services - IndoAsia Trading | Premium Import Solutions</title>
-    <meta name="description" content="Professional import services from China to Bangladesh. Product sourcing, logistics, quality assurance, customs clearance, and business consultation.">
-    <meta name="keywords" content="import services, China to Bangladesh, product sourcing, logistics, quality assurance, customs clearance">
-    
-    <link rel="icon" type="image/png" sizes="32x32" href="assets/images/logo.png">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <meta name="description"
+        content="Professional import services from China to Bangladesh. Product sourcing, logistics, quality assurance, customs clearance, and business consultation.">
+    <meta name="keywords"
+        content="import services, China to Bangladesh, product sourcing, logistics, quality assurance, customs clearance">
+
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/images/IndoAsia Logo_vertical.jpg">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/images/IndoAsia Logo_vertical.jpg">
+    <link rel="apple-touch-icon" href="assets/images/IndoAsia Logo_vertical.jpg">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js" defer></script>
-    
+
     <link rel="stylesheet" href="assets/css/main.css">
     <link rel="stylesheet" href="assets/css/responsive.css">
-   
+
     <link rel="stylesheet" href="assets/css/footer.css">
     <link rel="stylesheet" href="assets/css/animations.css">
     <link rel="stylesheet" href="assets/css/sidebar-nav.css">
     <link rel="stylesheet" href="assets/css/translate.css">
     <link rel="stylesheet" href="assets/css/chatbox.css">
-    
+
     <style>
         :root {
             /* Brand Colors */
             --brand-navy: #1a365d;
             --brand-red: #e53e3e;
             --brand-white: #EDEDED;
-            
+
             /* Backgrounds */
             --bg-primary: var(--brand-white);
             --bg-secondary: #f8fafc;
             --bg-tertiary: #f1f5f9;
-            
+
             /* Accents */
             --accent: var(--brand-navy);
             --accent-secondary: var(--brand-red);
             --accent-gradient: linear-gradient(135deg, var(--brand-navy), var(--brand-red));
-            
+
             /* Text */
             --text-primary: #0f172a;
             --text-secondary: #334155;
-            
+
             /* Borders & Shadows */
             --border: #e2e8f0;
             --shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
             --card-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
-            
+
             /* UI Helpers */
             --transition: all 0.3s ease;
             --border-radius: 12px;
@@ -60,7 +65,8 @@
             box-sizing: border-box;
         }
 
-        html, body {
+        html,
+        body {
             max-width: 100%;
             overflow-x: hidden;
         }
@@ -90,27 +96,39 @@
             padding: 5rem 0;
         }
 
-        h1, h2, h3 {
+        h1,
+        h2,
+        h3 {
             font-weight: 800;
             line-height: 1.3;
             margin-bottom: 1rem;
             color: var(--text-primary);
         }
 
-        h1 { font-size: 3.2rem; }
-        h2 { font-size: 2.2rem; font-weight: 700; }
-        h3 { font-size: 1.3rem; font-weight: 700; }
-        
+        h1 {
+            font-size: 3.2rem;
+        }
+
+        h2 {
+            font-size: 2.2rem;
+            font-weight: 700;
+        }
+
+        h3 {
+            font-size: 1.3rem;
+            font-weight: 700;
+        }
+
         /* Section Headers */
         .section-header {
             text-align: center;
             margin-bottom: 4rem;
         }
-        
+
         .section-header h2 {
             margin-bottom: 1rem;
         }
-        
+
         .section-header p {
             font-size: 1.1rem;
             color: var(--text-secondary);
@@ -118,7 +136,9 @@
             margin: 0 auto;
         }
 
-        .text-center { text-align: center; }
+        .text-center {
+            text-align: center;
+        }
 
         .accent-text {
             background: var(--accent-gradient);
@@ -242,7 +262,7 @@
             z-index: 1;
             overflow: hidden;
         }
-        
+
         .hero-background::before {
             content: '';
             position: absolute;
@@ -251,21 +271,25 @@
             width: 100%;
             height: 100%;
             background: radial-gradient(circle at 20% 80%, rgba(37, 99, 235, 0.1) 0%, transparent 50%),
-                        radial-gradient(circle at 80% 20%, rgba(220, 38, 38, 0.1) 0%, transparent 50%),
-                        radial-gradient(circle at 40% 40%, rgba(29, 78, 216, 0.05) 0%, transparent 50%);
+                radial-gradient(circle at 80% 20%, rgba(220, 38, 38, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 40% 40%, rgba(29, 78, 216, 0.05) 0%, transparent 50%);
             animation: backgroundShift 20s ease-in-out infinite;
         }
-        
+
         @keyframes backgroundShift {
-            0%, 100% {
+
+            0%,
+            100% {
                 transform: translateX(0) translateY(0) scale(1);
                 opacity: 0.7;
             }
-            33% { 
+
+            33% {
                 transform: translateX(-20px) translateY(-10px) scale(1.05);
                 opacity: 0.8;
             }
-            66% { 
+
+            66% {
                 transform: translateX(20px) translateY(10px) scale(0.95);
                 opacity: 0.6;
             }
@@ -292,44 +316,12 @@
             border-radius: 24px;
             padding: 0;
             border: 1px solid rgba(255, 255, 255, 0.8);
-            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
             position: relative;
             overflow: visible;
-            opacity: 0;
-            transform: translateY(20px);
             display: flex;
             flex-direction: column;
             height: 100%;
             box-shadow: 0 8px 32px rgba(26, 54, 93, 0.08), 0 2px 8px rgba(0, 0, 0, 0.04);
-            backdrop-filter: blur(10px);
-        }
-
-        .service-card::before {
-            content: '';
-            position: absolute;
-            inset: -2px;
-            border-radius: 24px;
-            padding: 2px;
-            background: var(--accent-gradient);
-            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-            -webkit-mask-composite: xor;
-            mask-composite: exclude;
-            opacity: 0;
-            transition: opacity 0.5s ease;
-        }
-
-        .service-card:hover::before {
-            opacity: 1;
-        }
-
-        .service-card:hover {
-            transform: translateY(-12px) scale(1.02);
-            box-shadow: 0 20px 60px rgba(26, 54, 93, 0.15), 0 8px 24px rgba(229, 62, 62, 0.1);
-        }
-
-        .service-card.animate {
-            opacity: 1;
-            transform: translateY(0);
         }
 
         .service-thumb {
@@ -360,13 +352,6 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
-            transition: transform 0.7s cubic-bezier(0.4, 0, 0.2, 1), filter 0.5s ease;
-            filter: brightness(1) saturate(1);
-        }
-
-        .service-card:hover .service-thumb img {
-            transform: scale(1.1) rotate(1deg);
-            filter: brightness(1.1) saturate(1.2);
         }
 
         .service-content {
@@ -403,11 +388,6 @@
             top: -30px;
             margin-left: auto;
             margin-right: auto;
-            transition: transform 0.3s ease;
-        }
-
-        .service-icon img {
-            transition: transform 0.3s ease;
         }
 
         .service-features {
@@ -421,7 +401,6 @@
             position: relative;
             padding-left: 1.5rem;
             font-weight: 600;
-            transition: transform 0.2s ease;
         }
 
         .service-features li::before {
@@ -443,7 +422,6 @@
         }
 
         .service-buttons .btn {
-            transition: transform 0.2s ease;
             position: relative;
             z-index: 10;
         }
@@ -494,13 +472,7 @@
             border-radius: var(--border-radius);
             padding: 2rem;
             border: 1px solid var(--border);
-            transition: var(--transition);
             text-align: center;
-        }
-
-        .feature-card:hover {
-            transform: translateY(-5px);
-            box-shadow: var(--card-shadow);
         }
 
         .feature-icon {
@@ -538,10 +510,15 @@
         }
 
         @keyframes sparkle {
-            0% { transform: translateX(0) translateY(0); }
-            100% { transform: translateX(100px) translateY(100px); }
+            0% {
+                transform: translateX(0) translateY(0);
+            }
+
+            100% {
+                transform: translateX(100px) translateY(100px);
+            }
         }
-        
+
         .cta-section h2,
         .cta-section p {
             color: white;
@@ -554,8 +531,13 @@
         }
 
         @keyframes glow {
-            from { text-shadow: 0 0 20px rgba(255,255,255,0.5); }
-            to { text-shadow: 0 0 30px rgba(255,255,255,0.8); }
+            from {
+                text-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+            }
+
+            to {
+                text-shadow: 0 0 30px rgba(255, 255, 255, 0.8);
+            }
         }
 
         .cta-buttons {
@@ -581,7 +563,7 @@
             left: -100%;
             width: 100%;
             height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
             transition: left 0.5s;
         }
 
@@ -601,6 +583,7 @@
                 opacity: 0;
                 transform: translateY(50px);
             }
+
             to {
                 opacity: 1;
                 transform: translateY(0);
@@ -612,6 +595,7 @@
                 opacity: 0;
                 transform: translateX(-50px);
             }
+
             to {
                 opacity: 1;
                 transform: translateX(0);
@@ -623,6 +607,7 @@
                 opacity: 0;
                 transform: translateX(50px);
             }
+
             to {
                 opacity: 1;
                 transform: translateX(0);
@@ -634,25 +619,21 @@
                 opacity: 0;
                 transform: scale(0.8);
             }
+
             to {
                 opacity: 1;
                 transform: scale(1);
             }
         }
 
-        @keyframes float {
-            0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(-10px); }
-        }
-
-        @keyframes pulse {
-            0%, 100% { transform: scale(1); }
-            50% { transform: scale(1.05); }
-        }
-
         @keyframes shimmer {
-            0% { background-position: -200% 0; }
-            100% { background-position: 200% 0; }
+            0% {
+                background-position: -200% 0;
+            }
+
+            100% {
+                background-position: 200% 0;
+            }
         }
 
         .fade-in {
@@ -699,14 +680,6 @@
             transform: scale(1);
         }
 
-        .floating {
-            animation: float 3s ease-in-out infinite;
-        }
-
-        .pulsing {
-            animation: pulse 2s ease-in-out infinite;
-        }
-
         /* Enhanced section styling */
         .services-section {
             position: relative;
@@ -723,7 +696,7 @@
             right: 0;
             bottom: 0;
             background: radial-gradient(circle at 20% 80%, rgba(26, 54, 93, 0.05) 0%, transparent 50%),
-                        radial-gradient(circle at 80% 20%, rgba(229, 62, 62, 0.05) 0%, transparent 50%);
+                radial-gradient(circle at 80% 20%, rgba(229, 62, 62, 0.05) 0%, transparent 50%);
             pointer-events: none;
         }
 
@@ -740,7 +713,7 @@
             left: -200%;
             width: 200%;
             height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
             animation: shimmer 2s infinite;
         }
 
@@ -786,77 +759,105 @@
         }
 
         /* Header Styles */
-       .header {
-  background: rgba(255, 255, 255, 0.98);
-  padding: 0.6rem 0;
-  position: fixed;
-  width: 100%;
-  top: 0;
-  z-index: 1000;
-  backdrop-filter: blur(14px);
-  border-bottom: 1px solid var(--border, #e5e7eb);
-  transition: var(--transition, all 0.2s ease);
-  box-shadow: 0 2px 12px rgba(37, 99, 235, 0.06);
-}
+        .header {
+            background: rgba(255, 255, 255, 0.98);
+            padding: 0.6rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            backdrop-filter: blur(14px);
+            border-bottom: 1px solid var(--border, #e5e7eb);
+            transition: var(--transition, all 0.2s ease);
+            box-shadow: 0 2px 12px rgba(37, 99, 235, 0.06);
+        }
 
-.header.sticky {
-  padding: 0.45rem 0;
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.06);
-}
+        .header.sticky {
+            padding: 0.45rem 0;
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.06);
+        }
 
-.header-content {
-  max-width: 100%;
-  margin: 0 auto;
-  padding: 0 9rem 0 8rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
+        .header-content {
+            max-width: 100%;
+            margin: 0 auto;
+            padding: 0 9rem 0 8rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
 
         .logo {
+            font-family: 'Playfair Display', 'Inter', serif;
+            font-size: 1.8rem;
+            font-weight: 800;
+            background: var(--accent-gradient);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            letter-spacing: -0.02em;
             display: flex;
             align-items: center;
             gap: 10px;
-            flex-shrink: 0;
-            max-width: 200px;
+        }
+
+        .logo a {
+            display: flex;
+            align-items: center;
+            gap: 10px;
         }
 
         .logo-img {
             height: 80px;
             width: auto;
             object-fit: contain;
+            margin-left: 90px;
         }
 
+        .logo-text {
+            background: var(--accent-gradient);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* Navigation */
         .nav {
             display: flex;
             list-style: none;
             gap: 0.3rem;
             align-items: center;
+            position: relative;
+        }
+
+        .nav li {
+            position: relative;
         }
 
         .nav li a {
             font-weight: 600;
-            color: var(--text-primary);
+            color: #0f172a;
             padding: 0.5rem 1rem;
             border-radius: var(--border-radius);
             transition: var(--transition);
-            text-decoration: none;
             display: flex;
             align-items: center;
             gap: 0.5rem;
         }
 
-        .nav li a:hover {
+        .nav li a:hover,
+        .nav li a.active {
             background: var(--hover-bg);
             color: var(--accent);
         }
+
 
         .dropdown-arrow {
             font-size: 0.8rem;
             transition: var(--transition);
         }
 
-        .dropdown:hover .dropdown-arrow {
+        .dropdown:hover .dropdown-arrow,
+        .dropdown.active .dropdown-arrow {
             transform: rotate(180deg);
         }
 
@@ -907,13 +908,13 @@
             font-weight: 600;
         }
 
-       
 
-      
+
+
 
         /* Small helpers */
         .sidebar a:focus {
-            outline: 3px solid rgba(37,99,235,0.12);
+            outline: 3px solid rgba(37, 99, 235, 0.12);
             outline-offset: 2px;
         }
 
@@ -922,6 +923,7 @@
             .sidebar {
                 display: none;
             }
+
             .sidebar-overlay {
                 display: none !important;
             }
@@ -943,22 +945,22 @@
             pointer-events: none;
             z-index: 5;
         }
-        
+
         .overlay-content {
             text-align: center;
             color: var(--text-primary);
         }
-        
+
         .overlay-content h4 {
             font-size: 1.2rem;
             margin-bottom: 0.5rem;
         }
-        
+
         .overlay-content p {
             margin-bottom: 1rem;
             opacity: 0.9;
         }
-        
+
         .overlay-btn {
             background: var(--accent);
             color: white;
@@ -974,19 +976,20 @@
             z-index: 10;
             position: relative;
         }
-        
+
         .overlay-btn:hover {
             background: var(--accent-secondary);
             color: white;
             transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
         }
 
-        /* Footer Styles */
+
         .footer {
             background: var(--bg-secondary);
             padding: 4rem 0 2rem;
             border-top: 1px solid var(--border);
+            font-family: 'Montserrat', sans-serif;
         }
 
         .footer-content {
@@ -994,26 +997,32 @@
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 2rem;
             margin-bottom: 3rem;
+            text-align: left;
         }
 
         .footer-section h3,
         .footer-section h4 {
             margin-bottom: 1.5rem;
             color: var(--accent);
+            text-align: left;
+            font-size: 1.5rem;
         }
 
         .footer-section p {
             margin-bottom: 1.5rem;
             line-height: 1.6;
             color: var(--text-primary);
+            text-align: left;
         }
 
         .footer-section ul {
             list-style: none;
+            text-align: left;
         }
 
         .footer-section ul li {
             margin-bottom: 0.8rem;
+            text-align: left;
         }
 
         .footer-section ul li a {
@@ -1031,6 +1040,7 @@
             display: flex;
             gap: 1rem;
             margin-top: 1.5rem;
+            justify-content: flex-start;
         }
 
         .social-links a {
@@ -1039,15 +1049,16 @@
             justify-content: center;
             width: 40px;
             height: 40px;
-            background: var(--accent);
+            background: linear-gradient(135deg, var(--brand-navy), var(--brand-red));
             color: white;
             border-radius: 50%;
             transition: var(--transition);
-            font-weight: 600;
+            font-size: 1.2rem;
+            text-decoration: none;
         }
 
         .social-links a:hover {
-            background: var(--accent-secondary);
+            background: var(--brand-navy);
             transform: translateY(-3px);
         }
 
@@ -1057,47 +1068,57 @@
             border-top: 1px solid var(--border);
             color: var(--text-secondary);
         }
-          .mobile-menu-btn {
-      display: none;
-      position: fixed;
-      top: 28px;
-      right: 35px;
-      align-items: center;
-      justify-content: center;
-      background: var(--bg-secondary);
-      border: 1px solid var(--border);
-      border-radius: 8px;
-      padding: 10px;
-      cursor: pointer;
-      transition: background 0.3s ease, transform 0.3s ease;
-      width: 44px;
-      height: 40px;
-      flex-direction: column;
-      gap: 5px;
-      z-index: 1101;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-    }
 
-    .mobile-menu-btn:hover {
-      background: var(--accent-secondary);
-    }
+        .mobile-menu-btn {
+            display: none;
+            position: fixed;
+            top: 28px;
+            right: 35px;
+            align-items: center;
+            justify-content: center;
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 10px;
+            cursor: pointer;
+            transition: background 0.3s ease, transform 0.3s ease;
+            width: 44px;
+            height: 40px;
+            flex-direction: column;
+            gap: 5px;
+            z-index: 1101;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
 
-    .mobile-menu-btn.active {
-      transform: rotate(90deg);
-    }
+        .mobile-menu-btn:hover {
+            background: var(--accent-secondary);
+        }
 
-    .mobile-menu-btn span {
-      display: block;
-      width: 22px;
-      height: 2px;
-      background: var(--text-primary);
-      border-radius: 2px;
-      transition: transform 0.25s ease, opacity 0.2s ease;
-    }
+        .mobile-menu-btn.active {
+            transform: rotate(90deg);
+        }
 
-    .mobile-menu-btn.active span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
-    .mobile-menu-btn.active span:nth-child(2) { opacity: 0; transform: scale(0); }
-    .mobile-menu-btn.active span:nth-child(3) { transform: rotate(-45deg) translate(7px, -6px); }
+        .mobile-menu-btn span {
+            display: block;
+            width: 22px;
+            height: 2px;
+            background: var(--text-primary);
+            border-radius: 2px;
+            transition: transform 0.25s ease, opacity 0.2s ease;
+        }
+
+        .mobile-menu-btn.active span:nth-child(1) {
+            transform: rotate(45deg) translate(5px, 5px);
+        }
+
+        .mobile-menu-btn.active span:nth-child(2) {
+            opacity: 0;
+            transform: scale(0);
+        }
+
+        .mobile-menu-btn.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(7px, -6px);
+        }
 
         /* Responsive Design */
         @media (max-width: 1200px) {
@@ -1110,15 +1131,15 @@
             h1 {
                 font-size: 2.8rem;
             }
-            
+
             h2 {
                 font-size: 2rem;
             }
-            
+
             .container {
                 padding: 0 1.5rem;
             }
-            
+
             .services-grid {
                 grid-template-columns: repeat(2, 1fr);
                 gap: 2rem;
@@ -1136,22 +1157,22 @@
                 margin-top: 0;
                 padding-top: 80px;
             }
-            
+
             .services-section {
                 margin-top: 0 !important;
             }
-            
+
             .hero-content h1 {
                 font-size: 2.5rem !important;
                 line-height: 1.2 !important;
                 margin-top: 2rem;
             }
-            
+
             .hero-content p {
                 font-size: 1.1rem !important;
                 padding: 0 1rem;
             }
-            
+
             .mobile-menu-btn {
                 display: inline-flex;
                 position: fixed;
@@ -1177,7 +1198,7 @@
                 gap: 0;
                 padding: 5rem 0 2rem;
                 transition: left 0.3s ease;
-                box-shadow: 5px 0 15px rgba(0,0,0,0.1);
+                box-shadow: 5px 0 15px rgba(0, 0, 0, 0.1);
                 z-index: 1099;
                 overflow-y: auto;
             }
@@ -1188,7 +1209,7 @@
 
             .nav li {
                 width: 100%;
-                border-bottom: 1px solid rgba(0,0,0,0.05);
+                border-bottom: 1px solid rgba(0, 0, 0, 0.05);
                 text-align: center;
             }
 
@@ -1211,7 +1232,7 @@
                 position: static;
                 display: none;
                 background: rgba(248, 250, 252, 0.95);
-                box-shadow: inset 0 2px 4px rgba(0,0,0,0.1);
+                box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
                 border-radius: 8px;
                 margin: 0.5rem 1rem;
                 padding: 0.5rem 0;
@@ -1288,15 +1309,15 @@
                 right: 1rem;
                 top: 0.75rem;
             }
-            
+
             .header {
                 padding: 0.3rem 0;
             }
-            
+
             .header-content {
                 padding: 0.25rem 1rem;
             }
-            
+
             .logo-img {
                 height: 50px !important;
             }
@@ -1339,18 +1360,13 @@
                 font-size: 2.5rem;
             }
 
-            .footer-content {
-                grid-template-columns: 1fr;
-                text-align: center;
-            }
+          
 
             .footer-section ul {
                 text-align: center;
             }
 
-            .social-links {
-                justify-content: center;
-            }
+
 
             .service-tabs {
                 flex-direction: column;
@@ -1365,55 +1381,49 @@
                 padding: 0.75rem 1.5rem !important;
                 font-size: 0.9rem !important;
             }
-            
+
             .services-grid {
                 grid-template-columns: 1fr !important;
                 gap: 2rem !important;
                 margin: 2rem 0;
             }
-            
+
             .service-card {
                 margin: 0 0.5rem;
             }
-            
+
             .service-card-detail {
                 padding: 1.5rem 1rem !important;
                 margin: 0 0.5rem;
             }
-            
+
             .service-card-detail .card-content {
                 grid-template-columns: 1fr !important;
                 gap: 2rem !important;
             }
-            
+
             .features-grid {
                 grid-template-columns: 1fr !important;
                 gap: 1.5rem !important;
             }
-            
+
             .feature-card {
                 margin: 0 0.5rem;
             }
-            
-            .footer-content {
-                grid-template-columns: 1fr !important;
-                text-align: center;
-                gap: 2rem !important;
-            }
-            
+
+           
+
             .footer-section {
                 margin-bottom: 1.5rem;
             }
-            
-            .social-links {
-                justify-content: center;
-            }
-            
+
+           
+
             .cta-buttons {
                 flex-direction: column;
                 gap: 1rem;
             }
-            
+
             .cta-buttons .btn {
                 width: 100%;
                 max-width: 300px;
@@ -1426,7 +1436,7 @@
                 bottom: 20px;
                 right: 15px;
             }
-            
+
             .social-icon {
                 width: 50px;
                 height: 50px;
@@ -1439,12 +1449,12 @@
                 grid-template-columns: 1fr;
                 gap: 1.5rem;
             }
-            
+
             .stats-grid {
                 grid-template-columns: 1fr;
                 gap: 1rem;
             }
-            
+
             .stat-item h3 {
                 font-size: 2rem;
             }
@@ -1517,13 +1527,13 @@
             .logo-img {
                 height: 60px;
             }
-            
+
             .service-icon {
                 width: 60px !important;
                 height: 60px !important;
                 top: -25px !important;
             }
-            
+
             .service-icon img {
                 width: 30px !important;
                 height: 30px !important;
@@ -1565,7 +1575,7 @@
             background: white;
             border-radius: 20px;
             padding: 3rem;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
             border: 1px solid #e2e8f0;
             opacity: 1;
             transition: opacity 0.5s ease;
@@ -1601,9 +1611,10 @@
         }
     </style>
 </head>
+
 <body>
     <div id="google_translate_element" style="display:none;"></div>
-    
+
     <div class="loading-overlay" id="loadingOverlay">
         <div class="loading-spinner"></div>
     </div>
@@ -1671,7 +1682,8 @@
             <div class="container">
                 <div class="hero-content">
                     <h1>Our <span class="accent-text">Core Services</span></h1>
-                    <p>Comprehensive import solutions tailored to your business needs. We handle the entire process from sourcing to delivery, ensuring quality and efficiency at every step.</p>
+                    <p>Comprehensive import solutions tailored to your business needs. We handle the entire process from
+                        sourcing to delivery, ensuring quality and efficiency at every step.</p>
                     <div class="hero-buttons">
                         <a href="#core-services" class="btn btn-primary">Explore Services</a>
                         <a href="contact.html" class="btn btn-secondary">Get Started</a>
@@ -1689,18 +1701,21 @@
                     <h2 class="scale-in">Our Core Services</h2>
                     <p class="fade-in">Comprehensive import solutions tailored to drive your business success</p>
                 </div>
-                
+
                 <div class="services-grid">
                     <article class="service-card interactive-card" data-service="sourcing">
                         <div class="service-thumb">
                             <img src="assets/images/productSourcingCore.jpg" alt="Product Sourcing" loading="lazy">
                         </div>
                         <div class="service-content">
-                            <div class="service-icon" style="margin-top: 20px; margin-bottom: 0px; background: #f0f4f8; padding: 15px; border-radius: 50%; width: 70px; height: 70px; display: flex; align-items: center; justify-content: center; margin-left: auto; margin-right: auto;">
-                                <img src="assets/icons/product-development.png" alt="Product Sourcing" style="width: 40px; height: 40px; object-fit: contain;">
+                            <div class="service-icon"
+                                style="margin-top: 20px; margin-bottom: 0px; background: #f0f4f8; padding: 15px; border-radius: 50%; width: 70px; height: 70px; display: flex; align-items: center; justify-content: center; margin-left: auto; margin-right: auto;">
+                                <img src="assets/icons/product-development.png" alt="Product Sourcing"
+                                    style="width: 40px; height: 40px; object-fit: contain;">
                             </div>
                             <h3 style="margin-top: 0; margin-bottom: 0.5rem;">Product Sourcing</h3>
-                            <p>Direct access to verified Chinese manufacturers with quality assurance and competitive pricing.</p>
+                            <p>Direct access to verified Chinese manufacturers with quality assurance and competitive
+                                pricing.</p>
                             <ul class="service-features">
                                 <li>Supplier verification & background checks</li>
                                 <li>Quality control & product inspection</li>
@@ -1719,8 +1734,10 @@
                             <img src="assets/images/logistics.jpeg" alt="Logistics & Shipping" loading="lazy">
                         </div>
                         <div class="service-content">
-                            <div class="service-icon" style="margin-top: 20px; margin-bottom: 0px; background: #f0f4f8; padding: 15px; border-radius: 50%; width: 70px; height: 70px; display: flex; align-items: center; justify-content: center; margin-left: auto; margin-right: auto;">
-                                <img src="assets/icons/logistics.png" alt="Logistics & Shipping" style="width: 40px; height: 40px; object-fit: contain;">
+                            <div class="service-icon"
+                                style="margin-top: 20px; margin-bottom: 0px; background: #f0f4f8; padding: 15px; border-radius: 50%; width: 70px; height: 70px; display: flex; align-items: center; justify-content: center; margin-left: auto; margin-right: auto;">
+                                <img src="assets/icons/logistics.png" alt="Logistics & Shipping"
+                                    style="width: 40px; height: 40px; object-fit: contain;">
                             </div>
                             <h3 style="margin-top: 0; margin-bottom: 0.5rem;">Logistics & Shipping</h3>
                             <p>Comprehensive shipping solutions with real-time tracking and customs handling.</p>
@@ -1742,8 +1759,10 @@
                             <img src="assets/images/qualityassuarancefinal.jpg" alt="Quality Assurance" loading="lazy">
                         </div>
                         <div class="service-content">
-                            <div class="service-icon" style="margin-top: 20px; margin-bottom: 0px; background: #f0f4f8; padding: 15px; border-radius: 50%; width: 70px; height: 70px; display: flex; align-items: center; justify-content: center; margin-left: auto; margin-right: auto;">
-                                <img src="assets/icons/quality.png" alt="Quality Assurance" style="width: 40px; height: 40px; object-fit: contain;">
+                            <div class="service-icon"
+                                style="margin-top: 20px; margin-bottom: 0px; background: #f0f4f8; padding: 15px; border-radius: 50%; width: 70px; height: 70px; display: flex; align-items: center; justify-content: center; margin-left: auto; margin-right: auto;">
+                                <img src="assets/icons/quality.png" alt="Quality Assurance"
+                                    style="width: 40px; height: 40px; object-fit: contain;">
                             </div>
                             <h3 style="margin-top: 0; margin-bottom: 0.5rem;">Quality Assurance</h3>
                             <p>Rigorous quality control processes to ensure products meet international standards.</p>
@@ -1765,8 +1784,10 @@
                             <img src="assets/images/customs.jpg" alt="Customs Clearance" loading="lazy">
                         </div>
                         <div class="service-content">
-                            <div class="service-icon" style="margin-top: 20px; margin-bottom: 0px; background: #f0f4f8; padding: 15px; border-radius: 50%; width: 70px; height: 70px; display: flex; align-items: center; justify-content: center; margin-left: auto; margin-right: auto;">
-                                <img src="assets/icons/custom-clearance.png" alt="Customs Clearance" style="width: 40px; height: 40px; object-fit: contain;">
+                            <div class="service-icon"
+                                style="margin-top: 20px; margin-bottom: 0px; background: #f0f4f8; padding: 15px; border-radius: 50%; width: 70px; height: 70px; display: flex; align-items: center; justify-content: center; margin-left: auto; margin-right: auto;">
+                                <img src="assets/icons/custom-clearance.png" alt="Customs Clearance"
+                                    style="width: 40px; height: 40px; object-fit: contain;">
                             </div>
                             <h3 style="margin-top: 0; margin-bottom: 0.5rem;">Customs Clearance</h3>
                             <p>Expert handling of customs procedures to ensure smooth import processes.</p>
@@ -1788,8 +1809,10 @@
                             <img src="assets/images/business.webp" alt="Business Consultation" loading="lazy">
                         </div>
                         <div class="service-content">
-                            <div class="service-icon" style="margin-top: 20px; margin-bottom: 0px; background: #f0f4f8; padding: 15px; border-radius: 50%; width: 70px; height: 70px; display: flex; align-items: center; justify-content: center; margin-left: auto; margin-right: auto;">
-                                <img src="assets/icons/business.png" alt="Business Consultation" style="width: 40px; height: 40px; object-fit: contain;">
+                            <div class="service-icon"
+                                style="margin-top: 20px; margin-bottom: 0px; background: #f0f4f8; padding: 15px; border-radius: 50%; width: 70px; height: 70px; display: flex; align-items: center; justify-content: center; margin-left: auto; margin-right: auto;">
+                                <img src="assets/icons/business.png" alt="Business Consultation"
+                                    style="width: 40px; height: 40px; object-fit: contain;">
                             </div>
                             <h3 style="margin-top: 0; margin-bottom: 0.5rem;">Business Consultation</h3>
                             <p>Strategic guidance for import businesses to optimize operations and maximize profits.</p>
@@ -1808,11 +1831,14 @@
 
                     <article class="service-card interactive-card" data-service="warehousing">
                         <div class="service-thumb">
-                            <img src="assets/images/wirehousedistribution.jpg" alt="Warehousing & Distribution" loading="lazy">
+                            <img src="assets/images/wirehousedistribution.jpg" alt="Warehousing & Distribution"
+                                loading="lazy">
                         </div>
                         <div class="service-content">
-                            <div class="service-icon" style="margin-top: 20px; margin-bottom: 0px; background: #f0f4f8; padding: 15px; border-radius: 50%; width: 70px; height: 70px; display: flex; align-items: center; justify-content: center; margin-left: auto; margin-right: auto;">
-                                <img src="assets/icons/distribution-center.png" alt="Warehousing & Distribution" style="width: 40px; height: 40px; object-fit: contain;">
+                            <div class="service-icon"
+                                style="margin-top: 20px; margin-bottom: 0px; background: #f0f4f8; padding: 15px; border-radius: 50%; width: 70px; height: 70px; display: flex; align-items: center; justify-content: center; margin-left: auto; margin-right: auto;">
+                                <img src="assets/icons/distribution-center.png" alt="Warehousing & Distribution"
+                                    style="width: 40px; height: 40px; object-fit: contain;">
                             </div>
                             <h3 style="margin-top: 0; margin-bottom: 0.5rem;">Warehousing & Distribution</h3>
                             <p>Secure storage solutions and efficient distribution networks across Bangladesh.</p>
@@ -1839,50 +1865,61 @@
                     <h2 class="text-center">Explore Our Service Options</h2>
                     <p class="text-center">Discover detailed information about each service we offer</p>
                 </div>
-                
+
                 <div class="service-tabs">
-                    <button class="tab-btn active" onclick="showService('sourcing')" data-tab="sourcing">Product Sourcing</button>
-                    <button class="tab-btn" onclick="showService('logistics')" data-tab="logistics">Logistics Solutions</button>
+                    <button class="tab-btn active" onclick="showService('sourcing')" data-tab="sourcing">Product
+                        Sourcing</button>
+                    <button class="tab-btn" onclick="showService('logistics')" data-tab="logistics">Logistics
+                        Solutions</button>
                     <button class="tab-btn" onclick="showService('quality')" data-tab="quality">Quality Control</button>
                     <button class="tab-btn" onclick="showService('customs')" data-tab="customs">Customs Support</button>
                 </div>
-                
+
                 <div class="service-content-cards">
                     <!-- Product Sourcing Card -->
                     <div class="service-card-detail active" id="card-sourcing">
                         <div class="card-header" style="text-align: center; margin-bottom: 2rem;">
-                            <div class="service-icon" style="width: 80px; height: 80px; background: linear-gradient(135deg, #dc2626, #ea580c); border-radius: 50%; margin: 1rem auto 0.5rem; display: flex; align-items: center; justify-content: center; color: white; font-size: 2rem; font-weight: bold;">PS</div>
-                            <h3 style="color: var(--accent); font-size: 2rem; margin-bottom: 0.5rem;">Product Sourcing Excellence</h3>
-                            <p style="color: #64748b; font-size: 1.1rem;">Connect with verified manufacturers and secure the best deals</p>
+                            <div class="service-icon"
+                                style="width: 80px; height: 80px; background: linear-gradient(135deg, #dc2626, #ea580c); border-radius: 50%; margin: 1rem auto 0.5rem; display: flex; align-items: center; justify-content: center; color: white; font-size: 2rem; font-weight: bold;">
+                                PS</div>
+                            <h3 style="color: var(--accent); font-size: 2rem; margin-bottom: 0.5rem;">Product Sourcing
+                                Excellence</h3>
+                            <p style="color: #64748b; font-size: 1.1rem;">Connect with verified manufacturers and secure
+                                the best deals</p>
                         </div>
-                        
+
                         <div class="card-content" style="display: grid; grid-template-columns: 1fr 1fr; gap: 3rem;">
                             <div>
                                 <h4 style="color: var(--accent); margin-bottom: 1rem;">What We Deliver</h4>
                                 <div class="feature-list">
                                     <div class="feature-item">
-                                        <span style="width: 20px; height: 20px; background: #10b981; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-size: 12px; margin-right: 0.75rem;">✓</span>
+                                        <span
+                                            style="width: 20px; height: 20px; background: #10b981; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-size: 12px; margin-right: 0.75rem;">✓</span>
                                         <span>Manufacturer verification and background screening</span>
                                     </div>
                                     <div class="feature-item">
-                                        <span style="width: 20px; height: 20px; background: #10b981; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-size: 12px; margin-right: 0.75rem;">✓</span>
+                                        <span
+                                            style="width: 20px; height: 20px; background: #10b981; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-size: 12px; margin-right: 0.75rem;">✓</span>
                                         <span>Product specification matching and customization</span>
                                     </div>
                                     <div class="feature-item">
-                                        <span style="width: 20px; height: 20px; background: #10b981; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-size: 12px; margin-right: 0.75rem;">✓</span>
+                                        <span
+                                            style="width: 20px; height: 20px; background: #10b981; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-size: 12px; margin-right: 0.75rem;">✓</span>
                                         <span>Competitive price negotiation and analysis</span>
                                     </div>
                                     <div class="feature-item">
-                                        <span style="width: 20px; height: 20px; background: #10b981; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-size: 12px; margin-right: 0.75rem;">✓</span>
+                                        <span
+                                            style="width: 20px; height: 20px; background: #10b981; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-size: 12px; margin-right: 0.75rem;">✓</span>
                                         <span>Sample procurement and quality validation</span>
                                     </div>
                                     <div class="feature-item">
-                                        <span style="width: 20px; height: 20px; background: #10b981; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-size: 12px; margin-right: 0.75rem;">✓</span>
+                                        <span
+                                            style="width: 20px; height: 20px; background: #10b981; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-size: 12px; margin-right: 0.75rem;">✓</span>
                                         <span>Contract drafting and legal protection</span>
                                     </div>
                                 </div>
                             </div>
-                            
+
                             <div>
                                 <h4 style="color: var(--accent); margin-bottom: 1rem;">Investment & Returns</h4>
                                 <div class="pricing-info">
@@ -1909,42 +1946,51 @@
                             </div>
                         </div>
                     </div>
-                    
+
                     <!-- Logistics Card -->
                     <div class="service-card-detail" id="card-logistics">
                         <div class="card-header" style="text-align: center; margin-bottom: 2rem;">
-                            <div class="service-icon" style="width: 80px; height: 80px; background: linear-gradient(135deg, #2563eb, #1d4ed8); border-radius: 50%; margin: 1rem auto 0.5rem; display: flex; align-items: center; justify-content: center; color: white; font-size: 2rem; font-weight: bold;">LS</div>
-                            <h3 style="color: var(--accent); font-size: 2rem; margin-bottom: 0.5rem;">Logistics Solutions</h3>
-                            <p style="color: #64748b; font-size: 1.1rem;">Comprehensive shipping and transportation management</p>
+                            <div class="service-icon"
+                                style="width: 80px; height: 80px; background: linear-gradient(135deg, #2563eb, #1d4ed8); border-radius: 50%; margin: 1rem auto 0.5rem; display: flex; align-items: center; justify-content: center; color: white; font-size: 2rem; font-weight: bold;">
+                                LS</div>
+                            <h3 style="color: var(--accent); font-size: 2rem; margin-bottom: 0.5rem;">Logistics
+                                Solutions</h3>
+                            <p style="color: #64748b; font-size: 1.1rem;">Comprehensive shipping and transportation
+                                management</p>
                         </div>
-                        
+
                         <div class="card-content" style="display: grid; grid-template-columns: 1fr 1fr; gap: 3rem;">
                             <div>
                                 <h4 style="color: var(--accent); margin-bottom: 1rem;">Transportation Options</h4>
                                 <div class="feature-list">
                                     <div class="feature-item">
-                                        <span style="width: 20px; height: 20px; background: #3b82f6; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-size: 12px; margin-right: 0.75rem;">S</span>
+                                        <span
+                                            style="width: 20px; height: 20px; background: #3b82f6; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-size: 12px; margin-right: 0.75rem;">S</span>
                                         <span>Sea freight - Most economical for large shipments</span>
                                     </div>
                                     <div class="feature-item">
-                                        <span style="width: 20px; height: 20px; background: #3b82f6; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-size: 12px; margin-right: 0.75rem;">A</span>
+                                        <span
+                                            style="width: 20px; height: 20px; background: #3b82f6; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-size: 12px; margin-right: 0.75rem;">A</span>
                                         <span>Air cargo - Fast delivery for urgent orders</span>
                                     </div>
                                     <div class="feature-item">
-                                        <span style="width: 20px; height: 20px; background: #3b82f6; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-size: 12px; margin-right: 0.75rem;">E</span>
+                                        <span
+                                            style="width: 20px; height: 20px; background: #3b82f6; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-size: 12px; margin-right: 0.75rem;">E</span>
                                         <span>Express courier - Door-to-door premium service</span>
                                     </div>
                                     <div class="feature-item">
-                                        <span style="width: 20px; height: 20px; background: #3b82f6; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-size: 12px; margin-right: 0.75rem;">T</span>
+                                        <span
+                                            style="width: 20px; height: 20px; background: #3b82f6; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-size: 12px; margin-right: 0.75rem;">T</span>
                                         <span>Real-time tracking and shipment monitoring</span>
                                     </div>
                                     <div class="feature-item">
-                                        <span style="width: 20px; height: 20px; background: #3b82f6; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-size: 12px; margin-right: 0.75rem;">I</span>
+                                        <span
+                                            style="width: 20px; height: 20px; background: #3b82f6; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-size: 12px; margin-right: 0.75rem;">I</span>
                                         <span>Comprehensive cargo insurance coverage</span>
                                     </div>
                                 </div>
                             </div>
-                            
+
                             <div>
                                 <h4 style="color: var(--accent); margin-bottom: 1rem;">Competitive Rates</h4>
                                 <div class="pricing-info">
@@ -1971,42 +2017,51 @@
                             </div>
                         </div>
                     </div>
-                    
+
                     <!-- Quality Control Card -->
                     <div class="service-card-detail" id="card-quality">
                         <div class="card-header" style="text-align: center; margin-bottom: 2rem;">
-                            <div class="service-icon" style="width: 80px; height: 80px; background: linear-gradient(135deg, #16a34a, #059669); border-radius: 50%; margin: 1rem auto 0.5rem; display: flex; align-items: center; justify-content: center; color: white; font-size: 2rem; font-weight: bold;">QC</div>
-                            <h3 style="color: var(--accent); font-size: 2rem; margin-bottom: 0.5rem;">Quality Control</h3>
-                            <p style="color: #64748b; font-size: 1.1rem;">Rigorous inspection and quality assurance processes</p>
+                            <div class="service-icon"
+                                style="width: 80px; height: 80px; background: linear-gradient(135deg, #16a34a, #059669); border-radius: 50%; margin: 1rem auto 0.5rem; display: flex; align-items: center; justify-content: center; color: white; font-size: 2rem; font-weight: bold;">
+                                QC</div>
+                            <h3 style="color: var(--accent); font-size: 2rem; margin-bottom: 0.5rem;">Quality Control
+                            </h3>
+                            <p style="color: #64748b; font-size: 1.1rem;">Rigorous inspection and quality assurance
+                                processes</p>
                         </div>
-                        
+
                         <div class="card-content" style="display: grid; grid-template-columns: 1fr 1fr; gap: 3rem;">
                             <div>
                                 <h4 style="color: var(--accent); margin-bottom: 1rem;">Quality Assurance Process</h4>
                                 <div class="feature-list">
                                     <div class="feature-item">
-                                        <span style="width: 20px; height: 20px; background: #16a34a; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-size: 12px; margin-right: 0.75rem;">1</span>
+                                        <span
+                                            style="width: 20px; height: 20px; background: #16a34a; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-size: 12px; margin-right: 0.75rem;">1</span>
                                         <span>Factory capability and compliance audit</span>
                                     </div>
                                     <div class="feature-item">
-                                        <span style="width: 20px; height: 20px; background: #16a34a; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-size: 12px; margin-right: 0.75rem;">2</span>
+                                        <span
+                                            style="width: 20px; height: 20px; background: #16a34a; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-size: 12px; margin-right: 0.75rem;">2</span>
                                         <span>Pre-production sample approval process</span>
                                     </div>
                                     <div class="feature-item">
-                                        <span style="width: 20px; height: 20px; background: #16a34a; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-size: 12px; margin-right: 0.75rem;">3</span>
+                                        <span
+                                            style="width: 20px; height: 20px; background: #16a34a; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-size: 12px; margin-right: 0.75rem;">3</span>
                                         <span>In-line production quality monitoring</span>
                                     </div>
                                     <div class="feature-item">
-                                        <span style="width: 20px; height: 20px; background: #16a34a; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-size: 12px; margin-right: 0.75rem;">4</span>
+                                        <span
+                                            style="width: 20px; height: 20px; background: #16a34a; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-size: 12px; margin-right: 0.75rem;">4</span>
                                         <span>Final pre-shipment inspection and testing</span>
                                     </div>
                                     <div class="feature-item">
-                                        <span style="width: 20px; height: 20px; background: #16a34a; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-size: 12px; margin-right: 0.75rem;">5</span>
+                                        <span
+                                            style="width: 20px; height: 20px; background: #16a34a; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-size: 12px; margin-right: 0.75rem;">5</span>
                                         <span>Detailed photo and video inspection reports</span>
                                     </div>
                                 </div>
                             </div>
-                            
+
                             <div>
                                 <h4 style="color: var(--accent); margin-bottom: 1rem;">Quality Metrics</h4>
                                 <div class="pricing-info">
@@ -2016,7 +2071,8 @@
                                     </div>
                                     <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
                                         <span>Defect Rate:</span>
-                                        <strong style="color: #16a34a;">< 2%</strong>
+                                        <strong style="color: #16a34a;">
+                                            < 2%</strong>
                                     </div>
                                     <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
                                         <span>Inspection Time:</span>
@@ -2033,42 +2089,51 @@
                             </div>
                         </div>
                     </div>
-                    
+
                     <!-- Customs Support Card -->
                     <div class="service-card-detail" id="card-customs">
                         <div class="card-header" style="text-align: center; margin-bottom: 2rem;">
-                            <div class="service-icon" style="width: 80px; height: 80px; background: linear-gradient(135deg, #7c3aed, #6d28d9); border-radius: 50%; margin: 1rem auto 0.5rem; display: flex; align-items: center; justify-content: center; color: white; font-size: 2rem; font-weight: bold;">CS</div>
-                            <h3 style="color: var(--accent); font-size: 2rem; margin-bottom: 0.5rem;">Customs Support</h3>
-                            <p style="color: #64748b; font-size: 1.1rem;">Expert customs clearance and compliance management</p>
+                            <div class="service-icon"
+                                style="width: 80px; height: 80px; background: linear-gradient(135deg, #7c3aed, #6d28d9); border-radius: 50%; margin: 1rem auto 0.5rem; display: flex; align-items: center; justify-content: center; color: white; font-size: 2rem; font-weight: bold;">
+                                CS</div>
+                            <h3 style="color: var(--accent); font-size: 2rem; margin-bottom: 0.5rem;">Customs Support
+                            </h3>
+                            <p style="color: #64748b; font-size: 1.1rem;">Expert customs clearance and compliance
+                                management</p>
                         </div>
-                        
+
                         <div class="card-content" style="display: grid; grid-template-columns: 1fr 1fr; gap: 3rem;">
                             <div>
                                 <h4 style="color: var(--accent); margin-bottom: 1rem;">Customs Services</h4>
                                 <div class="feature-list">
                                     <div class="feature-item">
-                                        <span style="width: 20px; height: 20px; background: #7c3aed; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-size: 12px; margin-right: 0.75rem;">D</span>
+                                        <span
+                                            style="width: 20px; height: 20px; background: #7c3aed; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-size: 12px; margin-right: 0.75rem;">D</span>
                                         <span>Complete documentation preparation</span>
                                     </div>
                                     <div class="feature-item">
-                                        <span style="width: 20px; height: 20px; background: #7c3aed; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-size: 12px; margin-right: 0.75rem;">T</span>
+                                        <span
+                                            style="width: 20px; height: 20px; background: #7c3aed; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-size: 12px; margin-right: 0.75rem;">T</span>
                                         <span>Duty and tax calculation optimization</span>
                                     </div>
                                     <div class="feature-item">
-                                        <span style="width: 20px; height: 20px; background: #7c3aed; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-size: 12px; margin-right: 0.75rem;">C</span>
+                                        <span
+                                            style="width: 20px; height: 20px; background: #7c3aed; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-size: 12px; margin-right: 0.75rem;">C</span>
                                         <span>Regulatory compliance verification</span>
                                     </div>
                                     <div class="feature-item">
-                                        <span style="width: 20px; height: 20px; background: #7c3aed; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-size: 12px; margin-right: 0.75rem;">G</span>
+                                        <span
+                                            style="width: 20px; height: 20px; background: #7c3aed; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-size: 12px; margin-right: 0.75rem;">G</span>
                                         <span>Government liaison and representation</span>
                                     </div>
                                     <div class="feature-item">
-                                        <span style="width: 20px; height: 20px; background: #7c3aed; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-size: 12px; margin-right: 0.75rem;">E</span>
+                                        <span
+                                            style="width: 20px; height: 20px; background: #7c3aed; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-size: 12px; margin-right: 0.75rem;">E</span>
                                         <span>Emergency 24/7 clearance support</span>
                                     </div>
                                 </div>
                             </div>
-                            
+
                             <div>
                                 <h4 style="color: var(--accent); margin-bottom: 1rem;">Service Fees</h4>
                                 <div class="pricing-info">
@@ -2130,52 +2195,70 @@
                 </div>
 
                 <div class="features-grid">
-                    <div class="feature-card slide-left" style="opacity: 0; transform: translateY(30px) scale(0.9); transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);">
-                        <div class="feature-icon floating">
-                            <img src="assets/icons/network.png" alt="Extensive Network" style="width: 40px; height: 40px; object-fit: contain;">
+                    <div class="feature-card slide-left"
+                        style="opacity: 0; transform: translateY(30px); transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);">
+                        <div class="feature-icon">
+                            <img src="assets/icons/network.png" alt="Extensive Network"
+                                style="width: 40px; height: 40px; object-fit: contain;">
                         </div>
                         <h3>Extensive Network</h3>
-                        <p>Strong relationships with verified manufacturers across China, ensuring you get the best products at competitive prices.</p>
+                        <p>Strong relationships with verified manufacturers across China, ensuring you get the best
+                            products at competitive prices.</p>
                     </div>
 
-                    <div class="feature-card slide-right" style="opacity: 0; transform: translateY(30px) scale(0.9); transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);">
-                        <div class="feature-icon floating">
-                            <img src="assets/icons/solution.png" alt="End-to-End Solutions" style="width: 40px; height: 40px; object-fit: contain;">
+                    <div class="feature-card slide-right"
+                        style="opacity: 0; transform: translateY(30px); transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);">
+                        <div class="feature-icon">
+                            <img src="assets/icons/solution.png" alt="End-to-End Solutions"
+                                style="width: 40px; height: 40px; object-fit: contain;">
                         </div>
                         <h3>End-to-End Solutions</h3>
-                        <p>From sourcing to delivery, we handle every aspect of the import process, saving you time and reducing complexity.</p>
+                        <p>From sourcing to delivery, we handle every aspect of the import process, saving you time and
+                            reducing complexity.</p>
                     </div>
 
-                    <div class="feature-card slide-left" style="opacity: 0; transform: translateY(30px) scale(0.9); transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);">
-                        <div class="feature-icon floating">
-                            <img src="assets/icons/quality.png" alt="Quality Assurance" style="width: 40px; height: 40px; object-fit: contain;">
+                    <div class="feature-card slide-left"
+                        style="opacity: 0; transform: translateY(30px); transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);">
+                        <div class="feature-icon">
+                            <img src="assets/icons/quality.png" alt="Quality Assurance"
+                                style="width: 40px; height: 40px; object-fit: contain;">
                         </div>
                         <h3>Quality Assurance</h3>
-                        <p>Rigorous quality control processes ensure that every product meets international standards and your specific requirements.</p>
+                        <p>Rigorous quality control processes ensure that every product meets international standards
+                            and your specific requirements.</p>
                     </div>
 
-                    <div class="feature-card slide-right" style="opacity: 0; transform: translateY(30px) scale(0.9); transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);">
-                        <div class="feature-icon floating">
-                            <img src="assets/icons/cost.png" alt="Cost Efficiency" style="width: 40px; height: 40px; object-fit: contain;">
+                    <div class="feature-card slide-right"
+                        style="opacity: 0; transform: translateY(30px); transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);">
+                        <div class="feature-icon">
+                            <img src="assets/icons/cost.png" alt="Cost Efficiency"
+                                style="width: 40px; height: 40px; object-fit: contain;">
                         </div>
                         <h3>Cost Efficiency</h3>
-                        <p>We optimize every step of the supply chain to reduce costs without compromising on quality or reliability.</p>
+                        <p>We optimize every step of the supply chain to reduce costs without compromising on quality or
+                            reliability.</p>
                     </div>
 
-                    <div class="feature-card slide-left" style="opacity: 0; transform: translateY(30px) scale(0.9); transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);">
-                        <div class="feature-icon floating">
-                            <img src="assets/icons/team.png" alt="Expert Team" style="width: 40px; height: 40px; object-fit: contain;">
+                    <div class="feature-card slide-left"
+                        style="opacity: 0; transform: translateY(30px); transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);">
+                        <div class="feature-icon">
+                            <img src="assets/icons/team.png" alt="Expert Team"
+                                style="width: 40px; height: 40px; object-fit: contain;">
                         </div>
                         <h3>Expert Team</h3>
-                        <p>Our experienced professionals have deep knowledge of international trade regulations and market dynamics.</p>
+                        <p>Our experienced professionals have deep knowledge of international trade regulations and
+                            market dynamics.</p>
                     </div>
 
-                    <div class="feature-card slide-right" style="opacity: 0; transform: translateY(30px) scale(0.9); transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);">
-                        <div class="feature-icon floating">
-                            <img src="assets/icons/delivery.png" alt="Timely Delivery" style="width: 40px; height: 40px; object-fit: contain;">
+                    <div class="feature-card slide-right"
+                        style="opacity: 0; transform: translateY(30px); transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);">
+                        <div class="feature-icon">
+                            <img src="assets/icons/delivery.png" alt="Timely Delivery"
+                                style="width: 40px; height: 40px; object-fit: contain;">
                         </div>
                         <h3>Timely Delivery</h3>
-                        <p>We understand the importance of deadlines and ensure your shipments arrive on schedule, every time.</p>
+                        <p>We understand the importance of deadlines and ensure your shipments arrive on schedule, every
+                            time.</p>
                     </div>
                 </div>
             </div>
@@ -2185,10 +2268,13 @@
             <div class="stars"></div>
             <div class="container">
                 <h2 style="color: white; animation: fadeInUp 1s ease;">Ready to Transform Your Import Business?</h2>
-                <p style="color: white;">Join hundreds of successful Bangladeshi businesses that trust us with their import needs.</p>
+                <p style="color: white;">Join hundreds of successful Bangladeshi businesses that trust us with their
+                    import needs.</p>
                 <div class="cta-buttons">
-                    <a href="contact.html" class="btn btn-primary" style="color: rgb(100, 14, 14);">Get Started Today</a>
-                    <a href="about.html" class="btn btn-secondary" style="margin-left: 1rem; color: white;">Learn About Us</a>
+                    <a href="contact.html" class="btn btn-primary" style="color: rgb(100, 14, 14);">Get Started
+                        Today</a>
+                    <a href="about.html" class="btn btn-secondary" style="margin-left: 1rem; color: white;">Learn About
+                        Us</a>
                 </div>
             </div>
         </section>
@@ -2198,19 +2284,33 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-section">
-                    <style>.footer-section a { text-decoration: none; }</style>
+                    <style>
+                        .footer-section a {
+                            text-decoration: none;
+                        }
+                    </style>
                     <h3>IndoAsia Trading</h3>
                     <p>Your trusted partner for premium import services from all over the world.</p>
                     <div class="social-links" role="list" aria-label="Social media links">
-                        <a href="https://www.facebook.com/p/IndoAsiaTrading" target="_blank" rel="noopener noreferrer" aria-label="Follow us on Facebook"><i class="fab fa-facebook-f"></i></a>
-                        <a href="https://www.linkedin.com/company/indoasiatrading/" target="_blank" rel="noopener noreferrer" aria-label="Follow us on LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="https://www.instagram.com/indoasiatrading/" target="_blank" rel="noopener noreferrer" aria-label="Follow us on Instagram"><i class="fab fa-instagram"></i></a>
-                        <a href="https://youtube.com/@indoasiatrading?si=OhMRuZv84sHg0lor" target="_blank" rel="noopener noreferrer" aria-label="Follow us on YouTube"><i class="fab fa-youtube"></i></a>
+                        <a href="https://www.facebook.com/p/IndoAsiaTrading" target="_blank" rel="noopener noreferrer"
+                            aria-label="Follow us on Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.linkedin.com/company/indoasiatrading/" target="_blank"
+                            rel="noopener noreferrer" aria-label="Follow us on LinkedIn"><i
+                                class="fab fa-linkedin-in"></i></a>
+                        <a href="https://www.instagram.com/indoasiatrading/" target="_blank" rel="noopener noreferrer"
+                            aria-label="Follow us on Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="https://youtube.com/@indoasiatrading?si=OhMRuZv84sHg0lor" target="_blank"
+                            rel="noopener noreferrer" aria-label="Follow us on YouTube"><i
+                                class="fab fa-youtube"></i></a>
                     </div>
                 </div>
-                
+
                 <div class="footer-section">
-                    <style>.footer-section a { text-decoration: none; }</style>
+                    <style>
+                        .footer-section a {
+                            text-decoration: none;
+                        }
+                    </style>
                     <h4 style="font-size: 1.5rem;">Services</h4>
                     <ul role="list">
                         <li><a href="coreServices.html">Core Services</a></li>
@@ -2219,9 +2319,13 @@
                         <li><a href="features.html">Features</a></li>
                     </ul>
                 </div>
-                
+
                 <div class="footer-section">
-                    <style>.footer-section a { text-decoration: none; }</style>
+                    <style>
+                        .footer-section a {
+                            text-decoration: none;
+                        }
+                    </style>
                     <h4 style="font-size: 1.5rem;">Company</h4>
                     <ul role="list">
                         <li><a href="about.html">About Us</a></li>
@@ -2230,9 +2334,13 @@
                         <li><a href="contact.html">Contact</a></li>
                     </ul>
                 </div>
-                
+
                 <div class="footer-section">
-                    <style>.footer-section a { text-decoration: none; }</style>
+                    <style>
+                        .footer-section a {
+                            text-decoration: none;
+                        }
+                    </style>
                     <h4 style="font-size: 1.5rem;">Contact Info</h4>
                     <address>
                         <p>Email: <a href="mailto:indoasiatrading@outlook.com">indoasiatrading@outlook.com</a></p>
@@ -2241,7 +2349,7 @@
                     </address>
                 </div>
             </div>
-            
+
             <div class="footer-bottom">
                 <p>&copy; IndoAsia Trading. All rights reserved.</p>
             </div>
@@ -2251,25 +2359,25 @@
     <script>
         // Global variables for service comparison
         let selectedServices = ['sourcing'];
-        
+
         // Service showcase functionality
         function showService(serviceId) {
             // Update tab buttons
             document.querySelectorAll('.tab-btn').forEach(btn => {
                 btn.classList.remove('active');
             });
-            
+
             const activeBtn = document.querySelector(`[data-tab="${serviceId}"]`);
             if (activeBtn) {
                 activeBtn.classList.add('active');
             }
-            
+
             // Update service cards
             document.querySelectorAll('.service-card-detail').forEach(card => {
                 card.classList.remove('active');
                 card.style.display = 'none';
             });
-            
+
             const activeCard = document.getElementById(`card-${serviceId}`);
             if (activeCard) {
                 activeCard.classList.add('active');
@@ -2279,7 +2387,7 @@
                 }, 10);
             }
         }
-        
+
         function updateSelectedServices() {
             const container = document.getElementById('selectedServicesList');
             const serviceNames = {
@@ -2288,7 +2396,7 @@
                 quality: 'Quality Assurance',
                 customs: 'Customs Clearance'
             };
-            
+
             container.innerHTML = '';
             selectedServices.forEach(service => {
                 const tag = document.createElement('span');
@@ -2299,14 +2407,14 @@
                 container.appendChild(tag);
             });
         }
-        
+
         function updateServiceDetails() {
             // Hide all details
             document.querySelectorAll('.service-detail').forEach(detail => {
                 detail.style.display = 'none';
                 detail.classList.remove('active');
             });
-            
+
             // Show selected service details
             if (selectedServices.length > 0) {
                 const firstService = selectedServices[0];
@@ -2317,42 +2425,16 @@
                 }
             }
         }
-        
+
         function requestQuote() {
             const services = selectedServices.join(', ');
             const message = `I'm interested in getting a quote for the following services: ${services}. Please provide detailed pricing information.`;
             const encodedMessage = encodeURIComponent(message);
             window.open(`mailto:indoasiatrading@outlook.com?subject=Service Quote Request&body=${encodedMessage}`, '_blank');
         }
-        
-        // Enhanced service card interactions
-        function initServiceCardInteractions() {
-            const serviceCards = document.querySelectorAll('.service-card');
-            
-            serviceCards.forEach(card => {
-                // Add tilt effect
-                card.addEventListener('mousemove', (e) => {
-                    const rect = card.getBoundingClientRect();
-                    const x = e.clientX - rect.left;
-                    const y = e.clientY - rect.top;
-                    
-                    const centerX = rect.width / 2;
-                    const centerY = rect.height / 2;
-                    
-                    const rotateX = (y - centerY) / 10;
-                    const rotateY = (centerX - x) / 10;
-                    
-                    card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateZ(10px)`;
-                });
-                
-                card.addEventListener('mouseleave', () => {
-                    card.style.transform = 'perspective(1000px) rotateX(0) rotateY(0) translateZ(0)';
-                });
-            });
-        }
-        
+
         // Loading overlay
-        window.addEventListener('load', function() {
+        window.addEventListener('load', function () {
             const loadingOverlay = document.getElementById('loadingOverlay');
             if (loadingOverlay) {
                 setTimeout(() => {
@@ -2369,25 +2451,25 @@
             const mobileMenuBtn = document.getElementById('mobileMenuBtn');
             const mainNav = document.getElementById('mainNav');
             const dropdowns = document.querySelectorAll('.dropdown');
-            
+
             if (mobileMenuBtn && mainNav) {
-                mobileMenuBtn.addEventListener('click', function() {
+                mobileMenuBtn.addEventListener('click', function () {
                     mobileMenuBtn.classList.toggle('active');
                     mainNav.classList.toggle('open');
                 });
-                
-                document.addEventListener('click', function(e) {
+
+                document.addEventListener('click', function (e) {
                     if (!mobileMenuBtn.contains(e.target) && !mainNav.contains(e.target)) {
                         mobileMenuBtn.classList.remove('active');
                         mainNav.classList.remove('open');
                     }
                 });
             }
-            
+
             dropdowns.forEach(dropdown => {
                 const toggle = dropdown.querySelector('.dropdown-toggle');
                 if (toggle) {
-                    toggle.addEventListener('click', function(e) {
+                    toggle.addEventListener('click', function (e) {
                         if (window.innerWidth <= 968) {
                             e.preventDefault();
                             // Close other dropdowns
@@ -2399,12 +2481,12 @@
                     });
                 }
             });
-            
 
-            
+
+
             // Close mobile menu when clicking on a link
             const navLinks = document.querySelectorAll('#mainNav a');
-            
+
             navLinks.forEach(link => {
                 link.addEventListener('click', () => {
                     if (window.innerWidth <= 968) {
@@ -2414,7 +2496,7 @@
                 });
             });
         }
-        
+
         initMobileMenu();
 
         // Particles.js
@@ -2523,7 +2605,7 @@
                 }
             });
         });
-        
+
         // Professional animation system
         function initProfessionalAnimations() {
             // Enhanced intersection observer with multiple animation types
@@ -2532,78 +2614,40 @@
                     if (entry.isIntersecting) {
                         setTimeout(() => {
                             entry.target.classList.add('visible');
-                            
+
                             // Add special effects based on element type
                             if (entry.target.classList.contains('service-card')) {
                                 entry.target.classList.add('animate');
                                 entry.target.style.animationDelay = `${index * 0.1}s`;
                             }
-                            
-                            if (entry.target.classList.contains('stat-item')) {
-                                entry.target.classList.add('floating');
-                                setTimeout(() => {
-                                    entry.target.classList.add('pulsing');
-                                }, 500);
-                            }
-                            
+
                             if (entry.target.classList.contains('feature-card')) {
-                                entry.target.style.transform = 'translateY(0) scale(1)';
+                                entry.target.style.transform = 'translateY(0)';
                                 entry.target.style.opacity = '1';
                             }
                         }, index * 100);
-                        
+
                         animationObserver.unobserve(entry.target);
                     }
                 });
             }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
-            
+
             // Observe all animated elements
             document.querySelectorAll('.fade-in, .slide-left, .slide-right, .scale-in, .service-card, .stat-item, .feature-card').forEach(el => {
                 animationObserver.observe(el);
             });
         }
-        
-        // Enhanced service card interactions with 3D effects
-        function initAdvancedServiceCards() {
-            const cards = document.querySelectorAll('.service-card');
-            
-            cards.forEach((card, index) => {
-                // Add staggered entrance animation
-                card.style.transitionDelay = `${index * 0.1}s`;
-                
-                // 3D tilt effect
-                card.addEventListener('mousemove', (e) => {
-                    const rect = card.getBoundingClientRect();
-                    const x = e.clientX - rect.left;
-                    const y = e.clientY - rect.top;
-                    
-                    const centerX = rect.width / 2;
-                    const centerY = rect.height / 2;
-                    
-                    const rotateX = (y - centerY) / 8;
-                    const rotateY = (centerX - x) / 8;
-                    
-                    card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateZ(20px) scale(1.02)`;
-                    card.style.boxShadow = '0 20px 40px rgba(0,0,0,0.15)';
-                });
-                
-                card.addEventListener('mouseleave', () => {
-                    card.style.transform = 'perspective(1000px) rotateX(0) rotateY(0) translateZ(0) scale(1)';
-                    card.style.boxShadow = '';
-                });
-            });
-        }
-        
+
         // Animated counter with easing
         function animateCounters() {
             const counters = document.querySelectorAll('.stat-item h3[data-count]');
-            
+
             counters.forEach(counter => {
                 const target = parseInt(counter.getAttribute('data-count'));
                 const duration = 2000;
                 const increment = target / (duration / 16);
                 let current = 0;
-                
+
                 const timer = setInterval(() => {
                     current += increment;
                     if (current >= target) {
@@ -2611,7 +2655,7 @@
                         clearInterval(timer);
                         counter.parentElement.classList.add('stat-glow');
                     }
-                    
+
                     if (counter.textContent.includes('%')) {
                         counter.textContent = Math.floor(current) + '%';
                     } else if (counter.textContent.includes('+')) {
@@ -2624,68 +2668,12 @@
                 }, 16);
             });
         }
-        
-        // Parallax scrolling effect
-        function initParallaxEffects() {
-            window.addEventListener('scroll', () => {
-                const scrolled = window.pageYOffset;
-                const parallaxElements = document.querySelectorAll('.services-hero');
-                
-                parallaxElements.forEach(element => {
-                    const speed = 0.5;
-                    element.style.transform = `translateY(${scrolled * speed}px)`;
-                });
-            });
-        }
-        
-        // Interactive section reveals
-        function initSectionReveals() {
-            const sections = document.querySelectorAll('section');
-            
-            sections.forEach((section, index) => {
-                section.style.opacity = '0';
-                section.style.transform = 'translateY(50px)';
-                
-                setTimeout(() => {
-                    section.style.transition = 'all 0.8s cubic-bezier(0.4, 0, 0.2, 1)';
-                    section.style.opacity = '1';
-                    section.style.transform = 'translateY(0)';
-                }, index * 200);
-            });
-        }
-        
-        // Enhanced button interactions
-        function initButtonEffects() {
-            const buttons = document.querySelectorAll('.btn');
-            
-            buttons.forEach(button => {
-                button.addEventListener('mouseenter', () => {
-                    button.style.transform = 'translateY(-3px) scale(1.05)';
-                    button.style.boxShadow = '0 10px 25px rgba(0,0,0,0.2)';
-                });
-                
-                button.addEventListener('mouseleave', () => {
-                    button.style.transform = 'translateY(0) scale(1)';
-                    button.style.boxShadow = '';
-                });
-            });
-        }
-        
+
         // Initialize everything when DOM is loaded
-        document.addEventListener('DOMContentLoaded', function() {
-            initServiceCardInteractions();
-            // Initialize first service
+        document.addEventListener('DOMContentLoaded', function () {
             showService('sourcing');
             initProfessionalAnimations();
-            initAdvancedServiceCards();
-            initButtonEffects();
-            
-            // Delayed initialization for better performance
-            setTimeout(() => {
-                initParallaxEffects();
-                initSectionReveals();
-            }, 500);
-            
+
             // Initialize counters when stats section is visible
             const statsSection = document.querySelector('.stats-section');
             if (statsSection) {
@@ -2697,21 +2685,23 @@
                         }
                     });
                 }, { threshold: 0.5 });
-                
+
                 statsObserver.observe(statsSection);
             }
         });
     </script>
-   
+
     <script src="assets/js/translate.js"></script>
     <script src="assets/js/chatbox.js"></script>
 
     <!-- Floating Social Contact Icons -->
     <div class="floating-social-icons">
-        <a href="#" onclick="openChatbox('facebook'); return false;" class="social-icon facebook-icon" aria-label="Chat on Facebook">
+        <a href="#" onclick="openChatbox('facebook'); return false;" class="social-icon facebook-icon"
+            aria-label="Chat on Facebook">
             <i class="fab fa-facebook-messenger"></i>
         </a>
-        <a href="#" onclick="openChatbox('whatsapp'); return false;" class="social-icon whatsapp-icon" aria-label="Chat on WhatsApp">
+        <a href="#" onclick="openChatbox('whatsapp'); return false;" class="social-icon whatsapp-icon"
+            aria-label="Chat on WhatsApp">
             <i class="fab fa-whatsapp"></i>
         </a>
     </div>
@@ -2769,9 +2759,12 @@
         }
 
         @keyframes pulse {
-            0%, 100% {
+
+            0%,
+            100% {
                 transform: scale(1);
             }
+
             50% {
                 transform: scale(1.05);
             }
@@ -2807,8 +2800,8 @@
             height: 2px;
             background: white;
             box-shadow: 100px 200px white, 300px 100px white, 500px 300px white, 700px 150px white, 900px 250px white,
-                        150px 50px white, 400px 350px white, 600px 50px white, 800px 300px white, 200px 150px white,
-                        350px 250px white, 550px 200px white, 750px 100px white, 250px 300px white, 450px 150px white;
+                150px 50px white, 400px 350px white, 600px 50px white, 800px 300px white, 200px 150px white,
+                350px 250px white, 550px 200px white, 750px 100px white, 250px 300px white, 450px 150px white;
             animation: stars 3s linear infinite;
         }
 
@@ -2817,9 +2810,15 @@
         }
 
         @keyframes stars {
-            from { transform: translateY(0); }
-            to { transform: translateY(-400px); }
+            from {
+                transform: translateY(0);
+            }
+
+            to {
+                transform: translateY(-400px);
+            }
         }
     </style>
 </body>
+
 </html>

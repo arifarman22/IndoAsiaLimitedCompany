@@ -256,7 +256,7 @@
 
   .mobile-menu-btn span {
     width: 22px;
-    height: 2px;
+    height: 1px;
     background: var(--text-primary, #1f2937);
     border-radius: 2px;
     margin: 2px 0;

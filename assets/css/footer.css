@@ -10,6 +10,7 @@
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 2rem;
   margin-bottom: 3rem;
+  text-align: left;
 }
 
 .footer-section h3,
@@ -108,11 +109,6 @@
 @media (max-width: 768px) {
   .footer-content {
     grid-template-columns: 1fr;
-    text-align: center;
-  }
-  
-  .social-links {
-    justify-content: center;
   }
   
   .back-to-top {
